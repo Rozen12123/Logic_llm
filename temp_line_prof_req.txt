@@ -1,0 +1,1 @@
+line-profiling @ git+https://ghproxy.com/https://github.com/hitachi-nlp/line-profiling.git@edc470335047d6ebf09db968dcf1bf43397538a2 

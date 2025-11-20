@@ -1,0 +1,296 @@
+[
+  {
+    "id": "FOLIO_dev_0",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Bonnie performs in school talent shows often.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nPerform(x) ::: x performs in school talent shows often.\nAttend(x) ::: x attends school events.\nEngaged(x) ::: x is very engaged with school events.\nInactive(x) ::: x is inactive and disinterested members of their community.\nChaperone(x) ::: x chaperone high school dances.\nStudent(x) ::: x is a student who attends the school.\nYoungChild(x) ::: x is a young child.\nTeenager(x) ::: x is a teenager.\nWish(x, y) ::: x wishes to y.\nFurther(x, y) ::: x further y.\nEducational(x, y) ::: x has educational y.\nBonnie(bonnie) ::: Bonnie is Bonnie.\n\nPremises:\nPerform(x) → (Attend(x) ∧ Engaged(x)) ::: If people perform in school talent shows often, then they attend and are very engaged with school events.\nPerform(x) ⊕ Inactive(x) ::: People either perform in school talent shows often or are inactive and disinterested members of their community.\nChaperone(x) → ¬Student(x) ::: If people chaperone high school dances, then they are not students who attend the school.\nInactive(x) → Chaperone(x) ::: All people who are inactive and disinterested members of their community chaperone high school dances.\n(YoungChild(x) ∨ Teenager(x)) ∧ Wish(x, further) ∧ Wish(x, academic) ∧ Wish(x, educational) → Student(x) ::: All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school.\n(Bonnie(attend) ∧ Bonnie(engaged)) ⊕ ¬(Bonnie(attend) ∨ Bonnie(engaged)) ::: Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.\n\nConclusion:\nPerform(bonnie) ::: Bonnie performs in school talent shows often."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_1",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nPerform(x) ::: x performs in school talent shows often.\nAttend(x) ::: x attends school events.\nEngaged(x) ::: x is very engaged with school events.\nInactive(x) ::: x is inactive.\nDisinterested(x) ::: x is disinterested.\nChaperone(x) ::: x chaperones high school dances.\nStudent(x) ::: x is a student.\nYoungChild(x) ::: x is a young child.\nTeenager(x) ::: x is a teenager.\nWish(x, y, z) ::: x wishes to further y and z.\nAttendSchool(x) ::: x is a student who attends the school.\n\nPremises:\nPerform(x) → (Attend(x) ∧ Engaged(x)) ::: If people perform in school talent shows often, then they attend and are very engaged with school events.\nPerform(x) ⊕ (Inactive(x) ∧ Disinterested(x)) ::: People either perform in school talent shows often or are inactive and disinterested members of their community.\nChaperone(x) → ¬(Student(x) ∧ AttendSchool(x)) ::: If people chaperone high school dances, then they are not students who attend the school.\nInactive(x) ∧ Disinterested(x) → Chaperone(x) ::: All people who are inactive and disinterested members of their community chaperone high school dances.\n(YoungChild(x) ∨ Teenager(x)) ∧ Wish(x, academicCareers, educationalOpportunities) → AttendSchool(x) ::: All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school.\n(Attend(bonnie) ∧ Engaged(bonnie)) ⊕ ¬(Attend(bonnie) ∨ Engaged(bonnie)) ::: Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.\n\nConclusion:\n(YoungChild(bonnie) ∨ Teenager(bonnie)) ∧ (Chaperone(bonnie) ⊕ ¬(YoungChild(bonnie) ∨ Teenager(bonnie))) → (AttendSchool(bonnie) ∨ Inactive(bonnie) ∧ Disinterested(bonnie)) ::: If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_2",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nPerform(x) ::: x performs in school talent shows often.\nAttend(x) ::: x attends school events.\nEngaged(x) ::: x is very engaged with school events.\nInactive(x) ::: x is inactive.\nDisinterested(x) ::: x is disinterested.\nChaperone(x) ::: x chaperones high school dances.\nStudent(x) ::: x is a student.\nYoungChild(x) ::: x is a young child.\nTeenager(x) ::: x is a teenager.\nWish(x, y) ::: x wishes to y.\nFurther(x, y) ::: x further y.\nEducationalOpportunity(x) ::: x is an educational opportunity.\nBonnie(bonnie) ::: Bonnie is Bonnie.\n\nPremises:\nPerform(x) → Attend(x) ∧ Engaged(x) ::: If people perform in school talent shows often, then they attend and are very engaged with school events.\nPerform(x) ⊕ Inactive(x) ∧ Disinterested(x) ::: People either perform in school talent shows often or are inactive and disinterested members of their community.\nChaperone(x) → ¬(Student(x) ∧ Attend(x)) ::: If people chaperone high school dances, then they are not students who attend the school.\nInactive(x) ∧ Disinterested(x) → Chaperone(x) ::: All people who are inactive and disinterested members of their community chaperone high school dances.\n(YoungChild(x) ∨ Teenager(x)) ∧ Wish(x, Further(x, academicCareers)) ∧ Wish(x, Further(x, EducationalOpportunity(x))) → Student(x) ∧ Attend(x) ::: All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school.\n(Bonnie(attend) ∧ Bonnie(engaged)) ⊕ ¬(Bonnie(attend) ∨ Bonnie(engaged)) ::: Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.\n\nConclusion:\n(Chaperone(bonnie) ∨ ¬Chaperone(bonnie) → Perform(bonnie)) → ((YoungChild(bonnie) ∨ Teenager(bonnie)) ∧ Wish(bonnie, Further(bonnie, academicCareers)) ∧ Wish(bonnie, Further(bonnie, EducationalOpportunity(bonnie))) ∧ (Inactive(bonnie) ∧ Disinterested(bonnie))) ::: If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_3",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has lunch in the company.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nEmployee(x) ::: x is an employee.\nSchedule(x, y) ::: x schedules a meeting with y.\nAppear(x) ::: x appears in the company today.\nLunch(x, y) ::: x has lunch in location y.\nRemote(x) ::: x is working remotely from home.\nManager(x) ::: x is a manager.\nCountry(x) ::: x is in another country.\n\nPremises:\n∀x ∀y (Employee(x) ∧ Schedule(x, y) → Appear(x)) ::: All employees who schedule a meeting with their customers will appear in the company today.\n∀x (Lunch(x, company) → Schedule(x, customer)) ::: Everyone who has lunch in the company schedules meetings with their customers.\n∀x (Lunch(x, company) ⊕ Lunch(x, home)) ::: Employees will either have lunch in the company or have lunch at home.\n∀x (Lunch(x, home) → Remote(x)) ::: If an employee has lunch at home, then he/she is working remotely from home.\n∀x (Country(x) → Remote(x)) ::: All employees who are in other countries work remotely from home.\n∀x (Manager(x) → ¬Remote(x)) ::: No managers work remotely from home.\n(Manager(james) ∧ Appear(james)) ⊕ ¬(Manager(james) ∨ Appear(james)) ::: James is either a manager and appears in the company today or neither a manager nor appears in the company today.\n\nConclusion:\nLunch(james, company) ::: James has lunch in the company."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_4",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have lunch in the company.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nEmployee(x) ::: x is an employee.\nSchedule(x, y) ::: x schedules a meeting with y.\nAppear(x) ::: x appears in the company today.\nLunch(x, y) ::: x has lunch in location y.\nRemote(x) ::: x is working remotely from home.\nManager(x) ::: x is a manager.\nCountry(x) ::: x is in another country.\n\nPremises:\n∀x (Schedule(x, customer) → Appear(x)) ::: All employees who schedule a meeting with their customers will appear in the company today.\n∀x (Lunch(x, company) → Schedule(x, customer)) ::: Everyone who has lunch in the company schedules meetings with their customers.\n∀x (Lunch(x, company) ⊕ Lunch(x, home)) ::: Employees will either have lunch in the company or have lunch at home.\n∀x (Lunch(x, home) → Remote(x)) ::: If an employee has lunch at home, then he/she is working remotely from home.\n∀x (Country(x) → Remote(x)) ::: All employees who are in other countries work remotely from home.\n∀x (Manager(x) → ¬Remote(x)) ::: No managers work remotely from home.\n(Manager(james) ∧ Appear(james)) ⊕ ¬(Manager(james) ∨ Appear(james)) ::: James is either a manager and appears in the company today or neither a manager nor appears in the company today.\n\nConclusion:\n¬Lunch(james, company) ::: James does not have lunch in the company."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_5",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If James is either a manager or in other countries,  then James either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nEmployee(x) ::: x is an employee.\nSchedule(x, y) ::: x schedules a meeting with y.\nAppear(x) ::: x appears in the company today.\nLunch(x, y) ::: x has lunch in location y.\nRemote(x) ::: x works remotely from home.\nManager(x) ::: x is a manager.\nCountry(x) ::: x is in other countries.\nPremises:\n∀x (Employee(x) ∧ Schedule(x, customer) → Appear(x)) ::: All employees who schedule a meeting with their customers will appear in the company today.\n∀x (Lunch(x, company) → Schedule(x, customer)) ::: Everyone who has lunch in the company schedules meetings with their customers.\n∀x (Lunch(x, company) ⊕ Lunch(x, home)) ::: Employees will either have lunch in the company or have lunch at home.\nLunch(x, home) → Remote(x) ::: If an employee has lunch at home, then he/she is working remotely from home.\n∀x (Country(x) → Remote(x)) ::: All employees who are in other countries work remotely from home.\n¬∀x (Manager(x) → Remote(x)) ::: No managers work remotely from home.\n(Manager(james) ∧ Appear(james)) ⊕ ¬(Manager(james) ∨ Appear(james)) ::: James is either a manager and appears in the company today or neither a manager nor appears in the company today.\nConclusion:\n(Manager(james) ∨ Country(james)) → (Lunch(james, home) ∧ Remote(james)) ⊕ ¬(Lunch(james, home) ∨ Remote(james)) ::: If James is either a manager or in other countries, then James either has lunch at home and works remotely from home, or neither has lunch at home nor works remotely from home."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_6",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is an animal.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nMonkeypox(x) ::: x is an infectious disease caused by the monkeypox virus.\nVirus(x) ::: x is the monkeypox virus.\nAnimal(x) ::: x is an animal.\nHuman(x) ::: x is a human.\nMammal(x) ::: x is a mammal.\nSymptom(x, y) ::: y is a symptom of x.\nFeel(x, y) ::: x feels y when they get y.\nPremises:\nMonkeypox(monkeypox) ∧ Virus(monkeypox) ::: Monkeypox is an infectious disease caused by the monkeypox virus.\n∃x (Virus(x) ∧ Animal(x)) ::: Monkeypox virus can occur in certain animals, including humans.\n∀x (Human(x) → Mammal(x)) ::: Humans are mammals.\n∀x (Mammal(x) → Animal(x)) ::: Mammals are animals.\n∀x (Monkeypox(x) → Symptom(x, fever)) ∧ ∀x (Monkeypox(x) → Symptom(x, headache)) ∧ ∀x (Monkeypox(x) → Symptom(x, musclePains)) ∧ ∀x (Monkeypox(x) → Symptom(x, tired)) ::: Symptoms of Monkeypox include fever, headache, muscle pains, feeling tired, and so on.\n∀x (Feel(x, glu) → Tired(x)) ::: People feel tired when they get a glu.\nConclusion:\n∃x (Animal(x)) ::: There is an animal."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_7",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No one gets flu.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nMonkeypox(x) ::: x is an infectious disease caused by the monkeypox virus.\nVirus(x) ::: x is the monkeypox virus.\nOccurIn(x, y) ::: x can occur in y.\nHuman(x) ::: x is a human.\nMammal(x) ::: x is a mammal.\nAnimal(x) ::: x is an animal.\nSymptom(x, y) ::: y is a symptom of x.\nFeel(x, y) ::: x feels y when they get y.\nFlu(x) ::: x is the flu.\n\nPremises:\nMonkeypox(monkeypox) ∧ Virus(monkeypox) ::: Monkeypox is an infectious disease caused by the monkeypox virus.\n∀x (OccurIn(virus(x), human(x))) ::: Monkeypox virus can occur in certain animals, including humans.\n∀x (Human(x) → Mammal(x)) ::: Humans are mammals.\n∀x (Mammal(x) → Animal(x)) ::: Mammals are animals.\n∀x (Monkeypox(x) → Symptom(x, fever)) ∧ ∀x (Monkeypox(x) → Symptom(x, headache)) ∧ ∀x (Monkeypox(x) → Symptom(x, musclePains)) ∧ ∀x (Monkeypox(x) → Symptom(x, tired)) ::: Symptoms of Monkeypox include fever, headache, muscle pains, feeling tired, and so on.\n∀x (Feel(x, flu)) ::: People feel tired when they get a flu.\n\nConclusion:\n¬∀x (Feel(x, flu)) ::: No one gets flu."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_8",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Symptons of Monkeypox include coughing.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nMonkeypox(x) ::: x is Monkeypox.\nVirus(x) ::: x is the monkeypox virus.\nAnimal(x) ::: x is an animal.\nHuman(x) ::: x is a human.\nMammal(x) ::: x is a mammal.\nSymptom(x, y) ::: x is a symptom of y.\nFeel(x, y) ::: x feels y.\nCause(x, y) ::: x is caused by y.\nOccur(x, y) ::: x occurs in y.\n\nPremises:\nMonkeypox(monkeypox) ∧ Cause(monkeypox, monkeypoxVirus) ::: Monkeypox is an infectious disease caused by the monkeypox virus.\n∀x (Occur(monkeypoxVirus, x)) ∧ ∃x (Human(x) ∧ Occur(monkeypoxVirus, x)) ::: Monkeypox virus can occur in certain animals, including humans.\n∀x (Human(x) → Mammal(x)) ∧ ∀x (Mammal(x) → Animal(x)) ::: Humans are mammals. Mammals are animals.\n∀x (Monkeypox(x) → Symptom(x, fever)) ∧ ∀x (Monkeypox(x) → Symptom(x, headache)) ∧ ∀x (Monkeypox(x) → Symptom(x, musclePains)) ∧ ∀x (Monkeypox(x) → Symptom(x, tired)) ::: Symptoms of Monkeypox include fever, headache, muscle pains, feeling tired, and so on.\n∀x (Feel(x, tired) → Get(x, glu)) ::: People feel tired when they get a glu.\n\nConclusion:\n¬Symptom(monkeypox, coughing) ::: Symptons of Monkeypox include coughing."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_9",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould鈥檚 wild turkey, Merriam鈥檚 wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Ocellated wild turkey.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nWildTurkey(x) ::: x is a wild turkey.\nEastern(x) ::: x is an Eastern wild turkey.\nOsceola(x) ::: x is an Osceola wild turkey.\nGoulds(x) ::: x is a Gould's wild turkey.\nMerriams(x) ::: x is a Merriam's wild turkey.\nRioGrande(x) ::: x is a Rio Grande wild turkey.\nOcellated(x) ::: x is an Ocellated wild turkey.\nPremises:\n∀x (WildTurkey(x) ↔ (Eastern(x) ∨ Osceola(x) ∨ Goulds(x) ∨ Merriams(x) ∨ RioGrande(x) ∨ Ocellated(x))) ::: There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould鈥檚 wild turkey, Merriam鈥檚 wild turkey, Rio Grande wild turkey, and Ocellated wild turkey.\n¬Eastern(tom) ::: Tom is not an Eastern wild turkey.\n¬Osceola(tom) ::: Tom is not an Osceola wild turkey.\n¬Goulds(tom) ∧ ¬Merriams(tom) ∧ ¬RioGrande(tom) ::: Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey.\nWildTurkey(tom) ::: Tom is a wild turkey.\nConclusion:\nOcellated(tom) ::: Tom is an Ocellated wild turkey."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_10",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould鈥檚 wild turkey, Merriam鈥檚 wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Eastern wild turkey.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nWildTurkey(x) ::: x is a wild turkey.\nEastern(x) ::: x is an Eastern wild turkey.\nOsceola(x) ::: x is an Osceola wild turkey.\nGoulds(x) ::: x is a Gould's wild turkey.\nMerriams(x) ::: x is a Merriams wild turkey.\nRioGrande(x) ::: x is a Rio Grande wild turkey.\nOcellated(x) ::: x is an Ocellated wild turkey.\nPremises:\n∀x (WildTurkey(x) ↔ (Eastern(x) ∨ Osceola(x) ∨ Goulds(x) ∨ Merriams(x) ∨ RioGrande(x) ∨ Ocellated(x))) ::: There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould鈥檚 wild turkey, Merriam鈥檚 wild turkey, Rio Grande wild turkey, and Ocellated wild turkey.\n¬Eastern(tom) ::: Tom is not an Eastern wild turkey.\n¬Osceola(tom) ::: Tom is not an Osceola wild turkey.\n¬Goulds(tom) ∧ ¬Merriams(tom) ∧ ¬RioGrande(tom) ::: Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey.\nWildTurkey(tom) ::: Tom is a wild turkey.\nConclusion:\n¬Eastern(tom) ::: Tom is an Eastern wild turkey."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_11",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould鈥檚 wild turkey, Merriam鈥檚 wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Joey is a wild turkey.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nWildTurkey(x) ::: x is a wild turkey.\nEastern(x) ::: x is an Eastern wild turkey.\nOsceola(x) ::: x is an Osceola wild turkey.\nGoulds(x) ::: x is a Gould's wild turkey.\nMerriams(x) ::: x is a Merriams wild turkey.\nRioGrande(x) ::: x is a Rio Grande wild turkey.\nOcellated(x) ::: x is an Ocellated wild turkey.\nTom(x) ::: x is Tom.\nJoey(x) ::: x is Joey.\n\nPremises:\n∀x (WildTurkey(x) ↔ (Eastern(x) ∨ Osceola(x) ∨ Goulds(x) ∨ Merriams(x) ∨ RioGrande(x) ∨ Ocellated(x))) ::: There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould鈥檚 wild turkey, Merriam鈥檚 wild turkey, Rio Grande wild turkey, and Ocellated wild turkey.\n¬Eastern(tom) ::: Tom is not an Eastern wild turkey.\n¬Osceola(tom) ::: Tom is not an Osceola wild turkey.\n¬Goulds(tom) ∧ ¬Merriams(tom) ∧ ¬RioGrande(tom) ::: Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey.\nWildTurkey(tom) ::: Tom is a wild turkey.\n\nConclusion:\nWildTurkey(joey) ::: Joey is a wild turkey."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_12",
+    "context": "A Japanese game company created the game the Legend of Zelda. All games in the Top 10 list are made by Japanese game companies. [BG] If a game sells more than one million copies, then it will be selected into the Top 10 list. The Legend of Zelda sold more than one million copies.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Legend of Zelda is in the Top 10 list.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nJapanese(x) ::: x is a Japanese game company.\nGame(x) ::: x is a game.\nTop10(y) ::: y is in the Top 10 list.\nCreated(x, y) ::: x created y.\nSells(x, y) ::: x sells y copies.\nPremises:\nJapanese(creator) ∧ Game(TheLegendOfZelda) ∧ Created(creator, TheLegendOfZelda) ::: A Japanese game company created the game the Legend of Zelda.\n∀y (Top10(y) → Japanese(maker(y))) ::: All games in the Top 10 list are made by Japanese game companies.\n∀x (Sells(x, >1000000) → Top10(x)) ::: If a game sells more than one million copies, then it will be selected into the Top 10 list.\nSells(TheLegendOfZelda, >1000000) ::: The Legend of Zelda sold more than one million copies.\nConclusion:\nTop10(TheLegendOfZelda) ::: The Legend of Zelda is in the Top 10 list."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_13",
+    "context": "A Japanese game company created the game the Legend of Zelda. All games in the Top 10 list are made by Japanese game companies. [BG] If a game sells more than one million copies, then it will be selected into the Top 10 list. The Legend of Zelda sold more than one million copies.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? FIFA 22 is made by a Japanese video game company.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nJapanese(x) ::: x is a Japanese game company.\nGame(x) ::: x is a game.\nMadeBy(x, y) ::: x is made by y.\nTop10(x) ::: x is in the Top 10 list.\nSells(x, y) ::: x sells y copies.\nPremises:\nJapanese(creator) ∧ Game(TheLegendOfZelda) ∧ MadeBy(TheLegendOfZelda, creator) ::: A Japanese game company created the game the Legend of Zelda.\n∀x (Top10(x) → MadeBy(x, Japanese(y))) ::: All games in the Top 10 list are made by Japanese game companies.\n∀x (Sells(x, moreThanOneMillion) → Top10(x)) ::: If a game sells more than one million copies, then it will be selected into the Top 10 list.\nSells(TheLegendOfZelda, moreThanOneMillion) ::: The Legend of Zelda sold more than one million copies.\nConclusion:\n¬(Game(fifa22) ∧ MadeBy(fifa22, Japanese(y))) ::: FIFA 22 is made by a Japanese video game company."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_14",
+    "context": "A Japanese game company created the game the Legend of Zelda. All games in the Top 10 list are made by Japanese game companies. [BG] If a game sells more than one million copies, then it will be selected into the Top 10 list. The Legend of Zelda sold more than one million copies.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Legend of Zelda is not in the Top 10 list.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nJapanese(x) ::: x is a Japanese game company.\nGame(x) ::: x is a game.\nTop10(y) ::: y is in the Top 10 list.\nCreated(x, y) ::: x created y.\nSells(x, y) ::: x sells y copies.\nPremises:\nJapanese(creator) ∧ Game(TheLegendOfZelda) ∧ Created(creator, TheLegendOfZelda) ::: A Japanese game company created the game the Legend of Zelda.\n∀y (Top10(y) → Japanese(maker)) ::: All games in the Top 10 list are made by Japanese game companies.\n∀x (Sells(x, >1000000) → Top10(x)) ::: If a game sells more than one million copies, then it will be selected into the Top 10 list.\nSells(TheLegendOfZelda, >1000000) ::: The Legend of Zelda sold more than one million copies.\nConclusion:\n¬Top10(TheLegendOfZelda) ::: The Legend of Zelda is not in the Top 10 list."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_15",
+    "context": "All squares have four sides. All four-sided things are shapes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All squares are shapes.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nSquare(x) ::: x is a square.\nFourSided(x) ::: x has four sides.\nShape(x) ::: x is a shape.\n\nPremises:\n∀x (Square(x) → FourSided(x)) ::: All squares have four sides.\n∀x (FourSided(x) → Shape(x)) ::: All four-sided things are shapes.\n\nConclusion:\n∀x (Square(x) → Shape(x)) ::: All squares are shapes."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_16",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a turtle.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nRabbit(x) ::: x is a rabbit.\nTurtle(x) ::: x is a turtle.\nSquirrel(x) ::: x is a squirrel.\nCute(x) ::: x is cute.\nSkittish(x) ::: x is skittish.\nStill(x) ::: x is still.\nPremises:\n∀x (Rabbit(x) → Cute(x)) ::: All rabbits are cute.\n∃x (Turtle(x)) ::: Some turtles exist.\n∀x ∀y (Animal(x) → (Rabbit(x) ∨ Squirrel(y))) ::: An animal is either a rabbit or a squirrel.\n∀x (Skittish(x) → ¬Still(x)) ::: If something is skittish, then it is not still.\n∀x (Squirrel(x) → Skittish(x)) ::: All squirrels are skittish.\nStill(rock) ::: Rock is still.\nConclusion:\n¬Turtle(rock) ::: Rock is a turtle."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_17",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is not a turtle.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nRabbit(x) ::: x is a rabbit.\nTurtle(x) ::: x is a turtle.\nSquirrel(x) ::: x is a squirrel.\nCute(x) ::: x is cute.\nSkittish(x) ::: x is skittish.\nStill(x) ::: x is still.\nPremises:\n∀x (Rabbit(x) → Cute(x)) ::: All rabbits are cute.\n∃x (Turtle(x)) ::: Some turtles exist.\n∀x ∀y (Animal(x) → (Rabbit(x) ∨ Squirrel(y))) ::: An animal is either a rabbit or a squirrel.\n∀x (Skittish(x) → ¬Still(x)) ::: If something is skittish, then it is not still.\n∀x (Squirrel(x) → Skittish(x)) ::: All squirrels are skittish.\nStill(rock) ::: Rock is still.\nConclusion:\n¬Turtle(rock) ::: Rock is not a turtle."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_18",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a turtle or cute.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nRabbit(x) ::: x is a rabbit.\nTurtle(x) ::: x is a turtle.\nSquirrel(x) ::: x is a squirrel.\nCute(x) ::: x is cute.\nSkittish(x) ::: x is skittish.\nStill(x) ::: x is still.\n\nPremises:\n∀x (Rabbit(x) → Cute(x)) ::: All rabbits are cute.\n∃x (Turtle(x)) ::: Some turtles exist.\n∀x ∀y (Animal(x) → (Rabbit(x) ∨ Squirrel(y))) ::: An animal is either a rabbit or a squirrel.\n∀x (Skittish(x) → ¬Still(x)) ::: If something is skittish, then it is not still.\n∀x (Squirrel(x) → Skittish(x)) ::: All squirrels are skittish.\nStill(rock) ::: Rock is still.\n\nConclusion:\nTurtle(rock) ∨ Cute(rock) ::: Rock is a turtle or cute."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_19",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is not both a turtle and a squirrel, then Rock is either cute or skittish.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nCute(x) ::: x is cute.\nRabbit(x) ::: x is a rabbit.\nTurtle(x) ::: x is a turtle.\nSquirrel(x) ::: x is a squirrel.\nSkittish(x) ::: x is skittish.\nStill(x) ::: x is still.\n\nPremises:\n∀x (Rabbit(x) → Cute(x)) ::: All rabbits are cute.\n∃x (Turtle(x)) ::: Some turtles exist.\n∀x (Rabbit(x) ⊕ Squirrel(x)) ::: An animal is either a rabbit or a squirrel.\n∀x (Skittish(x) → ¬Still(x)) ::: If something is skittish, then it is not still.\n∀x (Squirrel(x) → Skittish(x)) ::: All squirrels are skittish.\nStill(rock) ::: Rock is still.\n\nConclusion:\n¬(Turtle(rock) ∧ Squirrel(rock)) → (Cute(rock) ∨ Skittish(rock)) ::: If Rock is not both a turtle and a squirrel, then Rock is either cute or skittish."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_20",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is cute and still, then Rock is a turtle and skittish.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nCute(x) ::: x is cute.\nRabbit(x) ::: x is a rabbit.\nTurtle(x) ::: x is a turtle.\nSkittish(x) ::: x is skittish.\nStill(x) ::: x is still.\nSquirrel(x) ::: x is a squirrel.\nAnimal(x) ::: x is an animal.\nExists(x) ::: x exists.\nPremises:\n∀x (Rabbit(x) → Cute(x)) ::: All rabbits are cute.\n∃x (Turtle(x)) ::: Some turtles exist.\n∀x (Animal(x) → Rabbit(x) ⊕ Squirrel(x)) ::: An animal is either a rabbit or a squirrel.\n∀x (Skittish(x) → ¬Still(x)) ::: If something is skittish, then it is not still.\n∀x (Squirrel(x) → Skittish(x)) ::: All squirrels are skittish.\nStill(rock) ::: Rock is still.\nConclusion:\n(Cute(rock) ∧ Still(rock)) → (Turtle(rock) ∧ Skittish(rock)) ::: If Rock is cute and still, then Rock is a turtle and skittish."
+    ]
+  }
+]

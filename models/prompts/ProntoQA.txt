@@ -1,0 +1,104 @@
+Task Description: You are given a problem description and a question. The task is to: 
+1) define all the predicates in the problem
+2) parse the problem into logic rules based on the defined predicates
+3) write all the facts mentioned in the problem
+4) parse the question into the logic form
+
+**STRICT PREDICATE NAMING RULES**
+- Always use a single canonical form (usually singular) for every predicate name.
+- Every occurrence of a predicate in `Predicates`, `Facts`, `Rules`, and `Query` MUST use the exact same spelling and casing (e.g., if you define `Tumpus`, you must NEVER write `Tumpuses` or `tumpus` elsewhere).
+- When the story uses plural nouns ("Wumpuses"), convert them to the singular predicate name (`Wumpus`) but keep the same canonical form everywhere.
+- Do not introduce new predicate names in rules or queries that were not first defined in the `Predicates` section.
+- Before outputting, double-check that the predicate in the final `Query` matches one of the defined predicates exactly and that the rules/facts provide a reasoning chain to that predicate.
+
+**FACTS & RULES FORMAT (MANDATORY)**
+- Every predicate call MUST take the form `Predicate(Entity, True|False)`; never omit the boolean.
+- If the story explicitly states a negative fact ("X is not Y"), write it as `Y(X, False)` in `Facts`.
+- Do NOT invent negated predicate names like `NotBright`. Reuse the positive predicate with a boolean flag.
+- Rules that conclude negative statements must also use the same predicate with `False` (e.g., `Transparent($x, False)`).
+
+**CRITICAL: Query Format Rules - READ CAREFULLY**
+The Query must match the SEMANTIC MEANING of the question statement, NOT what you think the answer is.
+
+**Rule 1: Positive Statements (Affirmative)**
+- Question format: "Is X Y?" or "X is Y" or "True or false: X is Y"
+- Query format: Y(X, True)
+- Examples:
+  * "Max is sour" → Query: Sour(Max, True)
+  * "Is Stella bright?" → Query: Bright(Stella, True)
+  * "True or false: Wren is dull" → Query: Dull(Wren, True)
+
+**Rule 2: Negative Statements (Negation)**
+- Question format: "Is X not Y?" or "X is not Y" or "True or false: X is not Y"
+- Query format: Y(X, False)
+- Examples:
+  * "Alex is not shy" → Query: Shy(Alex, False)
+  * "Is Wren not metallic?" → Query: Metallic(Wren, False)
+  * "True or false: Alex is not dull" → Query: Dull(Alex, False)
+
+**IMPORTANT:**
+- The boolean value (True/False) in the Query represents what the question is ASKING to verify
+- If the question says "X is Y", you are checking if X IS Y, so use True
+- If the question says "X is not Y", you are checking if X IS NOT Y, so use False
+- DO NOT confuse the query format with the expected answer - the query format is determined by the question statement itself
+
+**IMPORTANT OUTPUT FORMAT:**
+- Output ONLY the following format, without any explanations, markdown formatting, or step-by-step breakdowns
+- Start directly with "Predicates:" followed by the predicate definitions
+- Then "Facts:" followed by the facts
+- Then "Rules:" followed by the rules
+- Finally "Query:" followed by the query
+- Do NOT include any introductory text, explanations, or markdown formatting (no **, *, ---, etc.)
+------
+Problem:
+Each jompus is fruity. Every jompus is a wumpus. Every wumpus is not transparent. Wumpuses are tumpuses. Tumpuses are mean. Tumpuses are vumpuses. Every vumpus is cold. Each vumpus is a yumpus. Yumpuses are orange. Yumpuses are numpuses. Numpuses are dull. Each numpus is a dumpus. Every dumpus is not shy. Impuses are shy. Dumpuses are rompuses. Each rompus is liquid. Rompuses are zumpuses. Alex is a tumpus.
+Question:
+True or false: Alex is not shy.
+###
+Predicates:
+Jompus($x, bool) ::: Does x belong to Jompus?
+Fruity($x, bool) ::: Is x fruity?
+Wumpus($x, bool) ::: Does x belong to Wumpus?
+Transparent($x, bool) ::: Is x transparent?
+Tumpuses($x, bool) ::: Does x belong to Tumpuses?
+Mean($x, bool) ::: Is x mean?
+Vumpuses($x, bool) ::: Does x belong to Vumpuses?
+Cold($x, bool) ::: Is x cold?
+Yumpus($x, bool) ::: Does x belong to Yumpus?
+Orange($x, bool) ::: Is x orange?
+Numpus($x, bool) ::: Does x belong to Numpus?
+Dull($x, bool) ::: Is x dull?
+Dumpus($x, bool) ::: Does x belong to Dumpus?
+Shy($x, bool) ::: Is x shy?
+Impuses($x, bool) ::: Does x belong to Impuses?
+Rompus($x, bool) ::: Does x belong to Rompus?
+Liquid($x, bool) ::: Is x liquid?
+Zumpus($x, bool) ::: Does x belong to Zumpus?
+Facts:
+Tumpuses(Alex, True)
+Rules:
+Jompus($x, True) >>> Fruity($x, True)
+Jompus($x, True) >>> Wumpus($x, True)
+Wumpus($x, True) >>> Transparent($x, False)
+Wumpuses($x, True) >>> Tumpuses($x, True)
+Tumpuses($x, True) >>> Mean($x, True)
+Tumpuses($x, True) >>> Vumpuses($x, True)
+Vumpuses($x, True) >>> Cold($x, True)
+Vumpuses($x, True) >>> Yumpus($x, True)
+Yumpus($x, True) >>> Orange($x, True)
+Yumpus($x, True) >>> Numpus($x, True)
+Numpus($x, True) >>> Dull($x, True)
+Numpus($x, True) >>> Dumpus($x, True)
+Dumpus($x, True) >>> Shy($x, False)
+Impuses($x, True) >>> Shy($x, True)
+Dumpus($x, True) >>> Rompus($x, True)
+Rompus($x, True) >>> Liquid($x, True)
+Rompus($x, True) >>> Zumpus($x, True)
+Query:
+Shy(Alex, False)
+------
+Problem:
+[[PROBLEM]]
+Question:
+[[QUESTION]]
+###

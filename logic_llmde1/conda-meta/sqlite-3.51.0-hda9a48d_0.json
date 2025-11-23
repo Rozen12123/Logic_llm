@@ -1,0 +1,79 @@
+{
+  "arch": "x86_64",
+  "build": "hda9a48d_0",
+  "build_number": 0,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "ucrt >=10.0.20348.0",
+    "vc >=14.2,<15",
+    "vc14_runtime >=14.29.30133"
+  ],
+  "extracted_package_dir": "E:\\anaconda\\pkgs_dirs\\sqlite-3.51.0-hda9a48d_0",
+  "features": "",
+  "files": [
+    "Library/bin/sqlite3.dll",
+    "Library/bin/sqlite3.exe",
+    "Library/include/sqlite3.h",
+    "Library/include/sqlite3ext.h",
+    "Library/lib/sqlite3.lib"
+  ],
+  "fn": "sqlite-3.51.0-hda9a48d_0.tar.bz2",
+  "license": "blessing",
+  "license_family": "Other",
+  "link": {
+    "source": "E:\\anaconda\\pkgs_dirs\\sqlite-3.51.0-hda9a48d_0",
+    "type": 1
+  },
+  "md5": "143d753a11deb858d0d9144ffcd1001a",
+  "name": "sqlite",
+  "package_tarball_full_path": "E:\\anaconda\\pkgs_dirs\\sqlite-3.51.0-hda9a48d_0.tar.bz2",
+  "paths_data": {
+    "paths": [
+      {
+        "_path": "Library/bin/sqlite3.dll",
+        "path_type": "hardlink",
+        "sha256": "55a57ff2beb67f793160ac9a8824ee10c25828f8f12d0ed83e66085513793354",
+        "sha256_in_prefix": "55a57ff2beb67f793160ac9a8824ee10c25828f8f12d0ed83e66085513793354",
+        "size_in_bytes": 1645384
+      },
+      {
+        "_path": "Library/bin/sqlite3.exe",
+        "path_type": "hardlink",
+        "sha256": "8ee3f08fadc4f9f41c084bf6fc1a034d86060b3de88ee40f1fe2f892a5d055be",
+        "sha256_in_prefix": "8ee3f08fadc4f9f41c084bf6fc1a034d86060b3de88ee40f1fe2f892a5d055be",
+        "size_in_bytes": 2149192
+      },
+      {
+        "_path": "Library/include/sqlite3.h",
+        "path_type": "hardlink",
+        "sha256": "3ba6d74c7cb4c47fb6847e7d914c7d057832c6c8eaddda94ee8c61549fbf53c6",
+        "sha256_in_prefix": "3ba6d74c7cb4c47fb6847e7d914c7d057832c6c8eaddda94ee8c61549fbf53c6",
+        "size_in_bytes": 671927
+      },
+      {
+        "_path": "Library/include/sqlite3ext.h",
+        "path_type": "hardlink",
+        "sha256": "ea81fb7bd05882e0e0b92c4d60f677b205f7f1fbf085f218b12f0b5b3f0b9e48",
+        "sha256_in_prefix": "ea81fb7bd05882e0e0b92c4d60f677b205f7f1fbf085f218b12f0b5b3f0b9e48",
+        "size_in_bytes": 38632
+      },
+      {
+        "_path": "Library/lib/sqlite3.lib",
+        "path_type": "hardlink",
+        "sha256": "4651fa743ba95914bdba446fcddacae06c75a210f57536eeb04251065d0eb3ef",
+        "sha256_in_prefix": "4651fa743ba95914bdba446fcddacae06c75a210f57536eeb04251065d0eb3ef",
+        "size_in_bytes": 68358
+      }
+    ],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "None",
+  "size": 1502638,
+  "subdir": "win-64",
+  "timestamp": 1762525050375,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/sqlite-3.51.0-hda9a48d_0.tar.bz2",
+  "version": "3.51.0"
+}

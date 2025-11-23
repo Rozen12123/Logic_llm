@@ -1,0 +1,35 @@
+{
+  "arch": "x86_64",
+  "build": "ha6b5a95_10",
+  "build_number": 10,
+  "channel": "https://repo.anaconda.com/pkgs/main/win-64",
+  "constrains": [],
+  "depends": [
+    "vc14_runtime >=14.44.35208"
+  ],
+  "extracted_package_dir": "E:\\anaconda\\pkgs_dirs\\vs2015_runtime-14.44.35208-ha6b5a95_10",
+  "features": "",
+  "files": [],
+  "fn": "vs2015_runtime-14.44.35208-ha6b5a95_10.tar.bz2",
+  "license": "BSD-3-Clause",
+  "license_family": "BSD",
+  "link": {
+    "source": "E:\\anaconda\\pkgs_dirs\\vs2015_runtime-14.44.35208-ha6b5a95_10",
+    "type": 1
+  },
+  "md5": "ee159e59f61b9c7fc28cc73d81fdfeab",
+  "name": "vs2015_runtime",
+  "package_tarball_full_path": "E:\\anaconda\\pkgs_dirs\\vs2015_runtime-14.44.35208-ha6b5a95_10.tar.bz2",
+  "paths_data": {
+    "paths": [],
+    "paths_version": 1
+  },
+  "platform": "win32",
+  "requested_spec": "None",
+  "size": 19128,
+  "subdir": "win-64",
+  "timestamp": 1752199762272,
+  "track_features": "",
+  "url": "https://repo.anaconda.com/pkgs/main/win-64/vs2015_runtime-14.44.35208-ha6b5a95_10.tar.bz2",
+  "version": "14.44.35208"
+}

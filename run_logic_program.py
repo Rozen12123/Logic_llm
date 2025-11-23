@@ -10,7 +10,7 @@
 # ============================================================================
 
 # 数据集配置
-DATASET_NAME = 'FOLIO'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
+DATASET_NAME = 'LogicalDeduction'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
 DATASET_SPLIT = 'dev'      # 可选: 'dev', 'test'
 
 # API配置
@@ -22,7 +22,7 @@ MODEL_NAME = 'glm-4.6'  # iflow模型: 'TBStars2-200B-A13B'
 # 其他配置（一般不需要修改）
 DATA_PATH = './data'
 SAVE_PATH = './outputs/logic_programs'
-MAX_NEW_TOKENS = 2048  # 增加到 2048 以避免输出被截断
+MAX_NEW_TOKENS = 4096  # 增加到 2048 以避免输出被截断
 STOP_WORDS = '------'
 BATCH_SIZE = 1
 MAX_CONCURRENT = 1

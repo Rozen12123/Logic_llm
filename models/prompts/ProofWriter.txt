@@ -1,0 +1,58 @@
+Task Description: You are given a problem description and a question. The task is to: 
+1) define all the predicates in the problem
+2) parse the problem into logic rules based on the defined predicates
+3) write all the facts mentioned in the problem
+4) parse the question into the logic form
+
+Output Requirements (STRICT):
+- Respond in plain text only. Do NOT use Markdown headings, bullet lists, commentary, or explanations.
+- Use exactly the four section headers `Predicates:`, `Facts:`, `Rules:`, `Query:` in this order and nothing else.
+- Each section should contain one entry per line following the pattern `Name(args) ::: natural language explanation`.
+- Do not add teaching steps, sub-headings, or any formatting beyond the specified structure.
+- Represent negation using the boolean argument (e.g., `Red($x, False)`), never by wrapping predicates with `Not(...)`, prefixing them with `!`, or inventing separate negated predicate names.
+- Keep each predicate’s arity and argument order consistent everywhere.
+- Every variable that appears in a rule head must also appear in that rule’s body so it is properly bound.
+- Do not emit stray labels like “Fact:” or any other text outside the four required sections.
+- The answer must be directly parsable by a logic engine expecting the above schema.
+------
+Problem:
+Anne is quiet. Erin is furry. Erin is green. Fiona is furry. Fiona is quiet. Fiona is red. Fiona is rough. Fiona is white. Harry is furry. Harry is quiet. Harry is white. Young people are furry. If Anne is quiet then Anne is red. Young, green people are rough. If someone is green then they are white. If someone is furry and quiet then they are white. If someone is young and white then they are rough. All red people are young.
+Question:
+Based on the above information, is the following statement true, false, or unknown? Anne is white.
+###
+Predicates:
+Quiet($x, bool) ::: Is x quiet?
+Furry($x, bool) ::: Is x furry?
+Green($x, bool) ::: Is x green?
+Red($x, bool) ::: Is x red?
+Rough($x, bool) ::: Is x rough?
+White($x, bool) ::: Is x white?
+Young($x, bool) ::: Is x young?
+Facts:
+Quiet(Anne, True) ::: Anne is quiet.
+Furry(Erin, True) ::: Erin is furry.
+Green(Erin, True) ::: Erin is green.
+Furry(Fiona, True) ::: Fiona is furry.
+Quiet(Fiona, True) ::: Fiona is quiet.
+Red(Fiona, True) ::: Fiona is red.
+Rough(Fiona, True) ::: Fiona is rough.
+White(Fiona, True) ::: Fiona is white.
+Furry(Harry, True) ::: Harry is furry.
+Quiet(Harry, True) ::: Harry is quiet.
+White(Harry, True) ::: Harry is white.
+Rules:
+Young($x, True) >>> Furry($x, True) ::: Young people are furry.
+Quiet(Anne, True) >>> Red(Anne, True) ::: If Anne is quiet then Anne is red.
+Young($x, True) && Green($x, True) >>> Rough($x, True) ::: Young, green people are rough.
+Green($x, True) >>> White($x, True) ::: If someone is green then they are white.
+Furry($x, True) && Quiet($x, True) >>> White($x, True) ::: If someone is furry and quiet then they are white.
+Young($x, True) && White($x, True) >>> Rough($x, True) ::: If someone is young and white then they are rough.
+Red($x, True) >>> Young($x, True) ::: All red people are young.
+Query:
+White(Anne, True) ::: Anne is white.
+------
+Problem:
+[[PROBLEM]]
+Question:
+[[QUESTION]]
+###

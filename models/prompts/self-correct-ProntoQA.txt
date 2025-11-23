@@ -1,0 +1,122 @@
+Task: Given the wrong logic program and the error message, output the correct logic program.
+------
+>>> Initial Program:
+Predicates:
+Jompus($x, bool) ::: Does x belong to Jompus?
+Fruity($x, bool) ::: Is x fruity?
+Wumpus($x, bool) ::: Does x belong to Wumpus?
+Transparent($x, bool) ::: Is x transparent?
+Facts:
+Tumpuses(Alex, True)
+Rules:
+Jompus($x, True) >>> Fruity($x, True)
+Jompus($x, True) >>> Wumpus($x, True)
+Wumpus($x, True) >>> Transparent($x, False)
+Query:
+Shy(Alex, False)
+>>> Error Message:
+Parsing Error: Predicate 'Tumpuses' not defined in Predicates section
+>>> Corrected Program:
+Predicates:
+Jompus($x, bool) ::: Does x belong to Jompus?
+Fruity($x, bool) ::: Is x fruity?
+Wumpus($x, bool) ::: Does x belong to Wumpus?
+Transparent($x, bool) ::: Is x transparent?
+Tumpuses($x, bool) ::: Does x belong to Tumpuses?
+Shy($x, bool) ::: Is x shy?
+Facts:
+Tumpuses(Alex, True)
+Rules:
+Jompus($x, True) >>> Fruity($x, True)
+Jompus($x, True) >>> Wumpus($x, True)
+Wumpus($x, True) >>> Transparent($x, False)
+Query:
+Shy(Alex, False)
+------
+>>> Initial Program:
+Predicates:
+Yumpus($x, bool) ::: Does x belong to Yumpus?
+Aggressive($x, bool) ::: Is x aggressive?
+Dumpus($x, bool) ::: Does x belong to Dumpus?
+Facts:
+Yumpus(Max, True)
+Rules:
+Yumpus($x, True) >>> Aggressive($x, True)
+Yumpus($x, True) >>> Dumpus($x, True)
+Dumpus($x, True) >>> NotWooden($x, True)
+Query:
+Sour(Max, False)
+>>> Error Message:
+Execution Error: Predicate 'NotWooden' used in rule but not defined in Predicates section
+>>> Corrected Program:
+Predicates:
+Yumpus($x, bool) ::: Does x belong to Yumpus?
+Aggressive($x, bool) ::: Is x aggressive?
+Dumpus($x, bool) ::: Does x belong to Dumpus?
+Wooden($x, bool) ::: Is x wooden?
+Sour($x, bool) ::: Is x sour?
+Facts:
+Yumpus(Max, True)
+Rules:
+Yumpus($x, True) >>> Aggressive($x, True)
+Yumpus($x, True) >>> Dumpus($x, True)
+Dumpus($x, True) >>> Wooden($x, False)
+Query:
+Sour(Max, False)
+------
+>>> Initial Program:
+Predicates:
+Rompus($x, bool) ::: Does x belong to Rompus?
+Impus($x, bool) ::: Does x belong to Impus?
+Facts:
+Zumpus(Alex, True)
+Rules:
+Rompus($x, True) >>> Impus($x, True)
+Query:
+Bright(Alex, True)
+>>> Error Message:
+Parsing Error: Fact 'Zumpus(Alex, True)' uses predicate 'Zumpus' not defined in Predicates section
+>>> Corrected Program:
+Predicates:
+Rompus($x, bool) ::: Does x belong to Rompus?
+Impus($x, bool) ::: Does x belong to Impus?
+Zumpus($x, bool) ::: Does x belong to Zumpus?
+Bright($x, bool) ::: Is x bright?
+Facts:
+Zumpus(Alex, True)
+Rules:
+Rompus($x, True) >>> Impus($x, True)
+Query:
+Bright(Alex, True)
+------
+>>> Initial Program:
+Predicates:
+Jompus($x, bool) ::: Does x belong to Jompus?
+Wumpus($x, bool) ::: Does x belong to Wumpus?
+Facts:
+Tumpuses(Alex, True)
+Rules:
+Jompus($x, True) >>> Wumpus($x, True)
+Query:
+Shy(Alex, False)
+>>> Error Message:
+Execution Error: Invalid rule syntax. Rule should use '>>>' operator
+>>> Corrected Program:
+Predicates:
+Jompus($x, bool) ::: Does x belong to Jompus?
+Wumpus($x, bool) ::: Does x belong to Wumpus?
+Tumpuses($x, bool) ::: Does x belong to Tumpuses?
+Shy($x, bool) ::: Is x shy?
+Facts:
+Tumpuses(Alex, True)
+Rules:
+Jompus($x, True) >>> Wumpus($x, True)
+Query:
+Shy(Alex, False)
+------
+>>> Initial Program:
+[[PROGRAM]]
+>>> Error Message:
+[[ERROR MESSAGE]]
+>>> Corrected Program:
+

@@ -13,7 +13,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat is not round.",
     "answer": "A",
     "flag": "execution error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1284_Q8",
@@ -21,7 +21,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is not green.",
     "answer": "B",
     "flag": "success",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-585_Q19",
@@ -37,7 +37,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat is not cold.",
     "answer": "B",
     "flag": "success",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-508_Q2",
@@ -52,16 +52,16 @@
     "context": "Charlie is green. Dave is quiet. Dave is red. Dave is not white. Erin is not big. Erin is not cold. Erin is green. Harry is big. Harry is cold. Harry is green. If someone is red then they are not white. If Charlie is quiet then Charlie is blue. If someone is quiet and red then they are blue. All white people are cold. All green people are quiet. All blue, green people are red. If someone is red and not white then they are big.",
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not red.",
     "answer": "B",
-    "flag": "execution error",
-    "predicted_answer": "A"
+    "flag": "success",
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-487_Q19",
     "context": "The cat chases the lion. The cat is rough. The cat is young. The cat needs the lion. The cat needs the rabbit. The dog is green. The dog is young. The dog likes the cat. The lion is blue. The lion is green. The rabbit chases the lion. The rabbit is blue. The rabbit is rough. The rabbit likes the dog. The rabbit needs the dog. The rabbit needs the lion. If someone chases the lion then they are round. If the lion needs the rabbit and the rabbit chases the dog then the lion likes the dog. If someone is round and they chase the lion then they need the cat. If someone needs the cat and they chase the dog then they like the rabbit. If someone chases the lion and the lion is blue then the lion is round. If someone chases the rabbit then they are rough. If someone is rough and they like the rabbit then the rabbit is young. If the rabbit chases the cat and the cat needs the lion then the rabbit is young. If someone is round and they need the cat then they chase the dog.",
     "question": "Based on the above information, is the following statement true, false, or unknown? The lion does not like the cat.",
     "answer": "C",
-    "flag": "parsing error",
-    "predicted_answer": "B"
+    "flag": "success",
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-971_Q5",
@@ -93,7 +93,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is white.",
     "answer": "C",
     "flag": "execution error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-686_Q18",
@@ -101,7 +101,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle chases the lion.",
     "answer": "C",
     "flag": "success",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-735_Q9",
@@ -116,8 +116,8 @@
     "context": "The bald eagle eats the cow. The bald eagle is young. The cow is nice. The cow sees the bald eagle. The dog eats the bald eagle. The tiger eats the cow. The tiger needs the bald eagle. If something is green and it eats the cow then it does not see the bald eagle. If something eats the tiger then the tiger is young. If something is red then it eats the tiger. If something sees the bald eagle then it eats the cow. If something is green and it needs the dog then it needs the bald eagle. If something sees the tiger then it needs the bald eagle. If something is red then it eats the bald eagle. If something is young then it is red. If something eats the dog and it is red then the dog is young.",
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger is young.",
     "answer": "A",
-    "flag": "execution error",
-    "predicted_answer": "C"
+    "flag": "success",
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-145_Q9",
@@ -141,7 +141,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not furry.",
     "answer": "B",
     "flag": "success",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-842_Q7",

@@ -5,15 +5,15 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? Bonnie performs in school talent shows often.",
     "answer": "C",
     "flag": "execution error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "FOLIO_dev_1",
     "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
     "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.",
     "answer": "A",
-    "flag": "execution error",
-    "predicted_answer": "C"
+    "flag": "parsing error",
+    "predicted_answer": "A"
   },
   {
     "id": "FOLIO_dev_2",
@@ -21,7 +21,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.",
     "answer": "B",
     "flag": "execution error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "FOLIO_dev_3",
@@ -29,7 +29,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? James has lunch in the company.",
     "answer": "C",
     "flag": "execution error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "FOLIO_dev_4",
@@ -53,7 +53,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? There is an animal.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "FOLIO_dev_7",
@@ -61,7 +61,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? No one gets flu.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "FOLIO_dev_8",
@@ -93,7 +93,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? Joey is a wild turkey.",
     "answer": "C",
     "flag": "execution error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "FOLIO_dev_12",
@@ -109,7 +109,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? FIFA 22 is made by a Japanese video game company.",
     "answer": "C",
     "flag": "execution error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "FOLIO_dev_14",
@@ -117,7 +117,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? The Legend of Zelda is not in the Top 10 list.",
     "answer": "B",
     "flag": "execution error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "FOLIO_dev_15",
@@ -125,7 +125,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? All squares are shapes.",
     "answer": "A",
     "flag": "execution error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "FOLIO_dev_16",
@@ -149,7 +149,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a turtle or cute.",
     "answer": "A",
     "flag": "execution error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "FOLIO_dev_19",
@@ -157,7 +157,7 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is not both a turtle and a squirrel, then Rock is either cute or skittish.",
     "answer": "A",
     "flag": "execution error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "FOLIO_dev_20",
@@ -165,6 +165,6 @@
     "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is cute and still, then Rock is a turtle and skittish.",
     "answer": "B",
     "flag": "execution error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   }
 ]

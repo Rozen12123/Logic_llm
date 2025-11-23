@@ -1,0 +1,59 @@
+fact1
+	foreach
+		facts.Round($x, True)
+		facts.Red($x, True)
+	assert
+		facts.Chases($x, dog, True)
+
+fact2
+	foreach
+		facts.Chases($x, bald_eagle, True)
+	assert
+		facts.Sees($x, mouse, True)
+
+fact3
+	foreach
+		facts.Needs($x, mouse, True)
+		facts.Needs(mouse, bald_eagle, True)
+	assert
+		facts.Sees($x, squirrel, False)
+
+fact4
+	foreach
+		facts.Needs($x, mouse, True)
+	assert
+		facts.Sees(mouse, squirrel, False)
+
+fact5
+	foreach
+		facts.Blue($x, True)
+		facts.Needs($x, dog, True)
+	assert
+		facts.Cold($x, True)
+
+fact6
+	foreach
+		facts.Chases($x, dog, True)
+	assert
+		facts.Chases($x, bald_eagle, True)
+
+fact7
+	foreach
+		facts.Chases(bald_eagle, squirrel, True)
+		facts.Sees(bald_eagle, squirrel, True)
+	assert
+		facts.Red(squirrel, True)
+
+fact8
+	foreach
+		facts.Sees($x, mouse, True)
+		facts.Needs(mouse, dog, True)
+	assert
+		facts.Chases(dog, bald_eagle, True)
+
+fact9
+	foreach
+		facts.Sees($x, squirrel, True)
+		facts.Cold(squirrel, True)
+	assert
+		facts.Blue($x, True)

@@ -1,180 +1,155 @@
-# API Key 配置说明
+1. # Logic-LM
 
-本项目支持 **OpenAI** 和 **智谱AI (ZhipuAI)** 两种API提供商，你可以根据需要选择使用。
+   Data and Codes for ["LOGIC-LM: Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning"](https://arxiv.org/abs/2305.12295) (Findings of EMNLP 2023). 
 
-## 快速开始（智谱AI）
+   Authors: **Liangming Pan, Alon Albalak, Xinyi Wang, William Yang Wang**. 
 
-1. 打开项目根目录下的 `config.py` 文件
-2. 确认 `ZHIPUAI_API_KEY` 已设置（已为你配置好）
-3. 确认 `API_PROVIDER = "zhipuai"`（默认已设置）
-4. 直接运行脚本即可
+   [NLP Group](http://nlp.cs.ucsb.edu/), University of California, Santa Barbara
 
-## API提供商选择
+   ## Introduction
 
-在 `config.py` 中设置 `API_PROVIDER`：
-- `"zhipuai"` - 使用智谱AI（默认）
-- `"openai"` - 使用OpenAI
+   Large Language Models (LLMs) have shown human-like reasoning abilities but still struggle with complex logical problems. This paper introduces a novel framework, **Logic-LM**, which integrates LLMs with symbolic solvers to improve logical problem-solving. Our method first utilizes LLMs to translate a natural language problem into a symbolic formulation. Afterward, a deterministic symbolic solver performs inference on the formulated problem. We also introduce a self-refinement module, which utilizes the symbolic solver's error messages to revise symbolic formalizations. We demonstrate Logic-LM's effectiveness on five logical reasoning datasets: ProofWriter, PrOntoQA, FOLIO, LogicalDeduction, and AR-LSAT. On average, Logic-LM achieves a significant performance boost of 39.2% over using LLM alone with standard prompting and 18.4% over LLM with chain-of-thought prompting. Our findings suggest that Logic-LM, by combining LLMs with symbolic logic, offers a promising avenue for faithful logical reasoning. 
 
-## 配置方式（按优先级从高到低）
+   ![The general framework of Logic-LM](./framework.png)
 
-### 方式一：使用配置文件（推荐）
+   First, install all the required packages:
 
-1. 打开项目根目录下的 `config.py` 文件
-2. 根据选择的API提供商，设置对应的API Key：
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-**智谱AI配置：**
-```python
-ZHIPUAI_API_KEY = "78443ce13bdd4f72809efda1abd95af4.s6TNCSWw3Q4Ci2wx"
-API_PROVIDER = "zhipuai"
-DEFAULT_MODEL_NAME = "glm-4-flash-250414"
-```
+   ## Datasets
 
-**OpenAI配置：**
-```python
-OPENAI_API_KEY = "sk-your-actual-api-key-here"
-API_PROVIDER = "openai"
-DEFAULT_MODEL_NAME = "text-davinci-003"
-```
+   The datasets we used are preprocessed and stored in the `./data` folder. We evaluate on the following datasets:
 
-3. 保存文件
+   - [ProntoQA](https://github.com/asaparov/prontoqa): Deductive resoning dataset. We use the 5-hop subset of the *fictional characters* version, consisting of 500 testing examples. 
+   - [ProofWriter](https://allenai.org/data/proofwriter): Deductive resoning dataset. We use the depth-5 subset of the OWA version. To reduce overall experimentation costs, we randomly sample 600 examples in the test set and ensure a balanced label distribution.
+   - [FOLIO](https://github.com/Yale-LILY/FOLIO): First-Order Logic reasoning dataset. We use the entire FOLIO test set for evaluation, consisting of 204 examples.
+   - [LogicalDeduction](https://github.com/google/BIG-bench/tree/main/bigbench/benchmark_tasks/logical_deduction): Constraint Satisfaction Problems (CSPs). We use the full test set consisting of 300 examples.
+   - [AR-LSAT](https://github.com/zhongwanjun/AR-LSAT): Analytical Reasoning (AR) problems, containing all analytical logic reasoning questions from the Law School Admission Test from 1991 to 2016. We use the test set which has 230 multiple-choice questions. 
 
-**注意**：`config.py` 文件已被添加到 `.gitignore`，不会被提交到版本控制系统，可以安全地存储你的 API Key。
+   ## Baselines
 
-### 方式二：使用环境变量
+   To replicate the **Standard-LM (Direct)** and the **Chain-of-Thought (CoT)** baselines, please run the following commands:
 
-#### 智谱AI
+   ```bash
+   cd ./baselines
+   python gpt3_baseline.py \
+       --api_key "Your OpenAI API Key" \
+       --model_name "Model Name [text-davinci-003 | gpt-4]" \
+       --dataset_name "Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction ｜ AR-LSAT]" \
+       --split dev \
+       --mode "Baseline [Direct | CoT]" \
+       --max_new_tokens "16 for Direct; 1024 for CoT" \
+   ```
 
-**Windows (PowerShell)**
-```powershell
-$env:ZHIPUAI_API_KEY="your-zhipuai-api-key"
-$env:API_PROVIDER="zhipuai"
-```
+   The results will be saved in `./baselines/results`. To evaluate the results, please run the following commands:
 
-**Windows (CMD)**
-```cmd
-set ZHIPUAI_API_KEY=your-zhipuai-api-key
-set API_PROVIDER=zhipuai
-```
+   ```bash
+   python evaluate.py \
+       --dataset_name "Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction ｜ AR-LSAT]" \
+       --model_name "Model Name [text-davinci-003 | gpt-4]" \
+       --split dev \
+       --mode "Baseline [Direct | CoT]" \
+   ```
 
-**Linux/Mac**
-```bash
-export ZHIPUAI_API_KEY="your-zhipuai-api-key"
-export API_PROVIDER="zhipuai"
-```
+   ## Logic Program Generation
 
-#### OpenAI
+   To generate logic programs for logical reasoning problems in each dataset, at the root directory, run the following commands:
 
-**Windows (PowerShell)**
-```powershell
-$env:OPENAI_API_KEY="sk-your-actual-api-key-here"
-$env:API_PROVIDER="openai"
-```
+   ```bash
+   python models/logic_program.py \
+       --api_key "Your OpenAI API Key" \
+       --dataset_name "Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction ｜ AR-LSAT]" \
+       --split dev \
+       --model_name "Model Name [text-davinci-003 | gpt-4]" \
+       --max_new_tokens 1024 \
+   ```
 
-**Windows (CMD)**
-```cmd
-set OPENAI_API_KEY=sk-your-actual-api-key-here
-set API_PROVIDER=openai
-```
+   The generated logic programs will be saved in `outputs/logic_programs`. You can also reuse the logic programs we generated in `./outputs/logic_programs`.
 
-**Linux/Mac**
-```bash
-export OPENAI_API_KEY="sk-your-actual-api-key-here"
-export API_PROVIDER="openai"
-```
+   ## Logic Inference with Symbolic Solver
 
-### 方式三：命令行参数
+   After generating logic programs, we can perform inference with symbolic solvers. At the root directory, run the following commands:
 
-在运行脚本时直接传递参数：
+   ```bash
+   DATASET="Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction ｜ AR-LSAT]"
+   SPLIT="Dataset Split [dev | test]"
+   MODEL="The logic programs are generated by which model? [text-davinci-003 | gpt-4]"
+   BACKUP="The random backup answer (random) or CoT-Logic collabration mode (LLM)"
+   
+   python models/logic_inference.py \
+       --model_name ${MODEL} \
+       --dataset_name ${DATASET} \
+       --split ${SPLIT} \
+       --backup_strategy ${BACKUP} \
+       --backup_LLM_result_path ./baselines/results/CoT_${DATASET}_${SPLIT}_${MODEL}.json
+   ```
 
-**使用智谱AI：**
-```bash
-python models/logic_program.py --api_provider zhipuai --api_key "your-zhipuai-api-key" --model_name glm-4-flash-250414 --dataset_name ProntoQA
-```
+   The logic reasoning results will be saved in `outputs/logic_inferences`. 
 
-**使用OpenAI：**
-```bash
-python models/logic_program.py --api_provider openai --api_key "sk-..." --model_name text-davinci-003 --dataset_name ProntoQA
-```
+   Backup Strategies:
 
-## 获取 API Key
+   - `random`: If the generated logic program cannot be executed by the symbolic solver, we will use random guess as the prediction.
+   - `LLM`: If the generated logic program cannot be executed by the symbolic solver, we will back up to using CoT to generate the prediction. To run this mode, you need to have the corresponding baseline LLM results stored in `./baselines/results`. To make the inference more efficient, the model will just load the baseline LLM results and use them as the prediction if the symbolic solver fails.
 
-### 智谱AI API Key
+   ## Evaluation
 
-1. 访问 https://open.bigmodel.cn/
-2. 登录你的智谱AI账户
-3. 在控制台创建API Key
-4. 复制生成的 API Key
+   To evaluate the logic reasoning results, please run the following commands:
 
-### OpenAI API Key
+   ```bash
+   python models/evaluation.py \
+       --dataset_name "Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction]" \
+       --model_name "The logic programs are generated by which model? [text-davinci-003 | gpt-4]" \
+       --split dev \
+       --backup "The basic mode (random) or CoT-Logic collabration mode (LLM)"
+   ```
 
-1. 访问 https://platform.openai.com/api-keys
-2. 登录你的 OpenAI 账户
-3. 点击 "Create new secret key"
-4. 复制生成的 API Key（注意：API Key 只会显示一次，请妥善保存）
+   ## Self-Refinement
 
-## 使用示例
+   After generating the logic programs without self-refinement, run the following commands for self-refinement:
 
-### 使用智谱AI（默认配置）
+   ```bash
+   DATASET="Dataset Name [ProntoQA | ProofWriter | FOLIO | LogicalDeduction ｜ AR-LSAT]"
+   SPLIT="Dataset Split [dev | test]"
+   MODEL="The logic programs are generated by which model? [text-davinci-003 | gpt-4]"
+   BACKUP="The random backup answer (random) or CoT-Logic collabration mode (LLM)"
+   
+   python models/self_refinement.py \
+       --model_name ${MODEL} \
+       --dataset_name ${DATASET} \
+       --split ${SPLIT} \
+       --backup_strategy ${BACKUP} \
+       --backup_LLM_result_path ./baselines/results/CoT_${DATASET}_${SPLIT}_${MODEL}.json
+       --api_key "Your OpenAI API Key" \
+       --maximum_rounds 3 \
+   ```
 
-配置好 API Key 后，你可以直接运行命令：
+   The self-refinement results will be saved in `outputs/logic_inferences`. 
 
-```bash
-# 使用配置文件中的默认设置（智谱AI）
-python models/logic_program.py --dataset_name ProntoQA --split dev
+   ## Reference
 
-# 指定模型
-python models/logic_program.py --dataset_name ProntoQA --split dev --model_name glm-4-flash-250414
-```
+   Please cite the paper in the following format if you use this dataset during your research.
 
-### 使用OpenAI
+   ```
+   @inproceedings{PanLogicLM23,
+     author       = {Liangming Pan and
+                     Alon Albalak and
+                     Xinyi Wang and
+                     William Yang Wang},
+     title        = {{Logic-LM:} Empowering Large Language Models with Symbolic Solvers for Faithful Logical Reasoning},
+     booktitle    = {Findings of the 2023 Conference on Empirical Methods in Natural Language Processing (Findings of EMNLP)},
+     address      = {Singapore},
+     year         = {2023},
+     month        = {Dec},
+     url          = {https://arxiv.org/abs/2305.12295}
+   }
+   ```
 
-```bash
-# 使用配置文件中的OpenAI设置
-python models/logic_program.py --api_provider openai --dataset_name ProntoQA --split dev --model_name text-davinci-003
+   ## Credit
 
-# 使用环境变量
-# Windows PowerShell:
-$env:API_PROVIDER="openai"
-$env:OPENAI_API_KEY="sk-..."
-python models/logic_program.py --dataset_name ProntoQA --split dev
-```
+   The codes for the SMT solver are modified from [SatLM](https://github.com/xiye17/sat-lm). 
 
-## 支持的模型
+   ## Q&A
 
-### 智谱AI模型
-- `glm-4-flash-250414`（推荐，默认）
-- `glm-4`
-- `glm-3-turbo`
-- 其他智谱AI支持的模型
-
-### OpenAI模型
-- `text-davinci-003`
-- `text-davinci-002`
-- `code-davinci-002`
-- `gpt-4`
-- `gpt-3.5-turbo`
-
-## 配置文件其他选项
-
-`config.py` 还支持设置其他默认值：
-
-- `API_PROVIDER`: API提供商选择（"openai" 或 "zhipuai"）
-- `DEFAULT_MODEL_NAME`: 默认使用的模型
-- `DEFAULT_MAX_NEW_TOKENS`: 默认最大生成token数
-- `DEFAULT_STOP_WORDS`: 默认停止词
-
-这些设置可以通过命令行参数覆盖。
-
-## 安装依赖
-
-使用智谱AI需要安装 `zai` 库：
-
-```bash
-pip install zai
-```
-
-## 注意事项
-
-1. **API Key安全**：请勿将包含真实API Key的 `config.py` 文件提交到版本控制系统
-2. **模型兼容性**：不同API提供商的模型名称不同，请根据选择的提供商使用对应的模型
-3. **默认设置**：项目默认使用智谱AI，如需切换请在配置文件中修改 `API_PROVIDER`
+   If you encounter any problem, please either directly contact the [Liangming Pan](liangmingpan@ucsb.edu) or leave an issue in the github repo.

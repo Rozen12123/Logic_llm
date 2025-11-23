@@ -83,6 +83,9 @@ class LogicInferenceEngine:
                     'answer': example['answer'],
                     'flag': flag,
                     'predicted_answer': answer}
+            # 如果有错误信息，添加到输出中
+            if error_message and error_message.strip():
+                output['error_message'] = error_message
             outputs.append(output)
         
         print(f"Error count: {error_count}")

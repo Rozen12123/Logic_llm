@@ -6,7 +6,11 @@ import sys
 from tqdm import tqdm
 from collections import OrderedDict
 from typing import Dict, List, Tuple
-from utils import OpenAIModel, ZhipuAIModel
+# 兼容相对导入和绝对导入
+try:
+    from .utils import OpenAIModel, ZhipuAIModel
+except ImportError:
+    from models.utils import OpenAIModel, ZhipuAIModel
 import argparse
 
 # 添加项目根目录到路径，以便导入config_loader
@@ -34,7 +38,9 @@ class LogicProgramGenerator:
         if self.api_provider == 'zhipuai':
             self.api = ZhipuAIModel(args.api_key, args.model_name, args.stop_words, args.max_new_tokens)
         else:
-            self.api = OpenAIModel(args.api_key, args.model_name, args.stop_words, args.max_new_tokens)
+            # 获取 base_url（用于 iflow 等需要自定义 base_url 的 API）
+            base_url = getattr(args, 'base_url', None)
+            self.api = OpenAIModel(args.api_key, args.model_name, args.stop_words, args.max_new_tokens, base_url=base_url)
         
         # 为了向后兼容，保留 openai_api 属性
         self.openai_api = self.api
@@ -98,7 +104,19 @@ class LogicProgramGenerator:
         program = program.strip()
         if not program:
             return False
-        required_sections = ['Predicates:', 'Facts:', 'Rules:', 'Query:']
+        
+        # 不同数据集使用不同的格式
+        if self.dataset_name == 'FOLIO':
+            # FOLIO 使用 Predicates:, Premises:, Conclusion:
+            required_sections = ['Predicates:', 'Premises:', 'Conclusion:']
+        elif self.dataset_name == 'AR-LSAT':
+            # AR-LSAT 可能使用不同的格式，需要根据实际情况调整
+            # 暂时使用 FOLIO 格式
+            required_sections = ['Predicates:', 'Premises:', 'Conclusion:']
+        else:
+            # ProntoQA, ProofWriter, LogicalDeduction 使用 Predicates:, Facts:, Rules:, Query:
+            required_sections = ['Predicates:', 'Facts:', 'Rules:', 'Query:']
+        
         return all(section in program for section in required_sections)
 
     def generate_program_with_retry(self, prompt: str, sample_id: str):
@@ -112,8 +130,19 @@ class LogicProgramGenerator:
             last_output = output if isinstance(output, str) else ''
             if self.validate_logic_program(last_output):
                 return last_output.strip()
-            print(f'Invalid logic program for {sample_id} on attempt {attempt}, retrying...')
+            # 打印调试信息
+            if last_output:
+                preview = last_output[:200] + "..." if len(last_output) > 200 else last_output
+                print(f'Invalid logic program for {sample_id} on attempt {attempt}. Output preview: {preview}')
+            else:
+                print(f'Empty output for {sample_id} on attempt {attempt}, retrying...')
         print(f'Failed to obtain valid logic program for {sample_id} after {self.max_retries} attempts.')
+        if last_output:
+            preview = last_output[:500] + "..." if len(last_output) > 500 else last_output
+            print(f'Last output was: {preview}')
+        # 如果所有重试都失败，返回 None 而不是空字符串，让调用者决定如何处理
+        if not last_output or not last_output.strip():
+            return None
         return last_output.strip()
 
     def logic_program_generation(self):
@@ -127,6 +156,10 @@ class LogicProgramGenerator:
             try:
                 full_prompt = self.prompt_creator[self.dataset_name](example)
                 program = self.generate_program_with_retry(full_prompt, example['id'])
+                # 如果生成失败（返回 None）或仍然是空字符串，跳过该样本
+                if program is None or not program or not program.strip():
+                    print(f'Skipping example {example["id"]} due to generation failure')
+                    continue
                 programs = [program]
 
                 # create output
@@ -137,8 +170,8 @@ class LogicProgramGenerator:
                         'options': example['options'],
                         'raw_logic_programs': programs}
                 outputs.append(output)
-            except:
-                print('Error in generating logic programs for example: ', example['id'])
+            except Exception as e:
+                print(f'Error in generating logic programs for example {example["id"]}: {e}')
 
         # save outputs        
         with open(os.path.join(self.save_path, f'{self.dataset_name}_{self.split}_{self.model_name}.json'), 'w', encoding='utf-8') as f:
@@ -171,6 +204,10 @@ class LogicProgramGenerator:
                             self.prompt_creator[self.dataset_name](sample),
                             sample['id']
                         )
+                    # 如果生成失败（返回 None）或仍然是空字符串，跳过该样本
+                    if program is None or not program or not program.strip():
+                        print(f'Skipping example {sample["id"]} due to generation failure')
+                        continue
                     programs = [program]
                     output = {'id': sample['id'], 
                             'context': sample['context'],
@@ -184,6 +221,10 @@ class LogicProgramGenerator:
                 for sample, full_prompt in zip(chunk, full_prompts):
                     try:
                         program = self.generate_program_with_retry(full_prompt, sample['id'])
+                        # 如果生成失败（返回 None）或仍然是空字符串，跳过该样本
+                        if program is None or not program or not program.strip():
+                            print(f'Skipping example {sample["id"]} due to generation failure')
+                            continue
                         programs = [program]
                         output = {'id': sample['id'], 
                                 'context': sample['context'],
@@ -192,8 +233,8 @@ class LogicProgramGenerator:
                                 'options': sample['options'],
                                 'raw_logic_programs': programs}
                         outputs.append(output)
-                    except:
-                        print('Error in generating logic programs for example: ', sample['id'])
+                    except Exception as e:
+                        print(f'Error in generating logic programs for example {sample["id"]}: {e}')
 
         # remove examples with duplicate ids from the result
         outputs = list({output['id']: output for output in outputs}.values())

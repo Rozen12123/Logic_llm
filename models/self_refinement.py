@@ -12,7 +12,11 @@ import argparse
 import random
 import sys
 from backup_answer_generation import Backup_Answer_Generator
-from utils import OpenAIModel, ZhipuAIModel
+# 兼容相对导入和绝对导入
+try:
+    from .utils import OpenAIModel, ZhipuAIModel
+except ImportError:
+    from models.utils import OpenAIModel, ZhipuAIModel
 
 # 添加项目根目录到路径，以便导入config_loader
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))

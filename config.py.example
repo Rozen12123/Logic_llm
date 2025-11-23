@@ -11,13 +11,20 @@ OPENAI_API_KEY = "your-api-key-here"
 # 获取方式：https://open.bigmodel.cn/
 ZHIPUAI_API_KEY = "your-zhipuai-api-key-here"
 
+# ========== iflow API配置 ==========
+# iflow API Key
+# iflow 是一个兼容 OpenAI API 的服务
+IFLOW_API_KEY = "your-iflow-api-key-here"
+IFLOW_BASE_URL = "https://apis.iflow.cn/v1"  # iflow API 的 base_url
+
 # ========== 默认设置 ==========
-# API提供商选择: "openai" 或 "zhipuai"
+# API提供商选择: "openai"、"zhipuai" 或 "iflow"
 API_PROVIDER = "zhipuai"  # 默认使用智谱AI
 
 # 默认模型设置（可选）
 # OpenAI模型: text-davinci-003, gpt-4, gpt-3.5-turbo
 # 智谱AI模型: glm-4-flash-250414, glm-4, glm-3-turbo 等
+# iflow模型: TBStars2-200B-A13B
 DEFAULT_MODEL_NAME = "glm-4-flash-250414"  # 智谱AI默认模型
 
 # 其他默认设置（可选）

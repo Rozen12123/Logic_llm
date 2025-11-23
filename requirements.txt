@@ -25,7 +25,7 @@ dglgo==0.0.2
 dill==0.3.7
 docutils==0.20.1
 emoji==2.8.0
-en-core-web-sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.6.0/en_core_web_sm-3.6.0-py3-none-any.whl
+# en-core-web-sm should be installed via: python -m spacy download en_core_web_sm
 filelock==3.12.3
 Flask==2.3.3
 fonttools==4.42.1
@@ -58,17 +58,6 @@ networkx==3.1
 nltk==3.8.1
 numpy==1.25.2
 numpydoc==1.5.0
-nvidia-cublas-cu11==11.10.3.66
-nvidia-cuda-cupti-cu11==11.7.101
-nvidia-cuda-nvrtc-cu11==11.7.99
-nvidia-cuda-runtime-cu11==11.7.99
-nvidia-cudnn-cu11==8.9.4.25
-nvidia-cufft-cu11==10.9.0.58
-nvidia-curand-cu11==10.2.10.91
-nvidia-cusolver-cu11==11.4.0.1
-nvidia-cusparse-cu11==11.7.4.91
-nvidia-nccl-cu11==2.14.3
-nvidia-nvtx-cu11==11.7.91
 ogb==1.3.6
 openai==0.27.9
 outdated==0.2.2
@@ -103,7 +92,6 @@ scikit-learn==1.3.0
 scipy==1.11.2
 scitools-pyke==1.1.1
 six==1.16.0
-sklearn==0.0.post7
 smart-open==6.4.0
 snowballstemmer==2.2.0
 spacy==3.6.1

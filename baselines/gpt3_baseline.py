@@ -3,7 +3,11 @@ import os
 from tqdm import tqdm
 from collections import OrderedDict
 from typing import Dict, List, Tuple
-from utils import OpenAIModel
+# 兼容相对导入和绝对导入
+try:
+    from .utils import OpenAIModel
+except ImportError:
+    from baselines.utils import OpenAIModel
 import argparse
 
 class GPT3_Reasoning_Graph_Baseline:

@@ -142,12 +142,18 @@ async def dispatch_openai_prompt_requests(
     return await asyncio.gather(*async_responses)
 
 class OpenAIModel:
-    def __init__(self, API_KEY, model_name, stop_words, max_new_tokens) -> None:
+    def __init__(self, API_KEY, model_name, stop_words, max_new_tokens, base_url=None) -> None:
         self.API_KEY = API_KEY
         if OPENAI_VERSION >= 2:
-            self.client = openai.OpenAI(api_key=API_KEY)
+            # 支持自定义 base_url（用于 iflow 等兼容 OpenAI 的 API）
+            if base_url:
+                self.client = openai.OpenAI(api_key=API_KEY, base_url=base_url)
+            else:
+                self.client = openai.OpenAI(api_key=API_KEY)
         else:
             openai.api_key = API_KEY
+            if base_url:
+                openai.api_base = base_url
             self.client = None
         self.model_name = model_name
         self.max_new_tokens = max_new_tokens
@@ -166,10 +172,50 @@ class OpenAIModel:
                 top_p = 1.0,
                 stop = self.stop_words
         )
-        if OPENAI_VERSION >= 2:
-            generated_text = response.choices[0].message.content.strip()
-        else:
-            generated_text = response['choices'][0]['message']['content'].strip()
+        try:
+            if OPENAI_VERSION >= 2:
+                # 处理可能的字典格式响应（某些兼容 API 可能返回字典）
+                if isinstance(response, dict):
+                    message = response['choices'][0]['message']
+                    content = message.get('content')
+                else:
+                    message = response.choices[0].message
+                    # 安全地获取 content，处理可能为 None 的情况
+                    content = getattr(message, 'content', None)
+                    if content is None and isinstance(message, dict):
+                        content = message.get('content')
+                
+                if content is None:
+                    # 打印响应结构以便调试
+                    import json
+                    try:
+                        response_str = json.dumps(str(response), indent=2)
+                    except:
+                        response_str = str(response)
+                    raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
+                generated_text = content.strip() if content else ""
+            else:
+                message = response['choices'][0]['message']
+                content = message.get('content')
+                if content is None:
+                    import json
+                    try:
+                        response_str = json.dumps(response, indent=2, default=str)
+                    except:
+                        response_str = str(response)
+                    raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
+                generated_text = content.strip() if content else ""
+        except (KeyError, AttributeError, IndexError) as e:
+            # 捕获访问响应字段时的错误，提供更详细的错误信息
+            import json
+            try:
+                if isinstance(response, dict):
+                    response_str = json.dumps(response, indent=2, default=str)
+                else:
+                    response_str = json.dumps(str(response), indent=2)
+            except:
+                response_str = str(response)
+            raise ValueError(f"Error accessing response content: {e}. Response structure: {response_str}")
         return generated_text
     
     # used for text/code-davinci
@@ -192,12 +238,13 @@ class OpenAIModel:
         return generated_text
 
     def generate(self, input_string, temperature = 0.0):
+        # 旧版 completion 模型使用 prompt_generate
         if self.model_name in ['text-davinci-002', 'code-davinci-002', 'text-davinci-003']:
             return self.prompt_generate(input_string, temperature)
-        elif self.model_name in ['gpt-4', 'gpt-3.5-turbo']:
-            return self.chat_generate(input_string, temperature)
+        # 其他模型（包括 gpt-4, gpt-3.5-turbo, glm-4.6, TBStars2-200B-A13B 等）默认使用 chat_generate
+        # 因为大多数现代模型都使用 chat 接口
         else:
-            raise Exception("Model name not recognized")
+            return self.chat_generate(input_string, temperature)
     
     def batch_chat_generate(self, messages_list, temperature = 0.0, max_concurrent=None):
         open_ai_messages_list = []
@@ -244,9 +291,62 @@ class OpenAIModel:
             )
         
         if OPENAI_VERSION >= 2:
-            return [x.choices[0].message.content.strip() for x in predictions]
+            results = []
+            for x in predictions:
+                try:
+                    # 处理可能的字典格式响应（某些兼容 API 可能返回字典）
+                    if isinstance(x, dict):
+                        message = x['choices'][0]['message']
+                        content = message.get('content')
+                    else:
+                        message = x.choices[0].message
+                        # 安全地获取 content，处理可能为 None 的情况
+                        content = getattr(message, 'content', None)
+                        if content is None and isinstance(message, dict):
+                            content = message.get('content')
+                    
+                    if content is None:
+                        import json
+                        try:
+                            response_str = json.dumps(str(x), indent=2)
+                        except:
+                            response_str = str(x)
+                        raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
+                    results.append(content.strip() if content else "")
+                except (KeyError, AttributeError, IndexError) as e:
+                    # 捕获访问响应字段时的错误，提供更详细的错误信息
+                    import json
+                    try:
+                        if isinstance(x, dict):
+                            response_str = json.dumps(x, indent=2, default=str)
+                        else:
+                            response_str = json.dumps(str(x), indent=2)
+                    except:
+                        response_str = str(x)
+                    raise ValueError(f"Error accessing response content: {e}. Response structure: {response_str}")
+            return results
         else:
-            return [x['choices'][0]['message']['content'].strip() for x in predictions]
+            results = []
+            for x in predictions:
+                try:
+                    message = x['choices'][0]['message']
+                    content = message.get('content')
+                    if content is None:
+                        import json
+                        try:
+                            response_str = json.dumps(x, indent=2, default=str)
+                        except:
+                            response_str = str(x)
+                        raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
+                    results.append(content.strip() if content else "")
+                except (KeyError, AttributeError, IndexError) as e:
+                    import json
+                    try:
+                        response_str = json.dumps(x, indent=2, default=str)
+                    except:
+                        response_str = str(x)
+                    raise ValueError(f"Error accessing response content: {e}. Response structure: {response_str}")
+            return results
     
     def batch_prompt_generate(self, prompt_list, temperature = 0.0, max_concurrent=None):
         # 如果指定了并发数，使用信号量控制
@@ -296,12 +396,13 @@ class OpenAIModel:
             return [x['choices'][0]['text'].strip() for x in predictions]
 
     def batch_generate(self, messages_list, temperature = 0.0, max_concurrent=None):
+        # 旧版 completion 模型使用 batch_prompt_generate
         if self.model_name in ['text-davinci-002', 'code-davinci-002', 'text-davinci-003']:
             return self.batch_prompt_generate(messages_list, temperature, max_concurrent)
-        elif self.model_name in ['gpt-4', 'gpt-3.5-turbo']:
-            return self.batch_chat_generate(messages_list, temperature, max_concurrent)
+        # 其他模型（包括 gpt-4, gpt-3.5-turbo, glm-4.6, TBStars2-200B-A13B 等）默认使用 batch_chat_generate
+        # 因为大多数现代模型都使用 chat 接口
         else:
-            raise Exception("Model name not recognized")
+            return self.batch_chat_generate(messages_list, temperature, max_concurrent)
 
     def generate_insertion(self, input_string, suffix, temperature = 0.0):
         response = completions_with_backoff(
@@ -382,10 +483,16 @@ class ZhipuAIModel:
         return None
 
     def _thinking_kwargs(self):
+        # 如果 thinking_config 是 {"type": "disabled"}，尝试不传递 thinking 参数
+        # 或者传递 None，让 API 使用默认行为
+        if self.thinking_config and self.thinking_config.get("type") == "disabled":
+            # 尝试不传递 thinking 参数，或者传递 None
+            # 根据智谱AI文档，不传递 thinking 参数应该禁用思考模式
+            return {}
         return {"thinking": self.thinking_config} if self.thinking_config else {}
 
     def _extract_message_content(self, response):
-        """兼容不同返回格式，优先使用content，退回reasoning_content"""
+        """兼容不同返回格式，优先使用content，如果只有reasoning_content则返回空（因为推理内容不是最终答案）"""
         if not response:
             return ""
         
@@ -411,12 +518,29 @@ class ZhipuAIModel:
                 return ''.join(parts)
             return str(value)
         
+        # 优先使用 content（最终答案）
         content = _normalize(getattr(message, 'content', None) or (message.get('content') if isinstance(message, dict) else None)).strip()
         if content:
             return content
         
+        # 如果只有 reasoning_content 而没有 content，尝试从推理内容中提取逻辑程序
         reasoning_content = _normalize(getattr(message, 'reasoning_content', None) or (message.get('reasoning_content') if isinstance(message, dict) else None)).strip()
-        return reasoning_content
+        if reasoning_content:
+            # 检查推理内容中是否包含逻辑程序的关键部分（如 Predicates:, Premises:, Conclusion: 等）
+            # 如果包含，说明推理内容可能就是逻辑程序，返回它
+            if any(keyword in reasoning_content for keyword in ['Predicates:', 'Premises:', 'Conclusion:', 'Facts:', 'Rules:', 'Query:']):
+                import sys
+                print(f"警告: 只返回了推理内容，但从中提取到逻辑程序。思考模式配置: {self.thinking_config}", file=sys.stderr)
+                return reasoning_content
+            else:
+                # 有推理内容但没有逻辑程序，可能是思考模式未正确禁用或输出被截断
+                # 打印警告信息以便调试
+                import sys
+                print(f"警告: 只返回了推理内容而没有逻辑程序。思考模式配置: {self.thinking_config}", file=sys.stderr)
+                # 返回空字符串，触发重试
+                return ""
+        
+        return ""
 
     def chat_generate(self, input_string, temperature=0.0):
         """使用聊天模式生成文本"""

@@ -10,7 +10,7 @@
 # ============================================================================
 
 # 数据集配置
-DATASET_NAME = 'AR-LSAT'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
+DATASET_NAME = 'LogicalDeduction'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
 DATASET_SPLIT = 'dev'      # 可选: 'dev', 'test'
 
 # API配置

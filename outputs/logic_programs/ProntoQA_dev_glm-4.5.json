@@ -1,0 +1,15 @@
+[
+  {
+    "id": "ProntoQA_1",
+    "context": "Jompuses are not shy. Jompuses are yumpuses. Each yumpus is aggressive. Each yumpus is a dumpus. Dumpuses are not wooden. Dumpuses are wumpuses. Wumpuses are red. Every wumpus is an impus. Each impus is opaque. Impuses are tumpuses. Numpuses are sour. Tumpuses are not sour. Tumpuses are vumpuses. Vumpuses are earthy. Every vumpus is a zumpus. Zumpuses are small. Zumpuses are rompuses. Max is a yumpus.",
+    "question": "Is the following statement true or false? Max is sour.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nJompus($x, bool) ::: Does x belong to Jompus?\nShy($x, bool) ::: Is x shy?\nYumpus($x, bool) ::: Does x belong to Yumpus?\nAggressive($x, bool) ::: Is x aggressive?\nDumpus($x, bool) ::: Does x belong to Dumpus?\nWooden($x, bool) ::: Is x wooden?\nWumpus($x, bool) ::: Does x belong to Wumpus?\nRed($x, bool) ::: Is x red?\nImpus($x, bool) ::: Does x belong to Impus?\nOpaque($x, bool) ::: Is x opaque?\nTumpus($x, bool) ::: Does x belong to Tumpus?\nNumpus($x, bool) ::: Does x belong to Numpus?\nSour($x, bool) ::: Is x sour?\nVumpus($x, bool) ::: Does x belong to Vumpus?\nEarthy($x, bool) ::: Is x earthy?\nZumpus($x, bool) ::: Does x belong to Zumpus?\nSmall($x, bool) ::: Is x small?\nRompus($x, bool) ::: Does x belong to Rompus?\nFacts:\nYumpus(Max, True)\nRules:\nJompus($x, True) >>> Shy($x, False)\nJompus($x, True) >>> Yumpus($x, True)\nYumpus($x, True) >>> Aggressive($x, True)\nYumpus($x, True) >>> Dumpus($x, True)\nDumpus($x, True) >>> Wooden($x, False)\nDumpus($x, True) >>> Wumpus($x, True)\nWumpus($x, True) >>> Red($x, True)\nWumpus($x, True) >>> Impus($x, True)\nImpus($x, True) >>> Opaque($x, True)\nImpus($x, True) >>> Tumpus($x, True)\nNumpus($x, True) >>> Sour($x, True)\nTumpus($x, True) >>> Sour($x, False)\nTumpus($x, True) >>> Vumpus($x, True)\nVumpus($x, True) >>> Earthy($x, True)\nVumpus($x, True) >>> Zumpus($x, True)\nZumpus($x, True) >>> Small($x, True)\nZumpus($x, True) >>> Rompus($x, True)\nQuery:\nSour(Max, True)"
+    ]
+  }
+]

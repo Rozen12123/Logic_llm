@@ -80,19 +80,45 @@ class CSP_Program:
         parsed_constraint = f"AllDifferentConstraint(), {str(values)}"
         return parsed_constraint
 
+    @staticmethod
+    def _strip_markup(text: str) -> str:
+        if text is None:
+            return ''
+        cleaned = text.strip()
+        cleaned = re.sub(r'^[-*\u2022•]+\s*', '', cleaned)
+        cleaned = re.sub(r'^\(?[A-Za-z]\)\s*', '', cleaned)
+        cleaned = re.sub(r'^\d+[\).:]\s*', '', cleaned)
+        if cleaned.startswith('`') and cleaned.endswith('`'):
+            cleaned = cleaned[1:-1]
+        return cleaned.strip()
+
     def execute_program(self, debug_mode = False):
         # parse the logic program into CSP python program
         python_program_list = ['from constraint import *', 'problem = Problem()']
         # add variables
         for variable in self.Variables:
-            variable_name, variable_domain = variable.split('[IN]')
-            variable_name, variable_domain = variable_name.strip(), variable_domain.strip()
-            # variable_domain = ast.literal_eval(variable_domain)
+            if not variable.strip():
+                continue
+            variable_clean = self._strip_markup(variable)
+            if not variable_clean:
+                continue
+            if '[IN]' not in variable_clean:
+                continue
+            variable_name, variable_domain = variable_clean.split('[IN]', 1)
+            variable_name = self._strip_markup(variable_name)
+            variable_domain = variable_domain.strip()
+            if not variable_name or not variable_domain:
+                continue
             python_program_list.append(f'problem.addVariable("{variable_name}", {variable_domain})')
         
         # add constraints
         for rule in self.Constraints:
             rule = rule.strip()
+            if not rule:
+                continue
+            rule = self._strip_markup(rule)
+            if not rule:
+                continue
             parsed_constraint = None
             if rule.startswith('AllDifferentConstraint'):
                 parsed_constraint = self.parse_all_different_constraint(rule)
@@ -113,28 +139,35 @@ class CSP_Program:
     
     def answer_mapping(self, answer):
         # Match both (A) and A) formats
-        self.option_pattern = r'^\(?(\w+)\)'
-        self.expression_pattern = r'\w+ == \d+'       
+        option_pattern = re.compile(r'^\(?([A-Za-z])\)')
+        expression_pattern = re.compile(r'([A-Za-z_][A-Za-z0-9_]*)\s*==\s*(-?\d+)')
 
         variable_ans_map = defaultdict(set)
         for result in answer:
             for variable, value in result.items():
                 variable_ans_map[variable].add(value)
 
+        bullet_pattern = re.compile(r'^\s*[-*\u2022•]+\s*')
+
         for option_str in self.Query:
+            if not option_str or not option_str.strip():
+                continue
+            option_clean = bullet_pattern.sub('', option_str.strip())
+            if not option_clean:
+                continue
             # Extract the option using regex
-            option_match = re.match(self.option_pattern, option_str)
+            option_match = option_pattern.match(option_clean)
             if option_match is None:
                 continue  # Skip if pattern doesn't match
             option = option_match.group(1)  # Get the captured group (the letter)
             # Extract the expression using regex
-            expression_match = re.search(self.expression_pattern, option_str)
+            expression_region = option_clean[option_match.end():].strip()
+            expression_region = expression_region.replace('`', '')
+            expression_match = expression_pattern.search(expression_region)
             if expression_match is None:
                 continue  # Skip if expression pattern doesn't match
-            expression_str = expression_match.group()
-            # Extract the variable and its value
-            variable, value = expression_str.split('==')
-            variable, value = variable.strip(), int(value.strip())
+            variable = expression_match.group(1).strip()
+            value = int(expression_match.group(2).strip())
             # Check if the variable is in the execution result
             if len(variable_ans_map[variable]) == 1 and value in variable_ans_map[variable]:
                 return option

@@ -17,6 +17,43 @@ class CodeTranslator:
     StdCodeLine = namedtuple("StdCodeLine", "line line_type")
 
     @staticmethod
+    def _split_top_level_arguments(arg_str: str):
+        args = []
+        depth = 0
+        current = []
+        for ch in arg_str:
+            if ch == '(':
+                depth += 1
+            elif ch == ')':
+                depth -= 1
+            if ch == ',' and depth == 0:
+                token = ''.join(current).strip()
+                if token:
+                    args.append(token)
+                current = []
+            else:
+                current.append(ch)
+        token = ''.join(current).strip()
+        if token:
+            args.append(token)
+        return args
+
+    @staticmethod
+    def pythonize_boolean_expression(expr: str) -> str:
+        stripped = expr.strip()
+        if stripped.startswith("And(") and stripped.endswith(")"):
+            inner = stripped[len("And("):-1]
+            parts = CodeTranslator._split_top_level_arguments(inner)
+            if parts:
+                return "(" + " and ".join(parts) + ")"
+        if stripped.startswith("Or(") and stripped.endswith(")"):
+            inner = stripped[len("Or("):-1]
+            parts = CodeTranslator._split_top_level_arguments(inner)
+            if parts:
+                return "(" + " or ".join(parts) + ")"
+        return expr
+
+    @staticmethod
     def translate_enum_sort_declaration(enum_sort_name, enum_sort_values):
         if all([x.isdigit() for x in enum_sort_values]):
             return [CodeTranslator.StdCodeLine(f"{enum_sort_name}_sort = IntSort()", CodeTranslator.LineType.DECL)]
@@ -278,59 +315,6 @@ class CodeTranslator:
                 if line.line_type == CodeTranslator.LineType.DECL:
                     lines += [line.line]
                 else:
-                    # Replace Z3's And with Python's and for boolean expressions
-                    # This is needed because is_valid/is_sat return Python booleans, not Z3 expressions
-                    condition = line.line
-                    # Only do this if the expression contains is_valid or is_sat calls
-                    if ('is_valid' in condition or 'is_sat' in condition or 'is_unsat' in condition) and 'And(' in condition:
-                        # Replace And(expr1, expr2, ...) with (expr1 and expr2 and ...)
-                        # Handle nested parentheses by finding matching pairs
-                        import re
-                        def replace_and_with_python_and(expr):
-                            result = expr
-                            # Find all And( patterns
-                            while True:
-                                match = re.search(r'\bAnd\s*\(', result)
-                                if not match:
-                                    break
-                                start = match.end()
-                                # Find matching closing parenthesis
-                                depth = 1
-                                end = start
-                                while end < len(result) and depth > 0:
-                                    if result[end] == '(':
-                                        depth += 1
-                                    elif result[end] == ')':
-                                        depth -= 1
-                                    end += 1
-                                if depth == 0:
-                                    # Extract arguments
-                                    args_str = result[start:end-1]
-                                    # Split arguments respecting nested parentheses
-                                    args = []
-                                    arg_depth = 0
-                                    current = ""
-                                    for char in args_str:
-                                        if char == '(':
-                                            arg_depth += 1
-                                            current += char
-                                        elif char == ')':
-                                            arg_depth -= 1
-                                            current += char
-                                        elif char == ',' and arg_depth == 0:
-                                            args.append(current.strip())
-                                            current = ""
-                                        else:
-                                            current += char
-                                    if current.strip():
-                                        args.append(current.strip())
-                                    # Replace And(...) with (arg1 and arg2 and ...)
-                                    replacement = '(' + ' and '.join(args) + ')'
-                                    result = result[:match.start()] + replacement + result[end:]
-                                else:
-                                    break
-                            return result
-                        
-                        condition = replace_and_with_python_and(condition)
+                    condition = CodeTranslator.pythonize_boolean_expression(line.line)
                     lines += [f"if {condition}: print('{choice_name}')"]
         return "\n".join(lines)

@@ -29,9 +29,17 @@ class LSAT_Z3_Program:
         # split the logic program into different parts
         lines = [x for x in self.logic_program.splitlines() if not x.strip() == ""]
 
-        decleration_start_index = lines.index("# Declarations")
-        constraint_start_index = lines.index("# Constraints")
-        option_start_index = lines.index("# Options")
+        def locate_section(target):
+            normalized_target = target.lower()
+            for idx, line in enumerate(lines):
+                normalized_line = line.strip().lstrip('#').strip().lower()
+                if normalized_line == normalized_target:
+                    return idx
+            raise ValueError(f"Missing section header: {target}")
+
+        decleration_start_index = locate_section("declarations")
+        constraint_start_index = locate_section("constraints")
+        option_start_index = locate_section("options")
  
         declaration_statements = lines[decleration_start_index + 1:constraint_start_index]
         constraint_statements = lines[constraint_start_index + 1:option_start_index]
@@ -187,7 +195,19 @@ class LSAT_Z3_Program:
     def answer_mapping(self, answer):
         mapping = {'(A)': 'A', '(B)': 'B', '(C)': 'C', '(D)': 'D', '(E)': 'E',
                    'A': 'A', 'B': 'B', 'C': 'C', 'D': 'D', 'E': 'E'}
-        return mapping[answer[0].strip()]
+        if not answer:
+            return None
+        for line in answer:
+            stripped = line.strip()
+            if not stripped:
+                continue
+            # 忽略 Python / pkg_resources 警告等非选项输出
+            if 'UserWarning' in stripped or stripped.startswith(('/', 'Traceback')):
+                continue
+            if stripped in mapping:
+                return mapping[stripped]
+        # 回退到第一行（保持之前行为，便于调试）
+        return mapping.get(answer[0].strip(), None)
 
 if __name__=="__main__":
     logic_program = '''# Declarations

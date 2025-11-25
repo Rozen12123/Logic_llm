@@ -12,7 +12,103 @@
       "E) The yellow book is the second from the left."
     ],
     "raw_logic_programs": [
-      "Domain:\n1: leftmost\n5: rightmost\nVariables:\ngreen_book [IN] [1, 2, 3, 4, 5]\nblue_book [IN] [1, 2, 3, 4, 5]\nwhite_book [IN] [1, 2, 3, 4, 5]\npurple_book [IN] [1, 2, 3, 4, 5]\nyellow_book [IN] [1, 2, 3, 4, 5]\nConstraints:\nblue_book > yellow_book ::: The blue book is to the right of the yellow book.\nwhite_book < yellow_book ::: The white book is to the left of the yellow book.\nblue_book == 4 ::: The blue book is the second from the right.\npurple_book == 2 ::: The purple book is the second from the left.\nAllDifferentConstraint([green_book, blue_book, white_book, purple_book, yellow_book]) ::: All books have different values.\nQuery:\n(A) green_book == 2 ::: The green book is the second from the left.\n(B) blue_book == 2 ::: The blue book is the second from the left.\n(C) white_book == 2 ::: The white book is the second from the left.\n(D) purple_book == 2 ::: The purple book is the second from the left.\n(E) yellow_book == 2 ::: The yellow book is the second from the left."
+      "Domain:\n1: leftmost\n5: rightmost\nVariables:\ngreen_book [IN] [1, 2, 3, 4, 5]\nblue_book [IN] [1, 2, 3, 4, 5]\nwhite_book [IN] [1, 2, 3, 4, 5]\npurple_book [IN] [1, 2, 3, 4, 5]\nyellow_book [IN] [1, 2, 3, 4, 5]\nConstraints:\nblue_book > yellow_book ::: The blue book is to the right of the yellow book.\nwhite_book < yellow_book ::: The white book is to the left of the yellow book.\nblue_book == 4 ::: The blue book is the second from the right.\npurple_book == 2 ::: The purple book is the second from the left.\nAllDifferentConstraint([green_book, blue_book, white_book, purple_book, yellow_book]) ::: All books have different values.\nQuery:\nA) green_book == 2 ::: The green book is the second from the left.\nB) blue_book == 2 ::: The blue book is the second from the left.\nC) white_book == 2 ::: The white book is the second from the left.\nD) purple_book == 2 ::: The purple book is the second from the left.\nE) yellow_book == 2 ::: The yellow book is the second from the left."
+    ]
+  },
+  {
+    "id": "logical_deduction_1",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn an antique car show, there are five vehicles: a convertible, a sedan, a tractor, a minivan, and a limousine. The tractor is newer than the minivan. The tractor is older than the limousine. The convertible is older than the sedan. The convertible is the second-newest.",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "options": [
+      "A) The convertible is the second-newest.",
+      "B) The sedan is the second-newest.",
+      "C) The tractor is the second-newest.",
+      "D) The minivan is the second-newest.",
+      "E) The limousine is the second-newest."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: oldest\n5: newest\nVariables:\nconvertible [IN] [1, 2, 3, 4, 5]\nsedan [IN] [1, 2, 3, 4, 5]\ntractor [IN] [1, 2, 3, 4, 5]\nminivan [IN] [1, 2, 3, 4, 5]\nlimousine [IN] [1, 2, 3, 4, 5]\nConstraints:\ntractor > minivan ::: The tractor is newer than the minivan.\ntractor < limousine ::: The tractor is older than the limousine.\nconvertible < sedan ::: The convertible is older than the sedan.\nconvertible == 4 ::: The convertible is the second-newest.\nAllDifferentConstraint([convertible, sedan, tractor, minivan, limousine]) ::: All vehicles have different values.\nQuery:\n(A) convertible == 4 ::: The convertible is the second-newest.\n(B) sedan == 4 ::: The sedan is the second-newest.\n(C) tractor == 4 ::: The tractor is the second-newest.\n(D) minivan == 4 ::: The minivan is the second-newest.\n(E) limousine == 4 ::: The limousine is the second-newest."
+    ]
+  },
+  {
+    "id": "logical_deduction_2",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn an antique car show, there are five vehicles: a station wagon, a sedan, a tractor, a motorcyle, and a limousine. The tractor is newer than the motorcyle. The motorcyle is newer than the sedan. The limousine is the oldest. The station wagon is the newest.",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "options": [
+      "A) The station wagon is the oldest.",
+      "B) The sedan is the oldest.",
+      "C) The tractor is the oldest.",
+      "D) The motorcyle is the oldest.",
+      "E) The limousine is the oldest."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: oldest\n5: newest\nVariables:\nstation_wagon [IN] [1, 2, 3, 4, 5]\nsedan [IN] [1, 2, 3, 4, 5]\ntractor [IN] [1, 2, 3, 4, 5]\nmotorcyle [IN] [1, 2, 3, 4, 5]\nlimousine [IN] [1, 2, 3, 4, 5]\nConstraints:\ntractor > motorcyle ::: The tractor is newer than the motorcyle.\nmotorcyle > sedan ::: The motorcyle is newer than the sedan.\nlimousine == 1 ::: The limousine is the oldest.\nstation_wagon == 5 ::: The station wagon is the newest.\nAllDifferentConstraint([station_wagon, sedan, tractor, motorcyle, limousine]) ::: All vehicles have different values.\nQuery:\n(A) station_wagon == 1 ::: The station wagon is the oldest.\n(B) sedan == 1 ::: The sedan is the oldest.\n(C) tractor == 1 ::: The tractor is the oldest.\n(D) motorcyle == 1 ::: The motorcyle is the oldest.\n(E) limousine == 1 ::: The limousine is the oldest."
+    ]
+  },
+  {
+    "id": "logical_deduction_3",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells five fruits: watermelons, plums, apples, peaches, and kiwis. The apples are less expensive than the peaches. The plums are the cheapest. The kiwis are the second-cheapest. The watermelons are more expensive than the peaches.",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "options": [
+      "A) The watermelons are the most expensive.",
+      "B) The plums are the most expensive.",
+      "C) The apples are the most expensive.",
+      "D) The peaches are the most expensive.",
+      "E) The kiwis are the most expensive."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: cheapest\n5: most expensive\nVariables:\nwatermelons [IN] [1, 2, 3, 4, 5]\nplums [IN] [1, 2, 3, 4, 5]\napples [IN] [1, 2, 3, 4, 5]\npeaches [IN] [1, 2, 3, 4, 5]\nkiwis [IN] [1, 2, 3, 4, 5]\nConstraints:\napples < peaches ::: The apples are less expensive than the peaches.\nplums == 1 ::: The plums are the cheapest.\nkiwis == 2 ::: The kiwis are the second-cheapest.\nwatermelons > peaches ::: The watermelons are more expensive than the peaches.\nAllDifferentConstraint([watermelons, plums, apples, peaches, kiwis]) ::: All fruits have different values.\nQuery:\n(A) watermelons == 5 ::: The watermelons are the most expensive.\n(B) plums == 5 ::: The plums are the most expensive.\n(C) apples == 5 ::: The apples are the most expensive.\n(D) peaches == 5 ::: The peaches are the most expensive.\n(E) kiwis == 5 ::: The kiwis are the most expensive."
+    ]
+  },
+  {
+    "id": "logical_deduction_4",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a branch, there are five birds: a cardinal, a crow, a falcon, a robin, and a blue jay. The robin is to the right of the cardinal. The cardinal is to the right of the blue jay. The blue jay is the second from the left. The crow is the rightmost.",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "options": [
+      "A) The cardinal is the second from the left.",
+      "B) The crow is the second from the left.",
+      "C) The falcon is the second from the left.",
+      "D) The robin is the second from the left.",
+      "E) The blue jay is the second from the left."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: leftmost\n5: rightmost\nVariables:\ncardinal [IN] [1, 2, 3, 4, 5]\ncrow [IN] [1, 2, 3, 4, 5]\nfalcon [IN] [1, 2, 3, 4, 5]\nrobin [IN] [1, 2, 3, 4, 5]\nblue_jay [IN] [1, 2, 3, 4, 5]\nConstraints:\nrobin > cardinal ::: The robin is to the right of the cardinal.\ncardinal > blue_jay ::: The cardinal is to the right of the blue jay.\nblue_jay == 2 ::: The blue jay is the second from the left.\ncrow == 5 ::: The crow is the rightmost.\nAllDifferentConstraint([cardinal, crow, falcon, robin, blue_jay]) ::: All birds have different values.\nQuery:\n(A) cardinal == 2 ::: The cardinal is the second from the left.\n(B) crow == 2 ::: The crow is the second from the left.\n(C) falcon == 2 ::: The falcon is the second from the left.\n(D) robin == 2 ::: The robin is the second from the left.\n(E) blue_jay == 2 ::: The blue jay is the second from the left."
+    ]
+  },
+  {
+    "id": "logical_deduction_5",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn an antique car show, there are five vehicles: a convertible, a sedan, a station wagon, a bus, and a limousine. The sedan is newer than the station wagon. The limousine is the newest. The bus is the second-newest. The convertible is the second-oldest.",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "options": [
+      "A) The convertible is the second-oldest.",
+      "B) The sedan is the second-oldest.",
+      "C) The station wagon is the second-oldest.",
+      "D) The bus is the second-oldest.",
+      "E) The limousine is the second-oldest."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: oldest\n5: newest\nVariables:\nconvertible [IN] [1, 2, 3, 4, 5]\nsedan [IN] [1, 2, 3, 4, 5]\nstation_wagon [IN] [1, 2, 3, 4, 5]\nbus [IN] [1, 2, 3, 4, 5]\nlimousine [IN] [1, 2, 3, 4, 5]\nConstraints:\nsedan > station_wagon ::: The sedan is newer than the station wagon.\nlimousine == 5 ::: The limousine is the newest.\nbus == 4 ::: The bus is the second-newest.\nconvertible == 2 ::: The convertible is the second-oldest.\nAllDifferentConstraint([convertible, sedan, station_wagon, bus, limousine]) ::: All vehicles have different values.\nQuery:\n(A) convertible == 2 ::: The convertible is the second-oldest.\n(B) sedan == 2 ::: The sedan is the second-oldest.\n(C) station_wagon == 2 ::: The station wagon is the second-oldest.\n(D) bus == 2 ::: The bus is the second-oldest.\n(E) limousine == 2 ::: The limousine is the second-oldest."
+    ]
+  },
+  {
+    "id": "logical_deduction_6",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a branch, there are five birds: a crow, a robin, a quail, a blue jay, and a falcon. The robin is to the left of the quail. The falcon is the third from the left. The crow is to the left of the falcon. The blue jay is the leftmost.",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "options": [
+      "A) The crow is the third from the left.",
+      "B) The robin is the third from the left.",
+      "C) The quail is the third from the left.",
+      "D) The blue jay is the third from the left.",
+      "E) The falcon is the third from the left."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: leftmost\n5: rightmost\nVariables:\ncrow [IN] [1, 2, 3, 4, 5]\nrobin [IN] [1, 2, 3, 4, 5]\nquail [IN] [1, 2, 3, 4, 5]\nblue_jay [IN] [1, 2, 3, 4, 5]\nfalcon [IN] [1, 2, 3, 4, 5]\nConstraints:\nrobin < quail ::: The robin is to the left of the quail.\nfalcon == 3 ::: The falcon is the third from the left.\ncrow < falcon ::: The crow is to the left of the falcon.\nblue_jay == 1 ::: The blue jay is the leftmost.\nAllDifferentConstraint([crow, robin, quail, blue_jay, falcon]) ::: All birds have different values.\nQuery:\n(A) crow == 3 ::: The crow is the third from the left.\n(B) robin == 3 ::: The robin is the third from the left.\n(C) quail == 3 ::: The quail is the third from the left.\n(D) blue_jay == 3 ::: The blue jay is the third from the left.\n(E) falcon == 3 ::: The falcon is the third from the left."
     ]
   }
 ]

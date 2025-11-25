@@ -110,14 +110,22 @@ class LogicProgramGenerator:
             # FOLIO 使用 Predicates:, Premises:, Conclusion:
             required_sections = ['Predicates:', 'Premises:', 'Conclusion:']
         elif self.dataset_name == 'AR-LSAT':
-            # AR-LSAT 可能使用不同的格式，需要根据实际情况调整
-            # 暂时使用 FOLIO 格式
-            required_sections = ['Predicates:', 'Premises:', 'Conclusion:']
+            # AR-LSAT 使用 # Declarations / # Constraints / # Options 三段格式
+            required_sections = [
+                ('# Declarations', '### Declarations'),
+                ('# Constraints', '### Constraints'),
+                ('# Options', '### Options')
+            ]
         else:
             # ProntoQA, ProofWriter, LogicalDeduction 使用 Predicates:, Facts:, Rules:, Query:
             required_sections = ['Predicates:', 'Facts:', 'Rules:', 'Query:']
         
-        return all(section in program for section in required_sections)
+        def has_section(program_text, section):
+            if isinstance(section, (list, tuple)):
+                return any(marker in program_text for marker in section)
+            return section in program_text
+        
+        return all(has_section(program, section) for section in required_sections)
 
     def generate_program_with_retry(self, prompt: str, sample_id: str):
         last_output = ''

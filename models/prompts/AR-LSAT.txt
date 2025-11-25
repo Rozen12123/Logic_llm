@@ -2,6 +2,16 @@ Given a problem description and a question. The task is to formulate the problem
 Declarations: Declare the variables and functions.
 Constraints: Write the constraints in the problem description as logic formulas.
 Options: Write the options in the question as logic formulas.
+
+Strict formatting requirements:
+1. Use exactly the DSL shown below (EnumSort, IntSort, Function, ForAll, Exists, Count, And, Or, Not, implies, etc.).
+2. Each clause must follow the pattern `FORMULA ::: natural language justification` with no extra prose or helper comments.
+3. Do not introduce Python helper code (no assignments like `boys = [...]`, no custom predicates such as `MustBeShared`).
+4. Do not emit natural language outside the three marked sections.
+5. Always mark section headers with a single `#` (e.g., `# Declarations`).
+6. IMPORTANT: For sorts with numeric values (e.g., locker numbers 1, 2, 3, 4, 5), use `EnumSort([1, 2, 3, 4, 5])` instead of `IntSort()`. Use `IntSort()` only when you need unbounded integers or when the function return type is `int`.
+
+Follow the exemplar carefully and mirror its structure exactly.
 ------
 Problem:
 On Tuesday Vladimir and Wendy each eat exactly four separate meals: breakfast, lunch, dinner, and a snack. The following is all that is known about what they eat during that day: At no meal does Vladimir eat the same kind of food as Wendy. Neither of them eats the same kind of food more than once during the day. For breakfast, each eats exactly one of the following: hot cakes, poached eggs, or omelet. For lunch, each eats exactly one of the following: fish, hot cakes, macaroni, or omelet. For dinner, each eats exactly one of the following: fish, hot cakes, macaroni, or omelet. For a snack, each eats exactly one of the following: fish or omelet. Wendy eats an omelet for lunch.
@@ -13,7 +23,6 @@ Choices:
 (C) macaroni
 (D) omelet
 (E) poached eggs
-###
 # Declarations
 people = EnumSort([Vladimir, Wendy])
 meals = EnumSort([breakfast, lunch, dinner, snack])
@@ -47,7 +56,6 @@ Choices:
 (C) Urma and Xena
 (D) Wim and Xena
 (E) Xena and Yolanda
-###
 # Declarations
 technicians = EnumSort([Stacy, Urma, Wim, Xena, Yolanda, Zane])
 machines = EnumSort([radios, televisions, VCRs])
@@ -107,4 +115,3 @@ Question:
 [[QUESTION]]
 Choices:
 [[CHOICES]]
-###

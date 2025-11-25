@@ -14,7 +14,11 @@ def clean_logic_program(raw_program: str, dataset_name: str) -> str:
 
     if dataset_name == 'FOLIO':
         cleaned = _clean_folio_program(raw_program)
-        return cleaned if cleaned else raw_program
+        if cleaned:
+            raw_program = cleaned
+
+    if dataset_name == 'AR-LSAT':
+        raw_program = _normalize_intsort_ranges(raw_program)
 
     return raw_program
 
@@ -63,6 +67,73 @@ def _clean_folio_program(raw_program: str) -> Optional[str]:
     sanitized += '\nConclusion:\n'
     sanitized += conclusion_lines[0]
     return sanitized
+
+
+def _normalize_intsort_ranges(raw_program: str) -> str:
+    """
+    Some AR-LSAT generations emit bare `IntSort()` declarations.
+    Without explicit domains the downstream Z3 translator cannot
+    unroll quantifiers such as Count/ForAll that iterate over the
+    corresponding scope. We attempt to infer a contiguous integer
+    range for each bare IntSort by scanning constraints for bounds
+    on variables typed with that sort (e.g. `ForAll([l:lockers], l>=1, l<=5)`).
+    When both a minimum and maximum can be recovered we rewrite the
+    declaration as `IntSort([min, ..., max])`.
+    """
+    intsort_pattern = re.compile(
+        r'^(?P<name>[A-Za-z_][A-Za-z0-9_]*)\s*=\s*IntSort\(\s*\)\s*$',
+        re.MULTILINE
+    )
+
+    def infer_domain(sort_name: str) -> Optional[List[int]]:
+        scope_var_pattern = re.compile(rf'\[([A-Za-z0-9_]+):{sort_name}\]')
+        scoped_vars = {m.group(1) for m in scope_var_pattern.finditer(raw_program)}
+        if not scoped_vars:
+            return None
+
+        numbers = set()
+        for var in scoped_vars:
+            forward = re.compile(rf'\b{var}\b\s*(==|>=|<=|>|<)\s*(-?\d+)')
+            reverse = re.compile(rf'(-?\d+)\s*(==|>=|<=|>|<)\s*\b{var}\b')
+            for match in forward.finditer(raw_program):
+                numbers.add(int(match.group(2)))
+            for match in reverse.finditer(raw_program):
+                numbers.add(int(match.group(1)))
+
+        if not numbers:
+            return None
+
+        lo, hi = min(numbers), max(numbers)
+        if hi < lo or hi - lo > 20:
+            return None
+
+        return list(range(lo, hi + 1))
+
+    def replace_decl(match: re.Match) -> str:
+        sort_name = match.group('name')
+        domain = infer_domain(sort_name)
+        if not domain:
+            return match.group(0)
+        domain_str = ", ".join(str(x) for x in domain)
+        # Use EnumSort for numeric values instead of IntSort to avoid code generation issues
+        return f"{sort_name} = EnumSort([{domain_str}])"
+
+    result = re.sub(intsort_pattern, replace_decl, raw_program)
+    
+    # Also convert IntSort([...]) to EnumSort([...]) if it exists
+    intsort_with_list_pattern = re.compile(
+        r'^(?P<name>[A-Za-z_][A-Za-z0-9_]*)\s*=\s*IntSort\(\s*\[(?P<values>[^\]]+)\]\s*\)\s*$',
+        re.MULTILINE
+    )
+    
+    def replace_intsort_with_list(match: re.Match) -> str:
+        sort_name = match.group('name')
+        values = match.group('values')
+        # Use EnumSort for numeric values instead of IntSort
+        return f"{sort_name} = EnumSort([{values}])"
+    
+    result = re.sub(intsort_with_list_pattern, replace_intsort_with_list, result)
+    return result
 
 
 def _extract_clause_lines(block: str) -> List[str]:

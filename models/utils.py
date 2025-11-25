@@ -184,7 +184,7 @@ class OpenAIModel:
                     content = getattr(message, 'content', None)
                     if content is None and isinstance(message, dict):
                         content = message.get('content')
-                
+
                 if content is None:
                     # 打印响应结构以便调试
                     import json
@@ -458,7 +458,13 @@ class ZhipuAIModel:
             if mapped is not None:
                 return mapped
         
-        reasoning_models = ("glm-4.6", "glm-4-long", "glm-4-air", "glm-4-plus")
+        reasoning_models = (
+            "glm-4.6",
+            "glm-4.5",
+            "glm-4-long",
+            "glm-4-air",
+            "glm-4-plus"
+        )
         if any(tag in model_name for tag in reasoning_models):
             return {"type": "disabled"}
         return None
@@ -518,8 +524,38 @@ class ZhipuAIModel:
                 return ''.join(parts)
             return str(value)
         
-        # 优先使用 content（最终答案）
-        content = _normalize(getattr(message, 'content', None) or (message.get('content') if isinstance(message, dict) else None)).strip()
+        def _extract_from_content(payload):
+            """从content结构中提取最终文本，优先跳过推理类片段"""
+            if payload is None:
+                return ""
+            if isinstance(payload, str):
+                return payload.strip()
+            if isinstance(payload, list):
+                parts = []
+                for item in payload:
+                    text = _extract_from_content(item)
+                    if text:
+                        parts.append(text)
+                return ''.join(parts).strip()
+            if isinstance(payload, dict):
+                segment_type = str(payload.get('type') or '').lower()
+                if segment_type in {'reasoning_content', 'chain_of_thought', 'thinking'}:
+                    return ""
+                text_fields = (
+                    'text', 'content', 'answer', 'final_answer', 'result', 'output_text', 'value'
+                )
+                for field in text_fields:
+                    if field in payload:
+                        extracted = _extract_from_content(payload[field])
+                        if extracted:
+                            return extracted
+                # 兜底: 将整个字典转成字符串
+                return str(payload).strip()
+            return str(payload).strip()
+        
+        # 优先使用 content（最终答案），在复杂结构中直接查找文本答案
+        raw_content = getattr(message, 'content', None) or (message.get('content') if isinstance(message, dict) else None)
+        content = _extract_from_content(raw_content)
         if content:
             return content
         
@@ -528,17 +564,17 @@ class ZhipuAIModel:
         if reasoning_content:
             # 检查推理内容中是否包含逻辑程序的关键部分（如 Predicates:, Premises:, Conclusion: 等）
             # 如果包含，说明推理内容可能就是逻辑程序，返回它
-            if any(keyword in reasoning_content for keyword in ['Predicates:', 'Premises:', 'Conclusion:', 'Facts:', 'Rules:', 'Query:']):
+            ar_lsat_keywords = ['# Declarations', '# Constraints', '# Options', '### Declarations', '### Constraints', '### Options']
+            logic_keywords = ['Predicates:', 'Premises:', 'Conclusion:', 'Facts:', 'Rules:', 'Query:'] + ar_lsat_keywords
+            if any(keyword in reasoning_content for keyword in logic_keywords):
                 import sys
                 print(f"警告: 只返回了推理内容，但从中提取到逻辑程序。思考模式配置: {self.thinking_config}", file=sys.stderr)
                 return reasoning_content
             else:
-                # 有推理内容但没有逻辑程序，可能是思考模式未正确禁用或输出被截断
-                # 打印警告信息以便调试
+                # 有推理内容但没有逻辑程序，尝试直接返回推理内容，让上游清洗器处理
                 import sys
                 print(f"警告: 只返回了推理内容而没有逻辑程序。思考模式配置: {self.thinking_config}", file=sys.stderr)
-                # 返回空字符串，触发重试
-                return ""
+        return reasoning_content
         
         return ""
 

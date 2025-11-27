@@ -10,22 +10,22 @@
 # ============================================================================
 
 # 数据集配置
-DATASET_NAME = 'LogicalDeduction'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
+DATASET_NAME = 'ProntoQA'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
 DATASET_SPLIT = 'dev'      # 可选: 'dev', 'test'
 
 # API配置
 API_PROVIDER = 'zhipuai'     # 可选: 'openai', 'zhipuai', 'iflow'
-MODEL_NAME = 'glm-4.5'  # iflow模型: 'TBStars2-200B-A13B'
-                                   # 智谱AI模型: 'GLM-4.6', 'glm-4', 'glm-4-flash-250414', 'glm-3-turbo'
+MODEL_NAME = 'glm-4-flash-250414'  # iflow模型: 'TBStars2-200B-A13B'
+                                   # 智谱AI模型: 'GLM-4.6', 'glm-4.5', 'glm-4-flash-250414', 'glm-3-turbo'
                                    # OpenAI模型: 'gpt-4', 'gpt-3.5-turbo', 'gpt-4-turbo', 'text-davinci-003'
 
 # 其他配置（一般不需要修改）
 DATA_PATH = './data'
 SAVE_PATH = './outputs/logic_programs'
-MAX_NEW_TOKENS = 20000  # 增加到 2048 以避免输出被截断
+MAX_NEW_TOKENS = 10000  # 增加到 2048 以避免输出被截断
 STOP_WORDS = '------'
 BATCH_SIZE = 1
-MAX_CONCURRENT = 1
+MAX_CONCURRENT = 20
 MAX_RETRIES = 1
 
 # ============================================================================

@@ -1,5 +1,20 @@
-Task: Given the wrong logic program and the error message, output the correct logic program.
-------
+Task: Task: Your goal is to act as an expert logician correcting a flawed logic program. You will be given an "Initial Program" and an "Error Message". Instead of directly outputting the corrected code, you must first engage in a Socratic reasoning process to diagnose and understand the error. Follow the exact thinking steps below, then provide the final, corrected program. The examples provided demonstrate the final output format.
+
+[Socratic Thinking Steps]
+
+1.Step 1: Diagnose the Problem's Nature
+Self-Question 1.1:"What is the core meaning of this error message? Is it a Predicate Undefined error, a Syntax Error, or another category?"
+
+2.Step 2: Localize the Root Cause
+Self-Question 2.1: "In which section (Predicates, Facts, Rules, or Query) does the error originate? What specific predicate, symbol, or structure is causing the failure?"
+
+3.Step 3: Formulate a Correction Plan
+Self-Question 3.1: "What specific actions must I take to fix this? Do I need to add a missing definition to the Predicates section? Do I need to correct the syntax of a rule? Or do I need to re-express the logic to be valid?"
+Self-Question 3.2:"Beyond fixing the immediate error, are there other potential issues in the program? For instance, are all predicates used in the Query and Rules also properly defined? I should ensure the entire program is consistent and complete."
+
+4.Step 4: Generate the Final Corrected Program
+After completing the self-questioning process, produce the final, complete, and corrected logic program.
+
 >>> Initial Program:
 Predicates:
 Jompus($x, bool) ::: Does x belong to Jompus?

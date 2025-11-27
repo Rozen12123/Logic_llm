@@ -162,15 +162,15 @@ class OpenAIModel:
     # used for chat-gpt and gpt-4
     def chat_generate(self, input_string, temperature = 0.0):
         response = chat_completions_with_backoff(
-                self.client if OPENAI_VERSION >= 2 else None,
-                model = self.model_name,
-                messages=[
-                        {"role": "user", "content": input_string}
-                    ],
-                max_tokens = self.max_new_tokens,
-                temperature = temperature,
-                top_p = 1.0,
-                stop = self.stop_words
+            self.client if OPENAI_VERSION >= 2 else None,
+            model=self.model_name,
+            messages=[
+                {"role": "user", "content": input_string}
+            ],
+            max_tokens=self.max_new_tokens,
+            temperature=temperature,
+            top_p=1.0,
+            stop=self.stop_words
         )
         try:
             if OPENAI_VERSION >= 2:
@@ -190,7 +190,7 @@ class OpenAIModel:
                     import json
                     try:
                         response_str = json.dumps(str(response), indent=2)
-                    except:
+                    except Exception:
                         response_str = str(response)
                     raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
                 generated_text = content.strip() if content else ""
@@ -201,7 +201,7 @@ class OpenAIModel:
                     import json
                     try:
                         response_str = json.dumps(response, indent=2, default=str)
-                    except:
+                    except Exception:
                         response_str = str(response)
                     raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
                 generated_text = content.strip() if content else ""
@@ -213,7 +213,7 @@ class OpenAIModel:
                     response_str = json.dumps(response, indent=2, default=str)
                 else:
                     response_str = json.dumps(str(response), indent=2)
-            except:
+            except Exception:
                 response_str = str(response)
             raise ValueError(f"Error accessing response content: {e}. Response structure: {response_str}")
         return generated_text

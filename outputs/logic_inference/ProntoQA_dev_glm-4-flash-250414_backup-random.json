@@ -5,7 +5,7 @@
     "question": "Is the following statement true or false? Max is sour.",
     "answer": "B",
     "flag": "success",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProntoQA_2",
@@ -69,7 +69,7 @@
     "question": "Is the following statement true or false? Wren is wooden.",
     "answer": "A",
     "flag": "execution error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProntoQA_10",
@@ -77,6 +77,326 @@
     "question": "Is the following statement true or false? Fae is sweet.",
     "answer": "B",
     "flag": "execution error",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_11",
+    "context": "Each jompus is not amenable. Wumpuses are not fruity. Every jompus is a vumpus. Every vumpus is not shy. Every vumpus is a rompus. Rompuses are not bitter. Rompuses are dumpuses. Dumpuses are opaque. Every dumpus is a yumpus. Every yumpus is orange. Yumpuses are zumpuses. Zumpuses are fruity. Each zumpus is a numpus. Numpuses are metallic. Every numpus is a tumpus. Each tumpus is large. Each tumpus is an impus. Sam is a vumpus.",
+    "question": "Is the following statement true or false? Sam is not fruity.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_12",
+    "context": "Each tumpus is orange. Tumpuses are numpuses. Numpuses are small. Numpuses are vumpuses. Every vumpus is sour. Vumpuses are dumpuses. Each dumpus is cold. Every dumpus is a zumpus. Each zumpus is dull. Zumpuses are yumpuses. Jompuses are floral. Every yumpus is not amenable. Each yumpus is a rompus. Every rompus is opaque. Rompuses are impuses. Impuses are not floral. Impuses are wumpuses. Fae is a dumpus.",
+    "question": "Is the following statement true or false? Fae is not floral.",
+    "answer": "A",
+    "flag": "success",
     "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_13",
+    "context": "Each yumpus is opaque. Each yumpus is a dumpus. Vumpuses are not dull. Dumpuses are floral. Each dumpus is a zumpus. Each zumpus is hot. Every zumpus is an impus. Each impus is large. Every impus is a rompus. Rompuses are spicy. Each rompus is a numpus. Numpuses are amenable. Each numpus is a jompus. Jompuses are dull. Each jompus is a wumpus. Wumpuses are not metallic. Every wumpus is a tumpus. Max is a zumpus.",
+    "question": "Is the following statement true or false? Max is dull.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_14",
+    "context": "Jompuses are large. Every jompus is a zumpus. Each zumpus is sweet. Zumpuses are numpuses. Every numpus is hot. Each tumpus is opaque. Numpuses are yumpuses. Every yumpus is brown. Each yumpus is a wumpus. Wumpuses are not opaque. Wumpuses are impuses. Fae is a jompus.",
+    "question": "Is the following statement true or false? Fae is opaque.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_15",
+    "context": "Jompuses are not small. Jompuses are tumpuses. Tumpuses are not kind. Each tumpus is a vumpus. Vumpuses are metallic. Vumpuses are numpuses. Each numpus is fruity. Each numpus is a dumpus. Dumpuses are nervous. Dumpuses are rompuses. Each rompus is opaque. Every wumpus is dull. Each rompus is a zumpus. Each zumpus is hot. Every zumpus is an impus. Every impus is not dull. Each impus is a yumpus. Sam is a numpus.",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_16",
+    "context": "Yumpuses are hot. Each yumpus is a rompus. Rompuses are happy. Rompuses are impuses. Each impus is not amenable. Every impus is a dumpus. Dumpuses are opaque. Dumpuses are tumpuses. Numpuses are small. Tumpuses are orange. Every tumpus is a wumpus. Wumpuses are not small. Wumpuses are vumpuses. Every vumpus is fruity. Every vumpus is a jompus. Jompuses are not dull. Every jompus is a zumpus. Sally is a rompus.",
+    "question": "Is the following statement true or false? Sally is small.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_17",
+    "context": "Each numpus is not nervous. Every numpus is a wumpus. Wumpuses are liquid. Each wumpus is a jompus. Jompuses are fruity. Zumpuses are not opaque. Each jompus is a yumpus. Every yumpus is kind. Yumpuses are vumpuses. Vumpuses are opaque. Every vumpus is an impus. Impuses are not small. Impuses are rompuses. Rompuses are dull. Rompuses are tumpuses. Every tumpus is temperate. Every tumpus is a dumpus. Fae is a numpus.",
+    "question": "Is the following statement true or false? Fae is not opaque.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_18",
+    "context": "Each dumpus is bright. Each dumpus is a rompus. Every rompus is aggressive. Every rompus is a yumpus. Yumpuses are brown. Yumpuses are vumpuses. Every impus is fruity. Every vumpus is sour. Every vumpus is a numpus. Every numpus is not temperate. Every numpus is a zumpus. Zumpuses are metallic. Zumpuses are jompuses. Each jompus is not fruity. Jompuses are tumpuses. Tumpuses are opaque. Every tumpus is a wumpus. Sam is a yumpus.",
+    "question": "Is the following statement true or false? Sam is fruity.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_19",
+    "context": "Each numpus is not opaque. Each numpus is a wumpus. Each wumpus is feisty. Wumpuses are tumpuses. Tumpuses are fruity. Every tumpus is a dumpus. Every dumpus is wooden. Each dumpus is a yumpus. Yumpuses are blue. Each yumpus is a zumpus. Every zumpus is spicy. Zumpuses are impuses. Each impus is not kind. Impuses are rompuses. Jompuses are not dull. Every rompus is dull. Each rompus is a vumpus. Sam is a dumpus.",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "B",
+    "flag": "execution error",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_20",
+    "context": "Each yumpus is not small. Each yumpus is a dumpus. Each dumpus is opaque. Every dumpus is a jompus. Each jompus is shy. Each numpus is sour. Every jompus is a tumpus. Each tumpus is brown. Each tumpus is a vumpus. Vumpuses are dull. Vumpuses are wumpuses. Every wumpus is not sour. Wumpuses are rompuses. Each rompus is not luminous. Rompuses are impuses. Stella is a dumpus.",
+    "question": "Is the following statement true or false? Stella is sour.",
+    "answer": "B",
+    "flag": "execution error",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_21",
+    "context": "Vumpuses are earthy. Vumpuses are dumpuses. Dumpuses are not wooden. Dumpuses are numpuses. Every numpus is kind. Each numpus is a rompus. Each rompus is small. Every rompus is a jompus. Every jompus is bright. Jompuses are yumpuses. Yumpuses are orange. Every yumpus is a zumpus. Zumpuses are sour. Zumpuses are impuses. Impuses are transparent. Tumpuses are not orange. Each impus is a wumpus. Max is a dumpus.",
+    "question": "Is the following statement true or false? Max is orange.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_22",
+    "context": "Every wumpus is sour. Wumpuses are yumpuses. Each yumpus is aggressive. Every yumpus is a tumpus. Every tumpus is transparent. Tumpuses are vumpuses. Vumpuses are wooden. Each vumpus is a jompus. Each impus is not feisty. Every jompus is large. Jompuses are numpuses. Numpuses are red. Numpuses are rompuses. Every rompus is feisty. Each rompus is a zumpus. Wren is a tumpus.",
+    "question": "Is the following statement true or false? Wren is not feisty.",
+    "answer": "B",
+    "flag": "execution error",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_23",
+    "context": "Every zumpus is not opaque. Each zumpus is a numpus. Numpuses are brown. Numpuses are dumpuses. Each dumpus is amenable. Impuses are not bitter. Every dumpus is a vumpus. Each vumpus is not cold. Each vumpus is a tumpus. Every tumpus is wooden. Every tumpus is a rompus. Each rompus is floral. Rompuses are yumpuses. Yumpuses are bitter. Every yumpus is a wumpus. Wumpuses are not feisty. Wumpuses are jompuses. Sally is a dumpus.",
+    "question": "Is the following statement true or false? Sally is bitter.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_24",
+    "context": "Every numpus is floral. Numpuses are jompuses. Jompuses are not nervous. Each jompus is an impus. Every impus is brown. Every dumpus is not amenable. Each impus is a wumpus. Wumpuses are not bitter. Each wumpus is a zumpus. Every zumpus is not small. Zumpuses are vumpuses. Vumpuses are hot. Vumpuses are rompuses. Rompuses are amenable. Every rompus is a tumpus. Every tumpus is bright. Every tumpus is a yumpus. Alex is an impus.",
+    "question": "Is the following statement true or false? Alex is amenable.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_25",
+    "context": "Zumpuses are dull. Every vumpus is not transparent. Vumpuses are numpuses. Numpuses are blue. Numpuses are wumpuses. Wumpuses are liquid. Each wumpus is a tumpus. Tumpuses are not spicy. Tumpuses are rompuses. Each rompus is not dull. Rompuses are yumpuses. Every yumpus is floral. Every yumpus is an impus. Impuses are hot. Each impus is a jompus. Every jompus is large. Jompuses are dumpuses. Sam is a vumpus.",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_26",
+    "context": "Each numpus is fruity. Every numpus is a tumpus. Every tumpus is dull. Every tumpus is a jompus. Every jompus is not orange. Each jompus is an impus. Each impus is not shy. Impuses are wumpuses. Wumpuses are sweet. Wumpuses are rompuses. Every rompus is not amenable. Each rompus is a zumpus. Every zumpus is large. Zumpuses are yumpuses. Every vumpus is not large. Yumpuses are transparent. Yumpuses are dumpuses. Rex is a jompus.",
+    "question": "Is the following statement true or false? Rex is large.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_27",
+    "context": "Wumpuses are not sour. Each wumpus is a rompus. Rompuses are dull. Each rompus is a dumpus. Every dumpus is feisty. Jompuses are aggressive. Dumpuses are tumpuses. Tumpuses are opaque. Every tumpus is a numpus. Numpuses are hot. Numpuses are zumpuses. Zumpuses are large. Every zumpus is a vumpus. Vumpuses are blue. Every vumpus is an impus. Impuses are not aggressive. Impuses are yumpuses. Fae is a tumpus.",
+    "question": "Is the following statement true or false? Fae is not aggressive.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_28",
+    "context": "Each impus is small. Each zumpus is not fruity. Every zumpus is a numpus. Each numpus is bitter. Numpuses are rompuses. Rompuses are kind. Rompuses are wumpuses. Every wumpus is not wooden. Wumpuses are yumpuses. Every yumpus is not temperate. Yumpuses are dumpuses. Every dumpus is dull. Dumpuses are tumpuses. Tumpuses are not small. Tumpuses are jompuses. Every jompus is nervous. Each jompus is a vumpus. Alex is a rompus.",
+    "question": "Is the following statement true or false? Alex is small.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_29",
+    "context": "Every jompus is liquid. Jompuses are rompuses. Every rompus is mean. Rompuses are zumpuses. Each zumpus is transparent. Zumpuses are tumpuses. Tumpuses are not earthy. Each dumpus is bright. Tumpuses are yumpuses. Yumpuses are not bright. Yumpuses are impuses. Impuses are temperate. Impuses are numpuses. Every numpus is feisty. Numpuses are wumpuses. Max is a jompus.",
+    "question": "Is the following statement true or false? Max is bright.",
+    "answer": "B",
+    "flag": "execution error",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_30",
+    "context": "Impuses are bright. Every impus is a jompus. Jompuses are mean. Every zumpus is not temperate. Each jompus is a vumpus. Vumpuses are transparent. Every vumpus is a tumpus. Every tumpus is shy. Tumpuses are numpuses. Each numpus is not blue. Every numpus is a dumpus. Dumpuses are not fruity. Each dumpus is a wumpus. Wumpuses are temperate. Wumpuses are rompuses. Rompuses are metallic. Rompuses are yumpuses. Fae is a vumpus.",
+    "question": "Is the following statement true or false? Fae is temperate.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_31",
+    "context": "Each jompus is not small. Each wumpus is angry. Each jompus is a zumpus. Zumpuses are temperate. Zumpuses are tumpuses. Tumpuses are brown. Tumpuses are yumpuses. Yumpuses are wooden. Yumpuses are dumpuses. Each dumpus is not angry. Every dumpus is a numpus. Numpuses are not dull. Every numpus is a vumpus. Wren is a jompus.",
+    "question": "Is the following statement true or false? Wren is not angry.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_32",
+    "context": "Numpuses are earthy. Numpuses are vumpuses. Vumpuses are transparent. Each vumpus is a tumpus. Tumpuses are small. Tumpuses are dumpuses. Each dumpus is not aggressive. Dumpuses are wumpuses. Every wumpus is not wooden. Every wumpus is a jompus. Jompuses are not nervous. Each jompus is a zumpus. Each zumpus is temperate. Rompuses are wooden. Zumpuses are impuses. Each impus is blue. Impuses are yumpuses. Sally is a numpus.",
+    "question": "Is the following statement true or false? Sally is not wooden.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_33",
+    "context": "Every yumpus is not temperate. Yumpuses are rompuses. Every rompus is large. Every rompus is an impus. Impuses are not blue. Impuses are tumpuses. Tumpuses are nervous. Tumpuses are wumpuses. Wumpuses are bright. Numpuses are not bright. Each wumpus is a zumpus. Every zumpus is not fruity. Zumpuses are dumpuses. Dumpuses are opaque. Dumpuses are vumpuses. Vumpuses are mean. Vumpuses are jompuses. Stella is a yumpus.",
+    "question": "Is the following statement true or false? Stella is not bright.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_34",
+    "context": "Impuses are bright. Every impus is a rompus. Rompuses are floral. Each rompus is a yumpus. Every yumpus is opaque. Yumpuses are numpuses. Each numpus is red. Every numpus is a dumpus. Dumpuses are bitter. Every dumpus is a vumpus. Vumpuses are not mean. Vumpuses are tumpuses. Tumpuses are not shy. Each wumpus is shy. Tumpuses are zumpuses. Each zumpus is temperate. Zumpuses are jompuses. Sam is a yumpus.",
+    "question": "Is the following statement true or false? Sam is shy.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_35",
+    "context": "Each zumpus is not wooden. Every zumpus is a vumpus. Every vumpus is not sour. Every vumpus is a jompus. Every jompus is floral. Each jompus is a wumpus. Every wumpus is transparent. Wumpuses are impuses. Impuses are dull. Every impus is a yumpus. Each yumpus is feisty. Numpuses are not orange. Every yumpus is a dumpus. Dumpuses are orange. Each dumpus is a rompus. Each rompus is not aggressive. Rompuses are tumpuses. Fae is a jompus.",
+    "question": "Is the following statement true or false? Fae is orange.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_36",
+    "context": "Every jompus is bright. Every jompus is a wumpus. Each wumpus is wooden. Each wumpus is a yumpus. Yumpuses are amenable. Yumpuses are impuses. Impuses are temperate. Impuses are tumpuses. Tumpuses are shy. Every tumpus is a rompus. Rompuses are not small. Every rompus is a numpus. Numpuses are fruity. Each dumpus is not shy. Numpuses are vumpuses. Sally is a jompus.",
+    "question": "Is the following statement true or false? Sally is shy.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_37",
+    "context": "Impuses are not fruity. Impuses are wumpuses. Each wumpus is not temperate. Wumpuses are dumpuses. Rompuses are not sweet. Dumpuses are kind. Dumpuses are zumpuses. Zumpuses are wooden. Zumpuses are vumpuses. Every vumpus is large. Vumpuses are yumpuses. Yumpuses are transparent. Yumpuses are numpuses. Numpuses are brown. Numpuses are tumpuses. Tumpuses are sweet. Tumpuses are jompuses. Wren is a zumpus.",
+    "question": "Is the following statement true or false? Wren is sweet.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_38",
+    "context": "Vumpuses are wooden. Every vumpus is a jompus. Jompuses are earthy. Each jompus is a wumpus. Wumpuses are not transparent. Wumpuses are yumpuses. Yumpuses are not bright. Each yumpus is an impus. Every rompus is happy. Impuses are not happy. Each impus is a dumpus. Dumpuses are brown. Dumpuses are zumpuses. Zumpuses are not sour. Zumpuses are numpuses. Every numpus is not angry. Numpuses are tumpuses. Polly is a vumpus.",
+    "question": "Is the following statement true or false? Polly is not happy.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_39",
+    "context": "Each rompus is amenable. Each rompus is an impus. Impuses are happy. Every impus is a wumpus. Wumpuses are sour. Each wumpus is a zumpus. Zumpuses are fruity. Zumpuses are tumpuses. Each tumpus is not large. Every tumpus is a vumpus. Yumpuses are not hot. Every vumpus is liquid. Every vumpus is a jompus. Jompuses are hot. Jompuses are dumpuses. Stella is a wumpus.",
+    "question": "Is the following statement true or false? Stella is not hot.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_40",
+    "context": "Yumpuses are small. Yumpuses are vumpuses. Vumpuses are red. Vumpuses are numpuses. Numpuses are bitter. Each numpus is a wumpus. Each impus is not amenable. Every wumpus is bright. Every wumpus is a dumpus. Every dumpus is temperate. Dumpuses are rompuses. Rompuses are floral. Rompuses are tumpuses. Tumpuses are opaque. Each tumpus is a jompus. Every jompus is amenable. Every jompus is a zumpus. Sally is a wumpus.",
+    "question": "Is the following statement true or false? Sally is amenable.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_41",
+    "context": "Rompuses are transparent. Every rompus is a yumpus. Yumpuses are earthy. Yumpuses are jompuses. Every jompus is not large. Each jompus is a wumpus. Each wumpus is not brown. Tumpuses are hot. Wumpuses are zumpuses. Every zumpus is dull. Zumpuses are numpuses. Numpuses are bitter. Every numpus is a dumpus. Dumpuses are not shy. Each dumpus is an impus. Impuses are not hot. Impuses are vumpuses. Max is a wumpus.",
+    "question": "Is the following statement true or false? Max is not hot.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_42",
+    "context": "Tumpuses are dull. Tumpuses are jompuses. Jompuses are not sour. Each jompus is a vumpus. Vumpuses are feisty. Vumpuses are dumpuses. Dumpuses are cold. Each dumpus is a yumpus. Each yumpus is transparent. Each yumpus is a numpus. Numpuses are not amenable. Numpuses are zumpuses. Each zumpus is orange. Each zumpus is a rompus. Rompuses are earthy. Each impus is not orange. Rompuses are wumpuses. Wren is a vumpus.",
+    "question": "Is the following statement true or false? Wren is not orange.",
+    "answer": "B",
+    "flag": "execution error",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_43",
+    "context": "Each impus is luminous. Every impus is a zumpus. Every zumpus is shy. Every zumpus is a numpus. Numpuses are not cold. Each numpus is a tumpus. Tumpuses are large. Each tumpus is a yumpus. Each yumpus is angry. Yumpuses are vumpuses. Vumpuses are not earthy. Vumpuses are jompuses. Every jompus is not sour. Dumpuses are not angry. Jompuses are rompuses. Rompuses are not opaque. Rompuses are wumpuses. Polly is an impus.",
+    "question": "Is the following statement true or false? Polly is angry.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_44",
+    "context": "Yumpuses are floral. Each yumpus is a vumpus. Vumpuses are not temperate. Vumpuses are jompuses. Jompuses are not dull. Impuses are not spicy. Jompuses are numpuses. Numpuses are not opaque. Each numpus is a wumpus. Every wumpus is amenable. Wumpuses are rompuses. Each rompus is not red. Rompuses are tumpuses. Tumpuses are spicy. Every tumpus is a dumpus. Dumpuses are shy. Each dumpus is a zumpus. Rex is a jompus.",
+    "question": "Is the following statement true or false? Rex is not spicy.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_45",
+    "context": "Dumpuses are cold. Dumpuses are numpuses. Each numpus is not bitter. Every numpus is a zumpus. Zumpuses are fruity. Zumpuses are wumpuses. Wumpuses are large. Each tumpus is not wooden. Each wumpus is an impus. Every impus is wooden. Impuses are rompuses. Fae is a dumpus.",
+    "question": "Is the following statement true or false? Fae is wooden.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_46",
+    "context": "Each rompus is nervous. Rompuses are jompuses. Jompuses are angry. Jompuses are tumpuses. Tumpuses are earthy. Every tumpus is a numpus. Each numpus is not cold. Each numpus is an impus. Dumpuses are metallic. Impuses are dull. Each impus is a zumpus. Zumpuses are not opaque. Zumpuses are wumpuses. Every wumpus is blue. Wumpuses are vumpuses. Every vumpus is not metallic. Every vumpus is a yumpus. Sally is a numpus.",
+    "question": "Is the following statement true or false? Sally is not metallic.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "ProntoQA_47",
+    "context": "Vumpuses are fruity. Vumpuses are jompuses. Jompuses are opaque. Every jompus is a wumpus. Every wumpus is nervous. Each wumpus is an impus. Every impus is sour. Impuses are tumpuses. Every tumpus is not amenable. Each tumpus is a yumpus. Yumpuses are not metallic. Yumpuses are numpuses. Numpuses are large. Every numpus is a rompus. Dumpuses are not cold. Each rompus is cold. Each rompus is a zumpus. Max is an impus.",
+    "question": "Is the following statement true or false? Max is not cold.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_48",
+    "context": "Tumpuses are fruity. Yumpuses are nervous. Yumpuses are numpuses. Each numpus is large. Each numpus is a rompus. Each rompus is red. Rompuses are vumpuses. Vumpuses are temperate. Each vumpus is a jompus. Every jompus is spicy. Each jompus is an impus. Impuses are not metallic. Impuses are wumpuses. Each wumpus is bright. Wumpuses are zumpuses. Zumpuses are not fruity. Each zumpus is a dumpus. Sam is a vumpus.",
+    "question": "Is the following statement true or false? Sam is not fruity.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_49",
+    "context": "Wumpuses are dull. Wumpuses are rompuses. Every rompus is not cold. Rompuses are dumpuses. Dumpuses are feisty. Dumpuses are numpuses. Numpuses are mean. Numpuses are zumpuses. Every zumpus is not earthy. Every zumpus is a tumpus. Every tumpus is opaque. Impuses are liquid. Tumpuses are vumpuses. Every vumpus is not liquid. Vumpuses are jompuses. Each jompus is not spicy. Jompuses are yumpuses. Wren is a dumpus.",
+    "question": "Is the following statement true or false? Wren is liquid.",
+    "answer": "B",
+    "flag": "execution error",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProntoQA_50",
+    "context": "Jompuses are not blue. Each rompus is happy. Rompuses are dumpuses. Dumpuses are not cold. Each dumpus is a wumpus. Each wumpus is liquid. Each wumpus is an impus. Each impus is kind. Every impus is a yumpus. Each yumpus is bright. Yumpuses are zumpuses. Each zumpus is sour. Each zumpus is a vumpus. Every vumpus is small. Vumpuses are tumpuses. Every tumpus is blue. Every tumpus is a numpus. Fae is an impus.",
+    "question": "Is the following statement true or false? Fae is not blue.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
   }
 ]

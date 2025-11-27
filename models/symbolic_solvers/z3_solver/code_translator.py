@@ -74,11 +74,14 @@ class CodeTranslator:
 
         sanitized_symbols = [str(x) for x in int_sort_values]
         if all(symbol.isidentifier() for symbol in sanitized_symbols):
-            line2 = "{} = Ints('{}')".format(
-                ", ".join(sanitized_symbols),
-                " ".join(sanitized_symbols)
+            line2 = CodeTranslator.StdCodeLine(
+                "{} = Ints('{}')".format(
+                    ", ".join(sanitized_symbols),
+                    " ".join(sanitized_symbols)
+                ),
+                CodeTranslator.LineType.DECL
             )
-            lines.append(CodeTranslator.StdCodeLine(line2, CodeTranslator.LineType.DECL))
+            lines.append(line2)
 
         line3 = "{} = [{}]".format(
             int_sort_name,

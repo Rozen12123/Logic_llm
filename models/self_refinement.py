@@ -36,6 +36,8 @@ class SelfRefinementEngine:
         self.dataset_name = args.dataset_name
         self.backup_strategy = args.backup_strategy
         self.api_provider = getattr(args, 'api_provider', 'zhipuai')
+        # 预留并发配置点（目前 single_round_self_refinement 仍为顺序执行）
+        self.max_concurrent = getattr(args, 'max_concurrent', 1)
         
         # 根据API提供商选择使用OpenAI或智谱AI
         # 注意：self-refinement 默认使用 gpt-4，但如果是智谱AI，使用指定的模型
@@ -109,12 +111,19 @@ class SelfRefinementEngine:
             return answer, 'parsing error', error_message
         # execuate the program
         answer, error_message = program.execute_program(debug=debug)
+
+        # 确保错误信息是字符串，避免后续调用 .strip() 或写入文件时报错
+        if not isinstance(error_message, str):
+            try:
+                error_message = str(error_message)
+            except Exception:
+                error_message = 'Execution Error: Unknown error object returned from execute_program'
         # not executable
         if answer is None:
             answer = self.backup_generator.get_backup_answer(id)
             
             # 确保错误消息不为空
-            if not error_message or error_message.strip() == '':
+            if not error_message or (isinstance(error_message, str) and error_message.strip() == ''):
                 error_message = 'Execution Error: Program execution failed with no output'
 
             ## output debug info
@@ -138,6 +147,13 @@ class SelfRefinementEngine:
         outputs = []
         fixed_count = 0
         for example in tqdm(self.logic_programs):
+            # 如果之前轮次已经成功（refinement_status == 'success'），则直接跳过后续自我修正
+            # 只把该样本原样写入本轮输出，避免重复调用求解器和大模型
+            prev_status = example.get('refinement_status')
+            if prev_status == 'success':
+                outputs.append(example)
+                continue
+
             logic_program = example['raw_logic_programs'][0].strip()
             answer, status, error_message = self.safe_execute_program(example['id'], logic_program)
 
@@ -155,11 +171,13 @@ class SelfRefinementEngine:
                     # 如果修复成功，使用修复后的程序；否则保留原程序
                     if revised_status == 'success':
                         programs = [revised_program]
+                        refinement_status = 'success'
                         fixed_count += 1
                         print(f"Fixed example {example['id']} after {status}")
                     else:
-                        # 修复失败，保留原程序
+                        # 修复失败，保留原程序，标记为仍需后续轮次尝试
                         programs = [logic_program]
+                        refinement_status = 'failed'
                         print(f"Failed to fix example {example['id']}, keeping original program")
                     
                     output = {'id': example['id'], 
@@ -167,7 +185,8 @@ class SelfRefinementEngine:
                             'question': example['question'], 
                             'answer': example['answer'],
                             'options': example.get('options', []),
-                            'raw_logic_programs': programs}
+                            'raw_logic_programs': programs,
+                            'refinement_status': refinement_status}
                     outputs.append(output)
                 else:
                     outputs.append(example)
@@ -185,11 +204,13 @@ class SelfRefinementEngine:
                 # 如果修复成功，使用修复后的程序；否则保留原程序
                 if revised_status == 'success':
                     programs = [revised_program]
+                    refinement_status = 'success'
                     fixed_count += 1
                     print(f"Fixed example {example['id']} after {status}")
                 else:
-                    # 修复失败，保留原程序
+                    # 修复失败，保留原程序，标记为仍需后续轮次尝试
                     programs = [logic_program]
+                    refinement_status = 'failed'
                     print(f"Failed to fix example {example['id']}, keeping original program")
                 
                 output = {'id': example['id'], 
@@ -197,9 +218,12 @@ class SelfRefinementEngine:
                         'question': example['question'], 
                         'answer': example['answer'],
                         'options': example.get('options', []),
-                        'raw_logic_programs': programs}
+                        'raw_logic_programs': programs,
+                        'refinement_status': refinement_status}
                 outputs.append(output)
             else:
+                # 本轮无需自我修正，但将其标记为 success，便于后续轮次直接跳过
+                example.setdefault('refinement_status', 'success')
                 outputs.append(example)
         
         print(f"Fixed {fixed_count} examples in this round.")

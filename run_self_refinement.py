@@ -10,11 +10,11 @@
 # ============================================================================
 
 # 数据集配置
-DATASET_NAME = 'ProntoQA'      # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
+DATASET_NAME = 'ProofWriter'      # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
 DATASET_SPLIT = 'dev'          # 可选: 'dev', 'test'
 
 # 自我修正轮数
-MAXIMUM_ROUNDS = 1             # 自我修正轮数，如 1 / 2 / 3
+MAXIMUM_ROUNDS = 3             # 自我修正轮数，如 1 / 2 / 3
 
 # 并发设置（预留，与 models/self_refinement.py 中的实现配合使用）
 MAX_CONCURRENT = 1             # 当前自我修正内部仍为顺序执行，此参数为预留配置点

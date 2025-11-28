@@ -10,11 +10,11 @@
 # ============================================================================
 
 # 数据集配置
-DATASET_NAME = 'self-refine-1_ProntoQA'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT', 'self-refine-1_ProntoQA'
+DATASET_NAME = 'ProofWriter'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT', 'self-refine-1_ProntoQA'
 DATASET_SPLIT = 'dev'      # 可选: 'dev', 'test'
 
 # 模型配置（需要与 run_logic_program.py 中使用的模型名称一致）
-MODEL_NAME = 'glm-4-flash-250414'  # 必须与生成逻辑程序时使用的模型名称一致
+MODEL_NAME = 'glm-4.6'  # 必须与生成逻辑程序时使用的模型名称一致glm-4-flash-250414
 
 # 备份策略配置
 BACKUP_STRATEGY = 'random'  # 可选: 'random', 'LLM'

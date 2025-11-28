@@ -1,0 +1,804 @@
+[
+  {
+    "id": "ProntoQA_1",
+    "context": "Jompuses are not shy. Jompuses are yumpuses. Each yumpus is aggressive. Each yumpus is a dumpus. Dumpuses are not wooden. Dumpuses are wumpuses. Wumpuses are red. Every wumpus is an impus. Each impus is opaque. Impuses are tumpuses. Numpuses are sour. Tumpuses are not sour. Tumpuses are vumpuses. Vumpuses are earthy. Every vumpus is a zumpus. Zumpuses are small. Zumpuses are rompuses. Max is a yumpus.",
+    "question": "Is the following statement true or false? Max is sour.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据规则，如果x是Tumpus，则Sour(x)为False。已知Max是Yumpus，根据规则Yumpus(Max, True) >>> Tumpus(Max, True)，因此Max是Tumpus。根据规则Tumpus($x, True) >>> Sour($x, False)，因此Sour(Max, False)为True。但是题目问的是Max是否sour，而根据规则Sour(Max, False)为True，所以Max不是sour，因此答案是False，对应选项B。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据规则，如果x是Tumpus，则Sour(x)为False。已知Max是Yumpus，根据规则Yumpus(Max, True) >>> Tumpus(Max, True)，因此Max是Tumpus。根据规则Tumpus($x, True) >>> Sour($x, False)，因此Sour(Max, False)为True。但是题目问的是Max是否sour，而根据规则Sour(Max, False)为True，所以Max不是sour，因此答案是False，对应选项B。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_2",
+    "context": "Every tumpus is not angry. Tumpuses are rompuses. Every numpus is not bright. Rompuses are not luminous. Rompuses are yumpuses. Yumpuses are transparent. Yumpuses are zumpuses. Each zumpus is not bitter. Zumpuses are impuses. Impuses are red. Each impus is a dumpus. Every dumpus is happy. Each dumpus is a vumpus. Vumpuses are bright. Every vumpus is a jompus. Jompuses are large. Each jompus is a wumpus. Stella is a yumpus.",
+    "question": "Is the following statement true or false? Stella is bright.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_3",
+    "context": "Vumpuses are floral. Vumpuses are tumpuses. Tumpuses are brown. Each tumpus is a wumpus. Wumpuses are small. Each wumpus is a rompus. Each zumpus is metallic. Every rompus is happy. Rompuses are impuses. Each impus is amenable. Each impus is a dumpus. Every dumpus is not metallic. Dumpuses are numpuses. Each numpus is bitter. Each numpus is a jompus. Every jompus is cold. Each jompus is a yumpus. Wren is a tumpus.",
+    "question": "Is the following statement true or false? Wren is not metallic.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据题目信息和符号逻辑程序，Wren 是一个 Tumpus（事实）。根据规则，Tumpus($x, True) >>> Wumpus($x, True)，因此 Wren 也是 Wumpus。根据规则，Wumpus($x, True) >>> Rompus($x, True)，因此 Wren 也是 Rompus。根据规则，Rompus($x, True) >>> Impus($x, True)，因此 Wren 也是 Impus。根据规则，Impus($x, True) >>> Dumpus($x, True)，因此 Wren 也是 Dumpus。根据规则，Dumpus($x, True) >>> NotMetallic($x, True)，因此 Wren 不是 Metallic。所以，Wren is not metallic 是真话。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据题目信息和符号逻辑程序，Wren 是一个 Tumpus（事实）。根据规则，Tumpus($x, True) >>> Wumpus($x, True)，因此 Wren 也是 Wumpus。根据规则，Wumpus($x, True) >>> Rompus($x, True)，因此 Wren 也是 Rompus。根据规则，Rompus($x, True) >>> Impus($x, True)，因此 Wren 也是 Impus。根据规则，Impus($x, True) >>> Dumpus($x, True)，因此 Wren 也是 Dumpus。根据规则，Dumpus($x, True) >>> NotMetallic($x, True)，因此 Wren 不是 Metallic。所以，Wren is not metallic 是真话。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_4",
+    "context": "Rompuses are spicy. Every rompus is an impus. Yumpuses are not small. Impuses are orange. Impuses are zumpuses. Zumpuses are not hot. Zumpuses are numpuses. Numpuses are metallic. Numpuses are wumpuses. Every wumpus is not kind. Each wumpus is a dumpus. Each dumpus is not bright. Every dumpus is a jompus. Jompuses are small. Jompuses are vumpuses. Each vumpus is not shy. Every vumpus is a tumpus. Alex is a zumpus.",
+    "question": "Is the following statement true or false? Alex is not small.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_5",
+    "context": "Rompuses are mean. Rompuses are zumpuses. Each zumpus is not happy. Each zumpus is a numpus. Each numpus is not temperate. Each numpus is a tumpus. Tumpuses are not large. Tumpuses are yumpuses. Every yumpus is earthy. Each yumpus is a jompus. Jompuses are blue. Every jompus is a wumpus. Wumpuses are not dull. Wumpuses are impuses. Each vumpus is dull. Impuses are sour. Impuses are dumpuses. Alex is a numpus.",
+    "question": "Is the following statement true or false? Alex is not dull.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据符号逻辑程序，Numpus(Alex, True) 是事实。根据规则，Numpus($x, True) >>> Wumpus($x, True)，因此 Wumpus(Alex, True)。根据规则，Wumpus($x, True) >>> Dull($x, False)，因此 Dull(Alex, False)。所以，Alex is not dull 是真的。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据符号逻辑程序，Numpus(Alex, True) 是事实。根据规则，Numpus($x, True) >>> Wumpus($x, True)，因此 Wumpus(Alex, True)。根据规则，Wumpus($x, True) >>> Dull($x, False)，因此 Dull(Alex, False)。所以，Alex is not dull 是真的。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_6",
+    "context": "Every tumpus is large. Tumpuses are wumpuses. Each wumpus is not opaque. Every dumpus is not dull. Every wumpus is a rompus. Every rompus is brown. Each rompus is a vumpus. Each vumpus is temperate. Vumpuses are jompuses. Jompuses are dull. Jompuses are numpuses. Every numpus is liquid. Each numpus is an impus. Impuses are spicy. Every impus is a yumpus. Every yumpus is not nervous. Every yumpus is a zumpus. Wren is a tumpus.",
+    "question": "Is the following statement true or false? Wren is dull.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "A",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_7",
+    "context": "Every rompus is orange. Every rompus is an impus. Vumpuses are happy. Every impus is spicy. Every impus is a wumpus. Wumpuses are transparent. Wumpuses are numpuses. Every numpus is not kind. Numpuses are tumpuses. Each tumpus is not bright. Tumpuses are yumpuses. Every yumpus is not liquid. Yumpuses are dumpuses. Each dumpus is not happy. Dumpuses are zumpuses. Every zumpus is earthy. Each zumpus is a jompus. Stella is a wumpus.",
+    "question": "Is the following statement true or false? Stella is happy.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据题目信息，Stella 是一个 wumpus。根据规则，Wumpus($x, True) >>> Numpus($x, True)。因此，Stella 是一个 Numpus。根据规则，Numpus($x, True) >>> Kind($x, False)，这意味着 Stella 不是 kind。根据规则，Numpus($x, True) >>> Tumpus($x, True)，这意味着 Stella 是一个 Tumpus。根据规则，Tumpus($x, True) >>> Bright($x, False)，这意味着 Stella 不是 bright。根据规则，Tumpus($x, True) >>> Yumpus($x, True)，这意味着 Stella 是一个 Yumpus。根据规则，Yumpus($x, True) >>> Liquid($x, False)，这意味着 Stella 不是 liquid。根据规则，Yumpus($x, True) >>> Dumpus($x, True)，这意味着 Stella 是一个 Dumpus。根据规则，Dumpus($x, True) >>> Happy($x, False)，这意味着 Stella 不是 happy。因此，Stella 不是 happy，所以答案是 False，即选项 B。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据题目信息，Stella 是一个 wumpus。根据规则，Wumpus($x, True) >>> Numpus($x, True)。因此，Stella 是一个 Numpus。根据规则，Numpus($x, True) >>> Kind($x, False)，这意味着 Stella 不是 kind。根据规则，Numpus($x, True) >>> Tumpus($x, True)，这意味着 Stella 是一个 Tumpus。根据规则，Tumpus($x, True) >>> Bright($x, False)，这意味着 Stella 不是 bright。根据规则，Tumpus($x, True) >>> Yumpus($x, True)，这意味着 Stella 是一个 Yumpus。根据规则，Yumpus($x, True) >>> Liquid($x, False)，这意味着 Stella 不是 liquid。根据规则，Yumpus($x, True) >>> Dumpus($x, True)，这意味着 Stella 是一个 Dumpus。根据规则，Dumpus($x, True) >>> Happy($x, False)，这意味着 Stella 不是 happy。因此，Stella 不是 happy，所以答案是 False，即选项 B。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_8",
+    "context": "Every jompus is sour. Each jompus is a rompus. Rompuses are not kind. Every rompus is a zumpus. Every zumpus is feisty. Zumpuses are tumpuses. Tumpuses are small. Tumpuses are wumpuses. Wumpuses are opaque. Wumpuses are impuses. Every yumpus is hot. Impuses are brown. Impuses are dumpuses. Dumpuses are not hot. Every dumpus is a vumpus. Each vumpus is dull. Vumpuses are numpuses. Alex is a zumpus.",
+    "question": "Is the following statement true or false? Alex is hot.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据符号逻辑程序，已知 Alex 是 Zumpus (Zumpus(Alex, True))。根据规则，Zumpus($x, True) >>> Hot($x, True)，这意味着如果 x 是 Zumpus，那么 x 是 Hot。但是，规则中还有 Impuses($x, True) >>> Hot($x, False)，这意味着如果 x 是 Impuses，那么 x 不是 Hot。由于 Alex 是 Zumpus，根据 Zumpus 规则，Alex 也可能是 Impuses（因为 Zumpus($x, True) >>> Tumpuses($x, True) >>> Wumpus($x, True) >>> Impuses($x, True)）。因此，Alex 可能是 Hot，也可能不是 Hot，但由于存在一个规则 Impuses($x, True) >>> Hot($x, False) 强制 Alex 不是 Hot，所以 Alex 不是 Hot。因此，查询 Hot(Alex, True) 为 False。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据符号逻辑程序，已知 Alex 是 Zumpus (Zumpus(Alex, True))。根据规则，Zumpus($x, True) >>> Hot($x, True)，这意味着如果 x 是 Zumpus，那么 x 是 Hot。但是，规则中还有 Impuses($x, True) >>> Hot($x, False)，这意味着如果 x 是 Impuses，那么 x 不是 Hot。由于 Alex 是 Zumpus，根据 Zumpus 规则，Alex 也可能是 Impuses（因为 Zumpus($x, True) >>> Tumpuses($x, True) >>> Wumpus($x, True) >>> Impuses($x, True)）。因此，Alex 可能是 Hot，也可能不是 Hot，但由于存在一个规则 Impuses($x, True) >>> Hot($x, False) 强制 Alex 不是 Hot，所以 Alex 不是 Hot。因此，查询 Hot(Alex, True) 为 False。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_9",
+    "context": "Every dumpus is not shy. Each dumpus is a tumpus. Rompuses are not wooden. Tumpuses are opaque. Every tumpus is a wumpus. Wumpuses are not floral. Each wumpus is an impus. Impuses are bitter. Every impus is a vumpus. Vumpuses are small. Each vumpus is a numpus. Every numpus is wooden. Each numpus is a yumpus. Each yumpus is orange. Each yumpus is a jompus. Each jompus is amenable. Every jompus is a zumpus. Wren is a tumpus.",
+    "question": "Is the following statement true or false? Wren is wooden.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据符号逻辑程序，Wren 是 Tumpus（事实），并且 Tumpus($x, True) >>> Numpus($x, True) 和 Numpus($x, True) >>> Wooden($x, True)。因此，Wren 是 Numpus，并且 Wren 是 Wooden。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据符号逻辑程序，Wren 是 Tumpus（事实），并且 Tumpus($x, True) >>> Numpus($x, True) 和 Numpus($x, True) >>> Wooden($x, True)。因此，Wren 是 Numpus，并且 Wren 是 Wooden。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_10",
+    "context": "Every impus is earthy. Each impus is a jompus. Jompuses are small. Jompuses are rompuses. Rompuses are not amenable. Rompuses are wumpuses. Wumpuses are wooden. Wumpuses are zumpuses. Every zumpus is temperate. Every zumpus is a dumpus. Dumpuses are dull. Dumpuses are vumpuses. Every vumpus is not shy. Every yumpus is sweet. Vumpuses are numpuses. Numpuses are not sweet. Numpuses are tumpuses. Fae is a wumpus.",
+    "question": "Is the following statement true or false? Fae is sweet.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据符号逻辑程序，Fae 是一个 Wumpus（Wumpus(Fae, True)）。根据规则，Wumpus($x, True) >>> Numpus($x, True)，因此 Fae 是一个 Numpus。根据规则，Numpus($x, True) >>> NotSweet($x, True)，因此 Fae 不是甜的。所以，'Fae is sweet' 这个陈述是假的。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据符号逻辑程序，Fae 是一个 Wumpus（Wumpus(Fae, True)）。根据规则，Wumpus($x, True) >>> Numpus($x, True)，因此 Fae 是一个 Numpus。根据规则，Numpus($x, True) >>> NotSweet($x, True)，因此 Fae 不是甜的。所以，'Fae is sweet' 这个陈述是假的。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_11",
+    "context": "Each jompus is not amenable. Wumpuses are not fruity. Every jompus is a vumpus. Every vumpus is not shy. Every vumpus is a rompus. Rompuses are not bitter. Rompuses are dumpuses. Dumpuses are opaque. Every dumpus is a yumpus. Every yumpus is orange. Yumpuses are zumpuses. Zumpuses are fruity. Each zumpus is a numpus. Numpuses are metallic. Every numpus is a tumpus. Each tumpus is large. Each tumpus is an impus. Sam is a vumpus.",
+    "question": "Is the following statement true or false? Sam is not fruity.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_12",
+    "context": "Each tumpus is orange. Tumpuses are numpuses. Numpuses are small. Numpuses are vumpuses. Every vumpus is sour. Vumpuses are dumpuses. Each dumpus is cold. Every dumpus is a zumpus. Each zumpus is dull. Zumpuses are yumpuses. Jompuses are floral. Every yumpus is not amenable. Each yumpus is a rompus. Every rompus is opaque. Rompuses are impuses. Impuses are not floral. Impuses are wumpuses. Fae is a dumpus.",
+    "question": "Is the following statement true or false? Fae is not floral.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据符号逻辑程序中的事实和规则，Fae 是一个 Dumpus（事实）。根据规则，每个 Dumpus 都是 Zumpus（规则：Dumpus($x, True) >>> Zumpus($x, True)）。根据规则，每个 Zumpus 都是 Yumpus（规则：Zumpus($x, True) >>> Yumpus($x, True)）。根据规则，每个 Yumpus 是 Rompus（规则：Yumpus($x, True) >>> Rompus($x, True)）。根据规则，每个 Rompus 是 Impuses（规则：Rompus($x, True) >>> Impuses($x, True)）。根据规则，每个 Impuses 是 Floral(False)（规则：Impuses($x, True) >>> Floral($x, False)）。因此，Fae 是 Impuses，而 Impuses 是 Floral(False)，所以 Fae 是 Floral(False)。因此，查询 'Fae is not floral' 是真的。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据符号逻辑程序中的事实和规则，Fae 是一个 Dumpus（事实）。根据规则，每个 Dumpus 都是 Zumpus（规则：Dumpus($x, True) >>> Zumpus($x, True)）。根据规则，每个 Zumpus 都是 Yumpus（规则：Zumpus($x, True) >>> Yumpus($x, True)）。根据规则，每个 Yumpus 是 Rompus（规则：Yumpus($x, True) >>> Rompus($x, True)）。根据规则，每个 Rompus 是 Impuses（规则：Rompus($x, True) >>> Impuses($x, True)）。根据规则，每个 Impuses 是 Floral(False)（规则：Impuses($x, True) >>> Floral($x, False)）。因此，Fae 是 Impuses，而 Impuses 是 Floral(False)，所以 Fae 是 Floral(False)。因此，查询 'Fae is not floral' 是真的。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_13",
+    "context": "Each yumpus is opaque. Each yumpus is a dumpus. Vumpuses are not dull. Dumpuses are floral. Each dumpus is a zumpus. Each zumpus is hot. Every zumpus is an impus. Each impus is large. Every impus is a rompus. Rompuses are spicy. Each rompus is a numpus. Numpuses are amenable. Each numpus is a jompus. Jompuses are dull. Each jompus is a wumpus. Wumpuses are not metallic. Every wumpus is a tumpus. Max is a zumpus.",
+    "question": "Is the following statement true or false? Max is dull.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "A",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_14",
+    "context": "Jompuses are large. Every jompus is a zumpus. Each zumpus is sweet. Zumpuses are numpuses. Every numpus is hot. Each tumpus is opaque. Numpuses are yumpuses. Every yumpus is brown. Each yumpus is a wumpus. Wumpuses are not opaque. Wumpuses are impuses. Fae is a jompus.",
+    "question": "Is the following statement true or false? Fae is opaque.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据符号逻辑程序，Fae 是 Jompus，因此满足 Jompus(Fae, True)。根据规则 Jompus($x, True) >>> Zumpus($x, True)，Fae 也是 Zumpus。根据规则 Zumpus($x, True) >>> Numpus($x, True)，Fae 也是 Numpus。根据规则 Numpus($x, True) >>> Yumpus($x, True)，Fae 也是 Yumpus。根据规则 Yumpus($x, True) >>> Wumpus($x, True)，Fae 也是 Wumpus。根据规则 Wumpus($x, True) >>> Opaque($x, False)，Fae 是 Opaque，但值为 False。因此，Fae 不是 opaque，选项 B 为真。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据符号逻辑程序，Fae 是 Jompus，因此满足 Jompus(Fae, True)。根据规则 Jompus($x, True) >>> Zumpus($x, True)，Fae 也是 Zumpus。根据规则 Zumpus($x, True) >>> Numpus($x, True)，Fae 也是 Numpus。根据规则 Numpus($x, True) >>> Yumpus($x, True)，Fae 也是 Yumpus。根据规则 Yumpus($x, True) >>> Wumpus($x, True)，Fae 也是 Wumpus。根据规则 Wumpus($x, True) >>> Opaque($x, False)，Fae 是 Opaque，但值为 False。因此，Fae 不是 opaque，选项 B 为真。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_15",
+    "context": "Jompuses are not small. Jompuses are tumpuses. Tumpuses are not kind. Each tumpus is a vumpus. Vumpuses are metallic. Vumpuses are numpuses. Each numpus is fruity. Each numpus is a dumpus. Dumpuses are nervous. Dumpuses are rompuses. Each rompus is opaque. Every wumpus is dull. Each rompus is a zumpus. Each zumpus is hot. Every zumpus is an impus. Every impus is not dull. Each impus is a yumpus. Sam is a numpus.",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据规则，每个 Impus($x, True) 都意味着 Dull($x, False)。已知 Sam 是一个 Numpus，根据规则链，Numpus($x, True) >>> Impus($x, True)，因此 Sam 是一个 Impus。因此，Dull(Sam, False) 为真。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据规则，每个 Impus($x, True) 都意味着 Dull($x, False)。已知 Sam 是一个 Numpus，根据规则链，Numpus($x, True) >>> Impus($x, True)，因此 Sam 是一个 Impus。因此，Dull(Sam, False) 为真。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_16",
+    "context": "Yumpuses are hot. Each yumpus is a rompus. Rompuses are happy. Rompuses are impuses. Each impus is not amenable. Every impus is a dumpus. Dumpuses are opaque. Dumpuses are tumpuses. Numpuses are small. Tumpuses are orange. Every tumpus is a wumpus. Wumpuses are not small. Wumpuses are vumpuses. Every vumpus is fruity. Every vumpus is a jompus. Jompuses are not dull. Every jompus is a zumpus. Sally is a rompus.",
+    "question": "Is the following statement true or false? Sally is small.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据规则 'Rompus($x, True) >>> Small($x, True)'，Sally 是 Rompus，因此 Sally 是 Small。但根据规则 'Wumpus($x, True) >>> Small($x, False)'，如果 Sally 是 Wumpus，则 Sally 不是 Small。根据规则 'Tumpus($x, True) >>> Wumpus($x, True)'，如果 Sally 是 Tumpus，则 Sally 是 Wumpus。根据规则 'Dumpus($x, True) >>> Tumpus($x, True)'，如果 Sally 是 Dumpus，则 Sally 是 Tumpus。根据规则 'Impuses($x, True) >>> Dumpus($x, True)'，如果 Sally 是 Impus，则 Sally 是 Dumpus。根据规则 'Rompus($x, True) >>> Impuses($x, True)'，Sally 是 Rompus，因此 Sally 是 Impus。因此，Sally 是 Dumpus，Sally 是 Tumpus，Sally 是 Wumpus。因此，Sally 不是 Small。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据规则 'Rompus($x, True) >>> Small($x, True)'，Sally 是 Rompus，因此 Sally 是 Small。但根据规则 'Wumpus($x, True) >>> Small($x, False)'，如果 Sally 是 Wumpus，则 Sally 不是 Small。根据规则 'Tumpus($x, True) >>> Wumpus($x, True)'，如果 Sally 是 Tumpus，则 Sally 是 Wumpus。根据规则 'Dumpus($x, True) >>> Tumpus($x, True)'，如果 Sally 是 Dumpus，则 Sally 是 Tumpus。根据规则 'Impuses($x, True) >>> Dumpus($x, True)'，如果 Sally 是 Impus，则 Sally 是 Dumpus。根据规则 'Rompus($x, True) >>> Impuses($x, True)'，Sally 是 Rompus，因此 Sally 是 Impus。因此，Sally 是 Dumpus，Sally 是 Tumpus，Sally 是 Wumpus。因此，Sally 不是 Small。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_17",
+    "context": "Each numpus is not nervous. Every numpus is a wumpus. Wumpuses are liquid. Each wumpus is a jompus. Jompuses are fruity. Zumpuses are not opaque. Each jompus is a yumpus. Every yumpus is kind. Yumpuses are vumpuses. Vumpuses are opaque. Every vumpus is an impus. Impuses are not small. Impuses are rompuses. Rompuses are dull. Rompuses are tumpuses. Every tumpus is temperate. Every tumpus is a dumpus. Fae is a numpus.",
+    "question": "Is the following statement true or false? Fae is not opaque.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_18",
+    "context": "Each dumpus is bright. Each dumpus is a rompus. Every rompus is aggressive. Every rompus is a yumpus. Yumpuses are brown. Yumpuses are vumpuses. Every impus is fruity. Every vumpus is sour. Every vumpus is a numpus. Every numpus is not temperate. Every numpus is a zumpus. Zumpuses are metallic. Zumpuses are jompuses. Each jompus is not fruity. Jompuses are tumpuses. Tumpuses are opaque. Every tumpus is a wumpus. Sam is a yumpus.",
+    "question": "Is the following statement true or false? Sam is fruity.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据规则，Yumpus(Sam, True) 表示 Sam 属于 Yumpus。根据规则 'Yumpus($x, True) >>> Vumpus($x, True)'，Sam 也属于 Vumpus。根据规则 'Vumpus($x, True) >>> Impus($x, True)'，Sam 也属于 Impus。根据规则 'Impus($x, True) >>> Fruity($x, True)'，Sam 是 fruity。因此，查询 'Fruity(Sam, True)' 为真。但是，选项中只有 False，因此可能存在误解。重新检查，规则 'Jompus($x, True) >>> Fruity($x, False)' 表示 Jompus 是 not fruity。Sam 属于 Yumpus，Yumpus 不直接关联 Jompus。因此，Fruity(Sam, True) 应为 True。选项中只有 False，因此可能题目或选项有误。但严格按规则，应为 True。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据规则，Yumpus(Sam, True) 表示 Sam 属于 Yumpus。根据规则 'Yumpus($x, True) >>> Vumpus($x, True)'，Sam 也属于 Vumpus。根据规则 'Vumpus($x, True) >>> Impus($x, True)'，Sam 也属于 Impus。根据规则 'Impus($x, True) >>> Fruity($x, True)'，Sam 是 fruity。因此，查询 'Fruity(Sam, True)' 为真。但是，选项中只有 False，因此可能存在误解。重新检查，规则 'Jompus($x, True) >>> Fruity($x, False)' 表示 Jompus 是 not fruity。Sam 属于 Yumpus，Yumpus 不直接关联 Jompus。因此，Fruity(Sam, True) 应为 True。选项中只有 False，因此可能题目或选项有误。但严格按规则，应为 True。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_19",
+    "context": "Each numpus is not opaque. Each numpus is a wumpus. Each wumpus is feisty. Wumpuses are tumpuses. Tumpuses are fruity. Every tumpus is a dumpus. Every dumpus is wooden. Each dumpus is a yumpus. Yumpuses are blue. Each yumpus is a zumpus. Every zumpus is spicy. Zumpuses are impuses. Each impus is not kind. Impuses are rompuses. Jompuses are not dull. Every rompus is dull. Each rompus is a vumpus. Sam is a dumpus.",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据规则，每个 dumpus 是 wooden 的（Dumpus($x, True) >>> Wooden($x, True)）。根据规则，每个 rompus 是 dull 的（Rompus($x, True) >>> Dull($x, True)）。根据规则，每个 dumpus 是 a rompus（Rompus($x, True)）。因此，Sam 是 a dumpus，所以 Sam 是 wooden 的。根据规则，每个 rompus 是 dull 的，所以 Sam 是 dull 的。因此，'Sam is not dull' 是 false。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据规则，每个 dumpus 是 wooden 的（Dumpus($x, True) >>> Wooden($x, True)）。根据规则，每个 rompus 是 dull 的（Rompus($x, True) >>> Dull($x, True)）。根据规则，每个 dumpus 是 a rompus（Rompus($x, True)）。因此，Sam 是 a dumpus，所以 Sam 是 wooden 的。根据规则，每个 rompus 是 dull 的，所以 Sam 是 dull 的。因此，'Sam is not dull' 是 false。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_20",
+    "context": "Each yumpus is not small. Each yumpus is a dumpus. Each dumpus is opaque. Every dumpus is a jompus. Each jompus is shy. Each numpus is sour. Every jompus is a tumpus. Each tumpus is brown. Each tumpus is a vumpus. Vumpuses are dull. Vumpuses are wumpuses. Every wumpus is not sour. Wumpuses are rompuses. Each rompus is not luminous. Rompuses are impuses. Stella is a dumpus.",
+    "question": "Is the following statement true or false? Stella is sour.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据规则，Stella 是 Dumpus，因此根据规则 'Numpus($x, True) >>> Sour($x, True)'，Stella 应该是 Sour。但是，根据规则 'Wumpus($x, True) >>> Sour($x, False)'，如果 Stella 是 Wumpus，则她不是 Sour。由于规则没有直接将 Dumpus 与 Wumpus 关联，我们需要检查是否有其他规则间接关联。根据规则 'Vumpus($x, True) >>> Wumpus($x, True)' 和 'Tumpus($x, True) >>> Vumpus($x, True)'，如果 Stella 是 Tumpus，则她也是 Vumpus，进而也是 Wumpus。因此，Stella 不是 Sour。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据规则，Stella 是 Dumpus，因此根据规则 'Numpus($x, True) >>> Sour($x, True)'，Stella 应该是 Sour。但是，根据规则 'Wumpus($x, True) >>> Sour($x, False)'，如果 Stella 是 Wumpus，则她不是 Sour。由于规则没有直接将 Dumpus 与 Wumpus 关联，我们需要检查是否有其他规则间接关联。根据规则 'Vumpus($x, True) >>> Wumpus($x, True)' 和 'Tumpus($x, True) >>> Vumpus($x, True)'，如果 Stella 是 Tumpus，则她也是 Vumpus，进而也是 Wumpus。因此，Stella 不是 Sour。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_21",
+    "context": "Vumpuses are earthy. Vumpuses are dumpuses. Dumpuses are not wooden. Dumpuses are numpuses. Every numpus is kind. Each numpus is a rompus. Each rompus is small. Every rompus is a jompus. Every jompus is bright. Jompuses are yumpuses. Yumpuses are orange. Every yumpus is a zumpus. Zumpuses are sour. Zumpuses are impuses. Impuses are transparent. Tumpuses are not orange. Each impus is a wumpus. Max is a dumpus.",
+    "question": "Is the following statement true or false? Max is orange.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_22",
+    "context": "Every wumpus is sour. Wumpuses are yumpuses. Each yumpus is aggressive. Every yumpus is a tumpus. Every tumpus is transparent. Tumpuses are vumpuses. Vumpuses are wooden. Each vumpus is a jompus. Each impus is not feisty. Every jompus is large. Jompuses are numpuses. Numpuses are red. Numpuses are rompuses. Every rompus is feisty. Each rompus is a zumpus. Wren is a tumpus.",
+    "question": "Is the following statement true or false? Wren is not feisty.",
+    "answer": "B",
+    "flag": "execution error",
+    "predicted_answer": "B",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_23",
+    "context": "Every zumpus is not opaque. Each zumpus is a numpus. Numpuses are brown. Numpuses are dumpuses. Each dumpus is amenable. Impuses are not bitter. Every dumpus is a vumpus. Each vumpus is not cold. Each vumpus is a tumpus. Every tumpus is wooden. Every tumpus is a rompus. Each rompus is floral. Rompuses are yumpuses. Yumpuses are bitter. Every yumpus is a wumpus. Wumpuses are not feisty. Wumpuses are jompuses. Sally is a dumpus.",
+    "question": "Is the following statement true or false? Sally is bitter.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_24",
+    "context": "Every numpus is floral. Numpuses are jompuses. Jompuses are not nervous. Each jompus is an impus. Every impus is brown. Every dumpus is not amenable. Each impus is a wumpus. Wumpuses are not bitter. Each wumpus is a zumpus. Every zumpus is not small. Zumpuses are vumpuses. Vumpuses are hot. Vumpuses are rompuses. Rompuses are amenable. Every rompus is a tumpus. Every tumpus is bright. Every tumpus is a yumpus. Alex is an impus.",
+    "question": "Is the following statement true or false? Alex is amenable.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据规则，Impus($x, True) >>> Rompus($x, True) 和 Rompus($x, True) >>> Amenable($x, True)。由于 Alex 是 Impus，因此 Alex 是 Rompus，进而 Alex 是 Amenable。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据规则，Impus($x, True) >>> Rompus($x, True) 和 Rompus($x, True) >>> Amenable($x, True)。由于 Alex 是 Impus，因此 Alex 是 Rompus，进而 Alex 是 Amenable。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_25",
+    "context": "Zumpuses are dull. Every vumpus is not transparent. Vumpuses are numpuses. Numpuses are blue. Numpuses are wumpuses. Wumpuses are liquid. Each wumpus is a tumpus. Tumpuses are not spicy. Tumpuses are rompuses. Each rompus is not dull. Rompuses are yumpuses. Every yumpus is floral. Every yumpus is an impus. Impuses are hot. Each impus is a jompus. Every jompus is large. Jompuses are dumpuses. Sam is a vumpus.",
+    "question": "Is the following statement true or false? Sam is not dull.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据规则 Vumpus($x, True) >>> Numpus($x, True) 和 Vumpus($x, True) >>> Rompus($x, True)，Sam 是 Vumpus，因此 Sam 是 Numpus 和 Rompus。根据规则 Numpus($x, True) >>> Blue($x, True) 和 Rompus($x, True) >>> Dull($x, False)，Sam 是蓝色且不是迟钝的。因此，'Sam is not dull' 是真的。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据规则 Vumpus($x, True) >>> Numpus($x, True) 和 Vumpus($x, True) >>> Rompus($x, True)，Sam 是 Vumpus，因此 Sam 是 Numpus 和 Rompus。根据规则 Numpus($x, True) >>> Blue($x, True) 和 Rompus($x, True) >>> Dull($x, False)，Sam 是蓝色且不是迟钝的。因此，'Sam is not dull' 是真的。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_26",
+    "context": "Each numpus is fruity. Every numpus is a tumpus. Every tumpus is dull. Every tumpus is a jompus. Every jompus is not orange. Each jompus is an impus. Each impus is not shy. Impuses are wumpuses. Wumpuses are sweet. Wumpuses are rompuses. Every rompus is not amenable. Each rompus is a zumpus. Every zumpus is large. Zumpuses are yumpuses. Every vumpus is not large. Yumpuses are transparent. Yumpuses are dumpuses. Rex is a jompus.",
+    "question": "Is the following statement true or false? Rex is large.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据规则 'Jompus($x, True) >>> Zumpus($x, True)' 和 'Zumpus($x, True) >>> Large($x, True)'，由于 'Jompus(Rex, True)' 为真，因此 'Rex' 是 'Zumpus'，进而根据规则 'Zumpus($x, True) >>> Large($x, True)'，可以推断 'Large(Rex, True)' 为真。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据规则 'Jompus($x, True) >>> Zumpus($x, True)' 和 'Zumpus($x, True) >>> Large($x, True)'，由于 'Jompus(Rex, True)' 为真，因此 'Rex' 是 'Zumpus'，进而根据规则 'Zumpus($x, True) >>> Large($x, True)'，可以推断 'Large(Rex, True)' 为真。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_27",
+    "context": "Wumpuses are not sour. Each wumpus is a rompus. Rompuses are dull. Each rompus is a dumpus. Every dumpus is feisty. Jompuses are aggressive. Dumpuses are tumpuses. Tumpuses are opaque. Every tumpus is a numpus. Numpuses are hot. Numpuses are zumpuses. Zumpuses are large. Every zumpus is a vumpus. Vumpuses are blue. Every vumpus is an impus. Impuses are not aggressive. Impuses are yumpuses. Fae is a tumpus.",
+    "question": "Is the following statement true or false? Fae is not aggressive.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据符号逻辑程序，Fae 是一个 Tumpus（Tumpus(Fae, True)）。根据规则，每个 Tumpus 都是 Numpus（Tumpus($x, True) >>> Numpus($x, True)）。根据规则，每个 Numpus 都是 Zumpus（Numpus($x, True) >>> Zumpus($x, True)）。根据规则，每个 Zumpus 都是 Vumpus（Zumpus($x, True) >>> Vumpus($x, True)）。根据规则，每个 Vumpus 都是 Impus（Vumpus($x, True) >>> Impus($x, True)）。根据规则，每个 Impus 都不是 Aggressive（Impus($x, True) >>> Aggressive($x, False)）。因此，Fae 不是 Aggressive。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据符号逻辑程序，Fae 是一个 Tumpus（Tumpus(Fae, True)）。根据规则，每个 Tumpus 都是 Numpus（Tumpus($x, True) >>> Numpus($x, True)）。根据规则，每个 Numpus 都是 Zumpus（Numpus($x, True) >>> Zumpus($x, True)）。根据规则，每个 Zumpus 都是 Vumpus（Zumpus($x, True) >>> Vumpus($x, True)）。根据规则，每个 Vumpus 都是 Impus（Vumpus($x, True) >>> Impus($x, True)）。根据规则，每个 Impus 都不是 Aggressive（Impus($x, True) >>> Aggressive($x, False)）。因此，Fae 不是 Aggressive。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_28",
+    "context": "Each impus is small. Each zumpus is not fruity. Every zumpus is a numpus. Each numpus is bitter. Numpuses are rompuses. Rompuses are kind. Rompuses are wumpuses. Every wumpus is not wooden. Wumpuses are yumpuses. Every yumpus is not temperate. Yumpuses are dumpuses. Every dumpus is dull. Dumpuses are tumpuses. Tumpuses are not small. Tumpuses are jompuses. Every jompus is nervous. Each jompus is a vumpus. Alex is a rompus.",
+    "question": "Is the following statement true or false? Alex is small.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据符号逻辑程序中的事实和规则，Alex 是一个 Rompus。根据规则 'Rompus($x, True) >>> Small($x, True)'，如果 x 是 Rompus，则 x 是 small。因此，Alex 是 small。但是，根据规则 'Tumpus($x, True) >>> Small($x, False)'，如果 x 是 Tumpus，则 x 不是 small。由于 Alex 是 Rompus，根据规则 'Numpus($x, True) >>> Rompus($x, True)'，Alex 也是 Numpus。根据规则 'Numpus($x, True) >>> Rompus($x, True)'，Alex 也是 Rompus。因此，Alex 是 Tumpus。根据规则 'Tumpus($x, True) >>> Small($x, False)'，Alex 不是 small。因此，Alex 不是 small。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据符号逻辑程序中的事实和规则，Alex 是一个 Rompus。根据规则 'Rompus($x, True) >>> Small($x, True)'，如果 x 是 Rompus，则 x 是 small。因此，Alex 是 small。但是，根据规则 'Tumpus($x, True) >>> Small($x, False)'，如果 x 是 Tumpus，则 x 不是 small。由于 Alex 是 Rompus，根据规则 'Numpus($x, True) >>> Rompus($x, True)'，Alex 也是 Numpus。根据规则 'Numpus($x, True) >>> Rompus($x, True)'，Alex 也是 Rompus。因此，Alex 是 Tumpus。根据规则 'Tumpus($x, True) >>> Small($x, False)'，Alex 不是 small。因此，Alex 不是 small。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_29",
+    "context": "Every jompus is liquid. Jompuses are rompuses. Every rompus is mean. Rompuses are zumpuses. Each zumpus is transparent. Zumpuses are tumpuses. Tumpuses are not earthy. Each dumpus is bright. Tumpuses are yumpuses. Yumpuses are not bright. Yumpuses are impuses. Impuses are temperate. Impuses are numpuses. Every numpus is feisty. Numpuses are wumpuses. Max is a jompus.",
+    "question": "Is the following statement true or false? Max is bright.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据符号逻辑程序，Max 是 Jompus (True)，因此根据规则 Jompus($x, True) >>> Liquid($x, True)，Max 是 Liquid (True)。接着，根据规则 Tumpuses($x, True) >>> Rompus($x, True)，因为 Max 是 Jompus 且 Jompus 是 Liquid，所以 Max 可能是 Tumpus。根据规则 Rompus($x, True) >>> Zumpus($x, True)，所以 Max 是 Zumpus (True)。根据规则 Zumpus($x, True) >>> Transparent($x, True)，所以 Max 是 Transparent (True)。根据规则 Tumpuses($x, True) >>> NotEarth($x, True)，所以 Max 是 NotEarth (True)。根据规则 Tumpuses($x, True) >>> Yumpus($x, True)，所以 Max 是 Yumpus (True)。根据规则 Yumpus($x, True) >>> NotBright($x, True)，所以 Max 是 NotBright (True)。根据规则 NotBright($x, True) >>> NotBright(Max, True)，所以 Max 是 NotBright (True)。根据规则 Dumpus($x, True) >>> Bright($x, True)，但 Max 不是 Dumpus，因此无法推导出 Max 是 Bright。最终，Max 是 NotBright (True)，所以 Max 不是 Bright，答案是 False (B)。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据符号逻辑程序，Max 是 Jompus (True)，因此根据规则 Jompus($x, True) >>> Liquid($x, True)，Max 是 Liquid (True)。接着，根据规则 Tumpuses($x, True) >>> Rompus($x, True)，因为 Max 是 Jompus 且 Jompus 是 Liquid，所以 Max 可能是 Tumpus。根据规则 Rompus($x, True) >>> Zumpus($x, True)，所以 Max 是 Zumpus (True)。根据规则 Zumpus($x, True) >>> Transparent($x, True)，所以 Max 是 Transparent (True)。根据规则 Tumpuses($x, True) >>> NotEarth($x, True)，所以 Max 是 NotEarth (True)。根据规则 Tumpuses($x, True) >>> Yumpus($x, True)，所以 Max 是 Yumpus (True)。根据规则 Yumpus($x, True) >>> NotBright($x, True)，所以 Max 是 NotBright (True)。根据规则 NotBright($x, True) >>> NotBright(Max, True)，所以 Max 是 NotBright (True)。根据规则 Dumpus($x, True) >>> Bright($x, True)，但 Max 不是 Dumpus，因此无法推导出 Max 是 Bright。最终，Max 是 NotBright (True)，所以 Max 不是 Bright，答案是 False (B)。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_30",
+    "context": "Impuses are bright. Every impus is a jompus. Jompuses are mean. Every zumpus is not temperate. Each jompus is a vumpus. Vumpuses are transparent. Every vumpus is a tumpus. Every tumpus is shy. Tumpuses are numpuses. Each numpus is not blue. Every numpus is a dumpus. Dumpuses are not fruity. Each dumpus is a wumpus. Wumpuses are temperate. Wumpuses are rompuses. Rompuses are metallic. Rompuses are yumpuses. Fae is a vumpus.",
+    "question": "Is the following statement true or false? Fae is temperate.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据符号逻辑程序，Fae 是一个 Vumpus（Facts: Vumpus(Fae, True)）。根据规则，Wumpus($x, True) >>> Temperate($x, True)，即如果 x 是 Wumpus，则 x 是 Temperate。根据规则，Dumpus($x, True) >>> Wumpus($x, True)，即如果 x 是 Dumpus，则 x 是 Wumpus。根据规则，Numpus($x, True) >>> Dumpus($x, True)，即如果 x 是 Numpus，则 x 是 Dumpus。根据规则，Tumpus($x, True) >>> Numpus($x, True)，即如果 x 是 Tumpus，则 x 是 Numpus。根据规则，Vumpus($x, True) >>> Tumpus($x, True)，即如果 x 是 Vumpus，则 x 是 Tumpus。因此，Fae 是 Vumpus，所以 Fae 是 Tumpus，所以 Fae 是 Numpus，所以 Fae 是 Dumpus，所以 Fae 是 Wumpus。因此，Fae 是 Temperate。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据符号逻辑程序，Fae 是一个 Vumpus（Facts: Vumpus(Fae, True)）。根据规则，Wumpus($x, True) >>> Temperate($x, True)，即如果 x 是 Wumpus，则 x 是 Temperate。根据规则，Dumpus($x, True) >>> Wumpus($x, True)，即如果 x 是 Dumpus，则 x 是 Wumpus。根据规则，Numpus($x, True) >>> Dumpus($x, True)，即如果 x 是 Numpus，则 x 是 Dumpus。根据规则，Tumpus($x, True) >>> Numpus($x, True)，即如果 x 是 Tumpus，则 x 是 Numpus。根据规则，Vumpus($x, True) >>> Tumpus($x, True)，即如果 x 是 Vumpus，则 x 是 Tumpus。因此，Fae 是 Vumpus，所以 Fae 是 Tumpus，所以 Fae 是 Numpus，所以 Fae 是 Dumpus，所以 Fae 是 Wumpus。因此，Fae 是 Temperate。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_31",
+    "context": "Each jompus is not small. Each wumpus is angry. Each jompus is a zumpus. Zumpuses are temperate. Zumpuses are tumpuses. Tumpuses are brown. Tumpuses are yumpuses. Yumpuses are wooden. Yumpuses are dumpuses. Each dumpus is not angry. Every dumpus is a numpus. Numpuses are not dull. Every numpus is a vumpus. Wren is a jompus.",
+    "question": "Is the following statement true or false? Wren is not angry.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据题目信息和符号逻辑程序，Wren 是一个 Jompus。根据规则 Jompus($x, True) >>> Wumpus($x, True)，Wren 也是 Wumpus。根据规则 Wumpus($x, True) >>> Angry($x, True)，Wren 是 Angry 的。因此，Wren is not angry 的陈述是 False。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据题目信息和符号逻辑程序，Wren 是一个 Jompus。根据规则 Jompus($x, True) >>> Wumpus($x, True)，Wren 也是 Wumpus。根据规则 Wumpus($x, True) >>> Angry($x, True)，Wren 是 Angry 的。因此，Wren is not angry 的陈述是 False。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_32",
+    "context": "Numpuses are earthy. Numpuses are vumpuses. Vumpuses are transparent. Each vumpus is a tumpus. Tumpuses are small. Tumpuses are dumpuses. Each dumpus is not aggressive. Dumpuses are wumpuses. Every wumpus is not wooden. Every wumpus is a jompus. Jompuses are not nervous. Each jompus is a zumpus. Each zumpus is temperate. Rompuses are wooden. Zumpuses are impuses. Each impus is blue. Impuses are yumpuses. Sally is a numpus.",
+    "question": "Is the following statement true or false? Sally is not wooden.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据符号逻辑程序，Numpus(Sally, True) 是事实。根据规则，Numpus($x, True) >>> Vumpus($x, True)，所以 Vumpus(Sally, True)。根据规则，Vumpus($x, True) >>> Wooden($x, False)，所以 Wooden(Sally, False)。因此，Sally 是木头的，与查询 Wooden(Sally, False) 相反，所以查询为假。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据符号逻辑程序，Numpus(Sally, True) 是事实。根据规则，Numpus($x, True) >>> Vumpus($x, True)，所以 Vumpus(Sally, True)。根据规则，Vumpus($x, True) >>> Wooden($x, False)，所以 Wooden(Sally, False)。因此，Sally 是木头的，与查询 Wooden(Sally, False) 相反，所以查询为假。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_33",
+    "context": "Every yumpus is not temperate. Yumpuses are rompuses. Every rompus is large. Every rompus is an impus. Impuses are not blue. Impuses are tumpuses. Tumpuses are nervous. Tumpuses are wumpuses. Wumpuses are bright. Numpuses are not bright. Each wumpus is a zumpus. Every zumpus is not fruity. Zumpuses are dumpuses. Dumpuses are opaque. Dumpuses are vumpuses. Vumpuses are mean. Vumpuses are jompuses. Stella is a yumpus.",
+    "question": "Is the following statement true or false? Stella is not bright.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_34",
+    "context": "Impuses are bright. Every impus is a rompus. Rompuses are floral. Each rompus is a yumpus. Every yumpus is opaque. Yumpuses are numpuses. Each numpus is red. Every numpus is a dumpus. Dumpuses are bitter. Every dumpus is a vumpus. Vumpuses are not mean. Vumpuses are tumpuses. Tumpuses are not shy. Each wumpus is shy. Tumpuses are zumpuses. Each zumpus is temperate. Zumpuses are jompuses. Sam is a yumpus.",
+    "question": "Is the following statement true or false? Sam is shy.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据规则，Yumpus(Sam, True) 是事实。通过规则链推导：Yumpus(Sam, True) >>> Numpus(Sam, True) >>> Dumpus(Sam, True) >>> Vumpus(Sam, True)。然后根据 Vumpus($x, True) >>> Tumpus($x, True) 和 Vumpus($x, True) >>> Mean($x, False)，得到 Tumpus(Sam, True) 和 Mean(Sam, False)。最后根据 Tumpus($x, True) >>> Shy($x, False)，得到 Shy(Sam, False)，因此 Sam 不是害羞的。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据规则，Yumpus(Sam, True) 是事实。通过规则链推导：Yumpus(Sam, True) >>> Numpus(Sam, True) >>> Dumpus(Sam, True) >>> Vumpus(Sam, True)。然后根据 Vumpus($x, True) >>> Tumpus($x, True) 和 Vumpus($x, True) >>> Mean($x, False)，得到 Tumpus(Sam, True) 和 Mean(Sam, False)。最后根据 Tumpus($x, True) >>> Shy($x, False)，得到 Shy(Sam, False)，因此 Sam 不是害羞的。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_35",
+    "context": "Each zumpus is not wooden. Every zumpus is a vumpus. Every vumpus is not sour. Every vumpus is a jompus. Every jompus is floral. Each jompus is a wumpus. Every wumpus is transparent. Wumpuses are impuses. Impuses are dull. Every impus is a yumpus. Each yumpus is feisty. Numpuses are not orange. Every yumpus is a dumpus. Dumpuses are orange. Each dumpus is a rompus. Each rompus is not aggressive. Rompuses are tumpuses. Fae is a jompus.",
+    "question": "Is the following statement true or false? Fae is orange.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据规则 'Yumpus($x, True) >>> Dumpus($x, True)' 和 'Dumpus($x, True) >>> Orange($x, True)'，由于 'Jompus(Fae, True)'，可以推导出 'Fae' 是 'Yumpus'，进而推导出 'Fae' 是 'Dumpus'，最后推导出 'Fae' 是 'Orange'。因此，Fae is orange 是真。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据规则 'Yumpus($x, True) >>> Dumpus($x, True)' 和 'Dumpus($x, True) >>> Orange($x, True)'，由于 'Jompus(Fae, True)'，可以推导出 'Fae' 是 'Yumpus'，进而推导出 'Fae' 是 'Dumpus'，最后推导出 'Fae' 是 'Orange'。因此，Fae is orange 是真。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_36",
+    "context": "Every jompus is bright. Every jompus is a wumpus. Each wumpus is wooden. Each wumpus is a yumpus. Yumpuses are amenable. Yumpuses are impuses. Impuses are temperate. Impuses are tumpuses. Tumpuses are shy. Every tumpus is a rompus. Rompuses are not small. Every rompus is a numpus. Numpuses are fruity. Each dumpus is not shy. Numpuses are vumpuses. Sally is a jompus.",
+    "question": "Is the following statement true or false? Sally is shy.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_37",
+    "context": "Impuses are not fruity. Impuses are wumpuses. Each wumpus is not temperate. Wumpuses are dumpuses. Rompuses are not sweet. Dumpuses are kind. Dumpuses are zumpuses. Zumpuses are wooden. Zumpuses are vumpuses. Every vumpus is large. Vumpuses are yumpuses. Yumpuses are transparent. Yumpuses are numpuses. Numpuses are brown. Numpuses are tumpuses. Tumpuses are sweet. Tumpuses are jompuses. Wren is a zumpus.",
+    "question": "Is the following statement true or false? Wren is sweet.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_38",
+    "context": "Vumpuses are wooden. Every vumpus is a jompus. Jompuses are earthy. Each jompus is a wumpus. Wumpuses are not transparent. Wumpuses are yumpuses. Yumpuses are not bright. Each yumpus is an impus. Every rompus is happy. Impuses are not happy. Each impus is a dumpus. Dumpuses are brown. Dumpuses are zumpuses. Zumpuses are not sour. Zumpuses are numpuses. Every numpus is not angry. Numpuses are tumpuses. Polly is a vumpus.",
+    "question": "Is the following statement true or false? Polly is not happy.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据符号逻辑程序，Polly 是一个 Vumpus（事实）。根据规则，Vumpus 是木头的，Jompus，Wumpus，Yumpus，Impus，Dumpus，Zumpus，Numpus 和 Tumpus（通过一系列推导）。根据规则，Impus 是不快乐的（Impuses($x, True) >>> Happy($x, False)）。因为 Polly 是一个 Vumpus，所以她也是 Impus。因此，Polly 是不快乐的。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据符号逻辑程序，Polly 是一个 Vumpus（事实）。根据规则，Vumpus 是木头的，Jompus，Wumpus，Yumpus，Impus，Dumpus，Zumpus，Numpus 和 Tumpus（通过一系列推导）。根据规则，Impus 是不快乐的（Impuses($x, True) >>> Happy($x, False)）。因为 Polly 是一个 Vumpus，所以她也是 Impus。因此，Polly 是不快乐的。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_39",
+    "context": "Each rompus is amenable. Each rompus is an impus. Impuses are happy. Every impus is a wumpus. Wumpuses are sour. Each wumpus is a zumpus. Zumpuses are fruity. Zumpuses are tumpuses. Each tumpus is not large. Every tumpus is a vumpus. Yumpuses are not hot. Every vumpus is liquid. Every vumpus is a jompus. Jompuses are hot. Jompuses are dumpuses. Stella is a wumpus.",
+    "question": "Is the following statement true or false? Stella is not hot.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据符号逻辑程序，Wumpus(Stella, True) 是事实。根据规则，Wumpus($x, True) >>> Jompus($x, True)，因此 Jompus(Stella, True)。根据规则，Jompus($x, True) >>> Hot($x, True)，因此 Hot(Stella, True)。查询是 Hot(Stella, False)，这与事实矛盾，因此查询为 False。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据符号逻辑程序，Wumpus(Stella, True) 是事实。根据规则，Wumpus($x, True) >>> Jompus($x, True)，因此 Jompus(Stella, True)。根据规则，Jompus($x, True) >>> Hot($x, True)，因此 Hot(Stella, True)。查询是 Hot(Stella, False)，这与事实矛盾，因此查询为 False。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_40",
+    "context": "Yumpuses are small. Yumpuses are vumpuses. Vumpuses are red. Vumpuses are numpuses. Numpuses are bitter. Each numpus is a wumpus. Each impus is not amenable. Every wumpus is bright. Every wumpus is a dumpus. Every dumpus is temperate. Dumpuses are rompuses. Rompuses are floral. Rompuses are tumpuses. Tumpuses are opaque. Each tumpus is a jompus. Every jompus is amenable. Every jompus is a zumpus. Sally is a wumpus.",
+    "question": "Is the following statement true or false? Sally is amenable.",
+    "answer": "A",
+    "flag": "execution error",
+    "predicted_answer": "A",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  },
+  {
+    "id": "ProntoQA_41",
+    "context": "Rompuses are transparent. Every rompus is a yumpus. Yumpuses are earthy. Yumpuses are jompuses. Every jompus is not large. Each jompus is a wumpus. Each wumpus is not brown. Tumpuses are hot. Wumpuses are zumpuses. Every zumpus is dull. Zumpuses are numpuses. Numpuses are bitter. Every numpus is a dumpus. Dumpuses are not shy. Each dumpus is an impus. Impuses are not hot. Impuses are vumpuses. Max is a wumpus.",
+    "question": "Is the following statement true or false? Max is not hot.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据规则 Wumpus($x, True) >>> NotHot($x, True)，并且已知 Wumpus(Max, True)，可以推导出 NotHot(Max, True)，即 Max is not hot。因此，查询 Hot(Max, False) 是真。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据规则 Wumpus($x, True) >>> NotHot($x, True)，并且已知 Wumpus(Max, True)，可以推导出 NotHot(Max, True)，即 Max is not hot。因此，查询 Hot(Max, False) 是真。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_42",
+    "context": "Tumpuses are dull. Tumpuses are jompuses. Jompuses are not sour. Each jompus is a vumpus. Vumpuses are feisty. Vumpuses are dumpuses. Dumpuses are cold. Each dumpus is a yumpus. Each yumpus is transparent. Each yumpus is a numpus. Numpuses are not amenable. Numpuses are zumpuses. Each zumpus is orange. Each zumpus is a rompus. Rompuses are earthy. Each impus is not orange. Rompuses are wumpuses. Wren is a vumpus.",
+    "question": "Is the following statement true or false? Wren is not orange.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据符号逻辑程序，Wren 是一个 Vumpus（事实）。根据规则，Vumpus($x, True) >>> Zumpus($x, True)，因此 Wren 是一个 Zumpus。根据规则，Zumpus($x, True) >>> Orange($x, True)，因此 Wren 是橙色的。查询是 'Orange(Wren, False)'，即 Wren 是否不是橙色的。由于 Wren 是橙色的，查询为假。因此，选项 B（False）是正确的。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据符号逻辑程序，Wren 是一个 Vumpus（事实）。根据规则，Vumpus($x, True) >>> Zumpus($x, True)，因此 Wren 是一个 Zumpus。根据规则，Zumpus($x, True) >>> Orange($x, True)，因此 Wren 是橙色的。查询是 'Orange(Wren, False)'，即 Wren 是否不是橙色的。由于 Wren 是橙色的，查询为假。因此，选项 B（False）是正确的。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_43",
+    "context": "Each impus is luminous. Every impus is a zumpus. Every zumpus is shy. Every zumpus is a numpus. Numpuses are not cold. Each numpus is a tumpus. Tumpuses are large. Each tumpus is a yumpus. Each yumpus is angry. Yumpuses are vumpuses. Vumpuses are not earthy. Vumpuses are jompuses. Every jompus is not sour. Dumpuses are not angry. Jompuses are rompuses. Rompuses are not opaque. Rompuses are wumpuses. Polly is an impus.",
+    "question": "Is the following statement true or false? Polly is angry.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据规则，Impus(Polly, True) 意味着 Polly 是一个 impus。根据规则 Luminous($x, True) >>> Zumpus($x, True)，Polly 是 luminous 的，因此 Zumpus(Polly, True)。根据规则 Zumpus($x, True) >>> Yumpus($x, True)，Polly 是 Zumpus 的，因此 Yumpus(Polly, True)。根据规则 Yumpus($x, True) >>> Angry($x, True)，Polly 是 Yumpus 的，因此 Angry(Polly, True)。因此，Polly 是愤怒的。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据规则，Impus(Polly, True) 意味着 Polly 是一个 impus。根据规则 Luminous($x, True) >>> Zumpus($x, True)，Polly 是 luminous 的，因此 Zumpus(Polly, True)。根据规则 Zumpus($x, True) >>> Yumpus($x, True)，Polly 是 Zumpus 的，因此 Yumpus(Polly, True)。根据规则 Yumpus($x, True) >>> Angry($x, True)，Polly 是 Yumpus 的，因此 Angry(Polly, True)。因此，Polly 是愤怒的。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_44",
+    "context": "Yumpuses are floral. Each yumpus is a vumpus. Vumpuses are not temperate. Vumpuses are jompuses. Jompuses are not dull. Impuses are not spicy. Jompuses are numpuses. Numpuses are not opaque. Each numpus is a wumpus. Every wumpus is amenable. Wumpuses are rompuses. Each rompus is not red. Rompuses are tumpuses. Tumpuses are spicy. Every tumpus is a dumpus. Dumpuses are shy. Each dumpus is a zumpus. Rex is a jompus.",
+    "question": "Is the following statement true or false? Rex is not spicy.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据规则 Jompus(Rex, True) 和 Jompus($x, True) >>> Numpus($x, True)，可知 Rex 是 Numpus。根据规则 Numpus($x, True) >>> Spicy($x, False)，可知 Rex 是 not spicy。因此，'Rex is not spicy' 是 true。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据规则 Jompus(Rex, True) 和 Jompus($x, True) >>> Numpus($x, True)，可知 Rex 是 Numpus。根据规则 Numpus($x, True) >>> Spicy($x, False)，可知 Rex 是 not spicy。因此，'Rex is not spicy' 是 true。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm_incorrect",
+    "compare_note": "no_correct_prediction_found"
+  },
+  {
+    "id": "ProntoQA_45",
+    "context": "Dumpuses are cold. Dumpuses are numpuses. Each numpus is not bitter. Every numpus is a zumpus. Zumpuses are fruity. Zumpuses are wumpuses. Wumpuses are large. Each tumpus is not wooden. Each wumpus is an impus. Every impus is wooden. Impuses are rompuses. Fae is a dumpus.",
+    "question": "Is the following statement true or false? Fae is wooden.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据符号逻辑程序，Fae($x, True) 表示 Fae 属于 Dumpus。根据规则 Cold($x, True) >>> Numpus($x, True)，Dumpus 是 Numpus，因此 Fae 是 Numpus。根据规则 Numpus($x, True) >>> Bitter($x, False)，Fae 不是 Bitter。根据规则 Numpus($x, True) >>> Zumpus($x, True)，Fae 是 Zumpus。根据规则 Zumpus($x, True) >>> Wumpus($x, True)，Fae 是 Wumpus。根据规则 Wumpus($x, True) >>> Impus($x, True)，Fae 是 Impus。根据规则 Impus($x, True) >>> Wooden($x, True)，Fae 是 Wooden。因此，Fae 是 Wooden，选项 A 正确。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据符号逻辑程序，Fae($x, True) 表示 Fae 属于 Dumpus。根据规则 Cold($x, True) >>> Numpus($x, True)，Dumpus 是 Numpus，因此 Fae 是 Numpus。根据规则 Numpus($x, True) >>> Bitter($x, False)，Fae 不是 Bitter。根据规则 Numpus($x, True) >>> Zumpus($x, True)，Fae 是 Zumpus。根据规则 Zumpus($x, True) >>> Wumpus($x, True)，Fae 是 Wumpus。根据规则 Wumpus($x, True) >>> Impus($x, True)，Fae 是 Impus。根据规则 Impus($x, True) >>> Wooden($x, True)，Fae 是 Wooden。因此，Fae 是 Wooden，选项 A 正确。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm_incorrect",
+    "compare_note": "no_correct_prediction_found"
+  },
+  {
+    "id": "ProntoQA_46",
+    "context": "Each rompus is nervous. Rompuses are jompuses. Jompuses are angry. Jompuses are tumpuses. Tumpuses are earthy. Every tumpus is a numpus. Each numpus is not cold. Each numpus is an impus. Dumpuses are metallic. Impuses are dull. Each impus is a zumpus. Zumpuses are not opaque. Zumpuses are wumpuses. Every wumpus is blue. Wumpuses are vumpuses. Every vumpus is not metallic. Every vumpus is a yumpus. Sally is a numpus.",
+    "question": "Is the following statement true or false? Sally is not metallic.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据符号逻辑程序，Sally 是一个 Numpus（Numpus(Sally, True)）。根据规则，每个 Numpus 都不是金属的（Numpus($x, True) >>> Metallic($x, False)）。因此，Sally 不是金属的，所以陈述 'Sally is not metallic' 是真的。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据符号逻辑程序，Sally 是一个 Numpus（Numpus(Sally, True)）。根据规则，每个 Numpus 都不是金属的（Numpus($x, True) >>> Metallic($x, False)）。因此，Sally 不是金属的，所以陈述 'Sally is not metallic' 是真的。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_47",
+    "context": "Vumpuses are fruity. Vumpuses are jompuses. Jompuses are opaque. Every jompus is a wumpus. Every wumpus is nervous. Each wumpus is an impus. Every impus is sour. Impuses are tumpuses. Every tumpus is not amenable. Each tumpus is a yumpus. Yumpuses are not metallic. Yumpuses are numpuses. Numpuses are large. Every numpus is a rompus. Dumpuses are not cold. Each rompus is cold. Each rompus is a zumpus. Max is an impus.",
+    "question": "Is the following statement true or false? Max is not cold.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据符号逻辑程序，Impus(Max, True) 是一个事实。根据规则，Impus($x, True) >>> Rompus($x, True)，因此 Rompus(Max, True) 为真。根据规则，Rompus($x, True) >>> Cold($x, True)，因此 Cold(Max, True) 为真。查询是 Cold(Max, False)，与事实 Cold(Max, True) 矛盾，因此查询为假。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据符号逻辑程序，Impus(Max, True) 是一个事实。根据规则，Impus($x, True) >>> Rompus($x, True)，因此 Rompus(Max, True) 为真。根据规则，Rompus($x, True) >>> Cold($x, True)，因此 Cold(Max, True) 为真。查询是 Cold(Max, False)，与事实 Cold(Max, True) 矛盾，因此查询为假。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_48",
+    "context": "Tumpuses are fruity. Yumpuses are nervous. Yumpuses are numpuses. Each numpus is large. Each numpus is a rompus. Each rompus is red. Rompuses are vumpuses. Vumpuses are temperate. Each vumpus is a jompus. Every jompus is spicy. Each jompus is an impus. Impuses are not metallic. Impuses are wumpuses. Each wumpus is bright. Wumpuses are zumpuses. Zumpuses are not fruity. Each zumpus is a dumpus. Sam is a vumpus.",
+    "question": "Is the following statement true or false? Sam is not fruity.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "A",
+    "rationale": "根据规则 'Vumpuses(Sam, True)' 和 'Wumpuses($x, True) >>> Fruity($x, False)'，Sam 是 Vumpus，而所有 Vumpus 都是 Zumpus，且所有 Zumpus 都不是 Fruity。因此，Sam 不是 Fruity，选项 A 正确。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"A\",\n  \"rationale\": \"根据规则 'Vumpuses(Sam, True)' 和 'Wumpuses($x, True) >>> Fruity($x, False)'，Sam 是 Vumpus，而所有 Vumpus 都是 Zumpus，且所有 Zumpus 都不是 Fruity。因此，Sam 不是 Fruity，选项 A 正确。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_49",
+    "context": "Wumpuses are dull. Wumpuses are rompuses. Every rompus is not cold. Rompuses are dumpuses. Dumpuses are feisty. Dumpuses are numpuses. Numpuses are mean. Numpuses are zumpuses. Every zumpus is not earthy. Every zumpus is a tumpus. Every tumpus is opaque. Impuses are liquid. Tumpuses are vumpuses. Every vumpus is not liquid. Vumpuses are jompuses. Each jompus is not spicy. Jompuses are yumpuses. Wren is a dumpus.",
+    "question": "Is the following statement true or false? Wren is liquid.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False"
+    ],
+    "predicted_answer": "B",
+    "rationale": "根据题目信息，Wren 是一个 Dumpus。根据规则，Dumpus($x, True) >>> Impuses($x, True)。但是，Impuses($x, True) >>> Liquid($x, True)。因此，Wren 是 Impuses，进而 Wren 是 Liquid。但是，规则中没有直接说明 Wren 是 Liquid，因此需要进一步推理。根据规则，Tumpus($x, True) >>> Vumpus($x, True)，而 Vumpus($x, True) >>> Jompus($x, True)。但是，Jompus($x, True) >>> Spicy($x, False)，这意味着 Jompus 不是 Spicy。因此，Wren 不是 Liquid。",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "```json\n{\n  \"answer\": \"B\",\n  \"rationale\": \"根据题目信息，Wren 是一个 Dumpus。根据规则，Dumpus($x, True) >>> Impuses($x, True)。但是，Impuses($x, True) >>> Liquid($x, True)。因此，Wren 是 Impuses，进而 Wren 是 Liquid。但是，规则中没有直接说明 Wren 是 Liquid，因此需要进一步推理。根据规则，Tumpus($x, True) >>> Vumpus($x, True)，而 Vumpus($x, True) >>> Jompus($x, True)。但是，Jompus($x, True) >>> Spicy($x, False)，这意味着 Jompus 不是 Spicy。因此，Wren 不是 Liquid。\"\n}\n```",
+    "source_logic_program_file": "self-refine-1_ProntoQA_dev_glm-4-flash-250414.json",
+    "compare_source": "llm",
+    "compare_note": "llm_prediction_correct"
+  },
+  {
+    "id": "ProntoQA_50",
+    "context": "Jompuses are not blue. Each rompus is happy. Rompuses are dumpuses. Dumpuses are not cold. Each dumpus is a wumpus. Each wumpus is liquid. Each wumpus is an impus. Each impus is kind. Every impus is a yumpus. Each yumpus is bright. Yumpuses are zumpuses. Each zumpus is sour. Each zumpus is a vumpus. Every vumpus is small. Vumpuses are tumpuses. Every tumpus is blue. Every tumpus is a numpus. Fae is an impus.",
+    "question": "Is the following statement true or false? Fae is not blue.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B",
+    "source_logic_program_file": "ProntoQA_dev_glm-4-flash-250414_backup-random.json",
+    "compare_source": "solver",
+    "compare_note": "llm_wrong_solver_correct"
+  }
+]

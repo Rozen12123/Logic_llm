@@ -45,7 +45,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cow is not red.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-270_Q8",
@@ -141,7 +141,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not furry.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-842_Q7",
@@ -365,7 +365,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle sees the mouse.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-745_Q8",
@@ -605,7 +605,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Anne is nice.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-439_Q23",
@@ -613,7 +613,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit does not see the bald eagle.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1176_Q11",
@@ -797,7 +797,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger does not see the tiger.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-442_Q5",
@@ -1005,7 +1005,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not quiet.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1251_Q3",
@@ -1069,7 +1069,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cow does not chase the squirrel.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1066_Q6",
@@ -1237,7 +1237,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit is not red.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-230_Q19",
@@ -1261,7 +1261,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is not kind.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-983_Q3",
@@ -1317,7 +1317,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit is kind.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-294_Q2",
@@ -1325,7 +1325,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger is not blue.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-947_Q2",
@@ -1397,7 +1397,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse does not see the squirrel.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-658_Q14",
@@ -1405,7 +1405,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Anne is white.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1118_Q22",
@@ -1573,7 +1573,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel does not see the cow.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-658_Q4",
@@ -1741,7 +1741,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is quiet.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-595_Q3",
@@ -1821,7 +1821,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is nice.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1022_Q3",
@@ -1837,7 +1837,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not rough.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1236_Q20",
@@ -1885,7 +1885,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is nice.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-908_Q16",
@@ -1893,7 +1893,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is rough.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-948_Q21",
@@ -2077,7 +2077,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not nice.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-856_Q6",
@@ -2109,7 +2109,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is not green.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-372_Q11",
@@ -2365,7 +2365,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit does not see the lion.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1236_Q12",
@@ -2397,7 +2397,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle is big.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-391_Q17",
@@ -2421,7 +2421,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger does not visit the bald eagle.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-891_Q1",
@@ -2429,7 +2429,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is not young.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-199_Q4",
@@ -2461,7 +2461,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle chases the cat.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-341_Q3",
@@ -2541,7 +2541,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger likes the tiger.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-586_Q21",
@@ -2573,7 +2573,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not green.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-268_Q19",
@@ -2589,7 +2589,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger is round.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-195_Q3",
@@ -2597,7 +2597,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is quiet.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-684_Q1",
@@ -2605,7 +2605,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is nice.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-502_Q3",
@@ -2613,7 +2613,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear is rough.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-616_Q7",
@@ -2629,7 +2629,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse does not eat the mouse.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-173_Q8",
@@ -2637,7 +2637,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cow does not see the cat.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-683_Q1",
@@ -2653,7 +2653,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is not furry.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-890_Q11",
@@ -2661,7 +2661,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse needs the rabbit.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-587_Q13",
@@ -2685,7 +2685,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat does not like the rabbit.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-136_Q24",
@@ -2693,7 +2693,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat is young.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-465_Q1",
@@ -2701,7 +2701,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is round.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-966_Q21",
@@ -2709,7 +2709,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger does not see the dog.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-345_Q22",
@@ -2717,7 +2717,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat likes the lion.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-672_Q3",
@@ -2725,7 +2725,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is kind.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-813_Q17",
@@ -2749,7 +2749,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is quiet.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-649_Q1",
@@ -2765,7 +2765,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is young.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1335_Q7",
@@ -2773,7 +2773,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is furry.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1331_Q16",
@@ -2781,7 +2781,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is green.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-427_Q14",
@@ -2789,7 +2789,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle sees the bald eagle.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-345_Q9",
@@ -2797,7 +2797,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel likes the cat.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-399_Q3",
@@ -2805,7 +2805,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is white.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-683_Q22",
@@ -2813,7 +2813,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat is rough.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-668_Q8",
@@ -2821,7 +2821,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The lion is not round.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1176_Q8",
@@ -2829,7 +2829,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is not smart.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-121_Q6",
@@ -2837,7 +2837,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cow does not need the mouse.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-517_Q3",
@@ -2845,7 +2845,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger is young.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-718_Q9",
@@ -2853,7 +2853,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is white.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-423_Q3",
@@ -2877,7 +2877,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit eats the bear.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-442_Q24",
@@ -2917,7 +2917,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not white.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-90_Q18",
@@ -2925,7 +2925,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear needs the rabbit.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-959_Q14",
@@ -2933,7 +2933,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is furry.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1183_Q16",
@@ -2941,7 +2941,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is white.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-70_Q15",
@@ -2949,7 +2949,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit does not visit the bald eagle.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-372_Q8",
@@ -2957,7 +2957,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not green.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-120_Q9",
@@ -2965,7 +2965,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is round.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-586_Q14",
@@ -2989,7 +2989,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle is cold.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1017_Q19",
@@ -3005,7 +3005,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle eats the lion.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-226_Q4",
@@ -3029,7 +3029,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is not rough.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-454_Q13",
@@ -3037,7 +3037,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is not smart.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-442_Q10",
@@ -3053,7 +3053,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger sees the tiger.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-276_Q8",
@@ -3061,7 +3061,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is not kind.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-423_Q4",
@@ -3069,7 +3069,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not furry.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-960_Q3",
@@ -3077,7 +3077,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is rough.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-1029_Q17",
@@ -3101,7 +3101,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The lion does not eat the tiger.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-183_Q3",
@@ -3109,7 +3109,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel is nice.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-221_Q5",
@@ -3117,7 +3117,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is nice.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-174_Q18",
@@ -3133,7 +3133,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse does not need the mouse.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-155_Q6",
@@ -3149,7 +3149,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit needs the tiger.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-849_Q24",
@@ -3165,7 +3165,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is red.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1233_Q2",
@@ -3197,7 +3197,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse visits the lion.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-637_Q19",
@@ -3205,7 +3205,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle is not green.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-897_Q12",
@@ -3213,7 +3213,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Anne is not big.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-992_Q10",
@@ -3237,7 +3237,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit does not see the bald eagle.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-31_Q8",
@@ -3253,7 +3253,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is not green.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-685_Q24",
@@ -3261,7 +3261,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear visits the rabbit.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1054_Q3",
@@ -3269,7 +3269,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is blue.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1041_Q8",
@@ -3277,7 +3277,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is not smart.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-973_Q19",
@@ -3285,7 +3285,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not white.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-973_Q6",
@@ -3293,7 +3293,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is not round.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-725_Q8",
@@ -3309,7 +3309,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is furry.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-517_Q10",
@@ -3325,7 +3325,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not big.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-691_Q3",
@@ -3341,7 +3341,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat does not eat the squirrel.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1057_Q5",
@@ -3349,7 +3349,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is kind.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-983_Q7",
@@ -3357,7 +3357,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is cold.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-107_Q6",
@@ -3365,7 +3365,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is not cold.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-272_Q14",
@@ -3381,7 +3381,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not blue.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-329_Q7",
@@ -3389,7 +3389,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle chases the squirrel.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-836_Q16",
@@ -3397,7 +3397,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is young.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-692_Q4",
@@ -3405,7 +3405,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is not red.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-940_Q9",
@@ -3413,7 +3413,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse is rough.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-427_Q11",
@@ -3421,7 +3421,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit sees the rabbit.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-165_Q11",
@@ -3445,7 +3445,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not kind.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-528_Q6",
@@ -3453,7 +3453,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is not nice.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-668_Q8",
@@ -3461,7 +3461,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit does not visit the cow.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-856_Q12",
@@ -3469,7 +3469,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger does not need the tiger.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-891_Q18",
@@ -3477,7 +3477,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is furry.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-735_Q12",
@@ -3485,7 +3485,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not smart.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-574_Q12",
@@ -3493,7 +3493,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The dog does not eat the dog.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-586_Q11",
@@ -3501,7 +3501,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is furry.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-933_Q12",
@@ -3509,7 +3509,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not rough.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-358_Q5",
@@ -3517,7 +3517,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse eats the cow.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-398_Q21",
@@ -3525,7 +3525,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear does not like the bald eagle.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-668_Q14",
@@ -3549,7 +3549,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The dog visits the rabbit.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-630_Q24",
@@ -3565,7 +3565,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not white.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-604_Q11",
@@ -3573,7 +3573,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger sees the dog.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-709_Q1",
@@ -3581,7 +3581,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle needs the squirrel.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-404_Q24",
@@ -3589,7 +3589,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit likes the bear.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-559_Q24",
@@ -3597,7 +3597,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear likes the tiger.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-178_Q5",
@@ -3613,7 +3613,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger needs the tiger.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1183_Q20",
@@ -3621,7 +3621,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is young.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-1026_Q9",
@@ -3645,7 +3645,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is red.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-694_Q2",
@@ -3653,7 +3653,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is not kind.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-221_Q8",
@@ -3677,7 +3677,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear does not need the squirrel.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1066_Q12",
@@ -3685,7 +3685,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not red.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-796_Q6",
@@ -3693,7 +3693,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The lion is not cold.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-746_Q9",
@@ -3709,7 +3709,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not rough.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-280_Q3",
@@ -3717,7 +3717,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The dog is red.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-276_Q18",
@@ -3733,7 +3733,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is not rough.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1421_Q11",
@@ -3741,7 +3741,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is smart.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-173_Q10",
@@ -3749,7 +3749,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit does not need the cat.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-77_Q15",
@@ -3757,7 +3757,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The dog does not need the cow.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-68_Q7",
@@ -3773,7 +3773,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Anne is kind.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1208_Q5",
@@ -3789,7 +3789,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is round.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-178_Q18",
@@ -3797,7 +3797,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is smart.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-40_Q3",
@@ -3813,7 +3813,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle is cold.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-144_Q12",
@@ -3821,7 +3821,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear does not chase the bear.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-718_Q2",
@@ -3829,7 +3829,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is not quiet.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1044_Q12",
@@ -3837,7 +3837,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not quiet.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-268_Q3",
@@ -3853,7 +3853,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not nice.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-333_Q16",
@@ -3869,7 +3869,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit does not see the rabbit.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-694_Q8",
@@ -3885,7 +3885,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel is blue.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-745_Q18",
@@ -3893,7 +3893,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse needs the lion.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1003_Q15",
@@ -3901,7 +3901,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not big.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-178_Q11",
@@ -3909,7 +3909,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is green.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-419_Q24",
@@ -3917,7 +3917,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger chases the bear.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-843_Q11",
@@ -3933,7 +3933,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is not cold.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1081_Q4",
@@ -3949,7 +3949,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is round.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-305_Q11",
@@ -3957,7 +3957,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is round.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-585_Q1",
@@ -3965,7 +3965,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit is not rough.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-111_Q2",
@@ -3973,7 +3973,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is not blue.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-582_Q12",
@@ -3989,7 +3989,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel is not big.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-975_Q22",
@@ -3997,7 +3997,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse chases the mouse.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-249_Q10",
@@ -4005,7 +4005,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse is not young.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-481_Q23",
@@ -4013,7 +4013,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle is not rough.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-251_Q21",
@@ -4021,7 +4021,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cow does not need the squirrel.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-347_Q1",
@@ -4029,7 +4029,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is white.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-866_Q17",
@@ -4037,7 +4037,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not quiet.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-731_Q5",
@@ -4053,7 +4053,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel is not blue.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-785_Q10",
@@ -4077,7 +4077,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit does not eat the squirrel.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-177_Q19",
@@ -4093,7 +4093,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse is not big.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-602_Q16",
@@ -4101,7 +4101,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel likes the mouse.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-189_Q12",
@@ -4109,7 +4109,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is not furry.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1251_Q1",
@@ -4117,7 +4117,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is red.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-585_Q24",
@@ -4125,7 +4125,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cow likes the squirrel.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-78_Q12",
@@ -4141,7 +4141,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle does not eat the rabbit.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-726_Q6",
@@ -4149,7 +4149,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat does not see the bear.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-347_Q14",
@@ -4157,7 +4157,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is young.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-264_Q5",
@@ -4165,7 +4165,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit visits the cow.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1286_Q7",
@@ -4173,7 +4173,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is blue.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-355_Q4",
@@ -4189,7 +4189,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The dog does not see the bear.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-203_Q7",
@@ -4197,7 +4197,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is big.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-586_Q7",
@@ -4213,7 +4213,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle sees the dog.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-649_Q12",
@@ -4229,7 +4229,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Erin is nice.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-582_Q5",
@@ -4237,7 +4237,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The dog is green.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-861_Q9",
@@ -4277,7 +4277,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is quiet.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-718_Q3",
@@ -4285,7 +4285,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is smart.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-14_Q9",
@@ -4309,7 +4309,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat does not need the dog.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-992_Q11",
@@ -4317,7 +4317,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The cat eats the dog.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-532_Q7",
@@ -4325,7 +4325,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Anne is cold.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-650_Q17",
@@ -4333,7 +4333,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bald eagle does not eat the squirrel.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-973_Q9",
@@ -4341,7 +4341,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is quiet.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-305_Q10",
@@ -4349,7 +4349,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is not quiet.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-709_Q11",
@@ -4365,7 +4365,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is not white.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-985_Q4",
@@ -4389,7 +4389,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit does not see the lion.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-115_Q11",
@@ -4413,7 +4413,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is red.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-412_Q9",
@@ -4421,7 +4421,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is red.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-414_Q2",
@@ -4429,7 +4429,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not white.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1169_Q1",
@@ -4453,7 +4453,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel does not see the rabbit.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-963_Q9",
@@ -4461,7 +4461,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Anne is cold.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-266_Q24",
@@ -4469,7 +4469,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The lion is round.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-949_Q24",
@@ -4485,7 +4485,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is not quiet.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-1036_Q11",
@@ -4493,7 +4493,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel eats the squirrel.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-301_Q16",
@@ -4501,7 +4501,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is cold.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-995_Q6",
@@ -4509,7 +4509,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear does not visit the cow.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-683_Q4",
@@ -4517,7 +4517,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear does not chase the lion.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-766_Q5",
@@ -4533,7 +4533,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit is cold.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-960_Q10",
@@ -4541,7 +4541,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse is not round.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-305_Q3",
@@ -4549,7 +4549,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Bob is red.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-882_Q2",
@@ -4557,7 +4557,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is not white.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1_Q1",
@@ -4573,7 +4573,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Anne is young.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-1030_Q23",
@@ -4581,7 +4581,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not big.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-785_Q8",
@@ -4589,7 +4589,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Anne is not smart.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-461_Q16",
@@ -4597,7 +4597,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is young.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-29_Q18",
@@ -4605,7 +4605,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger is blue.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-169_Q6",
@@ -4637,7 +4637,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Charlie is not cold.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-121_Q8",
@@ -4645,7 +4645,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse is not big.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-428_Q12",
@@ -4661,7 +4661,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Anne is young.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-856_Q19",
@@ -4669,7 +4669,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The squirrel does not visit the lion.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-410_Q24",
@@ -4685,7 +4685,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The bear does not eat the bear.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-904_Q14",
@@ -4693,7 +4693,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Gary is smart.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_RelNeg-OWA-D5-437_Q1",
@@ -4709,7 +4709,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The mouse sees the squirrel.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1421_Q1",
@@ -4717,7 +4717,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is red.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNeg-OWA-D5-414_Q22",
@@ -4725,7 +4725,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Harry is round.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "B"
+    "predicted_answer": "A"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-412_Q4",
@@ -4733,7 +4733,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not nice.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "C"
   },
   {
     "id": "ProofWriter_RelNoneg-OWA-D5-775_Q9",
@@ -4741,7 +4741,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The tiger needs the rabbit.",
     "answer": "A",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1_Q5",
@@ -4789,7 +4789,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Fiona is not smart.",
     "answer": "C",
     "flag": "parsing error",
-    "predicted_answer": "A"
+    "predicted_answer": "B"
   },
   {
     "id": "ProofWriter_AttNoneg-OWA-D5-1032_Q6",
@@ -4797,6 +4797,6 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? Dave is not furry.",
     "answer": "B",
     "flag": "parsing error",
-    "predicted_answer": "C"
+    "predicted_answer": "B"
   }
 ]

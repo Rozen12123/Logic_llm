@@ -162,11 +162,11 @@ class OpenAIModel:
     # used for chat-gpt and gpt-4
     def chat_generate(self, input_string, temperature = 0.0):
         response = chat_completions_with_backoff(
-            self.client if OPENAI_VERSION >= 2 else None,
+                self.client if OPENAI_VERSION >= 2 else None,
             model=self.model_name,
-            messages=[
-                {"role": "user", "content": input_string}
-            ],
+                messages=[
+                        {"role": "user", "content": input_string}
+                    ],
             max_tokens=self.max_new_tokens,
             temperature=temperature,
             top_p=1.0,
@@ -174,39 +174,27 @@ class OpenAIModel:
         )
         try:
             if OPENAI_VERSION >= 2:
-                # 处理可能的字典格式响应（某些兼容 API 可能返回字典）
                 if isinstance(response, dict):
                     message = response['choices'][0]['message']
-                    content = message.get('content')
                 else:
                     message = response.choices[0].message
-                    # 安全地获取 content，处理可能为 None 的情况
-                    content = getattr(message, 'content', None)
-                    if content is None and isinstance(message, dict):
-                        content = message.get('content')
-
-                if content is None:
-                    # 打印响应结构以便调试
-                    import json
-                    try:
-                        response_str = json.dumps(str(response), indent=2)
-                    except Exception:
-                        response_str = str(response)
-                    raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
-                generated_text = content.strip() if content else ""
+                content = getattr(message, 'content', None)
+                if content is None and isinstance(message, dict):
+                    content = message.get('content')
             else:
                 message = response['choices'][0]['message']
                 content = message.get('content')
-                if content is None:
-                    import json
-                    try:
-                        response_str = json.dumps(response, indent=2, default=str)
-                    except Exception:
-                        response_str = str(response)
-                    raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
-                generated_text = content.strip() if content else ""
+
+            if content is None:
+                import json
+                try:
+                    response_str = json.dumps(response, indent=2, default=str)
+                except Exception:
+                    response_str = str(response)
+                raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
+
+            generated_text = content.strip() if content else ""
         except (KeyError, AttributeError, IndexError) as e:
-            # 捕获访问响应字段时的错误，提供更详细的错误信息
             import json
             try:
                 if isinstance(response, dict):

@@ -1,173 +1,101 @@
 fact1
 	foreach
-		facts.Jompus($x, True)
+		facts.Impus($x, True)
 	assert
-		facts.Fruity($x, True)
+		facts.Transparent($x, True)
 
 fact2
 	foreach
-		facts.Jompus($x, True)
-	assert
-		facts.Wumpus($x, True)
-
-fact3
-	foreach
-		facts.Wumpus($x, True)
-	assert
-		facts.Transparent($x, False)
-
-fact4
-	foreach
-		facts.Tumpuses($x, True)
+		facts.Impus($x, True)
 	assert
 		facts.Tumpus($x, True)
 
+fact3
+	foreach
+		facts.Tumpus($x, True)
+	assert
+		facts.Angry($x, True)
+
+fact4
+	foreach
+		facts.Tumpus($x, True)
+	assert
+		facts.Dumpus($x, True)
+
 fact5
 	foreach
-		facts.Tumpuses($x, True)
+		facts.Dumpus($x, True)
 	assert
-		facts.Mean($x, True)
+		facts.Orange($x, False)
 
 fact6
 	foreach
-		facts.Tumpuses($x, True)
+		facts.Jompus($x, True)
 	assert
-		facts.Vumpuses($x, True)
+		facts.Dumpus($x, True)
 
 fact7
 	foreach
-		facts.Vumpuses($x, True)
+		facts.Jompus($x, True)
 	assert
-		facts.Cold($x, True)
+		facts.Feisty($x, True)
 
 fact8
 	foreach
-		facts.Vumpuses($x, True)
+		facts.Jompus($x, True)
 	assert
-		facts.Yumpus($x, True)
+		facts.Numpus($x, True)
 
 fact9
 	foreach
-		facts.Yumpus($x, True)
+		facts.Numpus($x, True)
 	assert
-		facts.Orange($x, True)
+		facts.Earthy($x, False)
 
 fact10
 	foreach
-		facts.Yumpus($x, True)
+		facts.Rompus($x, True)
 	assert
-		facts.Numpus($x, True)
+		facts.Earthy($x, True)
 
 fact11
 	foreach
 		facts.Numpus($x, True)
 	assert
-		facts.Dull($x, True)
+		facts.Vumpus($x, True)
 
 fact12
 	foreach
-		facts.Numpus($x, True)
+		facts.Vumpus($x, True)
 	assert
-		facts.Dumpus($x, True)
+		facts.Temperate($x, True)
 
 fact13
 	foreach
-		facts.Dumpus($x, True)
+		facts.Vumpus($x, True)
 	assert
-		facts.Shy($x, False)
+		facts.Wumpus($x, True)
 
 fact14
 	foreach
-		facts.Impuses($x, True)
-	assert
-		facts.Shy($x, True)
-
-fact15
-	foreach
-		facts.Rompus($x, True)
-	assert
-		facts.Liquid($x, True)
-
-fact16
-	foreach
-		facts.Rompus($x, True)
-	assert
-		facts.Zumpus($x, True)
-
-fact17
-	foreach
-		facts.Rompus($x, True)
-	assert
-		facts.Dumpus($x, True)
-
-fact18
-	foreach
-		facts.Dumpus($x, True)
-	assert
 		facts.Wumpus($x, True)
-
-fact19
-	foreach
-		facts.Wumpus($x, True)
-	assert
-		facts.Liquid($x, True)
-
-fact20
-	foreach
-		facts.Wumpus($x, True)
-	assert
-		facts.Impuses($x, True)
-
-fact21
-	foreach
-		facts.Impuses($x, True)
-	assert
-		facts.Kind($x, True)
-
-fact22
-	foreach
-		facts.Impuses($x, True)
-	assert
-		facts.Yumpus($x, True)
-
-fact23
-	foreach
-		facts.Yumpus($x, True)
-	assert
-		facts.Bright($x, True)
-
-fact24
-	foreach
-		facts.Yumpus($x, True)
-	assert
-		facts.Zumpus($x, True)
-
-fact25
-	foreach
-		facts.Zumpus($x, True)
-	assert
-		facts.Sour($x, True)
-
-fact26
-	foreach
-		facts.Zumpus($x, True)
-	assert
-		facts.Vumpus($x, True)
-
-fact27
-	foreach
-		facts.Vumpus($x, True)
 	assert
 		facts.Small($x, True)
 
-fact28
+fact15
 	foreach
-		facts.Vumpus($x, True)
+		facts.Wumpus($x, True)
 	assert
-		facts.Tumpus($x, True)
+		facts.Yumpus($x, True)
 
-fact29
+fact16
 	foreach
-		facts.Tumpus($x, True)
+		facts.Yumpus($x, True)
 	assert
-		facts.Blue($x, True)
+		facts.Metallic($x, False)
+
+fact17
+	foreach
+		facts.Yumpus($x, True)
+	assert
+		facts.Zumpus($x, True)

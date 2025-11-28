@@ -15,7 +15,7 @@ ZHIPUAI_API_KEY = "78443ce13bdd4f72809efda1abd95af4.s6TNCSWw3Q4Ci2wx"
 # ========== iflow API配置 ==========
 # iflow API Key
 # iflow 是一个兼容 OpenAI API 的服务
-IFLOW_API_KEY = "sk-33fc7dc2f8c9c910277c21af4891b270"
+IFLOW_API_KEY = "sk-64e5a7718cd09298a70a92578c89a50e"
 IFLOW_BASE_URL = "https://apis.iflow.cn/v1"  # iflow API 的 base_url
 
 # ========== 默认设置 ==========

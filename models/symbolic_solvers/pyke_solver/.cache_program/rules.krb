@@ -1,101 +1,37 @@
 fact1
 	foreach
-		facts.Impus($x, True)
+		facts.White($x, True)
+		facts.Blue($x, True)
 	assert
-		facts.Transparent($x, True)
+		facts.Furry($x, True)
 
 fact2
 	foreach
-		facts.Impus($x, True)
+		facts.Big($x, True)
+		facts.White($x, True)
 	assert
-		facts.Tumpus($x, True)
+		facts.Smart($x, True)
 
 fact3
 	foreach
-		facts.Tumpus($x, True)
+		facts.Furry($x, True)
 	assert
-		facts.Angry($x, True)
+		facts.Green($x, True)
 
 fact4
 	foreach
-		facts.Tumpus($x, True)
+		facts.Kind($x, True)
 	assert
-		facts.Dumpus($x, True)
+		facts.Blue($x, True)
 
 fact5
 	foreach
-		facts.Dumpus($x, True)
+		facts.Green($x, True)
 	assert
-		facts.Orange($x, False)
+		facts.Furry($x, True)
 
 fact6
 	foreach
-		facts.Jompus($x, True)
+		facts.Green($x, True)
 	assert
-		facts.Dumpus($x, True)
-
-fact7
-	foreach
-		facts.Jompus($x, True)
-	assert
-		facts.Feisty($x, True)
-
-fact8
-	foreach
-		facts.Jompus($x, True)
-	assert
-		facts.Numpus($x, True)
-
-fact9
-	foreach
-		facts.Numpus($x, True)
-	assert
-		facts.Earthy($x, False)
-
-fact10
-	foreach
-		facts.Rompus($x, True)
-	assert
-		facts.Earthy($x, True)
-
-fact11
-	foreach
-		facts.Numpus($x, True)
-	assert
-		facts.Vumpus($x, True)
-
-fact12
-	foreach
-		facts.Vumpus($x, True)
-	assert
-		facts.Temperate($x, True)
-
-fact13
-	foreach
-		facts.Vumpus($x, True)
-	assert
-		facts.Wumpus($x, True)
-
-fact14
-	foreach
-		facts.Wumpus($x, True)
-	assert
-		facts.Small($x, True)
-
-fact15
-	foreach
-		facts.Wumpus($x, True)
-	assert
-		facts.Yumpus($x, True)
-
-fact16
-	foreach
-		facts.Yumpus($x, True)
-	assert
-		facts.Metallic($x, False)
-
-fact17
-	foreach
-		facts.Yumpus($x, True)
-	assert
-		facts.Zumpus($x, True)
+		facts.Big($x, True)

@@ -10,11 +10,11 @@
 # ============================================================================
 
 # 数据配置
-DATASET_NAME = 'ProntoQA'   # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
+DATASET_NAME = 'AR-LSAT'   # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
 DATASET_SPLIT = 'dev'       # 可选: 'dev', 'test'
 
 # 模型配置（需与推理阶段一致）
-MODEL_NAME = 'glm-4-flash-250414'
+MODEL_NAME = 'glm-4.6'    #glm-4-flash-250414
 
 # 备份策略（需要与 run_logic_inference.py 的 backup_strategy 对齐）
 BACKUP_STRATEGY = 'random'  # 可选: 'random', 'LLM'

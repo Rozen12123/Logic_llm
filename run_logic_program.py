@@ -10,8 +10,8 @@
 # ============================================================================
 
 # 数据集配置
-DATASET_NAME = 'AR-LSAT'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
-DATASET_SPLIT = 'dev'      # 可选: 'dev', 'test'
+DATASET_NAME = 'ProofWriter'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
+DATASET_SPLIT = 'test'      # 可选: 'dev', 'test', 'train'
 
 # API配置
 API_PROVIDER = 'iflow'     # 可选: 'openai', 'zhipuai', 'iflow'

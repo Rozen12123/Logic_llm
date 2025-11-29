@@ -1,0 +1,90 @@
+[
+  {
+    "id": "logical_deduction_12",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there were five golfers: Eve, Rob, Ana, Eli, and Mya. Eli finished below Mya. Eve finished first. Ana finished below Eli. Rob finished second.",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "options": [
+      "A) Eve finished third.",
+      "B) Rob finished third.",
+      "C) Ana finished third.",
+      "D) Eli finished third.",
+      "E) Mya finished third."
+    ],
+    "raw_logic_programs": [
+      "###\nDomain:\n1: first\n5: fifth\nVariables:\nEve [IN] [1, 2, 3, 4, 5]\nRob [IN] [1, 2, 3, 4, 5]\nAna [IN] [1, 2, 3, 4, 5]\nEli [IN] [1, 2, 3, 4, 5]\nMya [IN] [1, 2, 3, 4, 5]\nConstraints:\neli > mya ::: Eli finished below Mya.\neve == 1 ::: Eve finished first.\nana > eli ::: Ana finished below Eli.\nrob == 2 ::: Rob finished second.\nAllDifferentConstraint([eve, rob, ana, eli, mya]) ::: All golfers have different values.\nQuery:\n(A) eve == 3 ::: Eve finished third.\n(B) rob == 3 ::: Rob finished third.\n(C) ana == 3 ::: Ana finished third.\n(D) eli == 3 ::: Eli finished third.\n(E) mya == 3 ::: Mya finished third."
+    ]
+  },
+  {
+    "id": "logical_deduction_109",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: mangoes, kiwis, oranges, watermelons, apples, pears, and loquats. The loquats are less expensive than the oranges. The oranges are the third-most expensive. The apples are the cheapest. The kiwis are more expensive than the pears. The mangoes are more expensive than the watermelons. The loquats are more expensive than the kiwis.",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "options": [
+      "A) The mangoes are the fourth-most expensive.",
+      "B) The kiwis are the fourth-most expensive.",
+      "C) The oranges are the fourth-most expensive.",
+      "D) The watermelons are the fourth-most expensive.",
+      "E) The apples are the fourth-most expensive.",
+      "F) The pears are the fourth-most expensive.",
+      "G) The loquats are the fourth-most expensive."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: cheapest\n7: most expensive\nVariables:\nmangoes [IN] [1, 2, 3, 4, 5, 6, 7]\nkiwis [IN] [1, 2, 3, 4, 5, 6, 7]\noranges [IN] [1, 2, 3, 4, 5, 6, 7]\nwatermelons [IN] [1, 2, 3, 4, 5, 6, 7]\napples [IN] [1, 2, 3, 4, 5, 6, 7]\npears [IN] [1, 2, 3, 4, 5, 6, 7]\nloquats [IN] [1, 2, 3, 4, 5, 6, 7]\nConstraints:\nloquats < oranges ::: The loquats are less expensive than the oranges.\noranges == 3 ::: The oranges are the third-most expensive.\napples == 1 ::: The apples are the cheapest.\nkiwis > pears ::: The kiwis are more expensive than the pears.\nmangoes > watermelons ::: The mangoes are more expensive than the watermelons.\nloquats > kiwis ::: The loquats are more expensive than the kiwis.\nAllDifferentConstraint([mangoes, kiwis, oranges, watermelons, apples, pears, loquats]) ::: All fruits have different values.\nQuery:\n(A) mangoes == 4 ::: The mangoes are the fourth-most expensive.\n(B) kiwis == 4 ::: The kiwis are the fourth-most expensive.\n(C) oranges == 4 ::: The oranges are the fourth-most expensive.\n(D) watermelons == 4 ::: The watermelons are the fourth-most expensive.\n(E) apples == 4 ::: The apples are the fourth-most expensive.\n(F) pears == 4 ::: The pears are the fourth-most expensive.\n(G) loquats == 4 ::: The loquats are the fourth-most expensive."
+    ]
+  },
+  {
+    "id": "logical_deduction_151",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, mangoes, kiwis, pears, cantaloupes, oranges, and peaches. The oranges are more expensive than the peaches. The cantaloupes are the fourth-most expensive. The pears are less expensive than the cantaloupes. The peaches are the second-most expensive. The mangoes are the cheapest. The kiwis are the third-cheapest.",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "options": [
+      "A) The watermelons are the second-most expensive.",
+      "B) The mangoes are the second-most expensive.",
+      "C) The kiwis are the second-most expensive.",
+      "D) The pears are the second-most expensive.",
+      "E) The cantaloupes are the second-most expensive.",
+      "F) The oranges are the second-most expensive.",
+      "G) The peaches are the second-most expensive."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: cheapest\n7: most expensive\nVariables:\nwatermelons [IN] [1, 2, 3, 4, 5, 6, 7]\nmangoes [IN] [1, 2, 3, 4, 5, 6, 7]\nkiwis [IN] [1, 2, 3, 4, 5, 6, 7]\npears [IN] [1, 2, 3, 4, 5, 6, 7]\ncantaloupes [IN] [1, 2, 3, 4, 5, 6, 7]\noranges [IN] [1, 2, 3, 4, 5, 6, 7]\npeaches [IN] [1, 2, 3, 4, 5, 6, 7]\nConstraints:\noranges > peaches ::: The oranges are more expensive than the peaches.\ncantaloupes == 4 ::: The cantaloupes are the fourth-most expensive.\npears < cantaloupes ::: The pears are less expensive than the cantaloupes.\npeaches == 2 ::: The peaches are the second-most expensive.\nmangoes == 1 ::: The mangoes are the cheapest.\nkiwis == 3 ::: The kiwis are the third-cheapest.\nAllDifferentConstraint([watermelons, mangoes, kiwis, pears, cantaloupes, oranges, peaches]) ::: All fruits have different values.\nQuery:\n(A) watermelons == 2 ::: The watermelons are the second-most expensive.\n(B) mangoes == 2 ::: The mangoes are the second-most expensive.\n(C) kiwis == 2 ::: The kiwis are the second-most expensive.\n(D) pears == 2 ::: The pears are the second-most expensive.\n(E) cantaloupes == 2 ::: The cantaloupes are the second-most expensive.\n(F) oranges == 2 ::: The oranges are the second-most expensive.\n(G) peaches == 2 ::: The peaches are the second-most expensive."
+    ]
+  },
+  {
+    "id": "logical_deduction_164",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: mangoes, kiwis, oranges, watermelons, apples, pears, and loquats. The loquats are less expensive than the oranges. The oranges are the third-most expensive. The apples are the cheapest. The kiwis are more expensive than the pears. The mangoes are more expensive than the watermelons. The loquats are more expensive than the kiwis.",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "options": [
+      "A) The mangoes are the most expensive.",
+      "B) The kiwis are the most expensive.",
+      "C) The oranges are the most expensive.",
+      "D) The watermelons are the most expensive.",
+      "E) The apples are the most expensive.",
+      "F) The pears are the most expensive.",
+      "G) The loquats are the most expensive."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: cheapest\n7: most expensive\nVariables:\nmangoes [IN] [1, 2, 3, 4, 5, 6, 7]\nkiwis [IN] [1, 2, 3, 4, 5, 6, 7]\noranges [IN] [1, 2, 3, 4, 5, 6, 7]\nwatermelons [IN] [1, 2, 3, 4, 5, 6, 7]\napples [IN] [1, 2, 3, 4, 5, 6, 7]\npears [IN] [1, 2, 3, 4, 5, 6, 7]\nloquats [IN] [1, 2, 3, 4, 5, 6, 7]\nConstraints:\nloquats < oranges ::: The loquats are less expensive than the oranges.\noranges == 3 ::: The oranges are the third-most expensive.\napples == 1 ::: The apples are the cheapest.\nkiwis > pears ::: The kiwis are more expensive than the pears.\nmangoes > watermelons ::: The mangoes are more expensive than the watermelons.\nloquats > kiwis ::: The loquats are more expensive than the kiwis.\nAllDifferentConstraint([mangoes, kiwis, oranges, watermelons, apples, pears, loquats]) ::: All fruits have different values.\nQuery:\n(A) mangoes == 7 ::: The mangoes are the most expensive.\n(B) kiwis == 7 ::: The kiwis are the most expensive.\n(C) oranges == 7 ::: The oranges are the most expensive.\n(D) watermelons == 7 ::: The watermelons are the most expensive.\n(E) apples == 7 ::: The apples are the most expensive.\n(F) pears == 7 ::: The pears are the most expensive.\n(G) loquats == 7 ::: The loquats are the most expensive."
+    ]
+  },
+  {
+    "id": "logical_deduction_208",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, mangoes, kiwis, pears, cantaloupes, oranges, and peaches. The oranges are more expensive than the peaches. The cantaloupes are the fourth-most expensive. The pears are less expensive than the cantaloupes. The peaches are the second-most expensive. The mangoes are the cheapest. The kiwis are the third-cheapest.",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "options": [
+      "A) The watermelons are the third-most expensive.",
+      "B) The mangoes are the third-most expensive.",
+      "C) The kiwis are the third-most expensive.",
+      "D) The pears are the third-most expensive.",
+      "E) The cantaloupes are the third-most expensive.",
+      "F) The oranges are the third-most expensive.",
+      "G) The peaches are the third-most expensive."
+    ],
+    "raw_logic_programs": [
+      "Domain:\n1: cheapest\n7: most expensive\nVariables:\nwatermelons [IN] [1, 2, 3, 4, 5, 6, 7]\nmangoes [IN] [1, 2, 3, 4, 5, 6, 7]\nkiwis [IN] [1, 2, 3, 4, 5, 6, 7]\npears [IN] [1, 2, 3, 4, 5, 6, 7]\ncantaloupes [IN] [1, 2, 3, 4, 5, 6, 7]\noranges [IN] [1, 2, 3, 4, 5, 6, 7]\npeaches [IN] [1, 2, 3, 4, 5, 6, 7]\nConstraints:\noranges > peaches ::: The oranges are more expensive than the peaches.\ncantaloupes == 4 ::: The cantaloupes are the fourth-most expensive.\npears < cantaloupes ::: The pears are less expensive than the cantaloupes.\npeaches == 2 ::: The peaches are the second-most expensive.\nmangoes == 1 ::: The mangoes are the cheapest.\nkiwis == 3 ::: The kiwis are the third-cheapest.\nAllDifferentConstraint([watermelons, mangoes, kiwis, pears, cantaloupes, oranges, peaches]) ::: All fruits have different values.\nQuery:\n(A) watermelons == 3 ::: The watermelons are the third-most expensive.\n(B) mangoes == 3 ::: The mangoes are the third-most expensive.\n(C) kiwis == 3 ::: The kiwis are the third-most expensive.\n(D) pears == 3 ::: The pears are the third-most expensive.\n(E) cantaloupes == 3 ::: The cantaloupes are the third-most expensive.\n(F) oranges == 3 ::: The oranges are the third-most expensive.\n(G) peaches == 3 ::: The peaches are the third-most expensive."
+    ]
+  }
+]

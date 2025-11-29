@@ -1,0 +1,43 @@
+[
+  {
+    "id": "logical_deduction_12",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there were five golfers: Eve, Rob, Ana, Eli, and Mya. Eli finished below Mya. Eve finished first. Ana finished below Eli. Rob finished second.",
+    "question": "Which of the following is true?",
+    "answer": "E",
+    "flag": "execution error",
+    "predicted_answer": "D",
+    "error_message": "'eli'"
+  },
+  {
+    "id": "logical_deduction_109",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: mangoes, kiwis, oranges, watermelons, apples, pears, and loquats. The loquats are less expensive than the oranges. The oranges are the third-most expensive. The apples are the cheapest. The kiwis are more expensive than the pears. The mangoes are more expensive than the watermelons. The loquats are more expensive than the kiwis.",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "flag": "success",
+    "predicted_answer": null
+  },
+  {
+    "id": "logical_deduction_151",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, mangoes, kiwis, pears, cantaloupes, oranges, and peaches. The oranges are more expensive than the peaches. The cantaloupes are the fourth-most expensive. The pears are less expensive than the cantaloupes. The peaches are the second-most expensive. The mangoes are the cheapest. The kiwis are the third-cheapest.",
+    "question": "Which of the following is true?",
+    "answer": "G",
+    "flag": "success",
+    "predicted_answer": null
+  },
+  {
+    "id": "logical_deduction_164",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: mangoes, kiwis, oranges, watermelons, apples, pears, and loquats. The loquats are less expensive than the oranges. The oranges are the third-most expensive. The apples are the cheapest. The kiwis are more expensive than the pears. The mangoes are more expensive than the watermelons. The loquats are more expensive than the kiwis.",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": null
+  },
+  {
+    "id": "logical_deduction_208",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, mangoes, kiwis, pears, cantaloupes, oranges, and peaches. The oranges are more expensive than the peaches. The cantaloupes are the fourth-most expensive. The pears are less expensive than the cantaloupes. The peaches are the second-most expensive. The mangoes are the cheapest. The kiwis are the third-cheapest.",
+    "question": "Which of the following is true?",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": null
+  }
+]

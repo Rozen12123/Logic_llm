@@ -44,28 +44,6 @@
     "answer": "C"
   },
   {
-    "id": "FOLIO_dev_19",
-    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is not both a turtle and a squirrel, then Rock is either cute or skittish.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
-  },
-  {
-    "id": "FOLIO_dev_20",
-    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? If Rock is cute and still, then Rock is a turtle and skittish.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "B"
-  },
-  {
     "id": "FOLIO_dev_24",
     "context": "Beijing is the capital of the People's Republic of China. Beijing is the world's most populous national capital city. Beijing is located in Northern China. Beijing hosted the 2008 Summer Olympics and 2008 Summer Paralympics Games. Beijing has hosted both the Summer and Winter Olympics, along with the Summer and Winter Paralympics Many of Beijing's 91 universities consistently rank among the best in the Asia-Pacific and the world.",
     "question": "Based on the above information, is the following statement true, false, or uncertain? Beijing has hosted both the 2008 Summer Olympics and a winter olympics.",
@@ -154,39 +132,6 @@
     "answer": "B"
   },
   {
-    "id": "FOLIO_dev_42",
-    "context": "If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis. Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association. All female tennis players at Roland Garros 2022 lost to Iga Świątek. Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022. All male tennis players at Roland Garros 2022 lost to Rafael Nadal. If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff is among the most active players in major tennis.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
-  },
-  {
-    "id": "FOLIO_dev_43",
-    "context": "If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis. Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association. All female tennis players at Roland Garros 2022 lost to Iga Świątek. Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022. All male tennis players at Roland Garros 2022 lost to Rafael Nadal. If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff has lost to Rafael Nadal.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "C"
-  },
-  {
-    "id": "FOLIO_dev_44",
-    "context": "If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis. Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association. All female tennis players at Roland Garros 2022 lost to Iga Świątek. Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022. All male tennis players at Roland Garros 2022 lost to Rafael Nadal. If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff is not a player who lost to Iga Świątek or one of the most active players in major tennis.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "B"
-  },
-  {
     "id": "FOLIO_dev_45",
     "context": "All cats are mammals. Some pets are not mammals.",
     "question": "Based on the above information, is the following statement true, false, or uncertain? No pets are cats.",
@@ -240,17 +185,6 @@
       "C) Uncertain"
     ],
     "answer": "C"
-  },
-  {
-    "id": "FOLIO_dev_54",
-    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? French is an Indo-European language.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
   },
   {
     "id": "FOLIO_dev_58",
@@ -407,28 +341,6 @@
     "answer": "B"
   },
   {
-    "id": "FOLIO_dev_88",
-    "context": "[BG] Books contain tons of knowledge. [BG] When a person reads a book, that person gains knowledge. [BG] If a person gains knowledge, they become smarter. Harry read the book “Walden” by Henry Thoreau.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Walden contains knowledge.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
-  },
-  {
-    "id": "FOLIO_dev_89",
-    "context": "[BG] Books contain tons of knowledge. [BG] When a person reads a book, that person gains knowledge. [BG] If a person gains knowledge, they become smarter. Harry read the book “Walden” by Henry Thoreau.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry is smarter than before.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
-  },
-  {
     "id": "FOLIO_dev_93",
     "context": "Pets are allowed in some managed buildings. [BG] A deposit is required to rent an apartment in a managed building. The security deposit can be either equal to one month's rent or more. Fluffy is Tom's cat. Cats are pets. The Olive Garden is a managed building. The monthly rent at the Olive Garden is $2000. Tom will rent an apartment in a managed building if and only if he is allowed to move in with Fluffy, and the security deposit is no more than $1500. 2000$ is more than $1500.",
     "question": "Based on the above information, is the following statement true, false, or uncertain? Tom will rent an apartment in The Olive Garden.",
@@ -462,39 +374,6 @@
     "answer": "A"
   },
   {
-    "id": "FOLIO_dev_97",
-    "context": "If animals are loved by tourists, then they are Max's favorite animals. All animals from Australia are loved by tourists. All quokka are animals from Australia. All of Max's favorite animals are very fluffy. All of Max's favorite animals love to sleep. If a koala is very fluffy, then the koala is not a quokka.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Koalas love to sleep and are quokka.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "B"
-  },
-  {
-    "id": "FOLIO_dev_100",
-    "context": "A man is either kind or evil. No ugly person is handsome. All evil people are ugly. All gentlemen are handsome. All CEOs are gentlemen. Harry is a gentleman.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry is kind or a CEO.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
-  },
-  {
-    "id": "FOLIO_dev_101",
-    "context": "A man is either kind or evil. No ugly person is handsome. All evil people are ugly. All gentlemen are handsome. All CEOs are gentlemen. Harry is a gentleman.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? If Harry is either both evil and ugly, or neither evil nor ugly, then Harry is neither kind nor a CEO.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "B"
-  },
-  {
     "id": "FOLIO_dev_105",
     "context": "It costs US $205 to take the GRE test. ETS provides financial aid to those GRE applicants who prove economic hardship. Economic hardship refers to difficulty caused by having too little money or too few resources. Tom lives in a single-parent family. His dad has been out of work for more than a year.",
     "question": "Based on the above information, is the following statement true, false, or uncertain? Tom can apply for financial aid from ETS to take the GRE test.",
@@ -526,17 +405,6 @@
       "C) Uncertain"
     ],
     "answer": "B"
-  },
-  {
-    "id": "FOLIO_dev_110",
-    "context": "If people spill a lot of food on their clothing, then they do not tidy their spaces consistently and enjoy the process of cleaning. All foodies who go out frequently to find new food restaurants to try are people who spill a lot of food on their clothing. If people grew up as only children with no siblings, then they tidy their spaces consistently and enjoy the process of cleaning. If people have parents who are very busy with their regular jobs, then they grew up as only children with no siblings. All households with a high net income have people who have parents who are very busy with their regular jobs. Peter is either both a person who spills a lot of food on his clothing and grew up as an only child with no siblings, or he is neither a person who spills a lot of food on his clothing nor grew up as an only child with no siblings.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter is either a foodie who goes out frequently to find new food restaurants to try and belong to a household with a high net income or he is a foodie who goes out frequently to find new food restaurants to try nor belongs to a household with a high net income.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
   },
   {
     "id": "FOLIO_dev_111",
@@ -649,17 +517,6 @@
     "answer": "C"
   },
   {
-    "id": "FOLIO_dev_126",
-    "context": "All mammals are animals. All monkeys are mammals. An animal is either a monkey or a bird. All birds fly. All animals breathe. If something can fly, then it has wings. If Rock is neither a fly nor a bird, then Rock neither flies nor breathes.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock has wings.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
-  },
-  {
     "id": "FOLIO_dev_127",
     "context": "All mammals are animals. All monkeys are mammals. An animal is either a monkey or a bird. All birds fly. All animals breathe. If something can fly, then it has wings. If Rock is neither a fly nor a bird, then Rock neither flies nor breathes.",
     "question": "Based on the above information, is the following statement true, false, or uncertain? Rock does not have wings.",
@@ -737,28 +594,6 @@
     "answer": "A"
   },
   {
-    "id": "FOLIO_dev_141",
-    "context": "If a cartoon character is funny, then it is popular. If a cartoon character is ugly, then it is not popular. If a cartoon character is loved by children, then it is funny. If a cartoon character is from The Simpsons, then it is loved by children. If a cartoon character is yellow, then it is from The Simpsons. Ben is either from The Simpsons or funny.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Ben is ugly or yellow.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "B"
-  },
-  {
-    "id": "FOLIO_dev_142",
-    "context": "If a cartoon character is funny, then it is popular. If a cartoon character is ugly, then it is not popular. If a cartoon character is loved by children, then it is funny. If a cartoon character is from The Simpsons, then it is loved by children. If a cartoon character is yellow, then it is from The Simpsons. Ben is either from The Simpsons or funny.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Ben is either yellow and ugly or neither yellow nor ugly.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
-  },
-  {
     "id": "FOLIO_dev_143",
     "context": "Breeding back is a form of artificial selection by the deliberate selective breeding of domestic animals. Heck cattle were bred-back in the 1920s to resemble the aurochs. [BG] Heck cattle are animals. [BG] Aurochs are animals. Some animals to be bred-back resemble animals that are extinct.",
     "question": "Based on the above information, is the following statement true, false, or uncertain? Some Heck cattle are artificially selected.",
@@ -779,17 +614,6 @@
       "C) Uncertain"
     ],
     "answer": "C"
-  },
-  {
-    "id": "FOLIO_dev_150",
-    "context": "New Vessel Press is a publishing house which specializes in translating foreign literature into English. All of New Vessel Press's published books are in English. Neapolitan Chronicles is a book published by New Vessel Press. Neapolitan Chronicles was translated from Italian. Palace of Flies is a book published by New Vessel Press.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Neapolitan Chronicles is an English book.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
   },
   {
     "id": "FOLIO_dev_164",
@@ -814,28 +638,6 @@
     "answer": "B"
   },
   {
-    "id": "FOLIO_dev_166",
-    "context": "On some Mondays at 8 pm, roses are given out on TV. Every rose given out on TV is on the Bachelor. Everything on the Bachelor portrays the lives of real people. All shows portraying the lives of real people are reality TV shows. Breaking Bad is not a reality TV show.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? If roses are given out during Breaking Bad, then it is on Monday at 8 pm.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
-  },
-  {
-    "id": "FOLIO_dev_167",
-    "context": "Heinrich Scmidt was a Nazi German politician. Heeinrich Scmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Heinrich Schmidt was either German or Russian.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
-  },
-  {
     "id": "FOLIO_dev_168",
     "context": "Heinrich Scmidt was a Nazi German politician. Heeinrich Scmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.",
     "question": "Based on the above information, is the following statement true, false, or uncertain? Some Nazi German politician was part of both the Prussian State Parliament and the Nazi Reichstag.",
@@ -856,17 +658,6 @@
       "C) Uncertain"
     ],
     "answer": "B"
-  },
-  {
-    "id": "FOLIO_dev_170",
-    "context": "If something is a deadly disease, then its survival rate is low. All severe cancers are deadly diseases. Bile duct cancer is a severe cancer. All Cholangiocarcinoma is bile duct cancer. No one with mild flu has a low survival rate. If colorectal cancer is a bile duct cancer and the survival rate is low, then colorectal cancer is not a bile duct cancer.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? Colorectal cancer is a severe cancer",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "C"
   },
   {
     "id": "FOLIO_dev_172",
@@ -977,17 +768,6 @@
       "C) Uncertain"
     ],
     "answer": "C"
-  },
-  {
-    "id": "FOLIO_dev_198",
-    "context": "If an animal barks, then Jane does not like it. All dogs are animals that bark. If an animal jumps, then Jane likes it. If an animal has legs, then it jumps. If an animal is terricolous, then it has legs. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
-    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi neither barks nor is a dog.",
-    "options": [
-      "A) True",
-      "B) False",
-      "C) Uncertain"
-    ],
-    "answer": "A"
   },
   {
     "id": "FOLIO_dev_199",

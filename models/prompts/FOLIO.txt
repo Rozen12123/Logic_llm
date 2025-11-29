@@ -1,18 +1,43 @@
-Given a problem description and a question. The task is to parse the problem and the question into first-order logic formulars.
-The grammar of the first-order logic formular is defined as follows:
-1) logical conjunction of expr1 and expr2: expr1 ∧ expr2
-2) logical disjunction of expr1 and expr2: expr1 ∨ expr2
-3) logical exclusive disjunction of expr1 and expr2: expr1 ⊕ expr2
-4) logical negation of expr1: ¬expr1
-5) expr1 implies expr2: expr1 → expr2
-6) expr1 if and only if expr2: expr1 ↔ expr2
-7) logical universal quantification: ∀x
-8) logical existential quantification: ∃x
-IMPORTANT OUTPUT RULES:
+Given a problem description and a question. The task is to parse the problem and the question into first-order logic formulas.
+
+**CRITICAL: Entity Naming Consistency (MUST FOLLOW)**
+- ALL entity names (individuals, objects) MUST use lowercase with underscores or camelCase (e.g., `rina`, `miroslav`, `james`, `zeldaCreator`, `legendOfZelda`)
+- Use the EXACT same entity name everywhere it appears in Premises and Conclusion
+- If the problem mentions a person's name, use lowercase (e.g., "Rina" → `rina`, "James" → `james`)
+- For compound names or titles, use camelCase (e.g., "Method of Studying Gregorian Chant" → `methodOfStudyingGregorianChant`)
+- Do NOT mix naming styles or use different variations of the same entity
+
+**CRITICAL: Predicate Naming**
+- Use clear, descriptive predicate names (e.g., `Employee(x)`, `ScheduleMeeting(x)`, `WorkRemotely(x)`)
+- Keep predicate names consistent - use the same name for the same concept throughout
+- For binary predicates, use clear names like `Author(x, y)`, `Created(x, y)`, `Loves(x, y)`
+
+**First-Order Logic Grammar:**
+1) logical conjunction: expr1 ∧ expr2
+2) logical disjunction: expr1 ∨ expr2
+3) logical exclusive disjunction: expr1 ⊕ expr2
+4) logical negation: ¬expr1
+5) implication: expr1 → expr2
+6) biconditional: expr1 ↔ expr2
+7) universal quantification: ∀x
+8) existential quantification: ∃x
+
+**CRITICAL: Formula Construction Rules**
+- Use parentheses to clearly group logical operations
+- For "All X are Y": ∀x (X(x) → Y(x))
+- For "Some X are Y": ∃x (X(x) ∧ Y(x))
+- For "No X are Y": ∀x (X(x) → ¬Y(x)) or equivalently ¬∃x (X(x) ∧ Y(x))
+- For "X either Y or Z" (exclusive or): X(x) ⊕ Y(x) or (X(x) ∧ Y(x)) ⊕ ¬(X(x) ∨ Y(x))
+- For "If X then Y": X → Y
+- For "X and Y": X ∧ Y
+- For "X or Y" (inclusive): X ∨ Y
+
+**IMPORTANT OUTPUT RULES:**
 - Respond **only** with the sections shown below: `Predicates:`, `Premises:`, and `Conclusion:`.
 - Every line inside those sections must be in the format `<FOL formula> ::: <natural-language description>` with no numbering, bullets, Markdown, explanations, or analysis.
 - Do not insert extra prose before, between, or after the sections. Do not restate the question, do not add reasoning, and do not include any additional headings.
 - When multiple questions are provided, list multiple conclusion lines (one per question) inside the same `Conclusion:` block, again without numbering.
+- Use consistent variable names (typically `x`, `y`, `z` for quantified variables, and specific lowercase names for entities)
 ------
 Problem:
 All people who regularly drink coffee are dependent on caffeine. People either regularly drink coffee or joke about being addicted to caffeine. No one who jokes about being addicted to caffeine is unaware that caffeine is a drug. Rina is either a student and unaware that caffeine is a drug, or neither a student nor unaware that caffeine is a drug. If Rina is not a person dependent on caffeine and a student, then Rina is either a person dependent on caffeine and a student, or neither a person dependent on caffeine nor a student.

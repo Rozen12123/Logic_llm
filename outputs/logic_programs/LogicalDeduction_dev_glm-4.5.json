@@ -1,0 +1,18 @@
+[
+  {
+    "id": "logical_deduction_0",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nOn a shelf, there are five books: a green book, a blue book, a white book, a purple book, and a yellow book. The blue book is to the right of the yellow book. The white book is to the left of the yellow book. The blue book is the second from the right. The purple book is the second from the left.",
+    "question": "Which of the following is true?",
+    "answer": "D",
+    "options": [
+      "A) The green book is the second from the left.",
+      "B) The blue book is the second from the left.",
+      "C) The white book is the second from the left.",
+      "D) The purple book is the second from the left.",
+      "E) The yellow book is the second from the left."
+    ],
+    "raw_logic_programs": [
+      "### Constraint Satisfaction Problem Definition\n\n**Domain:**  \n1: leftmost  \n5: rightmost  \n\n**Variables:**  \n- `green` [IN] [1, 2, 3, 4, 5]  \n- `blue` [IN] [1, 2, 3, 4, 5]  \n- `white` [IN] [1, 2, 3, 4, 5]  \n- `purple` [IN] [1, 2, 3, 4, 5]  \n- `yellow` [IN] [1, 2, 3, 4, 5]  \n\n**Constraints:**  \n1. `blue == 4` ::: The blue book is the second from the right.  \n2. `purple == 2` ::: The purple book is the second from the left.  \n3. `blue > yellow` ::: The blue book is to the right of the yellow book.  \n4. `white < yellow` ::: The white book is to the left of the yellow book.  \n5. `AllDifferentConstraint([green, blue, white, purple, yellow])` ::: All books have distinct positions.  \n\n**Query:**  \n- (A) `green == 2` ::: The green book is the second from the left.  \n- (B) `blue == 2` ::: The blue book is the second from the left.  \n- (C) `white == 2` ::: The white book is the second from the left.  \n- (D) `purple == 2` ::: The purple book is the second from the left.  \n- (E) `yellow == 2` ::: The yellow book is the second from the left."
+    ]
+  }
+]

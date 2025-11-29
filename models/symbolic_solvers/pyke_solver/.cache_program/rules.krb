@@ -1,59 +1,37 @@
 fact1
 	foreach
-		facts.Round($x, True)
-		facts.Red($x, True)
+		facts.White($x, True)
+		facts.Blue($x, True)
 	assert
-		facts.Chases($x, dog, True)
+		facts.Furry($x, True)
 
 fact2
 	foreach
-		facts.Chases($x, bald_eagle, True)
+		facts.Big($x, True)
+		facts.White($x, True)
 	assert
-		facts.Sees($x, mouse, True)
+		facts.Smart($x, True)
 
 fact3
 	foreach
-		facts.Needs($x, mouse, True)
-		facts.Needs(mouse, bald_eagle, True)
+		facts.Furry($x, True)
 	assert
-		facts.Sees($x, squirrel, False)
+		facts.Green($x, True)
 
 fact4
 	foreach
-		facts.Needs($x, mouse, True)
+		facts.Kind($x, True)
 	assert
-		facts.Sees(mouse, squirrel, False)
+		facts.Blue($x, True)
 
 fact5
 	foreach
-		facts.Blue($x, True)
-		facts.Needs($x, dog, True)
+		facts.Green($x, True)
 	assert
-		facts.Cold($x, True)
+		facts.Furry($x, True)
 
 fact6
 	foreach
-		facts.Chases($x, dog, True)
+		facts.Green($x, True)
 	assert
-		facts.Chases($x, bald_eagle, True)
-
-fact7
-	foreach
-		facts.Chases(bald_eagle, squirrel, True)
-		facts.Sees(bald_eagle, squirrel, True)
-	assert
-		facts.Red(squirrel, True)
-
-fact8
-	foreach
-		facts.Sees($x, mouse, True)
-		facts.Needs(mouse, dog, True)
-	assert
-		facts.Chases(dog, bald_eagle, True)
-
-fact9
-	foreach
-		facts.Sees($x, squirrel, True)
-		facts.Cold(squirrel, True)
-	assert
-		facts.Blue($x, True)
+		facts.Big($x, True)

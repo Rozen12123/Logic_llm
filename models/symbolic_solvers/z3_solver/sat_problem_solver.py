@@ -49,7 +49,26 @@ class LSAT_Z3_Program:
             (self.declared_enum_sorts, self.declared_int_sorts, self.declared_lists, self.declared_functions, self.variable_constrants) = self.parse_declaration_statements(declaration_statements)
 
             self.constraints = [x.split(':::')[0].strip() for x in constraint_statements]
-            self.options = [x.split(':::')[0].strip() for x in option_statements if not x.startswith("Question :::")]
+
+            self.options = []
+            current_option_lines = []
+            for raw_line in option_statements:
+                if raw_line.startswith("Question :::"):
+                    continue
+                line_without_meta = raw_line
+                if ':::' in raw_line:
+                    line_without_meta = raw_line.split(':::')[0].strip()
+                    current_option_lines.append(line_without_meta)
+                    combined = ' '.join(current_option_lines).strip()
+                    if combined:
+                        self.options.append(combined)
+                    current_option_lines = []
+                else:
+                    current_option_lines.append(raw_line.strip())
+            if current_option_lines:
+                combined = ' '.join(current_option_lines).strip()
+                if combined:
+                    self.options.append(combined)
         except Exception as e:
             return False
         

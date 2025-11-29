@@ -1,0 +1,16 @@
+[
+  {
+    "id": "FOLIO_dev_0",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Bonnie performs in school talent shows often.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nPerformInTalentShows(x) ::: x performs in school talent shows often.\nAttendAndEngaged(x) ::: x attends and is very engaged with school events.\nInactiveAndDisinterested(x) ::: x is inactive and disinterested member of their community.\nChaperoneDances(x) ::: x chaperones high school dances.\nStudent(x) ::: x is a student who attends the school.\nYoungChildOrTeenager(x) ::: x is a young child or teenager.\nWishToFurtherAcademicCareer(x) ::: x wishes to further their academic career and educational opportunities.\nPremises:\n∀x (PerformInTalentShows(x) → AttendAndEngaged(x)) ::: If people perform in school talent shows often, then they attend and are very engaged with school events.\n∀x (PerformInTalentShows(x) ⊕ InactiveAndDisinterested(x)) ::: People either perform in school talent shows often or are inactive and disinterested members of their community.\n∀x (ChaperoneDances(x) → ¬Student(x)) ::: If people chaperone high school dances, then they are not students who attend the school.\n∀x (InactiveAndDisinterested(x) → ChaperoneDances(x)) ::: All people who are inactive and disinterested members of their community chaperone high school dances.\n∀x ((YoungChildOrTeenager(x) ∧ WishToFurtherAcademicCareer(x)) → Student(x)) ::: All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school.\n(AttendAndEngaged(bonnie) ∧ Student(bonnie)) ⊕ ¬(AttendAndEngaged(bonnie) ∨ Student(bonnie)) ::: Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.\nConclusion:\nPerformInTalentShows(bonnie) ::: Bonnie performs in school talent shows often."
+    ]
+  }
+]

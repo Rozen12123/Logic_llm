@@ -57,10 +57,11 @@ class LogicInferenceEngine:
             return answer, 'parsing error', ''
         # execuate the program
         answer, error_message = program.execute_program()
+        error_message_str = str(error_message) if error_message else ''
         # not executable
         if answer is None:
             answer = self.backup_generator.get_backup_answer(id)
-            return answer, 'execution error', error_message
+            return answer, 'execution error', error_message_str
         # successfully executed
         answer = program.answer_mapping(answer)
         return answer, 'success', ''

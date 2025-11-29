@@ -1,1 +1,18 @@
-[]
+[
+  {
+    "id": "ar_lsat_200006_1-G_2_11",
+    "context": "A music store carries exactly ten types of CDs—both new and used of each of jazz, opera, pop, rap, and soul. The store is having a sale on some of these types of CDs. The following conditions must apply: Used pop is on sale; new opera is not. If both types of pop are on sale, then all soul is. If both types of jazz are on sale, then no rap is. If neither type of jazz is on sale, then new pop is. If either type of rap is on sale, then no soul is.",
+    "question": "If neither type of jazz is on sale, then each of the following must be true EXCEPT:",
+    "answer": "A",
+    "options": [
+      "A) Used opera is on sale.",
+      "B) New rap is not on sale.",
+      "C) Used rap is not on sale.",
+      "D) New soul is on sale.",
+      "E) Used soul is on sale."
+    ],
+    "raw_logic_programs": [
+      "# Declarations\nconditions = EnumSort([new, used])\ngenres = EnumSort([jazz, opera, pop, rap, soul])\non_sale = Function([conditions, genres] -> [bool])\n\n# Constraints\non_sale(used, pop) ::: Used pop is on sale\nNot(on_sale(new, opera)) ::: new opera is not\nImplies(And(on_sale(new, pop), on_sale(used, pop)), And(on_sale(new, soul), on_sale(used, soul))) ::: If both types of pop are on sale, then all soul is\nImplies(And(on_sale(new, jazz), on_sale(used, jazz)), And(Not(on_sale(new, rap)), Not(on_sale(used, rap)))) ::: If both types of jazz are on sale, then no rap is\nImplies(And(Not(on_sale(new, jazz)), Not(on_sale(used, jazz))), on_sale(new, pop)) ::: If neither type of jazz is on sale, then new pop is\nImplies(Or(on_sale(new, rap), on_sale(used, rap)), And(Not(on_sale(new, soul)), Not(on_sale(used, soul)))) ::: If either type of rap is on sale, then no soul is\n\n# Options\nQuestion ::: If neither type of jazz is on sale, then each of the following must be true EXCEPT:\nis_exception(is_sat(And(Not(on_sale(new, jazz)), Not(on_sale(used, jazz)), Not(on_sale(used, opera))))) ::: (A)\nis_exception(is_sat(And(Not(on_sale(new, jazz)), Not(on_sale(used, jazz)), on_sale(new, rap)))) ::: (B)\nis_exception(is_sat(And(Not(on_sale(new, jazz)), Not(on_sale(used, jazz)), on_sale(used, rap)))) ::: (C)\nis_exception(is_sat(And(Not(on_sale(new, jazz)), Not(on_sale(used, jazz)), Not(on_sale(new, soul))))) ::: (D)\nis_exception(is_sat(And(Not(on_sale(new, jazz)), Not(on_sale(used, jazz)), Not(on_sale(used, soul))))) ::: (E)"
+    ]
+  }
+]

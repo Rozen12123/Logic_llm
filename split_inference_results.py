@@ -23,11 +23,9 @@ LOGIC_PROGRAM_OTHERS_SUBDIR = "logic_programs_others"
 # 如果你想固定处理某几个文件，直接把路径填进下面列表即可（留空表示使用目录扫描）
 DEFAULT_FILE_PATHS: List[str] = [
 
-    "./outputs/logic_inference/ProntoQA_dev_glm-4.6_backup-random.json",
-    "./outputs/logic_inference/ProofWriter_dev_glm-4.6_backup-random.json",
-    "./outputs/logic_inference/LogicalDeduction_dev_glm-4.6_backup-random.json",
-    "./outputs/logic_inference/FOLIO_dev_glm-4.6_backup-random.json",
-    "./outputs/logic_inference/AR-LSAT_dev_glm-4.6_backup-random.json"
+    "./outputs/logic_inference/ProofWriter_train_glm-4.6_backup-random.json",
+    "./outputs/logic_inference/FOLIO_train_glm-4.6_backup-random.json",
+    "./outputs/logic_inference/AR-LSAT_train_glm-4.6_backup-random.json"
 
 
 ]

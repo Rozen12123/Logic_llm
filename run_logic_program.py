@@ -10,12 +10,12 @@
 # ============================================================================
 
 # 数据集配置
-DATASET_NAME = 'ProofWriter'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
-DATASET_SPLIT = 'test'      # 可选: 'dev', 'test', 'train'
+DATASET_NAME = 'AR-LSAT'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
+DATASET_SPLIT = 'train'      # 可选: 'dev', 'test', 'train'
 
 # API配置
 API_PROVIDER = 'iflow'     # 可选: 'openai', 'zhipuai', 'iflow'
-MODEL_NAME = 'glm-4.6'  # iflow模型: 'TBStars2-200B-A13B'
+MODEL_NAME = 'deepseek-v3.2'  # iflow模型: 'TBStars2-200B-A13B'
                                    # 智谱AI模型: 'GLM-4.6', 'glm-4.5', 'glm-4-flash-250414', 'glm-3-turbo'
                                    # OpenAI模型: 'gpt-4', 'gpt-3.5-turbo', 'gpt-4-turbo', 'text-davinci-003'
 

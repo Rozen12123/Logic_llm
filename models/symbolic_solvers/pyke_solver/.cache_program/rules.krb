@@ -1,38 +1,37 @@
 fact1
 	foreach
-		facts.Cold($x, True)
+		facts.White($x, True)
+		facts.Blue($x, True)
 	assert
-		facts.Sees($x, Rabbit, True)
+		facts.Furry($x, True)
 
 fact2
 	foreach
-		facts.Sees($x, Tiger, True)
-		facts.Kind(Tiger, True)
+		facts.Big($x, True)
+		facts.White($x, True)
 	assert
-		facts.Sees($x, BaldEagle, True)
+		facts.Smart($x, True)
 
 fact3
 	foreach
-		facts.Red(Rabbit, True)
-		facts.Rough(Rabbit, True)
+		facts.Furry($x, True)
 	assert
-		facts.Likes(Rabbit, Bear, True)
+		facts.Green($x, True)
 
 fact4
 	foreach
-		facts.Sees($x, Rabbit, True)
+		facts.Kind($x, True)
 	assert
-		facts.Eats(Rabbit, BaldEagle, True)
+		facts.Blue($x, True)
 
 fact5
 	foreach
-		facts.Eats($x, BaldEagle, True)
+		facts.Green($x, True)
 	assert
-		facts.Cold($x, True)
+		facts.Furry($x, True)
 
 fact6
 	foreach
-		facts.Sees($x, BaldEagle, True)
-		facts.Eats($x, Bear, True)
+		facts.Green($x, True)
 	assert
-		facts.Likes($x, BaldEagle, True)
+		facts.Big($x, True)

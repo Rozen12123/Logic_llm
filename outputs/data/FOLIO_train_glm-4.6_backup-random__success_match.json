@@ -1,0 +1,90 @@
+[
+  {
+    "id": "FOLIO_dev_42",
+    "context": "If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis. Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association. All female tennis players at Roland Garros 2022 lost to Iga Świątek. Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022. All male tennis players at Roland Garros 2022 lost to Rafael Nadal. If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff is among the most active players in major tennis.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_52",
+    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Basque is a Romance language.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "FOLIO_dev_54",
+    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? French is an Indo-European language.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_60",
+    "context": "Billings is a city in Montana. Montana includes the cities of Butte, Helena, and Missoula. White Sulphur Springs and Butte are cities in the same state. The city of Pierre is not in Montana. Any city in Butte is not in Pierre.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Montana is home to the city of Missoula.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_88",
+    "context": "[BG] Books contain tons of knowledge. [BG] When a person reads a book, that person gains knowledge. [BG] If a person gains knowledge, they become smarter. Harry read the book “Walden” by Henry Thoreau.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Walden contains knowledge.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_143",
+    "context": "Breeding back is a form of artificial selection by the deliberate selective breeding of domestic animals. Heck cattle were bred-back in the 1920s to resemble the aurochs. [BG] Heck cattle are animals. [BG] Aurochs are animals. Some animals to be bred-back resemble animals that are extinct.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Heck cattle are artificially selected.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_150",
+    "context": "New Vessel Press is a publishing house which specializes in translating foreign literature into English. All of New Vessel Press's published books are in English. Neapolitan Chronicles is a book published by New Vessel Press. Neapolitan Chronicles was translated from Italian. Palace of Flies is a book published by New Vessel Press.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Neapolitan Chronicles is an English book.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_166",
+    "context": "On some Mondays at 8 pm, roses are given out on TV. Every rose given out on TV is on the Bachelor. Everything on the Bachelor portrays the lives of real people. All shows portraying the lives of real people are reality TV shows. Breaking Bad is not a reality TV show.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If roses are given out during Breaking Bad, then it is on Monday at 8 pm.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_167",
+    "context": "Heinrich Scmidt was a Nazi German politician. Heeinrich Scmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Heinrich Schmidt was either German or Russian.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  },
+  {
+    "id": "FOLIO_dev_170",
+    "context": "If something is a deadly disease, then its survival rate is low. All severe cancers are deadly diseases. Bile duct cancer is a severe cancer. All Cholangiocarcinoma is bile duct cancer. No one with mild flu has a low survival rate. If colorectal cancer is a bile duct cancer and the survival rate is low, then colorectal cancer is not a bile duct cancer.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Colorectal cancer is a severe cancer",
+    "answer": "C",
+    "flag": "success",
+    "predicted_answer": "C"
+  },
+  {
+    "id": "FOLIO_dev_198",
+    "context": "If an animal barks, then Jane does not like it. All dogs are animals that bark. If an animal jumps, then Jane likes it. If an animal has legs, then it jumps. If an animal is terricolous, then it has legs. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi neither barks nor is a dog.",
+    "answer": "A",
+    "flag": "success",
+    "predicted_answer": "A"
+  }
+]

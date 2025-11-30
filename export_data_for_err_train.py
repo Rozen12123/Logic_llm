@@ -27,7 +27,9 @@ DEFAULT_INFERENCE_FILES: List[str] = [
     #"./outputs/logic_inference/LogicalDeduction_dev_glm-4.6_backup-random.json",
     #"./outputs/logic_inference/FOLIO_dev_glm-4.6_backup-random.json",
     #"./outputs/logic_inference/AR-LSAT_dev_glm-4.6_backup-random.json"
-    "./outputs/logic_inference/AR-LSAT_train_glm-4.6_backup-random.json"
+    "./outputs/logic_inference/FOLIO_train_deepseek-v3.2_backup-random.json",
+    "./outputs/logic_inference/AR-LSAT_train_deepseek-v3.2_backup-random.json"
+    
 
 
 ]

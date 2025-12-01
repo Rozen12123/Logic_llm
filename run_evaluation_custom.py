@@ -13,7 +13,7 @@
 # ============================================================================
 
 # 默认结果文件（可以直接改成你想评估的文件）
-DEFAULT_RESULT_FILE = './outputs/Compare/self-refine-1_ProntoQA_dev_glm-4-flash-250414_llm-symbolic__vs__ProntoQA_dev_glm-4-flash-250414_backup-random_20251128-174142.json'
+DEFAULT_RESULT_FILE = './outputs/logic_inference_with_thinking/FOLIO_dev_glm-4.6_backup-random.json'
 
 # ============================================================================
 # 以下为代码实现部分，一般不需要修改

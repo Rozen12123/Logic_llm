@@ -10,22 +10,22 @@
 # ============================================================================
 
 # 默认数据集（可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'）
-DATASET_NAME = 'ProntoQA'
+DATASET_NAME = 'ProofWriter'
 # 默认数据切分（可选: 'dev', 'test'）
 DATASET_SPLIT = 'dev'
 # 生成/推理时使用的模型名称，需与逻辑程序文件一致
-MODEL_NAME = 'glm-4.5'
+MODEL_NAME = 'glm-4.6'
 # 推理失败备份策略（可选: 'random', 'LLM'）
 BACKUP_STRATEGY = 'random'
 # 当 BACKUP_STRATEGY='LLM' 时，提供备份答案的文件目录
 BACKUP_LLM_RESULT_PATH = '../baselines/results'
 # 逻辑程序所在目录（默认 outputs/logic_programs，可自定义）
 # 逻辑程序所在目录（默认 outputs/logic_programs，可自定义）
-LOGIC_PROGRAMS_PATH = './outputs/logic_programs'
+LOGIC_PROGRAMS_PATH = './outputs/logic_programs_with_thinking'
 # 默认要加载的逻辑程序文件；设置为 None 则按常规命名查找
-DEFAULT_LOGIC_PROGRAM_FILE = './outputs/logic_programs/self-refine-1_ProntoQA_dev_glm-4-flash-250414.json'
+DEFAULT_LOGIC_PROGRAM_FILE = './outputs/logic_programs_with_thinking/ProofWriter_dev_glm-4.6.json'
 # 推理结果保存目录
-SAVE_PATH = './outputs/logic_inference'
+SAVE_PATH = './outputs/logic_inference_with_thinking'
 # 自定义输出文件前缀（例如 'self-refine-1_'）；留空则按默认命名。
 # 如果保持为空，脚本会尝试根据 logic_program_file 的文件名前缀自动推断
 OUTPUT_PREFIX = ''

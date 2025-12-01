@@ -15,18 +15,19 @@ from typing import Iterable, List, Tuple, Union, Any, Optional, Dict
 # ============================================================================
 # 默认配置：在这里填写常用的文件/筛选关键词，直接运行脚本即可处理
 # ============================================================================
-DEFAULT_INPUT_DIR = Path("./outputs/logic_inference")
-DEFAULT_OUTPUT_DIR = Path("./outputs/data")
-LOGIC_PROGRAM_DIR = Path("./outputs/logic_programs")
+DEFAULT_INPUT_DIR = Path("./outputs/logic_inference_with_thinking")
+DEFAULT_OUTPUT_DIR = Path("./outputs/data_thinking")
+LOGIC_PROGRAM_DIR = Path("./outputs/logic_programs_with_thinking")
 LOGIC_PROGRAM_SUCCESS_SUBDIR = "logic_programs_success"
 LOGIC_PROGRAM_OTHERS_SUBDIR = "logic_programs_others"
 # 如果你想固定处理某几个文件，直接把路径填进下面列表即可（留空表示使用目录扫描）
 DEFAULT_FILE_PATHS: List[str] = [
 
-    "./outputs/logic_inference/ProofWriter_train_glm-4.6_backup-random.json",
-    "./outputs/logic_inference/FOLIO_train_glm-4.6_backup-random.json",
-    "./outputs/logic_inference/AR-LSAT_train_glm-4.6_backup-random.json"
-
+    #"./outputs/logic_inference/ProofWriter_train_glm-4.6_backup-random.json",
+    #"./outputs/logic_inference/FOLIO_train_glm-4.6_backup-random.json",
+    #"./outputs/logic_inference/AR-LSAT_train_glm-4.6_backup-random.json"
+    #"./outputs/logic_inference_with_thinking/LogicalDeduction_dev_glm-4.6_backup-random.json",
+    "./outputs/logic_inference_with_thinking/ProofWriter_dev_glm-4.6_backup-random.json"
 
 ]
 # 如果想按关键词自动筛文件（当 DEFAULT_FILE_PATHS 为空时生效）

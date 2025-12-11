@@ -11,7 +11,7 @@
 
 # 数据集配置
 DATASET_NAME = 'AR-LSAT'  # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
-DATASET_SPLIT = 'train'      # 可选: 'dev', 'test', 'train'
+DATASET_SPLIT = 'dev'      # 可选: 'dev', 'test', 'train'
 
 # API配置
 API_PROVIDER = 'iflow'     # 可选: 'openai', 'zhipuai', 'iflow'
@@ -27,6 +27,10 @@ STOP_WORDS = '------'
 BATCH_SIZE = 1
 MAX_CONCURRENT = 1
 MAX_RETRIES = 1
+
+# 提示词模式配置
+USE_SYSTEM_MESSAGE = True  # True: 使用 system message 模式（从 prompts_qwen_system 和 prompts_qwen_nothinking 加载）
+                            # False: 使用传统模式（从 prompts 加载完整 prompt）
 
 # ============================================================================
 # 以下为代码实现部分，一般不需要修改
@@ -191,6 +195,13 @@ def parse_args():
         help=f'最大重试次数 (默认: {MAX_RETRIES})'
     )
     
+    parser.add_argument(
+        '--use_system_message',
+        action='store_true',
+        default=USE_SYSTEM_MESSAGE,
+        help=f'使用 system message 模式（从 prompts_qwen_system 和 prompts_qwen_nothinking 加载提示词）(默认: {USE_SYSTEM_MESSAGE})'
+    )
+    
     args = parser.parse_args()
     
     # 如果命令行没有提供api_key，尝试从配置文件或环境变量读取
@@ -242,6 +253,7 @@ def main():
     print(f"  批处理大小: {args.batch_size}")
     print(f"  最大并发数: {args.max_concurrent}")
     print(f"  最大重试次数: {args.max_retries}")
+    print(f"  使用 System Message: {args.use_system_message}")
     print()
     
     # 检查数据路径是否存在

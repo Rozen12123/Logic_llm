@@ -18,9 +18,9 @@ ZHIPUAI_API_KEY = "78443ce13bdd4f72809efda1abd95af4.s6TNCSWw3Q4Ci2wx"
 IFLOW_API_KEY = "sk-f70a41eaf88443a68739385b6bf0e83d"
 #sk-55fa9e3d00b983bff51f62a1b61dfe1d
 #sk-6f66c56e611e6945493655d7418d3453
-#sk-64e5a7718cd09298a70a92578c89a50e
+#sk-64e5a7718cd09298a70a92578c89a50e    
 #sk-4879f1cc4df9aa4e5280e82e085e7d72         
-#sk-3878b65faa7cc385bc8abafc8de74e85
+#sk-3878b65faa7cc385bc8abafc8de74e85  
 #sk-f70a41eaf88443a68739385b6bf0e83d
 
 IFLOW_BASE_URL = "https://apis.iflow.cn/v1"  # iflow API 的 base_url

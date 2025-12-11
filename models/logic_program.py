@@ -33,6 +33,8 @@ class LogicProgramGenerator:
         self.save_path = args.save_path
         self.api_provider = getattr(args, 'api_provider', 'zhipuai')
         self.max_retries = getattr(args, 'max_retries', 3)
+        # 是否使用 system message + user message 模式
+        self.use_system_message = getattr(args, 'use_system_message', False)
 
         # 根据API提供商选择使用OpenAI或智谱AI
         if self.api_provider == 'zhipuai':
@@ -53,45 +55,82 @@ class LogicProgramGenerator:
         self.load_prompt_templates()
     
     def load_prompt_templates(self):
-        prompt_file = f'./models/prompts/{self.dataset_name}.txt'
-        if self.dataset_name == 'AR-LSAT' and self.model_name == 'gpt-4':
-            prompt_file = f'./models/prompts/{self.dataset_name}-long.txt'
-        with open(prompt_file, 'r', encoding='utf-8') as f:
-            self.prompt_template = f.read()
+        """
+        加载提示词模版。
+        - 默认: 从 ./models/prompts/{dataset}.txt 加载完整 prompt（旧模式）
+        - 当 use_system_message=True 时:
+          * system prompt: ./models/prompts_qwen_system/{dataset}.txt
+          * user 模板: ./models/prompts_qwen_nothinking/{dataset}.txt
+        """
+        if self.use_system_message:
+            system_path = f'./models/prompts_qwen_system/{self.dataset_name}.txt'
+            user_path = f'./models/prompts_qwen_nothinking/{self.dataset_name}.txt'
+            with open(system_path, 'r', encoding='utf-8') as f:
+                self.system_prompt = f.read()
+            with open(user_path, 'r', encoding='utf-8') as f:
+                self.user_prompt_template = f.read()
+        else:
+            prompt_file = f'./models/prompts/{self.dataset_name}.txt'
+            if self.dataset_name == 'AR-LSAT' and self.model_name == 'gpt-4':
+                prompt_file = f'./models/prompts/{self.dataset_name}-long.txt'
+            with open(prompt_file, 'r', encoding='utf-8') as f:
+                self.prompt_template = f.read()
 
     def prompt_folio(self, test_data):
         problem = test_data['context']
         question = test_data['question'].strip()
-        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
-        return full_prompt
+        if self.use_system_message:
+            user_message = self.user_prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            return (self.system_prompt, user_message)
+        else:
+            full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            return full_prompt
 
     def prompt_arlsat(self, test_data):
         problem = test_data['context']
         question = test_data['question'].strip()
         choices_str = '\n'.join([f'({choice.strip()}' for choice in test_data['options']]).strip()
-        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
-        full_prompt = full_prompt.replace('[[CHOICES]]', choices_str)
-        return full_prompt
+        if self.use_system_message:
+            user_message = self.user_prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            user_message = user_message.replace('[[CHOICES]]', choices_str)
+            return (self.system_prompt, user_message)
+        else:
+            full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            full_prompt = full_prompt.replace('[[CHOICES]]', choices_str)
+            return full_prompt
     
     def prompt_prontoqa(self, test_data):
         problem = test_data['context']
         question = test_data['question'].strip()
-        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
-        return full_prompt
+        if self.use_system_message:
+            user_message = self.user_prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            return (self.system_prompt, user_message)
+        else:
+            full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            return full_prompt
     
     def prompt_proofwriter(self, test_data):
         problem = test_data['context']
         question = test_data['question'].strip()
-        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
-        return full_prompt
+        if self.use_system_message:
+            user_message = self.user_prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            return (self.system_prompt, user_message)
+        else:
+            full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            return full_prompt
     
     def prompt_logicaldeduction(self, test_data):
         problem = test_data['context']
         question = test_data['question'].strip()
         choices_str = '\n'.join([f'({choice.strip()}' for choice in test_data['options']]).strip()
-        full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
-        full_prompt = full_prompt.replace('[[CHOICES]]', choices_str)
-        return full_prompt
+        if self.use_system_message:
+            user_message = self.user_prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            user_message = user_message.replace('[[CHOICES]]', choices_str)
+            return (self.system_prompt, user_message)
+        else:
+            full_prompt = self.prompt_template.replace('[[PROBLEM]]', problem).replace('[[QUESTION]]', question)
+            full_prompt = full_prompt.replace('[[CHOICES]]', choices_str)
+            return full_prompt
 
     def load_raw_dataset(self, split):
         with open(os.path.join(self.data_path, self.dataset_name, f'{split}.json')) as f:
@@ -195,10 +234,15 @@ class LogicProgramGenerator:
         
         if max_concurrent:
             print(f"使用并发数: {max_concurrent}")
+        print(f"批次大小: {batch_size}")
+        print(f"预计批次数量: {(len(raw_dataset) + batch_size - 1) // batch_size}")
 
         outputs = []
         # split dataset into chunks
         dataset_chunks = [raw_dataset[i:i + batch_size] for i in range(0, len(raw_dataset), batch_size)]
+        print(f"实际批次数量: {len(dataset_chunks)}")
+        print(f"每个批次将并发处理最多 {min(batch_size, max_concurrent if max_concurrent else batch_size)} 个请求\n")
+        
         for chunk in tqdm(dataset_chunks):
             # create prompt
             full_prompts = [self.prompt_creator[self.dataset_name](example) for example in chunk]

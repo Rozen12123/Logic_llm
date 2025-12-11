@@ -13,7 +13,7 @@
 # ============================================================================
 
 # 默认结果文件（可以直接改成你想评估的文件）
-DEFAULT_RESULT_FILE = './outputs/logic_inference_with_thinking/FOLIO_dev_glm-4.6_backup-random.json'
+DEFAULT_RESULT_FILE = './output_data/inference/logic_inference_Qwen3-8B-1203-think/ProofWriter_dev_Qwen3-8B-1203_backup-random.json'
 
 # ============================================================================
 # 以下为代码实现部分，一般不需要修改

@@ -26,6 +26,8 @@ class LogicInferenceEngine:
         self.model_name = args.model_name
         self.save_path = args.save_path
         self.backup_strategy = args.backup_strategy
+        # 获取逻辑程序路径，如果没有则使用默认路径
+        self.logic_programs_path = getattr(args, 'logic_programs_path', './outputs/logic_programs')
 
         self.dataset = self.load_logic_programs()
         program_executor_map = {'FOLIO': FOL_Prover9_Program, 
@@ -37,9 +39,11 @@ class LogicInferenceEngine:
         self.backup_generator = Backup_Answer_Generator(self.dataset_name, self.backup_strategy, self.args.backup_LLM_result_path)
 
     def load_logic_programs(self):
-        with open(os.path.join('./outputs/logic_programs', f'{self.dataset_name}_{self.split}_{self.model_name}.json'), 'r', encoding='utf-8') as f:
+        logic_program_file = os.path.join(self.logic_programs_path, f'{self.dataset_name}_{self.split}_{self.model_name}.json')
+        with open(logic_program_file, 'r', encoding='utf-8') as f:
             dataset = json.load(f)
         print(f"Loaded {len(dataset)} examples from {self.split} split.")
+        print(f"Logic program file: {logic_program_file}")
         return dataset
     
     def save_results(self, outputs):

@@ -14,9 +14,9 @@ from copy import deepcopy
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
-DEFAULT_LLM_FILE = './outputs/logic_inference/self-refine-1_ProntoQA_dev_glm-4-flash-250414_llm-symbolic.json'
-DEFAULT_SOLVER_FILE = './outputs/logic_inference/ProntoQA_dev_glm-4-flash-250414_backup-random.json'
-OUTPUT_DIR = './outputs/Compare'
+DEFAULT_LLM_FILE = './output_data/inference/logic_inference_qwen3-8b_llm_all/ProntoQA_dev_glm-4.6_llm-symbolic.json'
+DEFAULT_SOLVER_FILE = './output_data/inference/logic_inference_qwen3-8b_think/ProntoQA_dev_Qwen3-8B_backup-random.json'
+OUTPUT_DIR = './output_data/Compare/glm4.6__qwen-8b'
 
 
 def parse_args() -> argparse.Namespace:
@@ -47,11 +47,12 @@ def normalize_choice(value: Optional[str]) -> Optional[str]:
     if not value or not isinstance(value, str):
         return None
     value = value.strip().upper()
-    if len(value) == 1 and value in 'ABCDE':
+    # 支持A-G选项（LogicalDeduction数据集有7个选项）
+    if len(value) == 1 and value in 'ABCDEFG':
         return value
     if value.startswith('(') and value.endswith(')') and len(value) == 3:
         candidate = value[1]
-        if candidate in 'ABCDE':
+        if candidate in 'ABCDEFG':
             return candidate
     return None
 
@@ -85,11 +86,23 @@ def merge_results(
 
         if not is_prediction_correct(llm_entry):
             solver_entry = solver_lookup.get(entry_id)
-            if solver_entry and is_prediction_correct(solver_entry):
-                base_record = deepcopy(solver_entry)
-                final_source = 'solver'
-                final_note = 'llm_wrong_solver_correct'
-                if 'source_logic_program_file' not in base_record:
+            if solver_entry:
+                if is_prediction_correct(solver_entry):
+                    # Solver预测正确，使用solver结果
+                    base_record = deepcopy(solver_entry)
+                    final_source = 'solver'
+                    final_note = 'llm_wrong_solver_correct'
+                elif solver_entry.get('flag') == 'success':
+                    # Solver执行成功但预测错误，仍然使用solver结果（保证执行率）
+                    base_record = deepcopy(solver_entry)
+                    final_source = 'solver'
+                    final_note = 'llm_failed_solver_executed_but_wrong'
+                else:
+                    # Solver也执行失败
+                    final_source = 'llm_incorrect'
+                    final_note = 'no_correct_prediction_found'
+                
+                if final_source == 'solver' and 'source_logic_program_file' not in base_record:
                     base_record['source_logic_program_file'] = os.path.basename(solver_file)
             else:
                 final_source = 'llm_incorrect'

@@ -8399,4 +8399,5 @@
       "Predicates:\nBig($x, bool) ::: Is x big?\nGreen($x, bool) ::: Is x green?\nKind($x, bool) ::: Is x kind?\nWhite($x, bool) ::: Is x white?\nSmart($x, bool) ::: Is x smart?\nBlue($x, bool) ::: Is x blue?\nFurry($x, bool) ::: Is x furry?\nFacts:\nBig(Bob, True) ::: Bob is big.\nGreen(Bob, True) ::: Bob is green.\nKind(Dave, True) ::: Dave is kind.\nWhite(Dave, True) ::: Dave is white.\nGreen(Erin, True) ::: Erin is green.\nKind(Erin, True) ::: Erin is kind.\nSmart(Erin, True) ::: Erin is smart.\nBig(Fiona, True) ::: Fiona is big.\nBlue(Fiona, True) ::: Fiona is blue.\nFurry(Fiona, True) ::: Fiona is furry.\nRules:\nWhite($x, True) && Blue($x, True) >>> Furry($x, True) ::: White, blue things are furry.\nBig($x, True) && White($x, True) >>> Smart($x, True) ::: All big, white things are smart.\nFurry($x, True) >>> Green($x, True) ::: Furry things are green.\nKind($x, True) >>> Blue($x, True) ::: Kind things are blue.\nGreen($x, True) >>> Furry($x, True) ::: All green things are furry.\nGreen($x, True) >>> Big($x, True) ::: Green things are big.\nQuery:\nFurry(Dave, False) ::: Dave is not furry."
     ]
   }
+  
 ]

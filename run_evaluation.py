@@ -11,7 +11,7 @@
 
 # 数据配置
 DATASET_NAME = 'AR-LSAT'   # 可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'
-DATASET_SPLIT = 'dev'       # 可选: 'dev', 'test'
+DATASET_SPLIT = 'dev'       # 可选: 'dev', 'test','train'
 
 # 模型配置（需与推理阶段一致）
 MODEL_NAME = 'glm-4.6'    #glm-4-flash-250414

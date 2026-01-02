@@ -1813,7 +1813,7 @@
     "question": "Based on the above information, is the following statement true, false, or unknown? The lion does not eat the lion.",
     "answer": "B",
     "flag": "execution error",
-    "predicted_answer": "A",
+    "predicted_answer": "C",
     "error_message": "'$x not bound'"
   },
   {

@@ -1,0 +1,74 @@
+[
+  {
+    "id": "ProofWriter_RelNoneg-OWA-D5-726_Q6",
+    "context": "The bear visits the tiger. The cat is kind. The mouse is green. The mouse is kind. The mouse sees the tiger. The tiger is rough. The tiger visits the cat. If something visits the bear then it sees the bear. If something sees the bear then the bear likes the cat. If something visits the cat then the cat visits the bear. If something sees the bear and the bear likes the cat then it is cold. Cold things are rough. If something is green and it likes the tiger then the tiger visits the mouse.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The cat does not see the bear.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProofWriter_RelNeg-OWA-D5-266_Q24",
+    "context": "The bald eagle eats the cow. The bald eagle does not eat the dog. The bald eagle is rough. The cow is round. The cow sees the bald eagle. The cow does not see the dog. The cow visits the bald eagle. The cow visits the lion. The dog is rough. The lion is young. The lion does not see the bald eagle. The lion sees the cow. If someone is green and they eat the bald eagle then the bald eagle is not rough. If someone is big and they do not see the bald eagle then the bald eagle is rough. If someone is big then they visit the dog. If someone eats the lion and they are big then the lion eats the dog. If someone visits the dog then the dog eats the cow. If someone is rough and they eat the cow then they are young. If the lion eats the cow then the lion visits the bald eagle. If someone is big and they see the lion then they are green. If someone is young then they are big.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The lion is round.",
+    "answer": "C",
+    "flag": "success",
+    "predicted_answer": "C"
+  },
+  {
+    "id": "ProofWriter_RelNoneg-OWA-D5-264_Q20",
+    "context": "The bald eagle likes the cat. The bald eagle visits the rabbit. The cat needs the bald eagle. The cat needs the cow. The cat visits the rabbit. The cow likes the bald eagle. The cow likes the rabbit. The cow visits the bald eagle. The rabbit is green. The rabbit is red. The rabbit needs the cat. If someone needs the bald eagle and they are red then they visit the cow. If someone needs the bald eagle then the bald eagle needs the rabbit. If someone needs the cat then they like the bald eagle. If someone needs the bald eagle then they are red. If someone is green then they need the bald eagle. If someone likes the bald eagle and they need the bald eagle then the bald eagle visits the rabbit. If the cat likes the bald eagle then the bald eagle visits the cow. If someone visits the cow then they need the cat. If the cow is rough and the cow is nice then the cow is red.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The rabbit visits the cat.",
+    "answer": "C",
+    "flag": "success",
+    "predicted_answer": "C"
+  },
+  {
+    "id": "ProofWriter_AttNeg-OWA-D5-372_Q4",
+    "context": "Charlie is young. Erin is blue. Erin is green. Fiona is big. Fiona is green. Gary is blue. Gary is green. All red things are furry. All furry things are red. Young things are red. If something is smart and not red then it is not green. All furry things are green. If something is red and green then it is blue. If something is young and big then it is smart. If something is blue and green then it is smart. Blue, red things are smart.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? Gary is not smart.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProofWriter_RelNoneg-OWA-D5-312_Q22",
+    "context": "The dog chases the squirrel. The dog likes the tiger. The lion chases the squirrel. The lion is big. The lion is red. The lion likes the tiger. The lion visits the squirrel. The lion visits the tiger. The squirrel chases the lion. The squirrel is nice. The squirrel likes the lion. The tiger chases the dog. The tiger is kind. The tiger is red. The tiger likes the dog. The tiger likes the lion. If something chases the lion then the lion is blue. If something is kind then it chases the tiger. If something chases the tiger then it visits the dog. If something visits the lion then it likes the squirrel. If something is red and it chases the tiger then it likes the squirrel. If something chases the tiger and it visits the squirrel then the squirrel visits the tiger. If something visits the dog then the dog likes the lion. If something is kind and it visits the dog then the dog is kind.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The tiger chases the lion.",
+    "answer": "C",
+    "flag": "success",
+    "predicted_answer": "C"
+  },
+  {
+    "id": "ProofWriter_RelNoneg-OWA-D5-960_Q12",
+    "context": "The dog is round. The dog needs the tiger. The lion chases the dog. The lion chases the mouse. The lion needs the dog. The lion sees the dog. The mouse is red. The mouse sees the tiger. The tiger is blue. The tiger is red. The tiger is round. The tiger sees the lion. If something chases the mouse and it is round then the mouse is kind. If the mouse sees the tiger and the tiger is red then the tiger is kind. If something chases the mouse then it sees the mouse. If something chases the lion and the lion sees the tiger then the tiger chases the lion. If something is round then it needs the tiger. If something chases the dog then it is round. If something is round then it sees the lion. If something is kind then it chases the dog. If something needs the lion then it is round.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The mouse does not see the lion.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProofWriter_RelNoneg-OWA-D5-369_Q10",
+    "context": "The cow chases the lion. The cow chases the squirrel. The cow eats the rabbit. The cow is nice. The cow likes the rabbit. The cow likes the squirrel. The lion chases the rabbit. The lion eats the rabbit. The lion likes the squirrel. The rabbit chases the squirrel. The rabbit is blue. The rabbit is nice. The rabbit likes the lion. The squirrel eats the cow. The squirrel eats the lion. The squirrel is rough. If something is nice and it eats the cow then it is kind. If something chases the squirrel then it eats the lion. If something likes the lion and it likes the rabbit then the lion chases the squirrel. If something chases the squirrel and the squirrel is nice then the squirrel is kind. If something likes the squirrel and the squirrel likes the cow then the cow likes the squirrel. If something eats the lion then it likes the rabbit.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The lion does not eat the lion.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  },
+  {
+    "id": "ProofWriter_RelNoneg-OWA-D5-76_Q13",
+    "context": "The bear eats the cow. The bear is blue. The cow eats the squirrel. The cow is young. The cow visits the lion. The lion is red. The lion is young. The lion visits the cow. The squirrel sees the bear. The squirrel visits the bear. If something sees the cow and the cow eats the squirrel then the cow is red. If the cow eats the bear and the bear sees the cow then the bear is blue. If something is blue and it sees the squirrel then the squirrel is round. If something sees the squirrel then the squirrel eats the cow. If the lion sees the cow and the cow visits the squirrel then the cow eats the squirrel. If something is red then it eats the lion. If the bear visits the squirrel and the bear is round then the bear sees the cow. If something eats the lion then it sees the cow. If something is young and cold then it eats the cow.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The bear does not eat the lion.",
+    "answer": "C",
+    "flag": "success",
+    "predicted_answer": "C"
+  },
+  {
+    "id": "ProofWriter_RelNeg-OWA-D5-226_Q4",
+    "context": "The bear is not big. The bear needs the squirrel. The dog is nice. The dog sees the tiger. The squirrel sees the bear. The squirrel sees the tiger. The tiger eats the dog. The tiger is green. The tiger needs the bear. The tiger sees the squirrel. If someone eats the dog then the dog needs the bear. If someone eats the bear then they eat the tiger. If someone needs the tiger and they see the dog then they eat the tiger. If someone is nice and they need the bear then they eat the bear. If someone sees the dog then they eat the squirrel. If someone needs the tiger and the tiger eats the bear then they eat the squirrel. If someone eats the tiger then the tiger eats the bear.",
+    "question": "Based on the above information, is the following statement true, false, or unknown? The dog does not need the bear.",
+    "answer": "B",
+    "flag": "success",
+    "predicted_answer": "B"
+  }
+]

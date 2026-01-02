@@ -1,0 +1,156 @@
+[
+  {
+    "id": "FOLIO_dev_42",
+    "context": "If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis. Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association. All female tennis players at Roland Garros 2022 lost to Iga Świątek. Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022. All male tennis players at Roland Garros 2022 lost to Rafael Nadal. If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff is among the most active players in major tennis.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nRankedHighlyWTA(x) ::: x is ranked highly by the Women's Tennis Association.\nActiveMajorTennis(x) ::: x is among the most active players in major tennis.\nLostToIga(x) ::: x lost to Iga Świątek.\nFemaleRG2022(x) ::: x is a female tennis player at Roland Garros 2022.\nMaleRG2022(x) ::: x is a male tennis player at Roland Garros 2022.\nLostToRafael(x) ::: x lost to Rafael Nadal.\nPremises:\n∀x (RankedHighlyWTA(x) → ActiveMajorTennis(x)) ::: If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis.\n∀x (LostToIga(x) → RankedHighlyWTA(x)) ::: Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association.\n∀x (FemaleRG2022(x) → LostToIga(x)) ::: All female tennis players at Roland Garros 2022 lost to Iga Świątek.\n∀x (FemaleRG2022(x) ⊕ MaleRG2022(x)) ::: Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022.\n∀x (MaleRG2022(x) → LostToRafael(x)) ::: All male tennis players at Roland Garros 2022 lost to Rafael Nadal.\n(RankedHighlyWTA(coco) ∨ LostToRafael(coco)) → ¬MaleRG2022(coco) ::: If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.\nConclusion:\nActiveMajorTennis(coco) ::: Coco Gauff is among the most active players in major tennis."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_52",
+    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Basque is a Romance language.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nRomance(x) ::: x is a Romance language.\nIndoEuropean(x) ::: x is an Indo-European language.\nRelated(x, y) ::: x is related to y.\nPremises:\n∀x (Romance(x) → IndoEuropean(x)) ::: All Romance languages are Indo-European languages.\n∀x ∀y ((Romance(x) ∧ Romance(y)) → Related(x, y)) ::: All languages within a language family are related to each other.\nRomance(french) ∧ Romance(spanish) ::: French and Spanish are both Romance languages.\nRelated(german, spanish) ::: German is related to Spanish.\n∀x ¬Related(basque, x) ::: Basque is not related to any other language.\nConclusion:\nRomance(basque) ::: Basque is a Romance language."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_54",
+    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? French is an Indo-European language.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nRomance(x) ::: x is a Romance language.\nIndoEuropean(x) ::: x is an Indo-European language.\nRelated(x, y) ::: x is related to y.\nPremises:\n∀x (Romance(x) → IndoEuropean(x)) ::: All Romance languages are Indo-European languages.\n∀x ∀y ((Romance(x) ∧ Romance(y)) → Related(x, y)) ::: All languages within a language family are related to each other.\nRomance(french) ∧ Romance(spanish) ::: French and Spanish are both Romance languages.\nRelated(german, spanish) ::: German is related to Spanish.\n∀y ¬Related(basque, y) ::: Basque is not related to any other language.\nConclusion:\nIndoEuropean(french) ::: French is an Indo-European language."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_60",
+    "context": "Billings is a city in Montana. Montana includes the cities of Butte, Helena, and Missoula. White Sulphur Springs and Butte are cities in the same state. The city of Pierre is not in Montana. Any city in Butte is not in Pierre.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Montana is home to the city of Missoula.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nCity(x) ::: x is a city.\nState(x) ::: x is a state.\nIn(x, y) ::: x is in y.\nPremises:\nCity(billings) ∧ In(billings, montana) ::: Billings is a city in Montana.\nIn(butte, montana) ∧ In(helena, montana) ∧ In(missoula, montana) ::: Montana includes the cities of Butte, Helena, and Missoula.\n∃s (State(s) ∧ In(whiteSulphurSprings, s) ∧ In(butte, s)) ::: White Sulphur Springs and Butte are cities in the same state.\n¬In(pierre, montana) ::: The city of Pierre is not in Montana.\n∀s (In(butte, s) → ¬In(pierre, s)) ::: Any city in Butte is not in Pierre.\nConclusion:\nIn(missoula, montana) ::: Montana is home to the city of Missoula."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_88",
+    "context": "[BG] Books contain tons of knowledge. [BG] When a person reads a book, that person gains knowledge. [BG] If a person gains knowledge, they become smarter. Harry read the book “Walden” by Henry Thoreau.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Walden contains knowledge.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nBook(x) ::: x is a book.\nContainsKnowledge(x) ::: x contains knowledge.\nPerson(x) ::: x is a person.\nReads(x, y) ::: x reads y.\nGainsKnowledge(x) ::: x gains knowledge.\nBecomesSmarter(x) ::: x becomes smarter.\nPremises:\n∀x (Book(x) → ContainsKnowledge(x)) ::: Books contain tons of knowledge.\n∀x ∀y ((Book(x) ∧ Person(y) ∧ Reads(y, x)) → GainsKnowledge(y)) ::: When a person reads a book, that person gains knowledge.\n∀x (GainsKnowledge(x) → BecomesSmarter(x)) ::: If a person gains knowledge, they become smarter.\nPerson(harry) ∧ Book(walden) ∧ Reads(harry, walden) ::: Harry read the book “Walden” by Henry Thoreau.\nConclusion:\nContainsKnowledge(walden) ::: Walden contains knowledge."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_143",
+    "context": "Breeding back is a form of artificial selection by the deliberate selective breeding of domestic animals. Heck cattle were bred-back in the 1920s to resemble the aurochs. [BG] Heck cattle are animals. [BG] Aurochs are animals. Some animals to be bred-back resemble animals that are extinct.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Heck cattle are artificially selected.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nBreedingBack(x) ::: x is bred-back.\nArtificialSelection(x) ::: x is artificially selected.\nAnimal(x) ::: x is an animal.\nHeckCattle(x) ::: x is a Heck cattle.\nResemble(x, y) ::: x resembles y.\nExtinct(x) ::: x is extinct.\nPremises:\n∀x (BreedingBack(x) → ArtificialSelection(x)) ::: Breeding back is a form of artificial selection by the deliberate selective breeding of domestic animals.\n∃x (HeckCattle(x) ∧ BreedingBack(x) ∧ Resemble(x, aurochs)) ::: Heck cattle were bred-back in the 1920s to resemble the aurochs.\n∀x (HeckCattle(x) → Animal(x)) ::: Heck cattle are animals.\nAnimal(aurochs) ::: Aurochs are animals.\n∃x ∃y (Animal(x) ∧ BreedingBack(x) ∧ Resemble(x, y) ∧ Animal(y) ∧ Extinct(y)) ::: Some animals to be bred-back resemble animals that are extinct.\nConclusion:\n∃x (HeckCattle(x) ∧ ArtificialSelection(x)) ::: Some Heck cattle are artificially selected."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_150",
+    "context": "New Vessel Press is a publishing house which specializes in translating foreign literature into English. All of New Vessel Press's published books are in English. Neapolitan Chronicles is a book published by New Vessel Press. Neapolitan Chronicles was translated from Italian. Palace of Flies is a book published by New Vessel Press.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Neapolitan Chronicles is an English book.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nBook(x) ::: x is a book.\nPublishedBy(x, y) ::: x is published by y.\nInLanguage(x, z) ::: x is in language z.\nTranslatedFrom(x, w) ::: x was translated from language w.\nPremises:\n∀x ((Book(x) ∧ PublishedBy(x, newVesselPress)) → InLanguage(x, english)) ::: All of New Vessel Press's published books are in English.\nBook(neapolitanChronicles) ∧ PublishedBy(neapolitanChronicles, newVesselPress) ::: Neapolitan Chronicles is a book published by New Vessel Press.\nTranslatedFrom(neapolitanChronicles, italian) ::: Neapolitan Chronicles was translated from Italian.\nBook(palaceOfFlies) ∧ PublishedBy(palaceOfFlies, newVesselPress) ::: Palace of Flies is a book published by New Vessel Press.\nConclusion:\nBook(neapolitanChronicles) ∧ InLanguage(neapolitanChronicles, english) ::: Neapolitan Chronicles is an English book."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_166",
+    "context": "On some Mondays at 8 pm, roses are given out on TV. Every rose given out on TV is on the Bachelor. Everything on the Bachelor portrays the lives of real people. All shows portraying the lives of real people are reality TV shows. Breaking Bad is not a reality TV show.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If roses are given out during Breaking Bad, then it is on Monday at 8 pm.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nMonday(x) ::: x is on a Monday.\nTime8pm(x) ::: x is at 8 pm.\nRosesGivenOut(x) ::: x is an event/show where roses are given out.\nOnTV(x) ::: x is on TV.\nOnTheBachelor(x) ::: x is on the show The Bachelor.\nPortraysRealLives(x) ::: x portrays the lives of real people.\nRealityTV(x) ::: x is a reality TV show.\nPremises:\n∃x (Monday(x) ∧ Time8pm(x) ∧ RosesGivenOut(x) ∧ OnTV(x)) ::: On some Mondays at 8 pm, roses are given out on TV.\n∀x ((RosesGivenOut(x) ∧ OnTV(x)) → OnTheBachelor(x)) ::: Every rose given out on TV is on the Bachelor.\n∀x (OnTheBachelor(x) → PortraysRealLives(x)) ::: Everything on the Bachelor portrays the lives of real people.\n∀x (PortraysRealLives(x) → RealityTV(x)) ::: All shows portraying the lives of real people are reality TV shows.\n¬RealityTV(breakingBad) ::: Breaking Bad is not a reality TV show.\nConclusion:\nRosesGivenOut(breakingBad) → (Monday(breakingBad) ∧ Time8pm(breakingBad)) ::: If roses are given out during Breaking Bad, then it is on Monday at 8 pm."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_167",
+    "context": "Heinrich Scmidt was a Nazi German politician. Heeinrich Scmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Heinrich Schmidt was either German or Russian.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nNazi(x) ::: x is a Nazi.\nGerman(x) ::: x is German.\nPolitician(x) ::: x is a politician.\nMember(x, y) ::: x is a member of y.\nRussian(x) ::: x is Russian.\nPremises:\nNazi(heinrich) ∧ German(heinrich) ∧ Politician(heinrich) ::: Heinrich Scmidt was a Nazi German politician.\nMember(heinrich, prussianStateParliament) ∧ Member(heinrich, naziReichstag) ::: Heeinrich Scmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.\nConclusion:\nGerman(heinrich) ∨ Russian(heinrich) ::: Heinrich Schmidt was either German or Russian."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_170",
+    "context": "If something is a deadly disease, then its survival rate is low. All severe cancers are deadly diseases. Bile duct cancer is a severe cancer. All Cholangiocarcinoma is bile duct cancer. No one with mild flu has a low survival rate. If colorectal cancer is a bile duct cancer and the survival rate is low, then colorectal cancer is not a bile duct cancer.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Colorectal cancer is a severe cancer",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nDeadlyDisease(x) ::: x is a deadly disease.\nLowSurvivalRate(x) ::: x has a low survival rate.\nSevereCancer(x) ::: x is a severe cancer.\nIsBileDuctCancer(x) ::: x is a bile duct cancer.\nCholangiocarcinoma(x) ::: x is a Cholangiocarcinoma.\nHasMildFlu(x) ::: x has mild flu.\nPremises:\n∀x (DeadlyDisease(x) → LowSurvivalRate(x)) ::: If something is a deadly disease, then its survival rate is low.\n∀x (SevereCancer(x) → DeadlyDisease(x)) ::: All severe cancers are deadly diseases.\nSevereCancer(bileDuctCancer) ::: Bile duct cancer is a severe cancer.\n∀x (Cholangiocarcinoma(x) → IsBileDuctCancer(x)) ::: All Cholangiocarcinoma is bile duct cancer.\n∀x (HasMildFlu(x) → ¬LowSurvivalRate(x)) ::: No one with mild flu has a low survival rate.\n(IsBileDuctCancer(colorectalCancer) ∧ LowSurvivalRate(colorectalCancer)) → ¬IsBileDuctCancer(colorectalCancer) ::: If colorectal cancer is a bile duct cancer and the survival rate is low, then colorectal cancer is not a bile duct cancer.\nConclusion:\nSevereCancer(colorectalCancer) ::: Colorectal cancer is a severe cancer."
+    ]
+  },
+  {
+    "id": "FOLIO_dev_198",
+    "context": "If an animal barks, then Jane does not like it. All dogs are animals that bark. If an animal jumps, then Jane likes it. If an animal has legs, then it jumps. If an animal is terricolous, then it has legs. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi neither barks nor is a dog.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "raw_logic_programs": [
+      "Predicates:\nAnimal(x) ::: x is an animal.\nBarks(x) ::: x barks.\nDog(x) ::: x is a dog.\nHasLegs(x) ::: x has legs.\nJumps(x) ::: x jumps.\nLikes(jane, x) ::: Jane likes x.\nTerricolous(x) ::: x is terricolous.\nPremises:\n∀x (Barks(x) → ¬Likes(jane, x)) ::: If an animal barks, then Jane does not like it.\n∀x (Dog(x) → Animal(x) ∧ Barks(x)) ::: All dogs are animals that bark.\n∀x (Jumps(x) → Likes(jane, x)) ::: If an animal jumps, then Jane likes it.\n∀x (HasLegs(x) → Jumps(x)) ::: If an animal has legs, then it jumps.\n∀x (Terricolous(x) → HasLegs(x)) ::: If an animal is terricolous, then it has legs.\n(¬Jumps(kiki) ∧ ¬HasLegs(kiki)) → (Terricolous(kiki) ∨ HasLegs(kiki)) ::: If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.\nConclusion:\n¬Barks(kiki) ∧ ¬Dog(kiki) ::: KiKi neither barks nor is a dog."
+    ]
+  }
+]

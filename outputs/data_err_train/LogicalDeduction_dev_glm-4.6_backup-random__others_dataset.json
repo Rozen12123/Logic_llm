@@ -1,0 +1,75 @@
+[
+  {
+    "id": "logical_deduction_12",
+    "context": "The following paragraphs each describe a set of five objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nIn a golf tournament, there were five golfers: Eve, Rob, Ana, Eli, and Mya. Eli finished below Mya. Eve finished first. Ana finished below Eli. Rob finished second.",
+    "question": "Which of the following is true?",
+    "options": [
+      "A) Eve finished third.",
+      "B) Rob finished third.",
+      "C) Ana finished third.",
+      "D) Eli finished third.",
+      "E) Mya finished third."
+    ],
+    "answer": "E"
+  },
+  {
+    "id": "logical_deduction_109",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: mangoes, kiwis, oranges, watermelons, apples, pears, and loquats. The loquats are less expensive than the oranges. The oranges are the third-most expensive. The apples are the cheapest. The kiwis are more expensive than the pears. The mangoes are more expensive than the watermelons. The loquats are more expensive than the kiwis.",
+    "question": "Which of the following is true?",
+    "options": [
+      "A) The mangoes are the fourth-most expensive.",
+      "B) The kiwis are the fourth-most expensive.",
+      "C) The oranges are the fourth-most expensive.",
+      "D) The watermelons are the fourth-most expensive.",
+      "E) The apples are the fourth-most expensive.",
+      "F) The pears are the fourth-most expensive.",
+      "G) The loquats are the fourth-most expensive."
+    ],
+    "answer": "G"
+  },
+  {
+    "id": "logical_deduction_151",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, mangoes, kiwis, pears, cantaloupes, oranges, and peaches. The oranges are more expensive than the peaches. The cantaloupes are the fourth-most expensive. The pears are less expensive than the cantaloupes. The peaches are the second-most expensive. The mangoes are the cheapest. The kiwis are the third-cheapest.",
+    "question": "Which of the following is true?",
+    "options": [
+      "A) The watermelons are the second-most expensive.",
+      "B) The mangoes are the second-most expensive.",
+      "C) The kiwis are the second-most expensive.",
+      "D) The pears are the second-most expensive.",
+      "E) The cantaloupes are the second-most expensive.",
+      "F) The oranges are the second-most expensive.",
+      "G) The peaches are the second-most expensive."
+    ],
+    "answer": "G"
+  },
+  {
+    "id": "logical_deduction_164",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: mangoes, kiwis, oranges, watermelons, apples, pears, and loquats. The loquats are less expensive than the oranges. The oranges are the third-most expensive. The apples are the cheapest. The kiwis are more expensive than the pears. The mangoes are more expensive than the watermelons. The loquats are more expensive than the kiwis.",
+    "question": "Which of the following is true?",
+    "options": [
+      "A) The mangoes are the most expensive.",
+      "B) The kiwis are the most expensive.",
+      "C) The oranges are the most expensive.",
+      "D) The watermelons are the most expensive.",
+      "E) The apples are the most expensive.",
+      "F) The pears are the most expensive.",
+      "G) The loquats are the most expensive."
+    ],
+    "answer": "A"
+  },
+  {
+    "id": "logical_deduction_208",
+    "context": "The following paragraphs each describe a set of seven objects arranged in a fixed order. The statements are logically consistent within each paragraph.\n\nA fruit stand sells seven fruits: watermelons, mangoes, kiwis, pears, cantaloupes, oranges, and peaches. The oranges are more expensive than the peaches. The cantaloupes are the fourth-most expensive. The pears are less expensive than the cantaloupes. The peaches are the second-most expensive. The mangoes are the cheapest. The kiwis are the third-cheapest.",
+    "question": "Which of the following is true?",
+    "options": [
+      "A) The watermelons are the third-most expensive.",
+      "B) The mangoes are the third-most expensive.",
+      "C) The kiwis are the third-most expensive.",
+      "D) The pears are the third-most expensive.",
+      "E) The cantaloupes are the third-most expensive.",
+      "F) The oranges are the third-most expensive.",
+      "G) The peaches are the third-most expensive."
+    ],
+    "answer": "A"
+  }
+]

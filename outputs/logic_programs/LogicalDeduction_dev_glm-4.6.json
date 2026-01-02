@@ -4959,4 +4959,5 @@
       "Domain:\n1: leftmost\n2: second from the left\n3: rightmost\nVariables:\nred_book [IN] [1, 2, 3]\ngray_book [IN] [1, 2, 3]\nwhite_book [IN] [1, 2, 3]\nConstraints:\nwhite_book < gray_book ::: The white book is to the left of the gray book.\nred_book == 2 ::: The red book is the second from the left.\nAllDifferentConstraint([red_book, gray_book, white_book]) ::: All books have different values.\nQuery:\nA) red_book == 1 ::: The red book is the leftmost.\nB) gray_book == 1 ::: The gray book is the leftmost.\nC) white_book == 1 ::: The white book is the leftmost."
     ]
   }
+  
 ]

@@ -4,52 +4,66 @@ Task Description: You are given a problem description and a question. The task i
 3) write all the facts mentioned in the problem
 4) parse the question into the logic form
 
-Output Requirements (STRICT):
+**CRITICAL: Entity Naming Consistency (MUST FOLLOW)**
+- ALL entity names (subjects, objects) MUST use lowercase with underscores (e.g., `bald_eagle`, `lion`, `rabbit`, NOT `BaldEagle`, `Lion`, `Rabbit`)
+- Use the EXACT same entity name everywhere it appears in Facts, Rules, and Query
+- If the problem says "the bald eagle", use `bald_eagle` consistently throughout
+- Do NOT mix naming styles (e.g., don't use `bald_eagle` in Facts but `BaldEagle` in Rules)
+
+**CRITICAL: Predicate Format Rules**
+- For unary predicates (one argument): `Predicate($x, bool)` where `$x` is a variable or entity name
+- For binary predicates (two arguments): `Predicate($x, $y, bool)` where `$x` and `$y` are variables or entity names
+- ALWAYS include the boolean argument as the last parameter, even for binary predicates
+- Represent negation using the boolean argument (e.g., `Red($x, False)`), NEVER by wrapping predicates with `Not(...)`, prefixing them with `!`, or inventing separate negated predicate names
+- Keep each predicate's arity and argument order consistent everywhere
+
+**CRITICAL: Rules Format**
+- Use `>>>` to separate rule body from rule head (e.g., `Condition($x, True) >>> Conclusion($x, True)`)
+- Use `&&` for logical AND in rule bodies (e.g., `A($x, True) && B($x, True) >>> C($x, True)`)
+- Every variable that appears in a rule head MUST also appear in that rule's body so it is properly bound
+- When a rule mentions "someone" or "something", use a variable like `$x` in the rule body
+- When a rule mentions a specific entity, use that entity's name directly (e.g., `Quiet(Anne, True) >>> Red(Anne, True)`)
+
+**CRITICAL: Query Format**
+- The Query must match the SEMANTIC MEANING of the question statement
+- For positive statements: "X is Y" → `Y(X, True)`
+- For negative statements: "X is not Y" or "X does not Y" → `Y(X, False)`
+- For binary predicates: "X does Y to Z" → `Y(X, Z, True)` or `Y(X, Z, False)` for negation
+
+**Output Requirements (STRICT):**
 - Respond in plain text only. Do NOT use Markdown headings, bullet lists, commentary, or explanations.
 - Use exactly the four section headers `Predicates:`, `Facts:`, `Rules:`, `Query:` in this order and nothing else.
 - Each section should contain one entry per line following the pattern `Name(args) ::: natural language explanation`.
 - Do not add teaching steps, sub-headings, or any formatting beyond the specified structure.
-- Represent negation using the boolean argument (e.g., `Red($x, False)`), never by wrapping predicates with `Not(...)`, prefixing them with `!`, or inventing separate negated predicate names.
-- Keep each predicate’s arity and argument order consistent everywhere.
-- Every variable that appears in a rule head must also appear in that rule’s body so it is properly bound.
-- Do not emit stray labels like “Fact:” or any other text outside the four required sections.
+- Do not emit stray labels like "Fact:" or any other text outside the four required sections.
 - The answer must be directly parsable by a logic engine expecting the above schema.
 ------
 Problem:
-Anne is quiet. Erin is furry. Erin is green. Fiona is furry. Fiona is quiet. Fiona is red. Fiona is rough. Fiona is white. Harry is furry. Harry is quiet. Harry is white. Young people are furry. If Anne is quiet then Anne is red. Young, green people are rough. If someone is green then they are white. If someone is furry and quiet then they are white. If someone is young and white then they are rough. All red people are young.
+The bald eagle chases the lion. The bald eagle chases the rabbit. The bald eagle is big. The cow needs the bald eagle. The lion is kind. The lion is not round. The lion does not visit the cow. The lion visits the rabbit. If someone needs the rabbit then the rabbit chases the lion. If someone is big then they do not visit the lion.
 Question:
-Based on the above information, is the following statement true, false, or unknown? Anne is white.
+Based on the above information, is the following statement true, false, or unknown? The rabbit does not visit the cow.
 ###
 Predicates:
-Quiet($x, bool) ::: Is x quiet?
-Furry($x, bool) ::: Is x furry?
-Green($x, bool) ::: Is x green?
-Red($x, bool) ::: Is x red?
-Rough($x, bool) ::: Is x rough?
-White($x, bool) ::: Is x white?
-Young($x, bool) ::: Is x young?
+Chases($x, $y, bool) ::: Does x chase y?
+Big($x, bool) ::: Is x big?
+Needs($x, $y, bool) ::: Does x need y?
+Kind($x, bool) ::: Is x kind?
+Round($x, bool) ::: Is x round?
+Visits($x, $y, bool) ::: Does x visit y?
 Facts:
-Quiet(Anne, True) ::: Anne is quiet.
-Furry(Erin, True) ::: Erin is furry.
-Green(Erin, True) ::: Erin is green.
-Furry(Fiona, True) ::: Fiona is furry.
-Quiet(Fiona, True) ::: Fiona is quiet.
-Red(Fiona, True) ::: Fiona is red.
-Rough(Fiona, True) ::: Fiona is rough.
-White(Fiona, True) ::: Fiona is white.
-Furry(Harry, True) ::: Harry is furry.
-Quiet(Harry, True) ::: Harry is quiet.
-White(Harry, True) ::: Harry is white.
+Chases(bald_eagle, lion, True) ::: The bald eagle chases the lion.
+Chases(bald_eagle, rabbit, True) ::: The bald eagle chases the rabbit.
+Big(bald_eagle, True) ::: The bald eagle is big.
+Needs(cow, bald_eagle, True) ::: The cow needs the bald eagle.
+Kind(lion, True) ::: The lion is kind.
+Round(lion, False) ::: The lion is not round.
+Visits(lion, cow, False) ::: The lion does not visit the cow.
+Visits(lion, rabbit, True) ::: The lion visits the rabbit.
 Rules:
-Young($x, True) >>> Furry($x, True) ::: Young people are furry.
-Quiet(Anne, True) >>> Red(Anne, True) ::: If Anne is quiet then Anne is red.
-Young($x, True) && Green($x, True) >>> Rough($x, True) ::: Young, green people are rough.
-Green($x, True) >>> White($x, True) ::: If someone is green then they are white.
-Furry($x, True) && Quiet($x, True) >>> White($x, True) ::: If someone is furry and quiet then they are white.
-Young($x, True) && White($x, True) >>> Rough($x, True) ::: If someone is young and white then they are rough.
-Red($x, True) >>> Young($x, True) ::: All red people are young.
+Needs($x, rabbit, True) >>> Chases(rabbit, lion, True) ::: If someone needs the rabbit then the rabbit chases the lion.
+Big($x, True) >>> Visits($x, lion, False) ::: If someone is big then they do not visit the lion.
 Query:
-White(Anne, True) ::: Anne is white.
+Visits(rabbit, cow, False) ::: The rabbit does not visit the cow.
 ------
 Problem:
 [[PROBLEM]]

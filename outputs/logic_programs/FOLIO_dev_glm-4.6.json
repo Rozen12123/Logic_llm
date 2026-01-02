@@ -2855,4 +2855,5 @@
       "Predicates:\nBornIn(x, y) ::: x was born in year y.\nFootballPlayer(x) ::: x is a football player.\nLoanedTo(x, y) ::: x was loaned out to y.\nBrazilian(x) ::: x is Brazilian.\nPlaysFor(x, y) ::: x plays for y.\nFootballClub(x) ::: x is a football club.\nPremises:\nBornIn(ailtonSilva, year1995) ::: Ailton Silva, born in 1995, is commonly known as Ailton.\nFootballPlayer(ailtonSilva) ∧ LoanedTo(ailtonSilva, braga) ::: Ailton is a football player who was loaned out to Braga.\nBrazilian(ailtonSilva) ∧ FootballPlayer(ailtonSilva) ∧ PlaysFor(ailtonSilva, nautico) ::: Ailton Silva is a Brazillian footballer who plays for Nautico.\nFootballClub(nautico) ∧ FootballClub(braga) ::: Nautico is a football club along with Braga.\nFootballClub(fluminense) ::: Fluminense is a football club.\nConclusion:\n∃y (FootballClub(y) ∧ LoanedTo(ailtonSilva, y)) ::: Ailton Silva was loaned out to a football club."
     ]
   }
+  
 ]

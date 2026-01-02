@@ -10,23 +10,25 @@
 # ============================================================================
 
 # 默认数据集（可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'）
-DATASET_NAME = 'ProntoQA'
+DATASET_NAME = 'ProofWriter'
 # 默认数据切分（可选: 'dev', 'test'）
 DATASET_SPLIT = 'dev'
 # 生成/推理时使用的模型名称，需与逻辑程序文件一致
-MODEL_NAME = 'glm-4.5'
+MODEL_NAME = 'Qwen3-8B-1203'
 # 推理失败备份策略（可选: 'random', 'LLM'）
 BACKUP_STRATEGY = 'random'
 # 当 BACKUP_STRATEGY='LLM' 时，提供备份答案的文件目录
 BACKUP_LLM_RESULT_PATH = '../baselines/results'
 # 逻辑程序所在目录（默认 outputs/logic_programs，可自定义）
 # 逻辑程序所在目录（默认 outputs/logic_programs，可自定义）
-LOGIC_PROGRAMS_PATH = './outputs/logic_programs'
+LOGIC_PROGRAMS_PATH = './output_data/programs/logic_programs_Qwen3-8B-1203-think'
 # 默认要加载的逻辑程序文件；设置为 None 则按常规命名查找
-DEFAULT_LOGIC_PROGRAM_FILE = './outputs/logic_programs/self-refine-1_ProntoQA_dev_glm-4-flash-250414.json'
+
+DEFAULT_LOGIC_PROGRAM_FILE = './output_data/programs/logic_programs_Qwen3-8B-1203-think/ProofWriter_dev_Qwen3-8B-1203.json'
 # 推理结果保存目录
-SAVE_PATH = './outputs/logic_inference'
+SAVE_PATH = './output_data/inference/logic_inference_Qwen3-8B-1203-think'
 # 自定义输出文件前缀（例如 'self-refine-1_'）；留空则按默认命名。
+
 # 如果保持为空，脚本会尝试根据 logic_program_file 的文件名前缀自动推断
 OUTPUT_PREFIX = ''
 # 每个程序执行超时时间，单位秒
@@ -53,6 +55,7 @@ try:
 except ImportError as e:
     print(f"错误: 无法导入必要模块: {e}")
     sys.exit(1)
+
 
 SUPPORTED_DATASETS = ['ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT']
 SUPPORTED_BACKUP_STRATEGIES = ['random', 'LLM']
@@ -153,9 +156,24 @@ def main():
             os.remove(expected_file)
 
     if args.logic_program_file:
+        # 先尝试直接使用提供的路径
         custom_path = os.path.abspath(args.logic_program_file)
+        
+        # 如果文件不存在，且提供的路径看起来只是文件名（没有目录部分），
+        # 则尝试在 LOGIC_PROGRAMS_PATH 下查找
         if not os.path.exists(custom_path):
-            print(f"错误: 找不到指定的逻辑程序文件: {custom_path}")
+            dir_part = os.path.dirname(args.logic_program_file)
+            # os.path.dirname 对纯文件名返回空字符串 ''
+            if not dir_part or dir_part == '.':
+                # 只是文件名，尝试在逻辑程序目录下查找
+                custom_path = os.path.abspath(os.path.join(args.logic_programs_path, args.logic_program_file))
+        
+        if not os.path.exists(custom_path):
+            print(f"错误: 找不到指定的逻辑程序文件")
+            print(f"  尝试的路径1: {os.path.abspath(args.logic_program_file)}")
+            dir_part = os.path.dirname(args.logic_program_file)
+            if not dir_part or dir_part == '.':
+                print(f"  尝试的路径2: {custom_path}")
             sys.exit(1)
 
         expected_abs = os.path.abspath(expected_file)
@@ -164,7 +182,8 @@ def main():
             backup_file = expected_file + '.bak'
             shutil.copy2(expected_file, backup_file)
 
-        if not os.path.samefile(custom_path, expected_abs):
+        # 只有在 expected_file 存在时才需要比较，如果不存在则直接复制
+        if not os.path.exists(expected_file) or not os.path.samefile(custom_path, expected_abs):
             shutil.copy2(custom_path, expected_file)
             cleanup_needed = True
 

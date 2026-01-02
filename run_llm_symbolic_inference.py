@@ -8,20 +8,20 @@
 # 快速配置区域 - 可按需修改默认值，也可通过命令行参数覆盖
 # ============================================================================
 
-DATASET_NAME = 'ProntoQA'
-DATASET_SPLIT = 'dev'
+# 默认数据集（可选: 'ProntoQA', 'ProofWriter', 'FOLIO', 'LogicalDeduction', 'AR-LSAT'）
+DATASET_NAME = 'AR-LSAT'
+DATASET_SPLIT = 'dev'  # 可选: 'dev', 'test'，'train'
 
-API_PROVIDER = 'zhipuai'      # 可选: 'openai', 'zhipuai', 'iflow'
-MODEL_NAME = 'glm-4-flash-250414'
+API_PROVIDER = 'iflow'      # 可选: 'openai', 'zhipuai', 'iflow'
+MODEL_NAME = 'glm-4.6'
 STOP_WORDS = '------'
-MAX_NEW_TOKENS = 10000
+MAX_NEW_TOKENS = 20000
 TEMPERATURE = 0.0
-MAX_CONCURRENT = 20           # 控制并发 API 调用
+MAX_CONCURRENT = 1           # 控制并发 API 调用
 BATCH_SIZE = 1               # 每次批量请求的样本数
 
-LOGIC_PROGRAMS_PATH = './outputs/logic_programs'
-DEFAULT_LOGIC_PROGRAM_FILE = './outputs/logic_programs/self-refine-1_ProntoQA_dev_glm-4-flash-250414.json'
-SAVE_PATH = './outputs/logic_inference'
+DEFAULT_LOGIC_PROGRAM_FILE = './outputs/logic_programs/AR-LSAT_dev_glm-4.6.json'
+SAVE_PATH = './output_data/inference/logic_inference_qwen3-8b_llm_all'
 OUTPUT_SUFFIX = '_llm-symbolic'   # 结果文件会追加该后缀
 
 MAX_EXAMPLES = None           # 仅用于调试，限制每个文件处理的样本数量
@@ -36,7 +36,9 @@ import json
 import os
 import re
 import sys
-from typing import Any, Dict, Iterable, List, Optional, Tuple
+from typing import Any, Dict, List, Optional, Tuple
+
+from tqdm import tqdm
 
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 if PROJECT_ROOT not in sys.path:
@@ -66,13 +68,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument('--dataset_name', type=str, default=DATASET_NAME, choices=SUPPORTED_DATASETS)
     parser.add_argument('--split', type=str, default=DATASET_SPLIT, choices=['dev', 'test'])
     parser.add_argument('--logic_program_file', type=str, default=DEFAULT_LOGIC_PROGRAM_FILE,
-                        help='指定单个逻辑程序文件；若为空则遍历 logic_programs_path')
-    parser.add_argument('--logic_programs_path', type=str, default=LOGIC_PROGRAMS_PATH,
-                        help='逻辑程序目录（当未指定单个文件时遍历该目录）')
-    parser.add_argument('--filename_contains', type=str, default=None,
-                        help='遍历目录时，仅处理文件名包含该字符串的逻辑程序')
-    parser.add_argument('--max_files', type=int, default=None,
-                        help='遍历目录时最多处理的文件数量')
+                        help='要读取的逻辑程序文件路径（默认直接使用 DEFAULT_LOGIC_PROGRAM_FILE）')
     parser.add_argument('--save_path', type=str, default=SAVE_PATH,
                         help='推理结果输出目录')
     parser.add_argument('--output_suffix', type=str, default=OUTPUT_SUFFIX,
@@ -121,31 +117,15 @@ def create_model_client(args: argparse.Namespace):
 
 
 def collect_logic_program_files(args: argparse.Namespace) -> List[str]:
-    if args.logic_program_file:
-        target = os.path.abspath(args.logic_program_file)
-        if not os.path.exists(target):
-            raise FileNotFoundError(f"指定的逻辑程序文件不存在: {target}")
-        return [target]
-    root = os.path.abspath(args.logic_programs_path)
-    if not os.path.isdir(root):
-        raise FileNotFoundError(f"逻辑程序目录不存在: {root}")
-    candidates = [
-        os.path.join(root, name)
-        for name in sorted(os.listdir(root))
-        if name.endswith('.json')
-    ]
-    if args.filename_contains:
-        candidates = [p for p in candidates if args.filename_contains in os.path.basename(p)]
-    if args.max_files:
-        candidates = candidates[:args.max_files]
-    if not candidates:
-        raise FileNotFoundError("未在指定目录中找到任何 .json 逻辑程序文件。")
-    return candidates
-
-
-def batched(iterable: List[Any], size: int) -> Iterable[List[Any]]:
-    for idx in range(0, len(iterable), max(1, size)):
-        yield iterable[idx: idx + max(1, size)]
+    """
+    只处理单个逻辑程序文件。若需要切换文件，请修改 DEFAULT_LOGIC_PROGRAM_FILE 或通过命令行参数覆盖。
+    """
+    if not args.logic_program_file:
+        raise ValueError("必须提供 logic_program_file，可通过 DEFAULT_LOGIC_PROGRAM_FILE 或命令行参数设置。")
+    target = os.path.abspath(args.logic_program_file)
+    if not os.path.exists(target):
+        raise FileNotFoundError(f"指定的逻辑程序文件不存在: {target}")
+    return [target]
 
 
 def get_logic_program_text(example: Dict[str, Any]) -> str:
@@ -311,40 +291,56 @@ def run_inference_on_file(
             'results': [],
         }
 
-    predictions = []
-    for chunk_examples in batched(examples, args.batch_size):
-        chunk_prompts = [build_prompt(ex) for ex in chunk_examples]
-        try:
-            responses = api_client.batch_generate(
-                chunk_prompts,
-                temperature=args.temperature,
-                max_concurrent=args.max_concurrent
-            )
-        except Exception as exc:
-            responses = [None] * len(chunk_prompts)
-            print(f"调用 API 失败: {exc}")
-        if not isinstance(responses, list):
-            responses = [responses]
-        # 如果 API 返回数量与请求不一致，进行填充
-        if len(responses) != len(chunk_examples):
-            responses = (responses + [None] * len(chunk_examples))[:len(chunk_examples)]
-        for example, raw in zip(chunk_examples, responses):
-            raw_text = raw if isinstance(raw, str) else (json.dumps(raw, ensure_ascii=False) if raw else '')
-            choice, rationale, error = parse_llm_response(raw_text)
-            result_entry = {
-                'id': example.get('id'),
-                'context': example.get('context'),
-                'question': example.get('question'),
-                'answer': example.get('answer'),
-                'options': example.get('options'),
-                'predicted_answer': choice,
-                'rationale': rationale,
-                'flag': 'success' if choice else 'failed',
-                'error_message': error,
-                'raw_response': raw_text,
-                'source_logic_program_file': os.path.basename(file_path)
-            }
-            predictions.append(result_entry)
+    total_examples = len(examples)
+    if total_examples == 0:
+        return {
+            'file_path': file_path,
+            'results': []
+        }
+
+    predictions: List[Dict[str, Any]] = []
+    batch_size = max(1, args.batch_size)
+    progress_desc = f"推理中: {os.path.basename(file_path)}"
+    progress_bar = tqdm(total=total_examples, desc=progress_desc, unit="sample")
+
+    try:
+        for start_idx in range(0, total_examples, batch_size):
+            end_idx = min(start_idx + batch_size, total_examples)
+            chunk_examples = examples[start_idx:end_idx]
+            chunk_prompts = prompts[start_idx:end_idx]
+            try:
+                responses = api_client.batch_generate(
+                    chunk_prompts,
+                    temperature=args.temperature,
+                    max_concurrent=args.max_concurrent
+                )
+            except Exception as exc:
+                responses = [None] * len(chunk_prompts)
+                print(f"调用 API 失败: {exc}")
+            if not isinstance(responses, list):
+                responses = [responses]
+            if len(responses) != len(chunk_examples):
+                responses = (responses + [None] * len(chunk_examples))[:len(chunk_examples)]
+            for example, raw in zip(chunk_examples, responses):
+                raw_text = raw if isinstance(raw, str) else (json.dumps(raw, ensure_ascii=False) if raw else '')
+                choice, rationale, error = parse_llm_response(raw_text)
+                result_entry = {
+                    'id': example.get('id'),
+                    'context': example.get('context'),
+                    'question': example.get('question'),
+                    'answer': example.get('answer'),
+                    'options': example.get('options'),
+                    'predicted_answer': choice,
+                    'rationale': rationale,
+                    'flag': 'success' if choice else 'failed',
+                    'error_message': error,
+                    'raw_response': raw_text,
+                    'source_logic_program_file': os.path.basename(file_path)
+                }
+                predictions.append(result_entry)
+            progress_bar.update(len(chunk_examples))
+    finally:
+        progress_bar.close()
 
     return {
         'file_path': file_path,
@@ -381,10 +377,8 @@ def main():
     print("=" * 60)
     print(f"数据集: {args.dataset_name} ({args.split})")
     print(f"模型: {args.api_provider} / {args.model_name}")
-    print(f"逻辑程序文件: {args.logic_program_file or '(扫描目录)'}")
+    print(f"逻辑程序文件: {args.logic_program_file}")
     print(f"输出目录: {args.save_path}")
-    if args.filename_contains:
-        print(f"文件名过滤: 包含 '{args.filename_contains}'")
     if args.max_examples:
         print(f"每个文件最多处理 {args.max_examples} 条样本")
     if args.dry_run:

@@ -77,30 +77,38 @@ async def dispatch_openai_chat_requests(
         List of responses from OpenAI API.
     """
     if OPENAI_VERSION >= 2 and client:
-        async_responses = [
-            client.chat.completions.create(
+        # 对于同步客户端，需要在 executor 中运行
+        import concurrent.futures
+        loop = asyncio.get_event_loop()
+        
+        def sync_call(messages):
+            return client.chat.completions.create(
                 model=model,
-                messages=x,
+                messages=messages,
                 temperature=temperature,
                 max_tokens=max_tokens,
                 top_p=top_p,
-                stop = stop_words
+                stop=stop_words
             )
+        
+        # 在线程池中执行同步调用
+        async_responses = await asyncio.gather(*[
+            loop.run_in_executor(None, sync_call, x)
             for x in messages_list
-        ]
+        ])
     else:
-        async_responses = [
+        async_responses = await asyncio.gather(*[
             openai.ChatCompletion.acreate(
                 model=model,
                 messages=x,
                 temperature=temperature,
                 max_tokens=max_tokens,
                 top_p=top_p,
-                stop = stop_words
+                stop=stop_words
             )
             for x in messages_list
-        ]
-    return await asyncio.gather(*async_responses)
+        ])
+    return async_responses
 
 async def dispatch_openai_prompt_requests(
     messages_list: list[list[dict[str,Any]]],
@@ -112,34 +120,42 @@ async def dispatch_openai_prompt_requests(
     client=None
 ) -> list[str]:
     if OPENAI_VERSION >= 2 and client:
-        async_responses = [
-            client.completions.create(
+        # 对于同步客户端，需要在 executor 中运行
+        import concurrent.futures
+        loop = asyncio.get_event_loop()
+        
+        def sync_call(prompt):
+            return client.completions.create(
                 model=model,
-                prompt=x,
+                prompt=prompt,
                 temperature=temperature,
                 max_tokens=max_tokens,
                 top_p=top_p,
-                frequency_penalty = 0.0,
-                presence_penalty = 0.0,
-                stop = stop_words
+                frequency_penalty=0.0,
+                presence_penalty=0.0,
+                stop=stop_words
             )
+        
+        # 在线程池中执行同步调用
+        async_responses = await asyncio.gather(*[
+            loop.run_in_executor(None, sync_call, x)
             for x in messages_list
-        ]
+        ])
     else:
-        async_responses = [
+        async_responses = await asyncio.gather(*[
             openai.Completion.acreate(
                 model=model,
                 prompt=x,
                 temperature=temperature,
                 max_tokens=max_tokens,
                 top_p=top_p,
-                frequency_penalty = 0.0,
-                presence_penalty = 0.0,
-                stop = stop_words
+                frequency_penalty=0.0,
+                presence_penalty=0.0,
+                stop=stop_words
             )
             for x in messages_list
-        ]
-    return await asyncio.gather(*async_responses)
+        ])
+    return async_responses
 
 class OpenAIModel:
     def __init__(self, API_KEY, model_name, stop_words, max_new_tokens, base_url=None) -> None:
@@ -159,14 +175,86 @@ class OpenAIModel:
         self.max_new_tokens = max_new_tokens
         self.stop_words = stop_words
 
+    def _build_chat_messages(self, content):
+        """
+        根据输入构造 ChatCompletion 的 messages:
+        - 字符串: 仅 user message
+        - (system, user) 元组或列表: system + user 两条 message
+        - 已经是 list[dict]: 直接返回
+        """
+        # 已经是完整的 messages 列表
+        if isinstance(content, list) and content and isinstance(content[0], dict):
+            return content
+
+        # (system, user) 形式
+        if isinstance(content, (tuple, list)) and len(content) == 2 \
+           and isinstance(content[0], str) and isinstance(content[1], str):
+            system_msg, user_msg = content
+            messages = []
+            if system_msg.strip():
+                messages.append({"role": "system", "content": system_msg})
+            messages.append({"role": "user", "content": user_msg})
+            return messages
+
+        # 默认视为单一 user 文本
+        if isinstance(content, str):
+            return [{"role": "user", "content": content}]
+
+        raise ValueError(f"Unsupported message content type for chat: {type(content)}")
+
     # used for chat-gpt and gpt-4
     def chat_generate(self, input_string, temperature = 0.0):
         response = chat_completions_with_backoff(
                 self.client if OPENAI_VERSION >= 2 else None,
             model=self.model_name,
-                messages=[
-                        {"role": "user", "content": input_string}
-                    ],
+                messages=self._build_chat_messages(input_string),
+            max_tokens=self.max_new_tokens,
+            temperature=temperature,
+            top_p=1.0,
+            stop=self.stop_words
+        )
+        try:
+            if OPENAI_VERSION >= 2:
+                if isinstance(response, dict):
+                    message = response['choices'][0]['message']
+                else:
+                    message = response.choices[0].message
+                content = getattr(message, 'content', None)
+                if content is None and isinstance(message, dict):
+                    content = message.get('content')
+            else:
+                message = response['choices'][0]['message']
+                content = message.get('content')
+
+            if content is None:
+                import json
+                try:
+                    response_str = json.dumps(response, indent=2, default=str)
+                except Exception:
+                    response_str = str(response)
+                raise ValueError(f"Response message has no 'content' field. Response structure: {response_str}")
+
+            generated_text = content.strip() if content else ""
+        except (KeyError, AttributeError, IndexError) as e:
+            import json
+            try:
+                if isinstance(response, dict):
+                    response_str = json.dumps(response, indent=2, default=str)
+                else:
+                    response_str = json.dumps(str(response), indent=2)
+            except Exception:
+                response_str = str(response)
+            raise ValueError(f"Error accessing response content: {e}. Response structure: {response_str}")
+        return generated_text
+
+    def chat_generate_with_messages(self, messages, temperature: float = 0.0) -> str:
+        """
+        显式传入 messages 列表进行生成。
+        """
+        response = chat_completions_with_backoff(
+            self.client if OPENAI_VERSION >= 2 else None,
+            model=self.model_name,
+            messages=messages,
             max_tokens=self.max_new_tokens,
             temperature=temperature,
             top_p=1.0,
@@ -225,21 +313,36 @@ class OpenAIModel:
             generated_text = response['choices'][0]['text'].strip()
         return generated_text
 
-    def generate(self, input_string, temperature = 0.0):
-        # 旧版 completion 模型使用 prompt_generate
+    def generate(self, input_content, temperature = 0.0):
+        """
+        统一单条生成接口:
+        - 对于旧版 completion 模型，仅支持字符串 prompt
+        - 对于 chat 模型，支持:
+          * 单字符串：user message
+          * (system, user) 二元组：system + user
+          * list[dict]: 完整 messages
+        """
+        # 旧版 completion 模型仅支持字符串
         if self.model_name in ['text-davinci-002', 'code-davinci-002', 'text-davinci-003']:
-            return self.prompt_generate(input_string, temperature)
-        # 其他模型（包括 gpt-4, gpt-3.5-turbo, glm-4.6, TBStars2-200B-A13B 等）默认使用 chat_generate
+            if not isinstance(input_content, str):
+                raise ValueError("Completion models only support single string prompts.")
+            return self.prompt_generate(input_content, temperature)
+        # 其他模型（包括 gpt-4, gpt-3.5-turbo, glm-4.6, TBStars2-200B-A13B 等）默认使用 chat 接口
         # 因为大多数现代模型都使用 chat 接口
         else:
-            return self.chat_generate(input_string, temperature)
+            return self.chat_generate(input_content, temperature)
     
     def batch_chat_generate(self, messages_list, temperature = 0.0, max_concurrent=None):
+        """
+        批量 chat 生成:
+        - messages_list 中的每个元素可以是:
+          * 字符串：视为单一 user 文本
+          * (system, user) 元组 / 列表：system + user
+          * list[dict]: 完整 messages
+        """
         open_ai_messages_list = []
         for message in messages_list:
-            open_ai_messages_list.append(
-                [{"role": "user", "content": message}]
-            )
+            open_ai_messages_list.append(self._build_chat_messages(message))
         
         # 如果指定了并发数，使用信号量控制
         if max_concurrent and max_concurrent > 0:
@@ -249,14 +352,22 @@ class OpenAIModel:
                 async def dispatch_with_semaphore(messages):
                     async with semaphore:
                         if OPENAI_VERSION >= 2 and self.client:
-                            return await self.client.chat.completions.create(
-                                model=self.model_name,
-                                messages=messages,
-                                temperature=temperature,
-                                max_tokens=self.max_new_tokens,
-                                top_p=1.0,
-                                stop=self.stop_words
-                            )
+                            # 对于同步客户端，需要在 executor 中运行
+                            import concurrent.futures
+                            loop = asyncio.get_event_loop()
+                            
+                            def sync_call():
+                                return self.client.chat.completions.create(
+                                    model=self.model_name,
+                                    messages=messages,
+                                    temperature=temperature,
+                                    max_tokens=self.max_new_tokens,
+                                    top_p=1.0,
+                                    stop=self.stop_words
+                                )
+                            
+                            # 在线程池中执行同步调用
+                            return await loop.run_in_executor(None, sync_call)
                         else:
                             return await openai.ChatCompletion.acreate(
                                 model=self.model_name,
@@ -345,16 +456,24 @@ class OpenAIModel:
                 async def dispatch_with_semaphore(prompt):
                     async with semaphore:
                         if OPENAI_VERSION >= 2 and self.client:
-                            return await self.client.completions.create(
-                                model=self.model_name,
-                                prompt=prompt,
-                                temperature=temperature,
-                                max_tokens=self.max_new_tokens,
-                                top_p=1.0,
-                                frequency_penalty=0.0,
-                                presence_penalty=0.0,
-                                stop=self.stop_words
-                            )
+                            # 对于同步客户端，需要在 executor 中运行
+                            import concurrent.futures
+                            loop = asyncio.get_event_loop()
+                            
+                            def sync_call():
+                                return self.client.completions.create(
+                                    model=self.model_name,
+                                    prompt=prompt,
+                                    temperature=temperature,
+                                    max_tokens=self.max_new_tokens,
+                                    top_p=1.0,
+                                    frequency_penalty=0.0,
+                                    presence_penalty=0.0,
+                                    stop=self.stop_words
+                                )
+                            
+                            # 在线程池中执行同步调用
+                            return await loop.run_in_executor(None, sync_call)
                         else:
                             return await openai.Completion.acreate(
                                 model=self.model_name,

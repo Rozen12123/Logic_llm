@@ -142,6 +142,9 @@ class CSP_Program:
         option_pattern = re.compile(r'^\(?([A-Za-z])\)')
         expression_pattern = re.compile(r'([A-Za-z_][A-Za-z0-9_]*)\s*==\s*(-?\d+)')
 
+        if not answer or len(answer) == 0:
+            return None
+
         variable_ans_map = defaultdict(set)
         for result in answer:
             for variable, value in result.items():
@@ -159,7 +162,7 @@ class CSP_Program:
             option_match = option_pattern.match(option_clean)
             if option_match is None:
                 continue  # Skip if pattern doesn't match
-            option = option_match.group(1)  # Get the captured group (the letter)
+            option = option_match.group(1).upper()  # Normalize to uppercase
             # Extract the expression using regex
             expression_region = option_clean[option_match.end():].strip()
             expression_region = expression_region.replace('`', '')
@@ -169,6 +172,10 @@ class CSP_Program:
             variable = expression_match.group(1).strip()
             value = int(expression_match.group(2).strip())
             # Check if the variable is in the execution result
+            if variable not in variable_ans_map:
+                continue
+            # If variable has exactly one value across all solutions and it matches, return the option
+            # This means the variable is fixed to this value in all solutions
             if len(variable_ans_map[variable]) == 1 and value in variable_ans_map[variable]:
                 return option
 

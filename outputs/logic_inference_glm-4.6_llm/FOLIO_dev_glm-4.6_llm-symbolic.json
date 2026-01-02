@@ -1,0 +1,2076 @@
+[
+  {
+    "id": "FOLIO_dev_0",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Bonnie performs in school talent shows often.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "Both scenarios—Bonnie performing often (making Engaged and Student true) and Bonnie not performing (making Inactive true, Engaged false, Student false)—satisfy all premises. Since the premises do not force a unique truth value for Performs(bonnie), the statement is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"Both scenarios—Bonnie performing often (making Engaged and Student true) and Bonnie not performing (making Inactive true, Engaged false, Student false)—satisfy all premises. Since the premises do not force a unique truth value for Performs(bonnie), the statement is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_1",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie is either both a young child or teenager who wishes to further her academic career and educational opportunities and chaperones high school dances or neither is a young child nor teenager who wishes to further her academic career and educational opportunities, then Bonnie is either a student who attends the school or is an inactive and disinterested member of the community.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From the premises we obtain Chaperones(b) ↔ ¬Student(b) and Inactive(b) ↔ ¬Student(b). Consequently Student(b) ∨ Inactive(b) simplifies to Student(b) ∨ ¬Student(b), which is a tautology. An implication with a tautological consequent is always true, so the given statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From the premises we obtain Chaperones(b) ↔ ¬Student(b) and Inactive(b) ↔ ¬Student(b). Consequently Student(b) ∨ Inactive(b) simplifies to Student(b) ∨ ¬Student(b), which is a tautology. An implication with a tautological consequent is always true, so the given statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_2",
+    "context": "If people perform in school talent shows often, then they attend and are very engaged with school events. People either perform in school talent shows often or are inactive and disinterested members of their community. If people chaperone high school dances, then they are not students who attend the school. All people who are inactive and disinterested members of their community chaperone high school dances. All young children and teenagers who wish to further their academic careers and educational opportunities are students who attend the school. Bonnie either both attends and is very engaged with school events and is a student who attends the school, or she neither attends and is very engaged with school events nor is a student who attends the school.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Bonnie either chaperones high school dances or, if she does not, she performs in school talent shows often, then Bonnie is both a young child or teenager who wishes to further her academic career and educational opportunities and an inactive and disinterested member of the community.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The premises entail that either Bonnie performs or she chaperones is always true, while Young ∧ Inactive can never be true (Inactive true forces Student false, which forces Young false). Thus the implication is always false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The premises entail that either Bonnie performs or she chaperones is always true, while Young ∧ Inactive can never be true (Inactive true forces Student false, which forces Young false). Thus the implication is always false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_3",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has lunch in the company.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises allow two mutually exclusive cases for James: (1) Manager(james) ∧ AppearsToday(james), which via the manager‑no‑remote rule forces LunchInCompany(james) true; or (2) ¬Manager(james) ∧ ¬AppearsToday(james), which via the lunch‑in‑company → appears rule forces LunchInCompany(james) false. Since the premises do not determine which case holds, the truth of LunchInCompany(james) cannot be decided, making it uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises allow two mutually exclusive cases for James: (1) Manager(james) ∧ AppearsToday(james), which via the manager‑no‑remote rule forces LunchInCompany(james) true; or (2) ¬Manager(james) ∧ ¬AppearsToday(james), which via the lunch‑in‑company → appears rule forces LunchInCompany(james) false. Since the premises do not determine which case holds, the truth of LunchInCompany(james) cannot be decided, making it uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_4",
+    "context": "All employees who schedule a meeting with their customers will appear in the company today. Everyone who has lunch in the company schedules meetings with their customers. Employees will either have lunch in the company or have lunch at home. If an employee has lunch at home, then he/she is working remotely from home. All employees who are in other countries work remotely from home. No managers work remotely from home. James is either a manager and appears in the company today or neither a manager nor appears in the company today.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have lunch in the company.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "Premise 7 yields two possible cases for James: (i) Manager(james) ∧ AppearsToday(james) or (ii) ¬Manager(james) ∧ ¬AppearsToday(james). In case (i), if James is an employee, he cannot have lunch at home (managers do not work remotely), so he must have lunch in the company, making ¬LunchInCompany(james) false. In case (ii), if James is an employee, having lunch in the company would imply AppearsToday(james), contradicting ¬AppearsToday(james), so he must have lunch at home, making ¬LunchInCompany(james) true. Since both cases are consistent with the premises, the truth of ¬LunchInCompany(james) cannot be determined; it is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"Premise 7 yields two possible cases for James: (i) Manager(james) ∧ AppearsToday(james) or (ii) ¬Manager(james) ∧ ¬AppearsToday(james). In case (i), if James is an employee, he cannot have lunch at home (managers do not work remotely), so he must have lunch in the company, making ¬LunchInCompany(james) false. In case (ii), if James is an employee, having lunch in the company would imply AppearsToday(james), contradicting ¬AppearsToday(james), so he must have lunch at home, making ¬LunchInCompany(james) true. Since both cases are consistent with the premises, the truth of ¬LunchInCompany(james) cannot be determined; it is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_6",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? There is an animal.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 2 explicitly asserts ∃x (Animal(x) ∧ OccursIn(monkeypoxVirus, x)), which directly entails the conclusion ∃x Animal(x). Therefore the statement 'There is an animal' is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 2 explicitly asserts ∃x (Animal(x) ∧ OccursIn(monkeypoxVirus, x)), which directly entails the conclusion ∃x Animal(x). Therefore the statement 'There is an animal' is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_7",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? No one gets flu.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises only state a conditional: if a person has flu then they feel tired. They do not assert that any person actually has flu, nor do they assert that no person has flu. Therefore the truth of 'No one gets flu' cannot be determined from the given information, making it uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises only state a conditional: if a person has flu then they feel tired. They do not assert that any person actually has flu, nor do they assert that no person has flu. Therefore the truth of 'No one gets flu' cannot be determined from the given information, making it uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_8",
+    "context": "Monkeypox is an infectious disease caused by the monkeypox virus. Monkeypox virus can occur in certain animals, including humans. Humans are mammals. Mammals are animals. Symptons of Monkeypox include fever, headache, muscle pains, feeling tired, and so on. People feel tired when they get a glu.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Symptons of Monkeypox include coughing.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises explicitly list only fever, headache, muscle pains, and feeling tired as symptoms of monkeypox. There is no rule stating that coughing is a symptom, nor any rule asserting the symptom list is exhaustive. Therefore, the truth of 'SymptomOf(coughing, monkeypox)' cannot be determined from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises explicitly list only fever, headache, muscle pains, and feeling tired as symptoms of monkeypox. There is no rule stating that coughing is a symptom, nor any rule asserting the symptom list is exhaustive. Therefore, the truth of 'SymptomOf(coughing, monkeypox)' cannot be determined from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_9",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould’s wild turkey, Merriam’s wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Ocellated wild turkey.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premise ∀x (WildTurkey(x) → (Eastern(x) ∨ Osceola(x) ∨ Goulds(x) ∨ Merriams(x) ∨ RioGrande(x) ∨ Ocellated(x))) together with WildTurkey(tom) yields a disjunction of all six types for Tom. The given negations eliminate every type except Ocellated, so Ocellated(tom) follows necessarily, making the statement true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premise ∀x (WildTurkey(x) → (Eastern(x) ∨ Osceola(x) ∨ Goulds(x) ∨ Merriams(x) ∨ RioGrande(x) ∨ Ocellated(x))) together with WildTurkey(tom) yields a disjunction of all six types for Tom. The given negations eliminate every type except Ocellated, so Ocellated(tom) follows necessarily, making the statement true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_10",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould’s wild turkey, Merriam’s wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is an Eastern wild turkey.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The premises include ¬Eastern(tom), directly asserting that Tom is not an Eastern wild turkey. Therefore the conclusion Eastern(tom) contradicts the given information and is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The premises include ¬Eastern(tom), directly asserting that Tom is not an Eastern wild turkey. Therefore the conclusion Eastern(tom) contradicts the given information and is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_11",
+    "context": "There are six types of wild turkeys: Eastern wild turkey, Osceola wild turkey, Gould’s wild turkey, Merriam’s wild turkey, Rio Grande wild turkey, and Ocellated wild turkey. Tom is not an Eastern wild turkey. Tom is not an Osceola wild turkey. Tom is also not a Gould's wild turkey, or a Merriam's wild turkey, or a Rio Grande wild turkey. Tom is a wild turkey.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Joey is a wild turkey.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises only give facts about Tom; there is no information about Joey, so we cannot determine whether Joey is a wild turkey.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises only give facts about Tom; there is no information about Joey, so we cannot determine whether Joey is a wild turkey.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_12",
+    "context": "A Japanese game company created the game the Legend of Zelda. All games in the Top 10 list are made by Japanese game companies. [BG] If a game sells more than one million copies, then it will be selected into the Top 10 list. The Legend of Zelda sold more than one million copies.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Legend of Zelda is in the Top 10 list.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise ∀x (SellsOverMillion(x) → Top10(x)) together with SellsOverMillion(legendOfZelda) yields, by universal instantiation and modus ponens, Top10(legendOfZelda). Hence the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise ∀x (SellsOverMillion(x) → Top10(x)) together with SellsOverMillion(legendOfZelda) yields, by universal instantiation and modus ponens, Top10(legendOfZelda). Hence the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_14",
+    "context": "A Japanese game company created the game the Legend of Zelda. All games in the Top 10 list are made by Japanese game companies. [BG] If a game sells more than one million copies, then it will be selected into the Top 10 list. The Legend of Zelda sold more than one million copies.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The Legend of Zelda is not in the Top 10 list.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "Premise ∀x (SellsOverOneMillion(x) → Top10(x)) together with SellsOverOneMillion(legendOfZelda) yields Top10(legendOfZelda). Hence ¬Top10(legendOfZelda) is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"Premise ∀x (SellsOverOneMillion(x) → Top10(x)) together with SellsOverOneMillion(legendOfZelda) yields Top10(legendOfZelda). Hence ¬Top10(legendOfZelda) is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_15",
+    "context": "All squares have four sides. All four-sided things are shapes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All squares are shapes.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From the premises ∀x (Square(x) → FourSided(x)) and ∀x (FourSided(x) → Shape(x)), we can chain the implications (hypothetical syllogism) to derive ∀x (Square(x) → Shape(x)). Therefore the statement 'All squares are shapes' is logically entailed and is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From the premises ∀x (Square(x) → FourSided(x)) and ∀x (FourSided(x) → Shape(x)), we can chain the implications (hypothetical syllogism) to derive ∀x (Square(x) → Shape(x)). Therefore the statement 'All squares are shapes' is logically entailed and is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_18",
+    "context": "All rabbits are cute. Some turtles exist. An animal is either a rabbit or a squirrel. If something is skittish, then it is not still. All squirrels are skittish. Rock is still.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a turtle or cute.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises give no information that rock is an animal, so we cannot apply the animal classification to infer that rock is a rabbit (and thus cute) or a squirrel. Likewise, there is no premise linking rock to turtles, so Turtle(rock) cannot be proven or disproven. Consequently, neither disjunct of Turtle(rock) ∨ Cute(rock) can be established, making the statement's truth value uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises give no information that rock is an animal, so we cannot apply the animal classification to infer that rock is a rabbit (and thus cute) or a squirrel. Likewise, there is no premise linking rock to turtles, so Turtle(rock) cannot be proven or disproven. Consequently, neither disjunct of Turtle(rock) ∨ Cute(rock) can be established, making the statement's truth value uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_21",
+    "context": "\"Stranger Things\" is a popular Netflix show. If a Netflix show is popular, Karen will binge-watch it. If and only if Karen binge-watches a Netflix show, she will download it. Karen does not download \"Black Mirror\". \"Black Mirror\" is a Netflix show. If Karen binge-watches a Netflix show, she will share it to Lisa.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Karen will share \"Stranger Things\" to Lisa.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premises 1 and 2 give BingeWatch(karen, strangerThings). Since strangerThings is a Netflix show, premise 6 applies: (NetflixShow(strangerThings) ∧ BingeWatch(karen, strangerThings)) → Share(karen, strangerThings, lisa). Therefore Share(karen, strangerThings, lisa) follows, making the statement true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premises 1 and 2 give BingeWatch(karen, strangerThings). Since strangerThings is a Netflix show, premise 6 applies: (NetflixShow(strangerThings) ∧ BingeWatch(karen, strangerThings)) → Share(karen, strangerThings, lisa). Therefore Share(karen, strangerThings, lisa) follows, making the statement true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_22",
+    "context": "\"Stranger Things\" is a popular Netflix show. If a Netflix show is popular, Karen will binge-watch it. If and only if Karen binge-watches a Netflix show, she will download it. Karen does not download \"Black Mirror\". \"Black Mirror\" is a Netflix show. If Karen binge-watches a Netflix show, she will share it to Lisa.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? \"Black Mirror\" is popular.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "From premise 3, BingeWatch(karen, x) ↔ Download(karen, x). Since ¬Download(karen, blackMirror) holds, we infer ¬BingeWatch(karen, blackMirror). Premise 2 states (NetflixShow(x) ∧ Popular(x)) → BingeWatch(karen, x). Its contrapositive gives ¬BingeWatch(karen, x) → (¬NetflixShow(x) ∨ ¬Popular(x)). With NetflixShow(blackMirror) true, the disjunction forces ¬Popular(blackMirror). Hence 'Black Mirror' is not popular, making the statement false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"From premise 3, BingeWatch(karen, x) ↔ Download(karen, x). Since ¬Download(karen, blackMirror) holds, we infer ¬BingeWatch(karen, blackMirror). Premise 2 states (NetflixShow(x) ∧ Popular(x)) → BingeWatch(karen, x). Its contrapositive gives ¬BingeWatch(karen, x) → (¬NetflixShow(x) ∨ ¬Popular(x)). With NetflixShow(blackMirror) true, the disjunction forces ¬Popular(blackMirror). Hence 'Black Mirror' is not popular, making the statement false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_23",
+    "context": "\"Stranger Things\" is a popular Netflix show. If a Netflix show is popular, Karen will binge-watch it. If and only if Karen binge-watches a Netflix show, she will download it. Karen does not download \"Black Mirror\". \"Black Mirror\" is a Netflix show. If Karen binge-watches a Netflix show, she will share it to Lisa.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Karen will share \"Black Mirror\" to Lisa.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "From premise 3, for any Netflix show x, BingeWatch(karen, x) ↔ Download(karen, x). Since Black Mirror is a Netflix show (premise 5) and Karen does not download it (premise 4), we infer ¬BingeWatch(karen, blackMirror). Premise 6 states that if Karen binge‑watches a Netflix show then she shares it, but the antecedent is false for Black Mirror, so the implication does not yield Share(karen, blackMirror, lisa). No other premise forces sharing, nor does any premise forbid it. Hence the truth of the conclusion cannot be determined from the given information; it is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"From premise 3, for any Netflix show x, BingeWatch(karen, x) ↔ Download(karen, x). Since Black Mirror is a Netflix show (premise 5) and Karen does not download it (premise 4), we infer ¬BingeWatch(karen, blackMirror). Premise 6 states that if Karen binge‑watches a Netflix show then she shares it, but the antecedent is false for Black Mirror, so the implication does not yield Share(karen, blackMirror, lisa). No other premise forces sharing, nor does any premise forbid it. Hence the truth of the conclusion cannot be determined from the given information; it is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_25",
+    "context": "Beijing is the capital of the People's Republic of China. Beijing is the world's most populous national capital city. Beijing is located in Northern China. Beijing hosted the 2008 Summer Olympics and 2008 Summer Paralympics Games. Beijing has hosted both the Summer and Winter Olympics, along with the Summer and Winter Paralympics Many of Beijing's 91 universities consistently rank among the best in the Asia-Pacific and the world.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beijing is located in southern China.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The premise LocatedIn(beijing, northernChina) explicitly states that Beijing is in northern China. This directly contradicts the conclusion LocatedIn(beijing, southernChina). No other premises support the conclusion, so the statement is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The premise LocatedIn(beijing, northernChina) explicitly states that Beijing is in northern China. This directly contradicts the conclusion LocatedIn(beijing, southernChina). No other premises support the conclusion, so the statement is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_26",
+    "context": "Beijing is the capital of the People's Republic of China. Beijing is the world's most populous national capital city. Beijing is located in Northern China. Beijing hosted the 2008 Summer Olympics and 2008 Summer Paralympics Games. Beijing has hosted both the Summer and Winter Olympics, along with the Summer and Winter Paralympics Many of Beijing's 91 universities consistently rank among the best in the Asia-Pacific and the world.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beijing is the second largest Chinese city by urban population.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises contain facts about Beijing being the capital, the most populous national capital, its location, hosted events, and its universities, but they give no information about its rank among Chinese cities by urban population. Therefore the conclusion cannot be proven true or false from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises contain facts about Beijing being the capital, the most populous national capital, its location, hosted events, and its universities, but they give no information about its rank among Chinese cities by urban population. Therefore the conclusion cannot be proven true or false from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_29",
+    "context": "All aliens are extraterrestrial. If someone is from Mars, then they are aliens. No extraterrestrial is human. Everyone from Earth is a human. Marvin cannot be from Earth and from Mars. If Marvin is not from Earth, then Marvin is an extraterrestrial.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Marvin is not from Mars, then Marvin is a human.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises permit a model where Marvin is neither from Earth nor Mars, making him extraterrestrial and not human, which falsifies the conditional. They also permit a model where Marvin is from Mars, making the antecedent false and the conditional true. Since the conclusion can be either true or false while satisfying all premises, its truth value is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises permit a model where Marvin is neither from Earth nor Mars, making him extraterrestrial and not human, which falsifies the conditional. They also permit a model where Marvin is from Mars, making the antecedent false and the conditional true. Since the conclusion can be either true or false while satisfying all premises, its truth value is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_30",
+    "context": "A person is either a Grand Slam champion or an Oscar-nominated actor. All people who are Grand Slam champions are professional tennis players. All Oscar-nominated actors are celebrities. All professional tennis players are athletes. If a person is a celebrity then they are well paid. If a person is an athlete then they are famous. All well-paid people live in tax havens. If Djokovic is famous and is an athlete, then Djokovic lives in well paid.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Djokovic is a Grand Slam champion.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises only state that for any person exactly one of GrandSlamChampion or OscarNominatedActor holds, but they give no specific facts about Djokovic. The only conditional involving Djokovic ((Famous(djokovic) ∧ Athlete(djokovic)) → WellPaid(djokovic)) has an antecedent that is not known to be true, so it yields no information. Without any premise that forces Djokovic to be (or not be) a Grand Slam champion, the conclusion cannot be determined; it is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises only state that for any person exactly one of GrandSlamChampion or OscarNominatedActor holds, but they give no specific facts about Djokovic. The only conditional involving Djokovic ((Famous(djokovic) ∧ Athlete(djokovic)) → WellPaid(djokovic)) has an antecedent that is not known to be true, so it yields no information. Without any premise that forces Djokovic to be (or not be) a Grand Slam champion, the conclusion cannot be determined; it is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_31",
+    "context": "A person is either a Grand Slam champion or an Oscar-nominated actor. All people who are Grand Slam champions are professional tennis players. All Oscar-nominated actors are celebrities. All professional tennis players are athletes. If a person is a celebrity then they are well paid. If a person is an athlete then they are famous. All well-paid people live in tax havens. If Djokovic is famous and is an athlete, then Djokovic lives in well paid.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Djokovic lives in a tax haven.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 1 forces Djokovic to be either a Grand Slam champion or an Oscar‑nominated actor. If he is a Grand Slam champion, premises 2→4→6 make him an athlete and famous, and premise 8 then yields WellPaid(djokovic). If he is an Oscar‑nominated actor, premise 3→5 gives WellPaid(djokovic). In both cases premise 7 (∀x (WellPaid(x)→LivesInTaxHaven(x))) entails LivesInTaxHaven(djokovic). Hence the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 1 forces Djokovic to be either a Grand Slam champion or an Oscar‑nominated actor. If he is a Grand Slam champion, premises 2→4→6 make him an athlete and famous, and premise 8 then yields WellPaid(djokovic). If he is an Oscar‑nominated actor, premise 3→5 gives WellPaid(djokovic). In both cases premise 7 (∀x (WellPaid(x)→LivesInTaxHaven(x))) entails LivesInTaxHaven(djokovic). Hence the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_32",
+    "context": "A person is either a Grand Slam champion or an Oscar-nominated actor. All people who are Grand Slam champions are professional tennis players. All Oscar-nominated actors are celebrities. All professional tennis players are athletes. If a person is a celebrity then they are well paid. If a person is an athlete then they are famous. All well-paid people live in tax havens. If Djokovic is famous and is an athlete, then Djokovic lives in well paid.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Djokovic does not live in a tax haven.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The exclusive‑or premise forces Djokovic to be either a GrandSlam champion or an Oscar‑nominated actor. If GrandSlam(djokovic) holds, then via ProTennis → Athlete → Famous and the conditional (Famous ∧ Athlete) → WellPaid, we get WellPaid(djokovic) and thus TaxHaven(djokovic). If OscarActor(djokovic) holds, then Celebrity → WellPaid → TaxHaven also yields TaxHaven(djokovic). In either case TaxHaven(djokovic) is true, so ¬TaxHaven(djokovic) is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The exclusive‑or premise forces Djokovic to be either a GrandSlam champion or an Oscar‑nominated actor. If GrandSlam(djokovic) holds, then via ProTennis → Athlete → Famous and the conditional (Famous ∧ Athlete) → WellPaid, we get WellPaid(djokovic) and thus TaxHaven(djokovic). If OscarActor(djokovic) holds, then Celebrity → WellPaid → TaxHaven also yields TaxHaven(djokovic). In either case TaxHaven(djokovic) is true, so ¬TaxHaven(djokovic) is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_34",
+    "context": "Diamond Mine is a professional wrestling stable, formed in WWE. Roderick Strong leads Diamond Mine. Diamond Mine includes the Creed Brothers, and Ivy Nile. Imperium has a feud with Diamond Mine.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Roderick strong leads the Creed Brothers.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises state that Roderick Strong leads Diamond Mine and that Diamond Mine includes the Creed Brothers, but there is no rule linking leadership of a group to leadership of its members. Without such a rule, Leads(roderickStrong, creedBrothers) cannot be derived, making the statement uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises state that Roderick Strong leads Diamond Mine and that Diamond Mine includes the Creed Brothers, but there is no rule linking leadership of a group to leadership of its members. Without such a rule, Leads(roderickStrong, creedBrothers) cannot be derived, making the statement uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_36",
+    "context": "Symphony No. 9 is a music piece. Composers write music pieces. Beethoven wrote Symphony No. 9. Vienna Music Society premiered Symphony No. 9. Vienna Music Society is an orchestra. Beethoven leads the Vienna Music Society. Orchestras are led by conductors.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beethoven is a composer.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premises include Writes(beethoven, symphony9) and MusicPiece(symphony9). The universal rule ∀x∀y (Writes(x, y) ∧ MusicPiece(y) → Composer(x)) therefore applies, yielding Composer(beethoven). Hence the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premises include Writes(beethoven, symphony9) and MusicPiece(symphony9). The universal rule ∀x∀y (Writes(x, y) ∧ MusicPiece(y) → Composer(x)) therefore applies, yielding Composer(beethoven). Hence the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_38",
+    "context": "Symphony No. 9 is a music piece. Composers write music pieces. Beethoven wrote Symphony No. 9. Vienna Music Society premiered Symphony No. 9. Vienna Music Society is an orchestra. Beethoven leads the Vienna Music Society. Orchestras are led by conductors.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Beethoven is not a conductor.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The premises state that Vienna Music Society is an orchestra and that Beethoven leads it. The rule ∀x∀y (Orchestra(x) ∧ Leads(y, x) → Conductor(y)) therefore entails Conductor(beethoven). Hence the statement ¬Conductor(beethoven) is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The premises state that Vienna Music Society is an orchestra and that Beethoven leads it. The rule ∀x∀y (Orchestra(x) ∧ Leads(y, x) → Conductor(y)) therefore entails Conductor(beethoven). Hence the statement ¬Conductor(beethoven) is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_39",
+    "context": "All of Zaha Hadid's design styles are timeless. No mass product design is timeless. Either Zaha Hadid's design style or Kelly Wearstler's design style. All of Kelly Wearstler's design styles are evocative. All of Kelly Wearstler's design styles are dreamy. If a design by Max is timeless, then a design by Max is a mass product design and evocative.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A design by Max is a mass product design.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "No premise guarantees the existence of a Max design or that any Max design is timeless. The conditional about Max only applies if a Max design is timeless, which cannot be derived. Therefore we cannot determine whether a Max design is a mass product design; the statement is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"No premise guarantees the existence of a Max design or that any Max design is timeless. The conditional about Max only applies if a Max design is timeless, which cannot be derived. Therefore we cannot determine whether a Max design is a mass product design; the statement is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_48",
+    "context": "[BG] There are four seasons in a year: Spring, Summer, Fall, and Winter. All students who want to have a long vacation love summer the most. Emma's favorite season is summer. Mia's favorite season is not the same as Emma's. James wants to have a long vacation.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mia's favorite season is spring.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises only state that Mia does not love summer (¬LovesMost(mia, summer)). No other premise restricts Mia's favorite season to a specific season among spring, fall, or winter. Therefore, the conclusion LovesMost(mia, spring) cannot be proven true or false from the given information, making it uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises only state that Mia does not love summer (¬LovesMost(mia, summer)). No other premise restricts Mia's favorite season to a specific season among spring, fall, or winter. Therefore, the conclusion LovesMost(mia, spring) cannot be proven true or false from the given information, making it uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_49",
+    "context": "No digital media are analog. Every printed text is analog. All streaming services are digital. If an object is a hardcover book then it is printed text. If 1984 is a streaming service, then 1984 is a hardcover book.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? 1984 is printed text.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises give no direct information that 1984 is a streaming service, a hardcover book, or printed text. The only conditional involving 1984 (StreamingService(1984) → HardcoverBook(1984)) does not allow us to infer its antecedent, so we cannot derive PrintedText(1984). Therefore the truth of '1984 is printed text' cannot be determined from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises give no direct information that 1984 is a streaming service, a hardcover book, or printed text. The only conditional involving 1984 (StreamingService(1984) → HardcoverBook(1984)) does not allow us to infer its antecedent, so we cannot derive PrintedText(1984). Therefore the truth of '1984 is printed text' cannot be determined from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_50",
+    "context": "No digital media are analog. Every printed text is analog. All streaming services are digital. If an object is a hardcover book then it is printed text. If 1984 is a streaming service, then 1984 is a hardcover book.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? 1984 is a streaming service.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "Assuming StreamingService(1984) leads to a contradiction: it implies Digital(1984) (by premise 3) and thus ¬Analog(1984) (by premise 1), while also implying HardcoverBook(1984) (by premise 5), which implies PrintedText(1984) (by premise 4) and thus Analog(1984) (by premise 2). The simultaneous Analog(1984) and ¬Analog(1984) is impossible, so the assumption must be false. Therefore StreamingService(1984) is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"Assuming StreamingService(1984) leads to a contradiction: it implies Digital(1984) (by premise 3) and thus ¬Analog(1984) (by premise 1), while also implying HardcoverBook(1984) (by premise 5), which implies PrintedText(1984) (by premise 4) and thus Analog(1984) (by premise 2). The simultaneous Analog(1984) and ¬Analog(1984) is impossible, so the assumption must be false. Therefore StreamingService(1984) is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_51",
+    "context": "No digital media are analog. Every printed text is analog. All streaming services are digital. If an object is a hardcover book then it is printed text. If 1984 is a streaming service, then 1984 is a hardcover book.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? 1984 is not a streaming service.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Assuming StreamingService(1984) leads to a contradiction: it implies HardcoverBook(1984), which implies PrintedText(1984), which implies Analog(1984); but StreamingService(1984) also implies Digital(1984), which implies ¬Analog(1984). Hence StreamingService(1984) cannot be true, so ¬StreamingService(1984) is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Assuming StreamingService(1984) leads to a contradiction: it implies HardcoverBook(1984), which implies PrintedText(1984), which implies Analog(1984); but StreamingService(1984) also implies Digital(1984), which implies ¬Analog(1984). Hence StreamingService(1984) cannot be true, so ¬StreamingService(1984) is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_55",
+    "context": "Robert Lewandowski is a striker. [BG] Strikers are soccer players. Robert Lewandowski left Bayern Munchen. [BG] If a player left a team they no longer play for that team.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Robert Lewandowski is a soccer player.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 1 states Striker(robert_lewandowski). Premise 2 is ∀x (Striker(x) → SoccerPlayer(x)). By universal instantiation, we get Striker(robert_lewandowski) → SoccerPlayer(robert_lewandowski). Applying modus ponens with Premise 1 yields SoccerPlayer(robert_lewandowski), so the conclusion is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 1 states Striker(robert_lewandowski). Premise 2 is ∀x (Striker(x) → SoccerPlayer(x)). By universal instantiation, we get Striker(robert_lewandowski) → SoccerPlayer(robert_lewandowski). Applying modus ponens with Premise 1 yields SoccerPlayer(robert_lewandowski), so the conclusion is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_56",
+    "context": "Robert Lewandowski is a striker. [BG] Strikers are soccer players. Robert Lewandowski left Bayern Munchen. [BG] If a player left a team they no longer play for that team.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Robert Lewandowski plays for Bayern Munchen.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "Premise Left(robert_lewandowski, bayern_munchen) together with the rule ∀x∀y (Left(x, y) → ¬PlaysFor(x, y)) yields ¬PlaysFor(robert_lewandowski, bayern_munchen). Hence the claim that Robert Lewandowski plays for Bayern Munchen is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"Premise Left(robert_lewandowski, bayern_munchen) together with the rule ∀x∀y (Left(x, y) → ¬PlaysFor(x, y)) yields ¬PlaysFor(robert_lewandowski, bayern_munchen). Hence the claim that Robert Lewandowski plays for Bayern Munchen is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_57",
+    "context": "Robert Lewandowski is a striker. [BG] Strikers are soccer players. Robert Lewandowski left Bayern Munchen. [BG] If a player left a team they no longer play for that team.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Robert Lewandowski is a star.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises provide information about Robert Lewandowski being a striker, a soccer player, and having left Bayern Munich, but there is no rule or fact that links any of these predicates to the predicate Star(x). Therefore, the truth of Star(robertLewandowski) cannot be determined from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises provide information about Robert Lewandowski being a striker, a soccer player, and having left Bayern Munich, but there is no rule or fact that links any of these predicates to the predicate Star(x). Therefore, the truth of Star(robertLewandowski) cannot be determined from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_61",
+    "context": "International students in US have either an F1 visa or a J1 visa. An international student in US with an F1 visa needs to apply for CPT or OPT if the student wants to work in the US. Mike is an international student. Mike needs to apply for CPT if he wants to work in the US.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mike has an F1 visa.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises establish that Mike is an international student, so he must have either an F1 or a J1 visa (exclusive). The statement that Mike needs to apply for CPT if he wants to work is compatible with both visa types, and no premise forces him to be an F1 student. Hence, F1(mike) cannot be determined from the given information and is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises establish that Mike is an international student, so he must have either an F1 or a J1 visa (exclusive). The statement that Mike needs to apply for CPT if he wants to work is compatible with both visa types, and no premise forces him to be an F1 student. Hence, F1(mike) cannot be determined from the given information and is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_62",
+    "context": "International students in US have either an F1 visa or a J1 visa. An international student in US with an F1 visa needs to apply for CPT or OPT if the student wants to work in the US. Mike is an international student. Mike needs to apply for CPT if he wants to work in the US.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mike has a J1 visa.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "Premise 1 guarantees Mike has either an F1 or a J1 visa, but no further premise specifies which one. Both visa types are consistent with the given information, so we cannot definitively conclude that Mike has a J1 visa.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"Premise 1 guarantees Mike has either an F1 or a J1 visa, but no further premise specifies which one. Both visa types are consistent with the given information, so we cannot definitively conclude that Mike has a J1 visa.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_65",
+    "context": "All cows are bovines. Some pets are cows. If something is a bovine, then it is domesticated. No domesticated animals are alligators. Ted is an aligator.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Ted is a cow, then Ted is not a pet.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From the premises, assuming Cow(ted) yields Bovine(ted) → Domesticated(ted) → ¬Alligator(ted), contradicting Alligator(ted). Hence ¬Cow(ted) is entailed, making the implication Cow(ted) → ¬Pet(ted) vacuously true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From the premises, assuming Cow(ted) yields Bovine(ted) → Domesticated(ted) → ¬Alligator(ted), contradicting Alligator(ted). Hence ¬Cow(ted) is entailed, making the implication Cow(ted) → ¬Pet(ted) vacuously true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_68",
+    "context": "Yale University is a private Ivy League research university. Yale University moved to New Haven in 1716. Yale university's endowment was valued at $42.3 billion. Yale University has been organized into 27 constituent colleges and schools: the residential colleges, the Yale Graduate School of Arts and Sciences, and twelve professional schools. A list of residential colleges at Yale: Benjamin Franklin College, Berkeley College, Branford College, Davenport College, Ezra Stiles College, Grace Hopper College, Jonathan Edwards College, Morse College, Pauli Murray College, Pierson College, Saybrook College, Silliman College, Timothy Dwight College, and Trumbull College.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Pierson College is a residential college at Yale.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premise explicitly asserts ResidentialCollege(pierson) ∧ AtYale(pierson), which directly states that Pierson College is a residential college at Yale, making the statement true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premise explicitly asserts ResidentialCollege(pierson) ∧ AtYale(pierson), which directly states that Pierson College is a residential college at Yale, making the statement true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_73",
+    "context": "All growth companies’ stocks are volatile. If the stock price is volatile, then it is not suitable for a retirement fund. Some companies’ stocks are growth companies’ stocks. All mature companies’ stocks are suitable for a retirement fund. KO is a mature company’s stock.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If KO is a growth company’s stock or if its price is volatile, then KO is neither a company’s stock nor is its price volatile.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From the premises we infer that KO is suitable for retirement, so ¬Volatile(ko) holds, and consequently ¬Growth(ko). Thus the antecedent (Growth(ko) ∨ Volatile(ko)) is false, making the implication vacuously true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From the premises we infer that KO is suitable for retirement, so ¬Volatile(ko) holds, and consequently ¬Growth(ko). Thus the antecedent (Growth(ko) ∨ Volatile(ko)) is false, making the implication vacuously true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_74",
+    "context": "All vehicle registration plates in Istanbul begin with the number 34. Plates that do not begin with the number 34 are not from Istanbul. Joe's vehicle registration plate is from Istanbul. Tom's license plate begins with the number 35. [BG] If a license plate begins with the number 35, then it does not begin with the number 34.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Joe's license plate begins with the number 34.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 1 states that every plate from Istanbul begins with 34. Premise 3 tells us that Joe’s plate is from Istanbul. By universal instantiation of Premise 1 with x = joe_plate, we derive BeginsWith34(joe_plate). Hence the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 1 states that every plate from Istanbul begins with 34. Premise 3 tells us that Joe’s plate is from Istanbul. By universal instantiation of Premise 1 with x = joe_plate, we derive BeginsWith34(joe_plate). Hence the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_75",
+    "context": "All vehicle registration plates in Istanbul begin with the number 34. Plates that do not begin with the number 34 are not from Istanbul. Joe's vehicle registration plate is from Istanbul. Tom's license plate begins with the number 35. [BG] If a license plate begins with the number 35, then it does not begin with the number 34.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom's license plate is from Istanbul.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "Tom's plate begins with 35, which by premise 5 implies it does not begin with 34. Premise 2 states that any plate not beginning with 34 is not from Istanbul. Therefore, Tom's plate cannot be from Istanbul, making the statement false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"Tom's plate begins with 35, which by premise 5 implies it does not begin with 34. Premise 2 states that any plate not beginning with 34 is not from Istanbul. Therefore, Tom's plate cannot be from Istanbul, making the statement false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_76",
+    "context": "If people work in student jobs on campus, then they need to earn money to help pay for their college tuition. If people order takeout frequently in college, then they work in student jobs on campus. People either order takeout frequently in college or enjoy the dining hall meals and recipes. If people enjoy the dining hall meals and recipes, then they are not picky eaters. If people enjoy the dining hall meals and recipes, then they spend a lot of their time eating and catching up with friends in the campus dining halls. If Mary works in student jobs on campus and needs to earn money to help pay for her college tuition, then Mary is neither picky nor needs to earn money to help pay for her college tuition.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mary needs to earn money to help pay for her college tuition.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "From premise 6 we infer ¬(WorkInStudentJobs(mary) ∧ NeedMoney(mary)), i.e., Mary cannot both work and need money. Premise 1 (WorkInStudentJobs → NeedMoney) rules out the case WorkInStudentJobs(mary) ∧ ¬NeedMoney(mary). Hence WorkInStudentJobs(mary) must be false, while NeedMoney(mary) may be either true or false. Premise 3 forces Mary to enjoy dining hall (since she cannot order takeout, which would imply WorkInStudentJobs), but no premise connects enjoying dining hall to needing money. Therefore NeedMoney(mary) is not determined; it is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"From premise 6 we infer ¬(WorkInStudentJobs(mary) ∧ NeedMoney(mary)), i.e., Mary cannot both work and need money. Premise 1 (WorkInStudentJobs → NeedMoney) rules out the case WorkInStudentJobs(mary) ∧ ¬NeedMoney(mary). Hence WorkInStudentJobs(mary) must be false, while NeedMoney(mary) may be either true or false. Premise 3 forces Mary to enjoy dining hall (since she cannot order takeout, which would imply WorkInStudentJobs), but no premise connects enjoying dining hall to needing money. Therefore NeedMoney(mary) is not determined; it is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_77",
+    "context": "If people work in student jobs on campus, then they need to earn money to help pay for their college tuition. If people order takeout frequently in college, then they work in student jobs on campus. People either order takeout frequently in college or enjoy the dining hall meals and recipes. If people enjoy the dining hall meals and recipes, then they are not picky eaters. If people enjoy the dining hall meals and recipes, then they spend a lot of their time eating and catching up with friends in the campus dining halls. If Mary works in student jobs on campus and needs to earn money to help pay for her college tuition, then Mary is neither picky nor needs to earn money to help pay for her college tuition.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Mary is not a picky eater and spends a lot of her time eating and catching up with friends in the campus dining halls.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 6 together with premise 1 yields a contradiction if Work(mary) holds, so ¬Work(mary). By contrapositive of premise 2, ¬Work(mary) gives ¬OrderTakeout(mary). The exclusive‑or in premise 3 then forces EnjoyDining(mary). Premises 4 and 5 from EnjoyDining(mary) give ¬Picky(mary) and SpendTime(mary), thus the conclusion is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 6 together with premise 1 yields a contradiction if Work(mary) holds, so ¬Work(mary). By contrapositive of premise 2, ¬Work(mary) gives ¬OrderTakeout(mary). The exclusive‑or in premise 3 then forces EnjoyDining(mary). Premises 4 and 5 from EnjoyDining(mary) give ¬Picky(mary) and SpendTime(mary), thus the conclusion is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_79",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are a product of Baked by Melissa.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "Any product of Baked by Melissa must be a cupcake (premise 4) and therefore a bakery (premise 2). However, a bakery cannot be spicy (premise 1). If dried Thai chilies were a bakery, premise 5 would require them to be a hotpot or spicy; being a bakery forces them not spicy, so they would have to be a hotpot, which by premise 3 would make them spicy—a contradiction. Hence dried Thai chilies cannot be a bakery, and thus cannot be a product of Baked by Melissa. The statement is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"Any product of Baked by Melissa must be a cupcake (premise 4) and therefore a bakery (premise 2). However, a bakery cannot be spicy (premise 1). If dried Thai chilies were a bakery, premise 5 would require them to be a hotpot or spicy; being a bakery forces them not spicy, so they would have to be a hotpot, which by premise 3 would make them spicy—a contradiction. Hence dried Thai chilies cannot be a bakery, and thus cannot be a product of Baked by Melissa. The statement is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_80",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are not a product of Baked by Melissa.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Assuming ProductOfBakedByMelissa(driedThaiChilies) yields Cupcake(driedThaiChilies) → Bakery(driedThaiChilies) → ¬Spicy(driedThaiChilies). Premise 5 then forces Hotpot(driedThaiChilies) ∨ Spicy(driedThaiChilies); with ¬Spicy, Hotpot must hold. But Hotpot → Spicy (premise 3), contradicting ¬Spicy. Thus the assumption is impossible, so ¬ProductOfBakedByMelissa(driedThaiChilies) is necessarily true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Assuming ProductOfBakedByMelissa(driedThaiChilies) yields Cupcake(driedThaiChilies) → Bakery(driedThaiChilies) → ¬Spicy(driedThaiChilies). Premise 5 then forces Hotpot(driedThaiChilies) ∨ Spicy(driedThaiChilies); with ¬Spicy, Hotpot must hold. But Hotpot → Spicy (premise 3), contradicting ¬Spicy. Thus the assumption is impossible, so ¬ProductOfBakedByMelissa(driedThaiChilies) is necessarily true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_81",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are a hotpot.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises provide no information that dried Thai chilies are spicy or a bakery, so the antecedent of the conditional (Spicy(driedThaiChilies) ∨ Bakery(driedThaiChilies)) cannot be established. Without that, the consequent (Hotpot(driedThaiChilies) ∨ Spicy(driedThaiChilies)) does not follow, and no other premise entails Hotpot(driedThaiChilies) or its negation. Hence the truth of 'Dried Thai chilies are a hotpot' is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises provide no information that dried Thai chilies are spicy or a bakery, so the antecedent of the conditional (Spicy(driedThaiChilies) ∨ Bakery(driedThaiChilies)) cannot be established. Without that, the consequent (Hotpot(driedThaiChilies) ∨ Spicy(driedThaiChilies)) does not follow, and no other premise entails Hotpot(driedThaiChilies) or its negation. Hence the truth of 'Dried Thai chilies are a hotpot' is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_82",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are neither a product of Baked by Melissa nor a bakery.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Assuming Bakery(d) leads to a contradiction: Bakery(d) ⇒ ¬Spicy(d) (no bakery is spicy), which makes the antecedent of the conditional true, forcing Hotpot(d) ∨ Spicy(d). Since ¬Spicy(d), we get Hotpot(d), and Hotpot(d) ⇒ Spicy(d), contradicting ¬Spicy(d). Hence ¬Bakery(d) is entailed. From ProductOfBakedByMelissa(d) → Cupcake(d) → Bakery(d), we have ¬Bakery(d) ⇒ ¬ProductOfBakedByMelissa(d). Thus both ¬ProductOfBakedByMelissa(d) and ¬Bakery(d) hold in every model, making the conclusion true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Assuming Bakery(d) leads to a contradiction: Bakery(d) ⇒ ¬Spicy(d) (no bakery is spicy), which makes the antecedent of the conditional true, forcing Hotpot(d) ∨ Spicy(d). Since ¬Spicy(d), we get Hotpot(d), and Hotpot(d) ⇒ Spicy(d), contradicting ¬Spicy(d). Hence ¬Bakery(d) is entailed. From ProductOfBakedByMelissa(d) → Cupcake(d) → Bakery(d), we have ¬Bakery(d) ⇒ ¬ProductOfBakedByMelissa(d). Thus both ¬ProductOfBakedByMelissa(d) and ¬Bakery(d) hold in every model, making the conclusion true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_83",
+    "context": "No bakery is spicy. All cupcakes are bakeries. All hotpots are spicy. All products of Baked by Melissa are cupcakes. If dried Thai chilies are spicy or a bakery, then dried Thai chilies are a hotpot or are spicy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dried Thai chilies are cupcakes and a product of Baked by Melissa.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "From premise 5, assuming Bakery(driedThaiChilies) leads to a contradiction (it forces Hotpot(driedThaiChilies) and thus Spicy(driedThaiChilies), conflicting with premise 1). Hence ¬Bakery(driedThaiChilies). By premise 2, Cupcake(driedThaiChilies) → Bakery(driedThaiChilies), so ¬Cupcake(driedThaiChilies). By premise 4, ProductOfBakedByMelissa(driedThaiChilies) → Cupcake(driedThaiChilies), so ¬ProductOfBakedByMelissa(driedThaiChilies). Both conjuncts of the conclusion are false, making the conjunction false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"From premise 5, assuming Bakery(driedThaiChilies) leads to a contradiction (it forces Hotpot(driedThaiChilies) and thus Spicy(driedThaiChilies), conflicting with premise 1). Hence ¬Bakery(driedThaiChilies). By premise 2, Cupcake(driedThaiChilies) → Bakery(driedThaiChilies), so ¬Cupcake(driedThaiChilies). By premise 4, ProductOfBakedByMelissa(driedThaiChilies) → Cupcake(driedThaiChilies), so ¬ProductOfBakedByMelissa(driedThaiChilies). Both conjuncts of the conclusion are false, making the conjunction false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_85",
+    "context": "If the restaurant is listed in Yelp’s recommendations, then the restaurant does not receive many negative reviews. All restaurants with a rating greater than 9 are listed in Yelp’s recommendations. Some restaurants that do not provide take-out service receive many negative reviews. All restaurants that are popular among local residents have ratings greater than 9. Subway has a rating greater than 9 or is popular among local residents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Subway provides take-out service and does not receive many negative reviews.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "From RatingGT9(subway) ∨ PopularLocal(subway) we infer RatingGT9(subway) (since PopularLocal → RatingGT9), which yields ListedInYelp(subway) and thus ¬ManyNegReviews(subway). However, no premise links Subway to TakeOut, so TakeOut(subway) cannot be determined. Hence the conjunction TakeOut(subway) ∧ ¬ManyNegReviews(subway) is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"From RatingGT9(subway) ∨ PopularLocal(subway) we infer RatingGT9(subway) (since PopularLocal → RatingGT9), which yields ListedInYelp(subway) and thus ¬ManyNegReviews(subway). However, no premise links Subway to TakeOut, so TakeOut(subway) cannot be determined. Hence the conjunction TakeOut(subway) ∧ ¬ManyNegReviews(subway) is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_87",
+    "context": "In superhero movies, the good guys always win. The Surprising Adventures of Sir Digby Chicken Caesar is a superhero movie. Good guys fight bad guys and vice versa. Sir Digby fights his nemesis. If a superhero movie is named after a character, that character is a good guy. The Surprising Adventures of Sir Digby Chicken Caesar is named after Sir Digby. If somebody wins a fight, the person they are fighting loses. If a superhero movie is named after a character, that character appears in the movie.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Sir Digby’s nemesis loses.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From premises 5,6,2 we infer GoodGuy(sirDigby). Premise 4 gives Fights(sirDigby,nemesis). Premise 3 then forces BadGuy(nemesis). Premise 1 yields Wins(sirDigby,nemesis). Premise 7 converts Wins to Loses, giving Loses(nemesis,sirDigby). Hence the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From premises 5,6,2 we infer GoodGuy(sirDigby). Premise 4 gives Fights(sirDigby,nemesis). Premise 3 then forces BadGuy(nemesis). Premise 1 yields Wins(sirDigby,nemesis). Premise 7 converts Wins to Loses, giving Loses(nemesis,sirDigby). Hence the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_90",
+    "context": "[BG] Books contain tons of knowledge. [BG] When a person reads a book, that person gains knowledge. [BG] If a person gains knowledge, they become smarter. Harry read the book “Walden” by Henry Thoreau.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A person who is smarter has gained knowledge.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises imply that gaining knowledge leads to becoming smarter (GainsKnowledge → BecomesSmarter), but they provide no rule that being smarter implies having gained knowledge. Since Smarter(x) is not defined or linked back to GainsKnowledge(x), the conclusion cannot be proven true or false, making it uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises imply that gaining knowledge leads to becoming smarter (GainsKnowledge → BecomesSmarter), but they provide no rule that being smarter implies having gained knowledge. Since Smarter(x) is not defined or linked back to GainsKnowledge(x), the conclusion cannot be proven true or false, making it uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_91",
+    "context": "Natural language processing tasks can be categorized as either language generation task or language understanding task. If the output of a natural language processing task is a text sequence, then it is a language generation task. Machine translation is a natural language processing task. The output of machine translation is a text sequence.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Machine translation is a language generation task.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 2 states that any NLP task whose output is a text sequence is a language generation task. Since NLP(mt) and OutputText(mt) are both true, the antecedent of Premise 2 holds for mt, therefore Gen(mt) follows. Hence the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 2 states that any NLP task whose output is a text sequence is a language generation task. Since NLP(mt) and OutputText(mt) are both true, the antecedent of Premise 2 holds for mt, therefore Gen(mt) follows. Hence the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_92",
+    "context": "Natural language processing tasks can be categorized as either language generation task or language understanding task. If the output of a natural language processing task is a text sequence, then it is a language generation task. Machine translation is a natural language processing task. The output of machine translation is a text sequence.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Machine translation is a language understanding task.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "From NLP(mt) and OutputText(mt) we derive Gen(mt) using premise 2. Premise 1 states Gen(mt) ⊕ Under(mt); with Gen(mt) true, Under(mt) must be false. Therefore the statement is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"From NLP(mt) and OutputText(mt) we derive Gen(mt) using premise 2. Premise 1 states Gen(mt) ⊕ Under(mt); with Gen(mt) true, Under(mt) must be false. Therefore the statement is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_96",
+    "context": "If animals are loved by tourists, then they are Max's favorite animals. All animals from Australia are loved by tourists. All quokka are animals from Australia. All of Max's favorite animals are very fluffy. All of Max's favorite animals love to sleep. If a koala is very fluffy, then the koala is not a quokka.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Koalas love to sleep.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises provide no link from Koala to MaxsFavorite or LovesToSleep; the only koala‑related premise is a conditional that does not assert VeryFluffy for koalas, so the conclusion cannot be derived as true or false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises provide no link from Koala to MaxsFavorite or LovesToSleep; the only koala‑related premise is a conditional that does not assert VeryFluffy for koalas, so the conclusion cannot be derived as true or false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_98",
+    "context": "If animals are loved by tourists, then they are Max's favorite animals. All animals from Australia are loved by tourists. All quokka are animals from Australia. All of Max's favorite animals are very fluffy. All of Max's favorite animals love to sleep. If a koala is very fluffy, then the koala is not a quokka.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If a koala is a quokka, then the koala either loves to sleep or is very fluffy.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premises entail that any quokka is very fluffy, and any koala that is very fluffy cannot be a quokka. Hence there is no x such that Koala(x) ∧ Quokka(x). The antecedent of the conditional is always false, making the implication vacuously true for all x.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premises entail that any quokka is very fluffy, and any koala that is very fluffy cannot be a quokka. Hence there is no x such that Koala(x) ∧ Quokka(x). The antecedent of the conditional is always false, making the implication vacuously true for all x.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_99",
+    "context": "A man is either kind or evil. No ugly person is handsome. All evil people are ugly. All gentlemen are handsome. All CEOs are gentlemen. Harry is a gentleman.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry is a CEO.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises provide the implication CEO(x) → Gentleman(x), but not its converse. Knowing Gentleman(harry) is true does not allow us to derive CEO(harry). No other premise forces Harry to be a CEO nor prohibits it, so the statement's truth cannot be determined from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises provide the implication CEO(x) → Gentleman(x), but not its converse. Knowing Gentleman(harry) is true does not allow us to derive CEO(harry). No other premise forces Harry to be a CEO nor prohibits it, so the statement's truth cannot be determined from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_102",
+    "context": "If people are twins or triplets, then they spend a lot of time hanging out with and playing with their siblings. If people have siblings who are the same age, then they are twins or triplets. If people complain often about annoying siblings, then they have siblings who are the same age. If people do not live at home regularly, then they do not develop strong bonds with their family members. If people spend a lot of time hanging out with and playing with their siblings, then they often did not live at home regularly. Luke is either both a twin or triplet and develops strong bonds with his family members, or he neither is a twin or triplet nor develops strong bonds with his family members.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Luke spends a lot of time hanging out and playing with his siblings.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The exclusive‑or premise forces Luke to be ¬TwinOrTriplet and ¬StrongBonds. While TwinOrTriplet → HangOutWithSiblings, its contrapositive does not give ¬HangOutWithSiblings from ¬TwinOrTriplet. The chain HangOutWithSiblings → ¬LiveAtHome → ¬StrongBonds is already satisfied because ¬StrongBonds holds, but it does not determine HangOutWithSiblings. Thus the truth of HangOutWithSiblings(luke) cannot be deduced, making it uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The exclusive‑or premise forces Luke to be ¬TwinOrTriplet and ¬StrongBonds. While TwinOrTriplet → HangOutWithSiblings, its contrapositive does not give ¬HangOutWithSiblings from ¬TwinOrTriplet. The chain HangOutWithSiblings → ¬LiveAtHome → ¬StrongBonds is already satisfied because ¬StrongBonds holds, but it does not determine HangOutWithSiblings. Thus the truth of HangOutWithSiblings(luke) cannot be deduced, making it uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_103",
+    "context": "If people are twins or triplets, then they spend a lot of time hanging out with and playing with their siblings. If people have siblings who are the same age, then they are twins or triplets. If people complain often about annoying siblings, then they have siblings who are the same age. If people do not live at home regularly, then they do not develop strong bonds with their family members. If people spend a lot of time hanging out with and playing with their siblings, then they often did not live at home regularly. Luke is either both a twin or triplet and develops strong bonds with his family members, or he neither is a twin or triplet nor develops strong bonds with his family members.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Luke complains often about annoying siblings.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The premises give ComplainAboutSiblings(luke) → SameAgeSiblings(luke) → TwinOrTriplet(luke) → HangOutWithSiblings(luke) → NotLiveAtHome(luke) → ¬StrongFamilyBonds(luke). Premise 6 forces TwinOrTriplet(luke) ↔ StrongFamilyBonds(luke). Thus Complain would require TwinOrTriplet true and StrongFamilyBonds false, which contradicts the equivalence. Hence ComplainAboutSiblings(luke) cannot be true and must be false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The premises give ComplainAboutSiblings(luke) → SameAgeSiblings(luke) → TwinOrTriplet(luke) → HangOutWithSiblings(luke) → NotLiveAtHome(luke) → ¬StrongFamilyBonds(luke). Premise 6 forces TwinOrTriplet(luke) ↔ StrongFamilyBonds(luke). Thus Complain would require TwinOrTriplet true and StrongFamilyBonds false, which contradicts the equivalence. Hence ComplainAboutSiblings(luke) cannot be true and must be false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_104",
+    "context": "If people are twins or triplets, then they spend a lot of time hanging out with and playing with their siblings. If people have siblings who are the same age, then they are twins or triplets. If people complain often about annoying siblings, then they have siblings who are the same age. If people do not live at home regularly, then they do not develop strong bonds with their family members. If people spend a lot of time hanging out with and playing with their siblings, then they often did not live at home regularly. Luke is either both a twin or triplet and develops strong bonds with his family members, or he neither is a twin or triplet nor develops strong bonds with his family members.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Luke is neither a twin nor triplet nor complains often about annoying siblings.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premises give TwinsOrTriplets → ¬DevelopsStrongBonds, so the first part of premise 6 (TwinsOrTriplets(luke) ∧ DevelopsStrongBonds(luke)) is impossible. Hence the exclusive‑or forces ¬TwinsOrTriplets(luke) ∧ ¬DevelopsStrongBonds(luke). Since ComplainAboutSiblings → TwinsOrTriplets, ¬TwinsOrTriplets(luke) entails ¬ComplainAboutSiblings(luke). Therefore the conclusion ¬TwinsOrTriplets(luke) ∧ ¬ComplainAboutSiblings(luke) is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premises give TwinsOrTriplets → ¬DevelopsStrongBonds, so the first part of premise 6 (TwinsOrTriplets(luke) ∧ DevelopsStrongBonds(luke)) is impossible. Hence the exclusive‑or forces ¬TwinsOrTriplets(luke) ∧ ¬DevelopsStrongBonds(luke). Since ComplainAboutSiblings → TwinsOrTriplets, ¬TwinsOrTriplets(luke) entails ¬ComplainAboutSiblings(luke). Therefore the conclusion ¬TwinsOrTriplets(luke) ∧ ¬ComplainAboutSiblings(luke) is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_108",
+    "context": "If people spill a lot of food on their clothing, then they do not tidy their spaces consistently and enjoy the process of cleaning. All foodies who go out frequently to find new food restaurants to try are people who spill a lot of food on their clothing. If people grew up as only children with no siblings, then they tidy their spaces consistently and enjoy the process of cleaning. If people have parents who are very busy with their regular jobs, then they grew up as only children with no siblings. All households with a high net income have people who have parents who are very busy with their regular jobs. Peter is either both a person who spills a lot of food on his clothing and grew up as an only child with no siblings, or he is neither a person who spills a lot of food on his clothing nor grew up as an only child with no siblings.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter tidies his space consistently and enjoys the process of cleaning.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The exclusive‑or premise forces Spill(peter) and OnlyChild(peter) to have the same truth value. If both were true, the universal premises would require Tidy(peter) to be both true (from OnlyChild) and false (from Spill), a contradiction. Hence the only consistent assignment is both false, which leaves Tidy(peter) and Enjoy(peter) unconstrained. Therefore the statement Tidy(peter) ∧ Enjoy(peter) cannot be determined from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The exclusive‑or premise forces Spill(peter) and OnlyChild(peter) to have the same truth value. If both were true, the universal premises would require Tidy(peter) to be both true (from OnlyChild) and false (from Spill), a contradiction. Hence the only consistent assignment is both false, which leaves Tidy(peter) and Enjoy(peter) unconstrained. Therefore the statement Tidy(peter) ∧ Enjoy(peter) cannot be determined from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_109",
+    "context": "If people spill a lot of food on their clothing, then they do not tidy their spaces consistently and enjoy the process of cleaning. All foodies who go out frequently to find new food restaurants to try are people who spill a lot of food on their clothing. If people grew up as only children with no siblings, then they tidy their spaces consistently and enjoy the process of cleaning. If people have parents who are very busy with their regular jobs, then they grew up as only children with no siblings. All households with a high net income have people who have parents who are very busy with their regular jobs. Peter is either both a person who spills a lot of food on his clothing and grew up as an only child with no siblings, or he is neither a person who spills a lot of food on his clothing nor grew up as an only child with no siblings.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Peter is either a foodie who goes out frequently to find new food restaurants to try or belongs to a household with a high net income.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The exclusive premise forces Peter to be neither a spiller nor an only child (the both‑true case contradicts Spill → ¬Tidy and OnlyChild → Tidy). Hence ¬Spill(peter) ⇒ ¬Foodie(peter) and ¬OnlyChild(peter) ⇒ ¬HighIncome(peter). Both Foodie(peter) and HighIncome(peter) are false, so the exclusive‑or conclusion is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The exclusive premise forces Peter to be neither a spiller nor an only child (the both‑true case contradicts Spill → ¬Tidy and OnlyChild → Tidy). Hence ¬Spill(peter) ⇒ ¬Foodie(peter) and ¬OnlyChild(peter) ⇒ ¬HighIncome(peter). Both Foodie(peter) and HighIncome(peter) are false, so the exclusive‑or conclusion is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_118",
+    "context": "Barutin Cove is named after the Bulgarian settlement of Barutin. Barutin Cove is on the southwest coast of Snow Island. The South Shetland Islands include Snow Island, Greenwich Island, and Deception Island. The South Shetland Islands are considered part of Antarctica. If A is located in B and B is located in C, then A is located in C.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Barutin is named after all islands in Antarctica.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises only assert NamedAfter(barutinCove, barutin) and give no NamedAfter relation between Barutin Cove and any island. Consequently the universal claim that Barutin Cove is named after every island in Antarctica is neither supported nor contradicted, making its truth value uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises only assert NamedAfter(barutinCove, barutin) and give no NamedAfter relation between Barutin Cove and any island. Consequently the universal claim that Barutin Cove is named after every island in Antarctica is neither supported nor contradicted, making its truth value uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_122",
+    "context": "If something can transport multiple passengers, then they are not empty. All airlines can transport multiple passengers. All planes are empty. All Boeing 707s are planes. If Greyhound is not an airline, then there are no Greyhound planes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Greyhound is an airline.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises allow both possibilities: assuming ¬Airline(greyhound) yields ¬Plane(greyhound) via premise 5, which is consistent with the other premises; assuming Airline(greyhound) does not lead to any contradiction (Greyhound could be an airline and not a plane). Since neither Airline(greyhound) nor its negation is entailed, the statement is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises allow both possibilities: assuming ¬Airline(greyhound) yields ¬Plane(greyhound) via premise 5, which is consistent with the other premises; assuming Airline(greyhound) does not lead to any contradiction (Greyhound could be an airline and not a plane). Since neither Airline(greyhound) nor its negation is entailed, the statement is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_123",
+    "context": "If something can transport multiple passengers, then they are not empty. All airlines can transport multiple passengers. All planes are empty. All Boeing 707s are planes. If Greyhound is not an airline, then there are no Greyhound planes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A Greyhound is a Boeing 707.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "From premise 5 we get Plane(greyhound) → Airline(greyhound). Combining this with premises 2, 1, and 3 yields a contradiction if Greyhound were a plane (it would be both empty and not empty). Hence ¬Plane(greyhound). Premise 4 states Boeing707(greyhound) → Plane(greyhound), so by modus tollens ¬Boeing707(greyhound). Therefore the statement “A Greyhound is a Boeing 707” is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"From premise 5 we get Plane(greyhound) → Airline(greyhound). Combining this with premises 2, 1, and 3 yields a contradiction if Greyhound were a plane (it would be both empty and not empty). Hence ¬Plane(greyhound). Premise 4 states Boeing707(greyhound) → Plane(greyhound), so by modus tollens ¬Boeing707(greyhound). Therefore the statement “A Greyhound is a Boeing 707” is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_124",
+    "context": "If something can transport multiple passengers, then they are not empty. All airlines can transport multiple passengers. All planes are empty. All Boeing 707s are planes. If Greyhound is not an airline, then there are no Greyhound planes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? A Greyhound is not a Boeing 707.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Assuming Boeing707(greyhound) yields Plane(greyhound) (premise 4), then Empty(greyhound) (premise 3). By the contrapositive of premise 1, Empty(greyhound) → ¬CanTransportMultiple(greyhound). The contrapositive of premise 2 gives ¬CanTransportMultiple(greyhound) → ¬Airline(greyhound). Premise 5 then yields ¬Plane(greyhound), contradicting Plane(greyhound). Hence the assumption is false, so ¬Boeing707(greyhound) follows; the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Assuming Boeing707(greyhound) yields Plane(greyhound) (premise 4), then Empty(greyhound) (premise 3). By the contrapositive of premise 1, Empty(greyhound) → ¬CanTransportMultiple(greyhound). The contrapositive of premise 2 gives ¬CanTransportMultiple(greyhound) → ¬Airline(greyhound). Premise 5 then yields ¬Plane(greyhound), contradicting Plane(greyhound). Hence the assumption is false, so ¬Boeing707(greyhound) follows; the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_125",
+    "context": "All mammals are animals. All monkeys are mammals. An animal is either a monkey or a bird. All birds fly. All animals breathe. If something can fly, then it has wings. If Rock is neither a fly nor a bird, then Rock neither flies nor breathes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rock is a monkey.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "Both the assumption Monkey(rock) and its negation can be satisfied without violating any premise; the premises do not force Rock to be a monkey, nor do they force it not to be. Hence the truth of 'Rock is a monkey' is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"Both the assumption Monkey(rock) and its negation can be satisfied without violating any premise; the premises do not force Rock to be a monkey, nor do they force it not to be. Hence the truth of 'Rock is a monkey' is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_129",
+    "context": "All people who have a wedding are people who have at least one child. All people who travel to Paris for their honeymoon are people who have a wedding. All weddings that occur in July belong to people who travel to Paris for their honeymoon. Some weddings in July are well-attended. If John has at least one child, then John does not travel to Paris for his honeymoon and does not have a wedding. If John has a wedding that is well-attended, then John has a wedding in July or, if not, then John travels to Paris for their honeymoon.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John does not have a wedding that is well-attended.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premises 1 (HasWedding → HasChild) and 5 (HasChild → ¬HasWedding) together give HasWedding(john) → ¬HasWedding(john), a contradiction, so ¬HasWedding(john) holds. By definition WellAttended(john) entails HasWedding(john); thus ¬HasWedding(john) implies ¬WellAttended(john). Therefore the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premises 1 (HasWedding → HasChild) and 5 (HasChild → ¬HasWedding) together give HasWedding(john) → ¬HasWedding(john), a contradiction, so ¬HasWedding(john) holds. By definition WellAttended(john) entails HasWedding(john); thus ¬HasWedding(john) implies ¬WellAttended(john). Therefore the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_131",
+    "context": "All people who have a wedding are people who have at least one child. All people who travel to Paris for their honeymoon are people who have a wedding. All weddings that occur in July belong to people who travel to Paris for their honeymoon. Some weddings in July are well-attended. If John has at least one child, then John does not travel to Paris for his honeymoon and does not have a wedding. If John has a wedding that is well-attended, then John has a wedding in July or, if not, then John travels to Paris for their honeymoon.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John has neither a wedding that is well-attended nor does he travel to Paris for his honeymoon.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From premises 1 and 5 we derive ¬HasWedding(john). By premise 2 this yields ¬TravelsToParis(john). Premise 6 with ¬TravelsToParis(john) simplifies to WellAttended(john) → WeddingInJuly(john). Premise 3 gives WeddingInJuly(john) → TravelsToParis(john). Hence WellAttended(john) → TravelsToParis(john). Since ¬TravelsToParis(john), we infer ¬WellAttended(john). Thus both ¬WellAttended(john) and ¬TravelsToParis(john) hold, making the conclusion true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From premises 1 and 5 we derive ¬HasWedding(john). By premise 2 this yields ¬TravelsToParis(john). Premise 6 with ¬TravelsToParis(john) simplifies to WellAttended(john) → WeddingInJuly(john). Premise 3 gives WeddingInJuly(john) → TravelsToParis(john). Hence WellAttended(john) → TravelsToParis(john). Since ¬TravelsToParis(john), we infer ¬WellAttended(john). Thus both ¬WellAttended(john) and ¬TravelsToParis(john) hold, making the conclusion true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_132",
+    "context": "[BG] Some mammals have teeth. Platypus have no teeth. Platypus are mammals. Humans have teeth.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Platypus are mammals with no teeth.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premises 2 (∀x (Platypus(x) → ¬HasTeeth(x))) and 3 (∀x (Platypus(x) → Mammal(x))) jointly imply that for any x, if x is a platypus then x is a mammal and has no teeth. This directly yields the conclusion ∀x (Platypus(x) → (Mammal(x) ∧ ¬HasTeeth(x))), so the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premises 2 (∀x (Platypus(x) → ¬HasTeeth(x))) and 3 (∀x (Platypus(x) → Mammal(x))) jointly imply that for any x, if x is a platypus then x is a mammal and has no teeth. This directly yields the conclusion ∀x (Platypus(x) → (Mammal(x) ∧ ¬HasTeeth(x))), so the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_135",
+    "context": "Plungers suck. Vacuums suck. Vampires suck. Space is a vacuum. A duster is a household appliance that doesn't suck.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Space sucks.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premise ∀x (Vacuum(x) → Sucks(x)) together with Vacuum(space) yields Sucks(space) by universal instantiation and modus ponens, so the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premise ∀x (Vacuum(x) → Sucks(x)) together with Vacuum(space) yields Sucks(space) by universal instantiation and modus ponens, so the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_136",
+    "context": "Plungers suck. Vacuums suck. Vampires suck. Space is a vacuum. A duster is a household appliance that doesn't suck.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Space is a vampire.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises entail that space sucks because it is a vacuum, but they give no rule that something which sucks must be a vampire, nor do they assert that space is not a vampire. Therefore the statement 'Space is a vampire' cannot be proven true or false from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises entail that space sucks because it is a vacuum, but they give no rule that something which sucks must be a vampire, nor do they assert that space is not a vampire. Therefore the statement 'Space is a vampire' cannot be proven true or false from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_139",
+    "context": "Machine Learning algorithms can be categorized as supervised learning, unsupervised learning, and reinforcement learning. Unsupervised learning doesn't require labelled data. The state-of-the-art text summarization model is trained with machine learning algorithms. Reinforcement learning is not used to train the state-of-the-art text summarization model. The Machine Learning algorithm for training text summarization model requires labelled data.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Unsupervised learning is used to train the state-of-the-art text summarization model.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "Premise 4 requires that any ML algorithm used to train the sota model must satisfy RequiresLabelledData(y). Premise 1 states that all unsupervised algorithms satisfy ¬RequiresLabelledData(y). Therefore an unsupervised algorithm cannot meet the condition of premise 4, so no unsupervised algorithm can be used to train the sota model. The conclusion ∃y (Unsupervised(y) ∧ TrainedWith(sota_model, y)) is thus false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"Premise 4 requires that any ML algorithm used to train the sota model must satisfy RequiresLabelledData(y). Premise 1 states that all unsupervised algorithms satisfy ¬RequiresLabelledData(y). Therefore an unsupervised algorithm cannot meet the condition of premise 4, so no unsupervised algorithm can be used to train the sota model. The conclusion ∃y (Unsupervised(y) ∧ TrainedWith(sota_model, y)) is thus false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_140",
+    "context": "If a cartoon character is funny, then it is popular. If a cartoon character is ugly, then it is not popular. If a cartoon character is loved by children, then it is funny. If a cartoon character is from The Simpsons, then it is loved by children. If a cartoon character is yellow, then it is from The Simpsons. Ben is either from The Simpsons or funny.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ben is loved by children.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises give FromSimpsons(ben) ∨ Funny(ben). If FromSimpsons(ben) holds, premise 4 yields LovedByChildren(ben). But if only Funny(ben) holds, there is no rule that derives LovedByChildren(ben) (the only implication involving LovedByChildren goes the opposite direction). Since we cannot determine which disjunct is true, the conclusion is not guaranteed.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises give FromSimpsons(ben) ∨ Funny(ben). If FromSimpsons(ben) holds, premise 4 yields LovedByChildren(ben). But if only Funny(ben) holds, there is no rule that derives LovedByChildren(ben) (the only implication involving LovedByChildren goes the opposite direction). Since we cannot determine which disjunct is true, the conclusion is not guaranteed.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_145",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Jerry is young.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "From ¬Teaches(jerry) and the exclusive‑or premise we infer Studies(jerry) and thus Student(jerry), but no premise connects Student or ¬Teaches to Young(jerry). The implication Young(x) → ¬Teaches(x) does not allow the converse inference, so Young(jerry) cannot be determined; it is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"From ¬Teaches(jerry) and the exclusive‑or premise we infer Studies(jerry) and thus Student(jerry), but no premise connects Student or ¬Teaches to Young(jerry). The implication Young(x) → ¬Teaches(x) does not allow the converse inference, so Young(jerry) cannot be determined; it is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_146",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Jerry is not young.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "From ¬Teaches(jerry) and the exclusive‑or premise we infer Studies(jerry) and thus Student(jerry), but no premise forces Jerry to be non‑young. The implication Young(x) → ¬Teaches(x) does not rule out Young(jerry), so ¬Young(jerry) is not entailed; it remains uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"From ¬Teaches(jerry) and the exclusive‑or premise we infer Studies(jerry) and thus Student(jerry), but no premise forces Jerry to be non‑young. The implication Young(x) → ¬Teaches(x) does not rule out Young(jerry), so ¬Young(jerry) is not entailed; it remains uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_147",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rose is a human or a manager.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The exclusive‑or Young(rose) ⊕ Student(rose) together with the other premises forces Student(rose) to be true (assuming Young(rose) leads to a contradiction). By ∀x (Student(x) → Human(x)), Rose is a human, so Human(rose) ∨ Manager(rose) is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The exclusive‑or Young(rose) ⊕ Student(rose) together with the other premises forces Student(rose) to be true (assuming Young(rose) leads to a contradiction). By ∀x (Student(x) → Human(x)), Rose is a human, so Human(rose) ∨ Manager(rose) is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_148",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Rose is a human or Jerry is a manager.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From ¬Manager(jerry) the disjunction reduces to Human(rose). Premise 6 gives Young(rose) ∨ Student(rose). If Student(rose) holds, ∀x (Student(x) → Human(x)) yields Human(rose). If Young(rose) holds, ∀x (Young(x) → ¬Teaches(x)) gives ¬Teaches(rose); combined with ∀x (Studies(x) ⊕ Teaches(x)) forces Studies(rose), which via ∀x (Studies(x) → Student(x)) gives Student(rose) and thus Human(rose). Hence Human(rose) is entailed, making the conclusion true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From ¬Manager(jerry) the disjunction reduces to Human(rose). Premise 6 gives Young(rose) ∨ Student(rose). If Student(rose) holds, ∀x (Student(x) → Human(x)) yields Human(rose). If Young(rose) holds, ∀x (Young(x) → ¬Teaches(x)) gives ¬Teaches(rose); combined with ∀x (Studies(x) ⊕ Teaches(x)) forces Studies(rose), which via ∀x (Studies(x) → Student(x)) gives Student(rose) and thus Human(rose). Hence Human(rose) is entailed, making the conclusion true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_149",
+    "context": "All students are humans. If someone studies, then they are a student. A person either studys or teaches. No young person teaches. Jerry neither teaches nor is a manager. Rose is young or a student.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? It is not true that Rose is a student and Jerry is a human.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "From ¬Teaches(jerry) and the exclusive‑or premise, Jerry must study, so Student(jerry) holds, and by ∀x(Student(x)→Human(x)) we get Human(jerry). Rose satisfies Young(rose)∨Student(rose). If Young(rose) holds, then ¬Teaches(rose) forces Studies(rose) (by the exclusive‑or), which yields Student(rose). If Student(rose) holds directly, she is a student. Thus Student(rose) is true in either case. Consequently Student(rose)∧Human(jerry) is true, so its negation ¬(Student(rose)∧Human(jerry)) is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"From ¬Teaches(jerry) and the exclusive‑or premise, Jerry must study, so Student(jerry) holds, and by ∀x(Student(x)→Human(x)) we get Human(jerry). Rose satisfies Young(rose)∨Student(rose). If Young(rose) holds, then ¬Teaches(rose) forces Studies(rose) (by the exclusive‑or), which yields Student(rose). If Student(rose) holds directly, she is a student. Thus Student(rose) is true in either case. Consequently Student(rose)∧Human(jerry) is true, so its negation ¬(Student(rose)∧Human(jerry)) is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_151",
+    "context": "New Vessel Press is a publishing house which specializes in translating foreign literature into English. All of New Vessel Press's published books are in English. Neapolitan Chronicles is a book published by New Vessel Press. Neapolitan Chronicles was translated from Italian. Palace of Flies is a book published by New Vessel Press.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Harry Potter was published by New Vessel Press.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises give no information about harryPotter; they only list specific books published by New Vessel Press. Without any premise asserting or denying that New Vessel Press publishes harryPotter, the conclusion cannot be proven true or false, making it uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises give no information about harryPotter; they only list specific books published by New Vessel Press. Without any premise asserting or denying that New Vessel Press publishes harryPotter, the conclusion cannot be proven true or false, making it uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_152",
+    "context": "New Vessel Press is a publishing house which specializes in translating foreign literature into English. All of New Vessel Press's published books are in English. Neapolitan Chronicles is a book published by New Vessel Press. Neapolitan Chronicles was translated from Italian. Palace of Flies is a book published by New Vessel Press.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Palace of Flies was translated from Italian.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises only entail that Palace of Flies is a book published by New Vessel Press and therefore is in English. No premise links Palace of Flies to any source language, so we cannot infer that it was translated from Italian, nor can we infer that it was not. Hence the statement is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises only entail that Palace of Flies is a book published by New Vessel Press and therefore is in English. No premise links Palace of Flies to any source language, so we cannot infer that it was translated from Italian, nor can we infer that it was not. Hence the statement is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_153",
+    "context": "If people own a large desktop monitor at their home, then they work regularly and often at home. All people who have a fully stocked and impressive home office are people who own a large desktop monitor at their home. All people who work regularly and often at home spend their free time tidying and organizing the spaces in their homes. All people who work regularly and often at home visit the office supply store regularly. If people spend their free time tidying and organizing the spaces in their home, then they do not go to bed late and wake up every day after noon. Remy either both goes to bed late and wakes up every day after noon and spends their free time tidying and organizing the spaces in their home, or they do not go to bed late and wake up every day after noon nor spend their free time tidying and organizing the spaces in their home.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Remy visits the office supply store regularly.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The exclusive‑or premise forces ¬Tidies(remy). By contrapositive of WorksAtHome→Tidies we get ¬WorksAtHome(remy). VisitsStore(remy) only follows from WorksAtHome(remy), and its absence does not determine VisitsStore. Hence VisitsStore(remy) cannot be proved true or false, making the statement uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The exclusive‑or premise forces ¬Tidies(remy). By contrapositive of WorksAtHome→Tidies we get ¬WorksAtHome(remy). VisitsStore(remy) only follows from WorksAtHome(remy), and its absence does not determine VisitsStore. Hence VisitsStore(remy) cannot be proved true or false, making the statement uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_154",
+    "context": "If people own a large desktop monitor at their home, then they work regularly and often at home. All people who have a fully stocked and impressive home office are people who own a large desktop monitor at their home. All people who work regularly and often at home spend their free time tidying and organizing the spaces in their homes. All people who work regularly and often at home visit the office supply store regularly. If people spend their free time tidying and organizing the spaces in their home, then they do not go to bed late and wake up every day after noon. Remy either both goes to bed late and wakes up every day after noon and spends their free time tidying and organizing the spaces in their home, or they do not go to bed late and wake up every day after noon nor spend their free time tidying and organizing the spaces in their home.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Remy has a fully stocked and impressive home office and also visits the office supply store regularly.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The exclusive‑or premise forces Remy to satisfy ¬SleepsIn(remy) ∧ ¬Tidies(remy). From ¬Tidies(remy) we infer ¬WorksAtHome(remy) (contrapositive of WorksAtHome→Tidies). Then ¬WorksAtHome(remy) yields ¬OwnsLargeMonitor(remy) (contrapositive of OwnsLargeMonitor→WorksAtHome), and ¬OwnsLargeMonitor(remy) yields ¬HasHomeOffice(remy) (contrapositive of HasHomeOffice→OwnsLargeMonitor). Since HasHomeOffice(remy) is false, the conjunction HasHomeOffice(remy) ∧ VisitsStore(remy) is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The exclusive‑or premise forces Remy to satisfy ¬SleepsIn(remy) ∧ ¬Tidies(remy). From ¬Tidies(remy) we infer ¬WorksAtHome(remy) (contrapositive of WorksAtHome→Tidies). Then ¬WorksAtHome(remy) yields ¬OwnsLargeMonitor(remy) (contrapositive of OwnsLargeMonitor→WorksAtHome), and ¬OwnsLargeMonitor(remy) yields ¬HasHomeOffice(remy) (contrapositive of HasHomeOffice→OwnsLargeMonitor). Since HasHomeOffice(remy) is false, the conjunction HasHomeOffice(remy) ∧ VisitsStore(remy) is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_155",
+    "context": "If people own a large desktop monitor at their home, then they work regularly and often at home. All people who have a fully stocked and impressive home office are people who own a large desktop monitor at their home. All people who work regularly and often at home spend their free time tidying and organizing the spaces in their homes. All people who work regularly and often at home visit the office supply store regularly. If people spend their free time tidying and organizing the spaces in their home, then they do not go to bed late and wake up every day after noon. Remy either both goes to bed late and wakes up every day after noon and spends their free time tidying and organizing the spaces in their home, or they do not go to bed late and wake up every day after noon nor spend their free time tidying and organizing the spaces in their home.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If Remy either goes to bed late and wakes up every day after noon or visits the office supply store regularly, then Remy neither spends their free time tidying and organizing the spaces in their home nor has a fully stocked and impressive home office.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": null,
+    "rationale": null,
+    "flag": "failed",
+    "error_message": "空响应",
+    "raw_response": "",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_156",
+    "context": "All humans are mortal. All Greeks are humans.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Greeks are mortal.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "From the premises we can derive ∀x (Greek(x) → Mortal(x)), meaning any Greek would be mortal. However, the premises do not assert that there exists at least one Greek. Without an existential premise, the conclusion ∃x (Greek(x) ∧ Mortal(x)) does not follow, so its truth is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"From the premises we can derive ∀x (Greek(x) → Mortal(x)), meaning any Greek would be mortal. However, the premises do not assert that there exists at least one Greek. Without an existential premise, the conclusion ∃x (Greek(x) ∧ Mortal(x)) does not follow, so its truth is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_157",
+    "context": "No students who work in the library are from the computer science department. All students who have part-time jobs offered by the university are students who work in the library. All students who take the database course are from the computer science department. All students instructed by professor David are taking the database course. All students working in the lab are instructed by professor David. James is a student working in the lab. Jack neither has a part-time job offered by the university nor works in the lab.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James has a part-time job offered by the university.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "From James working in the lab we infer he is instructed by David, takes the database course, and is from the CS department. Being from CS department implies he does not work in the library (by the contrapositive of premise 1). Since having a part‑time job requires working in the library (premise 2), James cannot have a part‑time job. Hence the statement is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"From James working in the lab we infer he is instructed by David, takes the database course, and is from the CS department. Being from CS department implies he does not work in the library (by the contrapositive of premise 1). Since having a part‑time job requires working in the library (premise 2), James cannot have a part‑time job. Hence the statement is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_158",
+    "context": "No students who work in the library are from the computer science department. All students who have part-time jobs offered by the university are students who work in the library. All students who take the database course are from the computer science department. All students instructed by professor David are taking the database course. All students working in the lab are instructed by professor David. James is a student working in the lab. Jack neither has a part-time job offered by the university nor works in the lab.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James does not have a part-time job offered by the university.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From WorkInLab(james) we infer InstructedByDavid(james) (premise 5), then TakeDB(james) (premise 4), then FromCS(james) (premise 3). If James had a part‑time job, premise 2 would give WorkInLibrary(james), and premise 1 would then imply ¬FromCS(james), contradicting FromCS(james). Hence HasPartTimeJob(james) is impossible, so ¬HasPartTimeJob(james) is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From WorkInLab(james) we infer InstructedByDavid(james) (premise 5), then TakeDB(james) (premise 4), then FromCS(james) (premise 3). If James had a part‑time job, premise 2 would give WorkInLibrary(james), and premise 1 would then imply ¬FromCS(james), contradicting FromCS(james). Hence HasPartTimeJob(james) is impossible, so ¬HasPartTimeJob(james) is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_159",
+    "context": "No students who work in the library are from the computer science department. All students who have part-time jobs offered by the university are students who work in the library. All students who take the database course are from the computer science department. All students instructed by professor David are taking the database course. All students working in the lab are instructed by professor David. James is a student working in the lab. Jack neither has a part-time job offered by the university nor works in the lab.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? James either takes the database course or has a part-time job offered by the university.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "James works in the lab, so by premise 5 he is instructed by David, and by premise 4 he therefore takes the database course. Since TakesDBCourse(james) is true, the disjunction TakesDBCourse(james) ∨ HasPartTimeJob(james) is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"James works in the lab, so by premise 5 he is instructed by David, and by premise 4 he therefore takes the database course. Since TakesDBCourse(james) is true, the disjunction TakesDBCourse(james) ∨ HasPartTimeJob(james) is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_160",
+    "context": "No students who work in the library are from the computer science department. All students who have part-time jobs offered by the university are students who work in the library. All students who take the database course are from the computer science department. All students instructed by professor David are taking the database course. All students working in the lab are instructed by professor David. James is a student working in the lab. Jack neither has a part-time job offered by the university nor works in the lab.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Jack takes the database course.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises give no information that forces TakesDB(jack) to be true or false. The only way to derive TakesDB(x) is via InstructedByDavid(x), which requires WorksInLab(x) (by premise 5). Since ¬WorksInLab(jack) is given, InstructedByDavid(jack) cannot be derived, and Jack's status as a student is not asserted. Thus neither TakesDB(jack) nor its negation follows, making the statement uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises give no information that forces TakesDB(jack) to be true or false. The only way to derive TakesDB(x) is via InstructedByDavid(x), which requires WorksInLab(x) (by premise 5). Since ¬WorksInLab(jack) is given, InstructedByDavid(jack) cannot be derived, and Jack's status as a student is not asserted. Thus neither TakesDB(jack) nor its negation follows, making the statement uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_161",
+    "context": "If George likes music, he wants to compose. If George has access to a program, he can compose. If George can compose and wants to compose, he will compose.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If George likes music and has access to a program, he will compose.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From LikesMusic(george) we get WantsToCompose(george) (premise 1), and from HasAccessToProgram(george) we get CanCompose(george) (premise 2). Having both WantsToCompose and CanCompose triggers premise 3, yielding WillCompose(george). Hence the conclusion follows logically.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From LikesMusic(george) we get WantsToCompose(george) (premise 1), and from HasAccessToProgram(george) we get CanCompose(george) (premise 2). Having both WantsToCompose and CanCompose triggers premise 3, yielding WillCompose(george). Hence the conclusion follows logically.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_162",
+    "context": "If George likes music, he wants to compose. If George has access to a program, he can compose. If George can compose and wants to compose, he will compose.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If George will not compose, George can not compose.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises entail ¬WillCompose → (¬CanCompose ∨ ¬WantsToCompose) via contraposition, which only guarantees that if George does not compose then either he cannot compose or he does not want to compose. It does not force ¬CanCompose; a model where CanCompose is true, WantsToCompose is false, and WillCompose is false satisfies all premises, making the conclusion false in that case. Since the conclusion can be true in some models and false in others, its truth is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises entail ¬WillCompose → (¬CanCompose ∨ ¬WantsToCompose) via contraposition, which only guarantees that if George does not compose then either he cannot compose or he does not want to compose. It does not force ¬CanCompose; a model where CanCompose is true, WantsToCompose is false, and WillCompose is false satisfies all premises, making the conclusion false in that case. Since the conclusion can be true in some models and false in others, its truth is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_163",
+    "context": "A hawk never lands. Some birds are hawks.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All birds land",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The premises guarantee a bird that is a hawk (∃x (Bird(x) ∧ Hawk(x))) and that no hawk lands (∀x (Hawk(x) → ¬Land(x))). Hence there exists at least one bird that does not land, contradicting the universal claim ∀x (Bird(x) → Land(x)). Therefore the statement 'All birds land' is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The premises guarantee a bird that is a hawk (∃x (Bird(x) ∧ Hawk(x))) and that no hawk lands (∀x (Hawk(x) → ¬Land(x))). Hence there exists at least one bird that does not land, contradicting the universal claim ∀x (Bird(x) → Land(x)). Therefore the statement 'All birds land' is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_171",
+    "context": "If something is a deadly disease, then its survival rate is low. All severe cancers are deadly diseases. Bile duct cancer is a severe cancer. All Cholangiocarcinoma is bile duct cancer. No one with mild flu has a low survival rate. If colorectal cancer is a bile duct cancer and the survival rate is low, then colorectal cancer is not a bile duct cancer.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If colorectal cancer is a bile duct cancer or a Cholangiocarcinoma, then colorectal cancer is a bile duct cancer and a mild flu.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": null,
+    "rationale": null,
+    "flag": "failed",
+    "error_message": "空响应",
+    "raw_response": "",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_173",
+    "context": "All people who eat salads regularly are very conscious about their health and eating habits. All people who grew up in health-conscious childhood homes eat salads regularly. All people who fulfill their nutritional daily intakes grew up in health-conscious childhood homes. If people have good relationships with their parents, then they fulfill their nutritional daily intakes. If people have good relationships with their parents, then they do not eat salads regularly. If people visit the gym at least once a day, then they always fulfill their daily nutritional intakes. It is either both true that Taylor grew up in a health-conscious childhood home and she has a good relationship with her parents, or it is true that Taylor neither grew up in a health-conscious childhood home nor has a good relationship with her parents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Taylor eats salads regularly.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The exclusive-or forces either both HealthConsciousHome(taylor) and GoodParentRelationship(taylor) true or both false. The first case yields a contradiction (HealthConsciousHome → EatsSalads and GoodParentRelationship → ¬EatsSalads). The second case makes both false, which entails ¬FulfillsIntake(taylor) and ¬VisitsGym(taylor) but leaves EatsSalads(taylor) unconstrained; both true and false assignments satisfy all premises. Hence the statement is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The exclusive-or forces either both HealthConsciousHome(taylor) and GoodParentRelationship(taylor) true or both false. The first case yields a contradiction (HealthConsciousHome → EatsSalads and GoodParentRelationship → ¬EatsSalads). The second case makes both false, which entails ¬FulfillsIntake(taylor) and ¬VisitsGym(taylor) but leaves EatsSalads(taylor) unconstrained; both true and false assignments satisfy all premises. Hence the statement is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_174",
+    "context": "All people who eat salads regularly are very conscious about their health and eating habits. All people who grew up in health-conscious childhood homes eat salads regularly. All people who fulfill their nutritional daily intakes grew up in health-conscious childhood homes. If people have good relationships with their parents, then they fulfill their nutritional daily intakes. If people have good relationships with their parents, then they do not eat salads regularly. If people visit the gym at least once a day, then they always fulfill their daily nutritional intakes. It is either both true that Taylor grew up in a health-conscious childhood home and she has a good relationship with her parents, or it is true that Taylor neither grew up in a health-conscious childhood home nor has a good relationship with her parents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Taylor visits the gym at least once a day.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The exclusive‑or premise forces both HealthConsciousHome(taylor) and GoodParentRelationship(taylor) to be false (the case where both are true contradicts premises 2 and 5). From ¬HealthConsciousHome(taylor) we get ¬FulfillsIntake(taylor) by contrapositive of premise 3, and from ¬FulfillsIntake(taylor) we obtain ¬VisitsGym(taylor) by contrapositive of premise 6. Hence the statement that Taylor visits the gym at least once a day is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The exclusive‑or premise forces both HealthConsciousHome(taylor) and GoodParentRelationship(taylor) to be false (the case where both are true contradicts premises 2 and 5). From ¬HealthConsciousHome(taylor) we get ¬FulfillsIntake(taylor) by contrapositive of premise 3, and from ¬FulfillsIntake(taylor) we obtain ¬VisitsGym(taylor) by contrapositive of premise 6. Hence the statement that Taylor visits the gym at least once a day is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_175",
+    "context": "All people who eat salads regularly are very conscious about their health and eating habits. All people who grew up in health-conscious childhood homes eat salads regularly. All people who fulfill their nutritional daily intakes grew up in health-conscious childhood homes. If people have good relationships with their parents, then they fulfill their nutritional daily intakes. If people have good relationships with their parents, then they do not eat salads regularly. If people visit the gym at least once a day, then they always fulfill their daily nutritional intakes. It is either both true that Taylor grew up in a health-conscious childhood home and she has a good relationship with her parents, or it is true that Taylor neither grew up in a health-conscious childhood home nor has a good relationship with her parents.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Taylor neither grew up in a health-conscious childhood home nor does she visit the gym at least once a day.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The XOR premise forces either both HealthConsciousHome(taylor) and GoodParentRelationship(taylor) true or both false. The first option contradicts HealthConsciousHome → EatsSalads and GoodParentRelationship → ¬EatsSalads, so only the second option holds, giving ¬HealthConsciousHome(taylor). With GoodParentRelationship(taylor) false, FulfillsIntake(taylor) must be false (otherwise HealthConsciousHome would be true). Since VisitsGym → FulfillsIntake, VisitsGym(taylor) must also be false. Hence ¬HealthConsciousHome(taylor) ∧ ¬VisitsGym(taylor) is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The XOR premise forces either both HealthConsciousHome(taylor) and GoodParentRelationship(taylor) true or both false. The first option contradicts HealthConsciousHome → EatsSalads and GoodParentRelationship → ¬EatsSalads, so only the second option holds, giving ¬HealthConsciousHome(taylor). With GoodParentRelationship(taylor) false, FulfillsIntake(taylor) must be false (otherwise HealthConsciousHome would be true). Since VisitsGym → FulfillsIntake, VisitsGym(taylor) must also be false. Hence ¬HealthConsciousHome(taylor) ∧ ¬VisitsGym(taylor) is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_176",
+    "context": "[BG] The Olympic games is a sporting event. The last Olympic games was in Tokyo. The United States won the most medals in Tokyo.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The world championships is a sporting event.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises only assert that the Olympic games is a sporting event; there is no information linking world championships to being a sporting event, so the conclusion cannot be proven true or false and is therefore uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises only assert that the Olympic games is a sporting event; there is no information linking world championships to being a sporting event, so the conclusion cannot be proven true or false and is therefore uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_177",
+    "context": "[BG] The Olympic games is a sporting event. The last Olympic games was in Tokyo. The United States won the most medals in Tokyo.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The last Olympic games were not in Tokyo.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The premise In(lastOlympicGames, tokyo) explicitly states that the last Olympic games were in Tokyo, so its negation ¬In(lastOlympicGames, tokyo) is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The premise In(lastOlympicGames, tokyo) explicitly states that the last Olympic games were in Tokyo, so its negation ¬In(lastOlympicGames, tokyo) is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_178",
+    "context": "[BG] The Olympic games is a sporting event. The last Olympic games was in Tokyo. The United States won the most medals in Tokyo.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? The United States won the most medals in the last Olympic games.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premise WonMostMedals(usa, lastOlympicGames) directly states that the United States won the most medals in the last Olympic games, which is exactly the conclusion, so the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premise WonMostMedals(usa, lastOlympicGames) directly states that the United States won the most medals in the last Olympic games, which is exactly the conclusion, so the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_179",
+    "context": "All horses have hooves. No humans have hooves.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some humans are horses.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "From the premises, any horse must have hooves and any human must lack hooves. Assuming an individual were both a horse and a human would require it to both have and lack hooves, a contradiction. Hence ∃x (Human(x) ∧ Horse(x)) cannot hold; the statement is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"From the premises, any horse must have hooves and any human must lack hooves. Assuming an individual were both a horse and a human would require it to both have and lack hooves, a contradiction. Hence ∃x (Human(x) ∧ Horse(x)) cannot hold; the statement is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_181",
+    "context": "Susan flies to LGA airport. The departure and arrival can not be the same airport. John flies from LGA airport.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? John flies to LGA airport.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "Premise 2 forbids any person from both departing and arriving at the same airport. Since FliesFrom(john, LGA) is true, FliesTo(john, LGA) must be false, making the conclusion false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"Premise 2 forbids any person from both departing and arriving at the same airport. Since FliesFrom(john, LGA) is true, FliesTo(john, LGA) must be false, making the conclusion false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_183",
+    "context": "No one nice to animals is mean to animals. Some grumpy people are mean to animals. All animal lovers are nice to animals. If someone owns a pet, then they love animals. Tom is a pet owner.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Tom is not a grumpy person and mean to animals.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From PetOwner(tom) we infer AnimalLover(tom) (premise 4), then NiceToAnimals(tom) (premise 3), and thus ¬MeanToAnimals(tom) (premise 1). Since Tom is not mean to animals, the conjunction Grumpy(tom) ∧ MeanToAnimals(tom) is false, so its negation ¬(Grumpy(tom) ∧ MeanToAnimals(tom)) is true. Therefore the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From PetOwner(tom) we infer AnimalLover(tom) (premise 4), then NiceToAnimals(tom) (premise 3), and thus ¬MeanToAnimals(tom) (premise 1). Since Tom is not mean to animals, the conjunction Grumpy(tom) ∧ MeanToAnimals(tom) is false, so its negation ¬(Grumpy(tom) ∧ MeanToAnimals(tom)) is true. Therefore the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_186",
+    "context": "A podcast is not a novel. [BG] If a person is born in American City, the person is American. [BG] If a book is novel and it is written by a person, then the person is a novel writer. Dani Shapiro is an American writer. Family History is written by Dani Shapiro. Family History is a novel written in 2003. Dani Shapiro created a podcast called Family Secrets. [BG] Boston is an American city.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Family Secrets is a novel.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "Premise 7 asserts Podcast(familySecrets). Premise 1 states ∀x (Podcast(x) → ¬Novel(x)), so from Podcast(familySecrets) we derive ¬Novel(familySecrets). Hence the claim that Family Secrets is a novel is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"Premise 7 asserts Podcast(familySecrets). Premise 1 states ∀x (Podcast(x) → ¬Novel(x)), so from Podcast(familySecrets) we derive ¬Novel(familySecrets). Hence the claim that Family Secrets is a novel is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_187",
+    "context": "A podcast is not a novel. [BG] If a person is born in American City, the person is American. [BG] If a book is novel and it is written by a person, then the person is a novel writer. Dani Shapiro is an American writer. Family History is written by Dani Shapiro. Family History is a novel written in 2003. Dani Shapiro created a podcast called Family Secrets. [BG] Boston is an American city.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Dani Shapiro was born in Boston.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises state that Dani Shapiro is American and that Boston is an American city, but there is no rule that allows us to infer a person's birthplace from their nationality. The only rule involving BornIn is an implication from being born in an American city to being American, not the converse. Hence, we cannot deduce BornIn(dani, boston) from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises state that Dani Shapiro is American and that Boston is an American city, but there is no rule that allows us to infer a person's birthplace from their nationality. The only rule involving BornIn is an implication from being born in an American city to being American, not the converse. Hence, we cannot deduce BornIn(dani, boston) from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_189",
+    "context": "Some basketball players are not American. All basketball players are tall. If someone is tall, they wear large shoes. If someone wears large shoes, they wear large-sized clothes. Yuri does not wear large-size clothes.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Yuri is not an American basketball player.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From ¬WearsLargeClothes(yuri) we infer ¬WearsLargeShoes(yuri), then ¬Tall(yuri), then ¬BasketballPlayer(yuri). Since Yuri is not a basketball player, the statement American(yuri) ∧ BasketballPlayer(yuri) is false, so its negation is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From ¬WearsLargeClothes(yuri) we infer ¬WearsLargeShoes(yuri), then ¬Tall(yuri), then ¬BasketballPlayer(yuri). Since Yuri is not a basketball player, the statement American(yuri) ∧ BasketballPlayer(yuri) is false, so its negation is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_193",
+    "context": "Events are either happy or sad. At least one event is happy.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? All events are sad.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The premises state that every event is either happy or sad (exclusive) and that at least one event is happy. This happy event cannot be sad, so the claim that all events are sad is contradicted and therefore false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The premises state that every event is either happy or sad (exclusive) and that at least one event is happy. This happy event cannot be sad, so the claim that all events are sad is contradicted and therefore false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_194",
+    "context": "The winner of the 1992 du Maurier Classic was Steinhauer. Steinhauer participated in the 1992 du Maurier Classic. There was one six-way tie on the leaderboard and one person in the six-way tie was from Belgium. Descampe is from Belgium and is on the leaderboard of the 1992 du Maurier Classic. All people on the leaderboard of the 1992 du Maurier Classic participated in the 1992 du Maurier Classic.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Steinhauer was not the winner of the 1992 du Maurier Classic.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "The premise Winner(steinhauer, duMaurierClassic1992) explicitly states that Steinhauer was the winner. Therefore the conclusion ¬Winner(steinhauer, duMaurierClassic1992) contradicts this premise and is false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"The premise Winner(steinhauer, duMaurierClassic1992) explicitly states that Steinhauer was the winner. Therefore the conclusion ¬Winner(steinhauer, duMaurierClassic1992) contradicts this premise and is false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_196",
+    "context": "If an animal barks, then Jane does not like it. All dogs are animals that bark. If an animal jumps, then Jane likes it. If an animal has legs, then it jumps. If an animal is terricolous, then it has legs. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi is terricolous.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The only premise involving KiKi is a conditional: if KiKi neither jumps nor has legs, then KiKi is terricolous or has legs. The premises give no way to establish the antecedent (¬Jumps(kiki) ∧ ¬HasLegs(kiki)), nor do they provide any other information that forces KiKi to be terricolous or not terricolous. Therefore, the truth of 'KiKi is terricolous' cannot be determined from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The only premise involving KiKi is a conditional: if KiKi neither jumps nor has legs, then KiKi is terricolous or has legs. The premises give no way to establish the antecedent (¬Jumps(kiki) ∧ ¬HasLegs(kiki)), nor do they provide any other information that forces KiKi to be terricolous or not terricolous. Therefore, the truth of 'KiKi is terricolous' cannot be determined from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_197",
+    "context": "If an animal barks, then Jane does not like it. All dogs are animals that bark. If an animal jumps, then Jane likes it. If an animal has legs, then it jumps. If an animal is terricolous, then it has legs. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi barks and is a dog.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises contain no assertion that KiKi is a dog (or that KiKi is not a dog). The only KiKi‑specific premise is a conditional whose antecedent is not known to hold, so neither Barks(kiki) nor Dog(kiki) can be derived. Therefore the truth of 'KiKi barks and is a dog' cannot be determined from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises contain no assertion that KiKi is a dog (or that KiKi is not a dog). The only KiKi‑specific premise is a conditional whose antecedent is not known to hold, so neither Barks(kiki) nor Dog(kiki) can be derived. Therefore the truth of 'KiKi barks and is a dog' cannot be determined from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_202",
+    "context": "Ailton Silva, born in 1995, is commonly known as Ailton. Ailton is a football player who was loaned out to Braga. Ailton Silva is a Brazillian footballer who plays for Nautico. Nautico is a football club along with Braga. Fluminense is a football club.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton Silva played for Fluminense.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises state that Ailton plays for Nautico and was loaned to Braga, and that Fluminense is a football club, but they provide no information linking Ailton to Fluminense. Therefore, the conclusion that Ailton played for Fluminense cannot be proven true or false from the given facts.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises state that Ailton plays for Nautico and was loaned to Braga, and that Fluminense is a football club, but they provide no information linking Ailton to Fluminense. Therefore, the conclusion that Ailton played for Fluminense cannot be proven true or false from the given facts.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_203",
+    "context": "Ailton Silva, born in 1995, is commonly known as Ailton. Ailton is a football player who was loaned out to Braga. Ailton Silva is a Brazillian footballer who plays for Nautico. Nautico is a football club along with Braga. Fluminense is a football club.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Ailton Silva was loaned out to a football club.",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premises state LoanedTo(ailtonSilva, braga) and FootballClub(braga). This provides a specific y (braga) such that FootballClub(y) ∧ LoanedTo(ailtonSilva, y) holds, directly satisfying the conclusion.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premises state LoanedTo(ailtonSilva, braga) and FootballClub(braga). This provides a specific y (braga) such that FootballClub(y) ∧ LoanedTo(ailtonSilva, y) holds, directly satisfying the conclusion.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_42",
+    "context": "If a player is ranked highly by the Women's Tennis Association, then they are among the most active players in major tennis. Everyone who lost to Iga Świątek is ranked highly by the Women's Tennis Association. All female tennis players at Roland Garros 2022 lost to Iga Świątek. Either female tennis players at Roland Garros 2022 or male tennis players at Roland Garros 2022. All male tennis players at Roland Garros 2022 lost to Rafael Nadal. If Coco Gauff is a player who is ranked highly by the Women's Tennis Association or a player who lost to Rafael Nadal, then Coco Gauff is not a male tennis player at Roland Garros 2022.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Coco Gauff is among the most active players in major tennis.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 4 forces Coco to be either FemaleRG2022 or MaleRG2022. If MaleRG2022 held, premise 5 would give LostToRafael(coco), making the antecedent of premise 6 true and yielding ¬MaleRG2022(coco), a contradiction. Hence Coco must be FemaleRG2022. By premise 3 she then LostToIga(coco); by premise 2 this implies RankedHighlyWTA(coco); and by premise 1 RankedHighlyWTA(coco) entails ActiveMajorTennis(coco). Therefore the conclusion is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 4 forces Coco to be either FemaleRG2022 or MaleRG2022. If MaleRG2022 held, premise 5 would give LostToRafael(coco), making the antecedent of premise 6 true and yielding ¬MaleRG2022(coco), a contradiction. Hence Coco must be FemaleRG2022. By premise 3 she then LostToIga(coco); by premise 2 this implies RankedHighlyWTA(coco); and by premise 1 RankedHighlyWTA(coco) entails ActiveMajorTennis(coco). Therefore the conclusion is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_52",
+    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Basque is a Romance language.",
+    "answer": "B",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "B",
+    "rationale": "If Basque were a Romance language, premise 2 would require it to be related to every other Romance language (e.g., French and Spanish). However, premise 5 states that Basque is not related to any language, creating a contradiction. Therefore, Basque cannot be a Romance language, making the statement false.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"B\",\n  \"rationale\": \"If Basque were a Romance language, premise 2 would require it to be related to every other Romance language (e.g., French and Spanish). However, premise 5 states that Basque is not related to any language, creating a contradiction. Therefore, Basque cannot be a Romance language, making the statement false.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_54",
+    "context": "All Romance languages are Indo-European languages. The Romance languages are a language family. All languages within a language family are related to each other. French and Spanish are both Romance languages. German is related to Spanish. Basque is not related to any other language.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? French is an Indo-European language.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 1 states ∀x (Romance(x) → IndoEuropean(x)). Premise 3 asserts Romance(french). By universal instantiation and modus ponens, IndoEuropean(french) follows, so the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 1 states ∀x (Romance(x) → IndoEuropean(x)). Premise 3 asserts Romance(french). By universal instantiation and modus ponens, IndoEuropean(french) follows, so the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_60",
+    "context": "Billings is a city in Montana. Montana includes the cities of Butte, Helena, and Missoula. White Sulphur Springs and Butte are cities in the same state. The city of Pierre is not in Montana. Any city in Butte is not in Pierre.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Montana is home to the city of Missoula.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premise 'In(butte, montana) ∧ In(helena, montana) ∧ In(missoula, montana)' explicitly asserts that Missoula is in Montana, so the conclusion In(missoula, montana) follows directly and is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premise 'In(butte, montana) ∧ In(helena, montana) ∧ In(missoula, montana)' explicitly asserts that Missoula is in Montana, so the conclusion In(missoula, montana) follows directly and is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_88",
+    "context": "[BG] Books contain tons of knowledge. [BG] When a person reads a book, that person gains knowledge. [BG] If a person gains knowledge, they become smarter. Harry read the book “Walden” by Henry Thoreau.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Walden contains knowledge.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 1 (∀x (Book(x) → ContainsKnowledge(x))) states that every book contains knowledge. Premise 4 asserts Book(walden). By universal instantiation, ContainsKnowledge(walden) follows, so the statement is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 1 (∀x (Book(x) → ContainsKnowledge(x))) states that every book contains knowledge. Premise 4 asserts Book(walden). By universal instantiation, ContainsKnowledge(walden) follows, so the statement is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_143",
+    "context": "Breeding back is a form of artificial selection by the deliberate selective breeding of domestic animals. Heck cattle were bred-back in the 1920s to resemble the aurochs. [BG] Heck cattle are animals. [BG] Aurochs are animals. Some animals to be bred-back resemble animals that are extinct.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Some Heck cattle are artificially selected.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 2 provides an individual that is both a Heck cattle and bred‑back. Premise 1 states that anything bred‑back is artificially selected. Hence that Heck cattle is artificially selected, satisfying the conclusion ∃x (HeckCattle(x) ∧ ArtificialSelection(x)).",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 2 provides an individual that is both a Heck cattle and bred‑back. Premise 1 states that anything bred‑back is artificially selected. Hence that Heck cattle is artificially selected, satisfying the conclusion ∃x (HeckCattle(x) ∧ ArtificialSelection(x)).\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_150",
+    "context": "New Vessel Press is a publishing house which specializes in translating foreign literature into English. All of New Vessel Press's published books are in English. Neapolitan Chronicles is a book published by New Vessel Press. Neapolitan Chronicles was translated from Italian. Palace of Flies is a book published by New Vessel Press.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Neapolitan Chronicles is an English book.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "Premise 1 asserts that every book published by New Vessel Press is in English. Premise 2 states that Neapolitan Chronicles is a book published by New Vessel Press. By universal instantiation and modus ponens, we derive InLanguage(neapolitanChronicles, english). Combined with Book(neapolitanChronicles) from Premise 2, the conclusion Book(neapolitanChronicles) ∧ InLanguage(neapolitanChronicles, english) is true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"Premise 1 asserts that every book published by New Vessel Press is in English. Premise 2 states that Neapolitan Chronicles is a book published by New Vessel Press. By universal instantiation and modus ponens, we derive InLanguage(neapolitanChronicles, english). Combined with Book(neapolitanChronicles) from Premise 2, the conclusion Book(neapolitanChronicles) ∧ InLanguage(neapolitanChronicles, english) is true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_166",
+    "context": "On some Mondays at 8 pm, roses are given out on TV. Every rose given out on TV is on the Bachelor. Everything on the Bachelor portrays the lives of real people. All shows portraying the lives of real people are reality TV shows. Breaking Bad is not a reality TV show.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? If roses are given out during Breaking Bad, then it is on Monday at 8 pm.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "The premises only entail that any TV event with roses must be on The Bachelor and thus be a reality TV show. Since Breaking Bad is not a reality TV show, we can infer that Breaking Bad cannot have roses given out on TV, but the premises do not rule out roses being given out during Breaking Bad in a non‑TV context. Nothing links Breaking Bad to Monday or 8 pm, so the antecedent could be true while the consequent is false, and the premises do not force the conditional to be true or false. Hence the statement is uncertain.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"The premises only entail that any TV event with roses must be on The Bachelor and thus be a reality TV show. Since Breaking Bad is not a reality TV show, we can infer that Breaking Bad cannot have roses given out on TV, but the premises do not rule out roses being given out during Breaking Bad in a non‑TV context. Nothing links Breaking Bad to Monday or 8 pm, so the antecedent could be true while the consequent is false, and the premises do not force the conditional to be true or false. Hence the statement is uncertain.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_167",
+    "context": "Heinrich Scmidt was a Nazi German politician. Heeinrich Scmidt was also a member of the Prussian State Parliament and the Nazi Reichstag.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Heinrich Schmidt was either German or Russian.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "The premises explicitly state German(heinrich). Since a disjunction is true if at least one of its disjuncts is true, German(heinrich) ∨ Russian(heinrich) follows directly, making the statement true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"The premises explicitly state German(heinrich). Since a disjunction is true if at least one of its disjuncts is true, German(heinrich) ∨ Russian(heinrich) follows directly, making the statement true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_170",
+    "context": "If something is a deadly disease, then its survival rate is low. All severe cancers are deadly diseases. Bile duct cancer is a severe cancer. All Cholangiocarcinoma is bile duct cancer. No one with mild flu has a low survival rate. If colorectal cancer is a bile duct cancer and the survival rate is low, then colorectal cancer is not a bile duct cancer.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? Colorectal cancer is a severe cancer",
+    "answer": "C",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "C",
+    "rationale": "No premise connects colorectal cancer to severe cancer. Premise 6 only restricts that colorectal cancer cannot be both a bile duct cancer and have low survival rate, but it does not entail SevereCancer(colorectalCancer). Therefore the statement cannot be proven true or false from the given information.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"C\",\n  \"rationale\": \"No premise connects colorectal cancer to severe cancer. Premise 6 only restricts that colorectal cancer cannot be both a bile duct cancer and have low survival rate, but it does not entail SevereCancer(colorectalCancer). Therefore the statement cannot be proven true or false from the given information.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  },
+  {
+    "id": "FOLIO_dev_198",
+    "context": "If an animal barks, then Jane does not like it. All dogs are animals that bark. If an animal jumps, then Jane likes it. If an animal has legs, then it jumps. If an animal is terricolous, then it has legs. If KiKi neither jumps nor has legs, then KiKi is terricolous or has legs.",
+    "question": "Based on the above information, is the following statement true, false, or uncertain? KiKi neither barks nor is a dog.",
+    "answer": "A",
+    "options": [
+      "A) True",
+      "B) False",
+      "C) Uncertain"
+    ],
+    "predicted_answer": "A",
+    "rationale": "From premise 6 and premise 5 we infer ¬(¬Jumps(kiki)∧¬HasLegs(kiki)), i.e., Jumps(kiki)∨HasLegs(kiki). By premises 4 and 3 this yields Likes(jane,kiki). Premise 1 says Barks(kiki)→¬Likes(jane,kiki), so Likes(jane,kiki) forces ¬Barks(kiki). Premise 2 states Dog(kiki)→Barks(kiki); with ¬Barks(kiki) we get ¬Dog(kiki). Thus both ¬Barks(kiki) and ¬Dog(kiki) are entailed, making the conclusion true.",
+    "flag": "success",
+    "error_message": null,
+    "raw_response": "{\n  \"answer\": \"A\",\n  \"rationale\": \"From premise 6 and premise 5 we infer ¬(¬Jumps(kiki)∧¬HasLegs(kiki)), i.e., Jumps(kiki)∨HasLegs(kiki). By premises 4 and 3 this yields Likes(jane,kiki). Premise 1 says Barks(kiki)→¬Likes(jane,kiki), so Likes(jane,kiki) forces ¬Barks(kiki). Premise 2 states Dog(kiki)→Barks(kiki); with ¬Barks(kiki) we get ¬Dog(kiki). Thus both ¬Barks(kiki) and ¬Dog(kiki) are entailed, making the conclusion true.\"\n}",
+    "source_logic_program_file": "FOLIO_dev_glm-4.6.json"
+  }
+]

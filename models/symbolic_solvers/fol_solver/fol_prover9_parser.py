@@ -1,5 +1,6 @@
 from z3 import *
 from ply import lex, yacc
+import re
 from .Formula import FOL_Formula
 
 """
@@ -37,17 +38,20 @@ class Prover9_FOL_Formula:
         self.t_COMMA = r','
 
         if len(fol_formula.variables) > 0:
-            self.t_VAR = r'|'.join(list(fol_formula.variables))
+            # 转义特殊字符，避免正则表达式错误
+            self.t_VAR = r'|'.join([re.escape(v) for v in fol_formula.variables])
         else:
             self.t_VAR = r'x'
         
         if len(fol_formula.predicates) > 0:
-            self.t_PRED = r'|'.join(list(fol_formula.predicates))
+            # 转义特殊字符，避免正则表达式错误
+            self.t_PRED = r'|'.join([re.escape(p) for p in fol_formula.predicates])
         else:
             self.t_PRED = r'PRED'
 
         if len(fol_formula.constants) > 0:
-            self.t_CONST = r'|'.join(list(fol_formula.constants))
+            # 转义特殊字符，避免正则表达式错误（如 [、] 等）
+            self.t_CONST = r'|'.join([re.escape(c) for c in fol_formula.constants])
         else:
             self.t_CONST = r'0'
 
